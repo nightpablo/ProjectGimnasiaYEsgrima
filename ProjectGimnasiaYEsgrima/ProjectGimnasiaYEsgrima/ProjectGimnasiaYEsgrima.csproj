@@ -45,23 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDDeporte.cs" />
-    <Compile Include="ControladorDeporte.cs" />
-    <Compile Include="Curso.cs" />
-    <Compile Include="Deporte.cs" />
-    <Compile Include="Empleado.cs" />
-    <Compile Include="InterfazDeporte.cs">
+    <Compile Include="BD\BDDeporte.cs" />
+    <Compile Include="Controlador\ControladorDeporte.cs" />
+    <Compile Include="Modelo\Curso.cs" />
+    <Compile Include="Modelo\Deporte.cs" />
+    <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Interfaz\InterfazDeporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfazDeporte.Designer.cs">
+    <Compile Include="Interfaz\InterfazDeporte.Designer.cs">
       <DependentUpon>InterfazDeporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persona.cs" />
-    <Compile Include="Profesor.cs" />
+    <Compile Include="Modelo\Persona.cs" />
+    <Compile Include="Modelo\Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Socio.cs" />
-    <EmbeddedResource Include="InterfazDeporte.resx">
+    <Compile Include="Modelo\Socio.cs" />
+    <EmbeddedResource Include="Interfaz\InterfazDeporte.resx">
       <DependentUpon>InterfazDeporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -85,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Excepcion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@ namespace ProjectGimnasiaYEsgrima
 {
     public class ControladorDeporte
     {
-        public void crearDeporte(string nombre, string descripcion)
+        public void crearDeporte(string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {
             Deporte un_deporte = new Deporte(nombre, descripcion);
 
