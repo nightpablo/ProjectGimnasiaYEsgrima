@@ -8,16 +8,17 @@ namespace ProjectGimnasiaYEsgrima
 {
     public class Deporte
     {
-        public Deporte(string nombre, string descripcion)
+        public Deporte() { }
+        public Deporte(int id_deporte, string nombre, string descripcion)
         {
-            this.id_deporte = id_deporte;
-            this.nombre = nombre;
-            this.descripcion = descripcion;
+            this.Id_deporte = id_deporte;
+            this.Nombre = nombre;
+            this.Descripcion = descripcion;
         }
 
-        public int id_deporte { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
+        public int Id_deporte { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
     }
 
 }

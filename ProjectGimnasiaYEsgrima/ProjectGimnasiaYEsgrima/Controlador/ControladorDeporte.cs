@@ -8,12 +8,19 @@ namespace ProjectGimnasiaYEsgrima
 {
     public class ControladorDeporte
     {
-        public void crearDeporte(string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
+        public int CrearDeporte(string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {
-            Deporte un_deporte = new Deporte(nombre, descripcion);
+
+            Deporte un_deporte = new Deporte
+            {
+                Nombre = nombre,
+                Descripcion = descripcion
+            };
+
+
 
             BDDeporte una_bddeporte = new BDDeporte();
-            una_bddeporte.Crear(un_deporte);
+            return una_bddeporte.Crear(un_deporte);
         }
     }
 }
