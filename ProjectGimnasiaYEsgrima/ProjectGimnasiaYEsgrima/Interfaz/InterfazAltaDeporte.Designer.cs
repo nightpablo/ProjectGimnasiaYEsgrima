@@ -1,6 +1,7 @@
-﻿namespace ProjectGimnasiaYEsgrima
+﻿
+namespace ProjectGimnasiaYEsgrima
 {
-    partial class InterfazDeporte
+    partial class InterfazAltaDeporte
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreDeporte = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,10 +52,11 @@
             // txtNombreDeporte
             // 
             this.txtNombreDeporte.Location = new System.Drawing.Point(204, 87);
-            this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(197, 22);
             this.txtNombreDeporte.TabIndex = 1;
+            
             // 
             // label2
             // 
@@ -68,7 +71,7 @@
             // txtDescripcionDeporte
             // 
             this.txtDescripcionDeporte.Location = new System.Drawing.Point(204, 148);
-            this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcionDeporte.Name = "txtDescripcionDeporte";
             this.txtDescripcionDeporte.Size = new System.Drawing.Size(196, 22);
             this.txtDescripcionDeporte.TabIndex = 3;
@@ -76,7 +79,7 @@
             // BotonGuardarDeporte
             // 
             this.BotonGuardarDeporte.Location = new System.Drawing.Point(67, 206);
-            this.BotonGuardarDeporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BotonGuardarDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.BotonGuardarDeporte.Name = "BotonGuardarDeporte";
             this.BotonGuardarDeporte.Size = new System.Drawing.Size(141, 38);
             this.BotonGuardarDeporte.TabIndex = 4;
@@ -98,14 +101,15 @@
             // 
             this.botonCancelarDeporte.Cursor = System.Windows.Forms.Cursors.Default;
             this.botonCancelarDeporte.Location = new System.Drawing.Point(253, 202);
-            this.botonCancelarDeporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonCancelarDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.botonCancelarDeporte.Name = "botonCancelarDeporte";
             this.botonCancelarDeporte.Size = new System.Drawing.Size(149, 42);
             this.botonCancelarDeporte.TabIndex = 6;
             this.botonCancelarDeporte.Text = "Cancelar";
             this.botonCancelarDeporte.UseVisualStyleBackColor = true;
+            this.botonCancelarDeporte.Click += new System.EventHandler(this.BotonCancelarDeporte_Click);
             // 
-            // InterfazDeporte
+            // InterfazAltaDeporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,8 +121,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreDeporte);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "InterfazDeporte";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "InterfazAltaDeporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion Deportes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,6 +139,7 @@
         private System.Windows.Forms.Button BotonGuardarDeporte;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button botonCancelarDeporte;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

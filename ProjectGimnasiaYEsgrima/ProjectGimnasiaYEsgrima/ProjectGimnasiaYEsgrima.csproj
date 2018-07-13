@@ -61,6 +61,19 @@
     <Compile Include="BD\BDDeporte.cs" />
     <Compile Include="BD\MySqlConexionBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Interfaz\InterfazListaDeportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListaDeportes.Designer.cs">
+      <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarDeporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarDeporte.Designer.cs">
+      <DependentUpon>InterfazModificarDeporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Curso.cs" />
     <Compile Include="Modelo\Deporte.cs" />
     <Compile Include="Modelo\Empleado.cs" />
@@ -75,8 +88,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelo\Socio.cs" />
+    <Compile Include="Utils\CampoConRestriccion.cs" />
     <EmbeddedResource Include="Interfaz\InterfazAltaDeporte.resx">
       <DependentUpon>InterfazAltaDeporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
+      <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazModificarDeporte.resx">
+      <DependentUpon>InterfazModificarDeporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Deporte.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Excepcion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

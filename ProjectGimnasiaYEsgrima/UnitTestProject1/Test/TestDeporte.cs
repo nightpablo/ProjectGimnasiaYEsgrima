@@ -15,11 +15,13 @@ namespace UnitTestProject1
             ControladorDeporte controladorDeporte = new ControladorDeporte();
 
             //Aceptado
-            controladorDeporte.crearDeporte("Futbol5", "");
+            controladorDeporte.CrearDeporte("Futbol5", "");
             //Error
-            controladorDeporte.crearDeporte("FUTBOLFUTBOLFUTBOLFUTBOLFUTBOLF", "");
-            controladorDeporte.crearDeporte("", "");
-            controladorDeporte.crearDeporte("Futbol", "");
+            controladorDeporte.CrearDeporte("FUTBOLFUTBOLFUTBOLFUTBOLFUTBOLF", "");
+            controladorDeporte.CrearDeporte("", "");
+
+            //Repetido y Error
+            controladorDeporte.CrearDeporte("Futbol", "");
 
         }
 

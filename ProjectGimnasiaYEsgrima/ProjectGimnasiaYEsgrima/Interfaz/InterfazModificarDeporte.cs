@@ -9,29 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectGimnasiaYEsgrima
+namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    public partial class InterfazAltaDeporte : Form
+    public partial class InterfazModificarDeporte : Form
     {
+
         private Form padre;
-        public InterfazAltaDeporte(Form padre)
+        private Deporte deporte;
+        public InterfazModificarDeporte(Form padre, Deporte deporte)
         {
             this.padre = padre;
+            this.deporte = deporte;
             InitializeComponent();
-
-            this.txtNombreDeporte.Focus();
+            txtNombreDeporte.Text = deporte.Nombre;
+            txtDescripcionDeporte.Text = deporte.Descripcion;
             this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
             this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
 
-
         }
+       
 
         private void BotonGuardarDeporte_Click(object sender, EventArgs e)
         {
             var hayError = false;
-            if (txtNombreDeporte.Text.Length < 3) { 
+            if (txtNombreDeporte.Text.Length < 3)
+            {
                 hayError = true;
                 errorProvider1.SetError(txtNombreDeporte, "El nombre debe ser con carácter entre 3 y 50");
             }
@@ -42,24 +46,21 @@ namespace ProjectGimnasiaYEsgrima
 
             if (hayError)
                 return;
+
             string nombre = txtNombreDeporte.Text;
             string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            
-            if (un_controlador_deporte.CrearDeporte(nombre, descripcion) > 0)
+            if (un_controlador_deporte.ModificarDeporte(deporte.Id_deporte, nombre, descripcion) > 0)
             {
-                MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
+                MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
                 Dispose();
             }
-
-
         }
 
-        private void BotonCancelarDeporte_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Dispose();
         }
-       
     }
 }
