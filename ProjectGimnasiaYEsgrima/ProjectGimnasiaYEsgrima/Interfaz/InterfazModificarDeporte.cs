@@ -51,11 +51,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            if (un_controlador_deporte.ModificarDeporte(deporte.Id_deporte, nombre, descripcion) > 0)
+            var resultado = un_controlador_deporte.ModificarDeporte(deporte.Id_deporte, nombre, descripcion);
+            if (resultado > 0)
             {
                 MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
                 Dispose();
             }
+            else if (resultado == -2)
+                MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
         }
 
         private void Button1_Click(object sender, EventArgs e)

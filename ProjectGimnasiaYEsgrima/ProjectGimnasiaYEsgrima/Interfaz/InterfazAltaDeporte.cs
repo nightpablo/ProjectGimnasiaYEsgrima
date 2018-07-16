@@ -46,12 +46,14 @@ namespace ProjectGimnasiaYEsgrima
             string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            
-            if (un_controlador_deporte.CrearDeporte(nombre, descripcion) > 0)
+            var resultado = un_controlador_deporte.CrearDeporte(nombre, descripcion);
+            if ( resultado > 0)
             {
                 MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }
+            else if(resultado == -2)
+                MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
 
 
         }

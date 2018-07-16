@@ -39,13 +39,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.BotonBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridViewDeporte = new System.Windows.Forms.DataGridView();
+            this.deporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iddeporteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.deporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deporteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +82,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(183, 22);
             this.txtNombreDeporte.TabIndex = 2;
-            
             // 
             // txtDescripcionDeporte
             // 
@@ -120,7 +118,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.iddeporteDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
-            this.Ver,
             this.Modificar,
             this.Eliminar});
             this.dataGridViewDeporte.DataSource = this.deporteBindingSource;
@@ -130,6 +127,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewDeporte.Size = new System.Drawing.Size(769, 204);
             this.dataGridViewDeporte.TabIndex = 4;
             this.dataGridViewDeporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // deporteBindingSource
+            // 
+            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Deporte);
             // 
             // iddeporteDataGridViewTextBoxColumn
             // 
@@ -156,16 +157,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Ver
-            // 
-            this.Ver.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Ver.HeaderText = "";
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Text = "Ver";
-            this.Ver.UseColumnTextForButtonValue = true;
-            this.Ver.Width = 24;
-            // 
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -185,10 +176,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 24;
-            // 
-            // deporteBindingSource
-            // 
-            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Deporte);
             // 
             // InterfazListaDeportes
             // 
@@ -226,7 +213,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn iddeporteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn Ver;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

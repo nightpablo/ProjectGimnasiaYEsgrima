@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\BDDeporte.cs" />
+    <Compile Include="BD\INterfaceBD.cs" />
     <Compile Include="BD\MySqlConexionBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
     <Compile Include="GlobalSuppressions.cs" />

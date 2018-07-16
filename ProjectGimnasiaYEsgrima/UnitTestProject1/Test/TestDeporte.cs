@@ -10,33 +10,24 @@ namespace UnitTestProject1
         //Generar excepciones para probar
         //[ExpectedException(typeof(ExceptionDeporteCampoNombre))]
         //Se debe saber que las excepciones hay que generarlas desde la clase ControladorDeporte
-        public void Campo1_nombre()
+        public void TestDeporteControladorBD()
         {
             ControladorDeporte controladorDeporte = new ControladorDeporte();
 
             //Aceptado
-            controladorDeporte.CrearDeporte("Futbol5", "");
+            Assert.IsTrue(controladorDeporte.CrearDeporte("FutbolPrueba1", "")>0);
+            Deporte deporte_buscado = controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba1");
+            Assert.IsNotNull(deporte_buscado);
+            Assert.IsTrue(controladorDeporte.ListarTodosDeportes().Count > 0);
+            Assert.IsTrue(controladorDeporte.ListarTodosDeportesPorFiltros("futbolprueba1","").Count > 0);
+            Assert.IsTrue(controladorDeporte.ModificarDeporte(deporte_buscado.Id_deporte, "FutbolPrueba1", "Futbol en Testing")>0);
+            Assert.IsTrue(controladorDeporte.ListarTodosDeportesPorFiltros("", "Futbol en Test").Count > 0);
             //Error
-            controladorDeporte.CrearDeporte("FUTBOLFUTBOLFUTBOLFUTBOLFUTBOLF", "");
-            controladorDeporte.CrearDeporte("", "");
+            Assert.AreEqual(controladorDeporte.CrearDeporte("FutbolPrueba1", ""),-2);
+            Assert.AreEqual(controladorDeporte.ModificarDeporte(deporte_buscado.Id_deporte,"Futbol", ""), -2); //Debe existir Futbol en la base de datos
 
-            //Repetido y Error
-            controladorDeporte.CrearDeporte("Futbol", "");
-
-        }
-
-        [TestMethod]
-        //Generar excepciones para probar
-        //[ExpectedException(typeof(ExceptionDeporteCampoDescripcion))]
-        public void Campo1_descripcion()
-        {
-            ControladorDeporte controladorDeporte = new ControladorDeporte();
-
-            //Aceptado
-            controladorDeporte.crearDeporte("Futbol1", "Deporte que se practica entre dos equipos de once jugadores que tratan de introducir un balón en la portería del contrario impulsándolo con los pies, la cabeza o cualquier parte del cuerpo excepto las manos y los brazos; en cada equipo hay un portero, que puede tocar el balón con las manos, aunque solamente dentro del área; vence el equipo que logra más goles durante los 90 minutos que dura el encuentro.");
-            controladorDeporte.crearDeporte("Futbol9", "");
-            //Error
-            controladorDeporte.crearDeporte("Futbol11", "Deporte que se practica entre dos equipos de once jugadores que tratan de introducir un balón en la portería del contrario impulsándolo con los pies, la cabeza o cualquier parte del cuerpo excepto las manos y los brazos; en cada equipo hay un portero, que puede tocar el balón con las manos, aunque solamente dentro del área; vence el equipo que logra más goles durante los 90 minutos que dura el encuentro.Deporte que se practica entre dos equipos de once jugadores que tratan de introducir un balón en la portería del contrario impulsándolo con los pies, la cabeza o cualquier parte del cuerpo excepto las manos y los brazos; en cada equipo hay un portero, que puede tocar el balón con las manos, aunque solamente dentro del área; vence el equipo que logra más goles durante los 90 minutos que dura el encuentro.");
+            //Eliminación
+            Assert.IsTrue(controladorDeporte.EliminarDeporte(deporte_buscado) > 0);
 
         }
 

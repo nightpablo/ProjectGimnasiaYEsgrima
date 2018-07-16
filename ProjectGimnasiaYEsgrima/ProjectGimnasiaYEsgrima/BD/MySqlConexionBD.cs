@@ -1,14 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
     public class MySqlConexionBD
     {
+        private const string SERVIDOR_IP = "127.0.0.1";
+        private const string DATABASE = "gimesgdb";
+        private const string UID = "root";
+        private const string PWD = "1234";
+
+
         MySqlConnection conexion = new MySqlConnection("server=127.0.0.1; database=gimesgdb; Uid=root; pwd=1234;");
 
         public MySqlConnection Open()
@@ -19,6 +22,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show(null, "Open connection Error [" + ex.Number + "]: " + ex.Message, "MySql");
                 Console.WriteLine("Open connection Error [" + ex.Number + "]: " + ex.Message);
             }
 
@@ -33,6 +37,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show(null, "Close connection Error [" + ex.Number + "]: " + ex.Message, "MySql");
                 Console.WriteLine("Close connection Error [" + ex.Number + "]: " + ex.Message);
             }
         }

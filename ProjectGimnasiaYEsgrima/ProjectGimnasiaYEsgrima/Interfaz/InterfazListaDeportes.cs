@@ -17,23 +17,24 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscar);
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
 
+            dataGridViewDeporte.AllowUserToAddRows = false;
             dataGridViewDeporte.Visible = false;
             
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            BDDeporte dBDeporte = new BDDeporte();
+            ControladorDeporte controladorDeporte = new ControladorDeporte();
             List<Deporte> lista;
             deporteBindingSource.Clear();
             
             if (txtNombreDeporte.Text.ToString().Equals("") && txtDescripcionDeporte.Text.ToString().Equals(""))
             {
-                lista = dBDeporte.ListarTodos();   
+                lista = controladorDeporte.ListarTodosDeportes();   
             }
             else
             {
-                lista = dBDeporte.ListarPorFiltro(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
+                lista = controladorDeporte.ListarTodosDeportesPorFiltros(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
             }
             
             foreach (var i in lista)
