@@ -1,4 +1,6 @@
-﻿using ProjectGimnasiaYEsgrima.Utils;
+﻿using ProjectGimnasiaYEsgrima;
+using ProjectGimnasiaYEsgrima.Utils;
+using ProjectGimnasiaYEsgrima.Controlador;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -7,6 +9,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazListaDeportes : Form
     {
+        
+
         public InterfazListaDeportes()
         {
             InitializeComponent();
@@ -16,10 +20,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscar);
             this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
-
+            
             dataGridViewDeporte.AllowUserToAddRows = false;
             dataGridViewDeporte.Visible = false;
-            
+
+            this.ModificarMensaje("");
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -45,7 +51,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
 
             dataGridViewDeporte.Visible = true;
-            dataGridViewDeporte.Columns[0].Visible = false;
+            //dataGridViewDeporte.Columns[0].Visible = false;
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +70,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     ControladorDeporte un_controlador_deporte = new ControladorDeporte();
                     if (un_controlador_deporte.EliminarDeporte((Deporte)dataGridViewDeporte.CurrentRow.DataBoundItem) > 0)
                     {
-                        MessageBox.Show(this, "Se ha eliminado el DEPORTE", "Deporte");
+                        this.ModificarMensaje("Se ha eliminado el DEPORTE");
+                        //MessageBox.Show(this, "Se ha eliminado el DEPORTE", "Deporte");
                     }
                 }
             }
@@ -79,5 +86,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 Button1_Click(sender, e);
         }
         
+        public void ModificarMensaje(String entrada)
+        {
+            LabelInfoDeporte.Text = entrada;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using ProjectGimnasiaYEsgrima.Utils;
+﻿using ProjectGimnasiaYEsgrima;
+using ProjectGimnasiaYEsgrima.Utils;
+using ProjectGimnasiaYEsgrima.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,10 +53,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            var resultado = un_controlador_deporte.ModificarDeporte(deporte.Id_deporte, nombre, descripcion);
+            var resultado = un_controlador_deporte.ModificarDeporte(deporte.Iddeporte, nombre, descripcion);
             if (resultado > 0)
             {
-                MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
+                //MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
+                ((InterfazListaDeportes)padre).ModificarMensaje("Se ha modificado el DEPORTE");
                 Dispose();
             }
             else if (resultado == -2)

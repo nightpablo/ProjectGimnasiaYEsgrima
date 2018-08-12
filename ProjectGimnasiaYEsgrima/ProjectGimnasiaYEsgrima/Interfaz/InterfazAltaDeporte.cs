@@ -1,4 +1,5 @@
 ﻿using ProjectGimnasiaYEsgrima.Utils;
+using ProjectGimnasiaYEsgrima.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectGimnasiaYEsgrima
+namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAltaDeporte : Form
     {
@@ -49,7 +50,8 @@ namespace ProjectGimnasiaYEsgrima
             var resultado = un_controlador_deporte.CrearDeporte(nombre, descripcion);
             if ( resultado > 0)
             {
-                MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
+                ((InterfazListaDeportes)padre).ModificarMensaje("Se ha creado un nuevo DEPORTE");
+                //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }
             else if(resultado == -2)

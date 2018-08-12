@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectGimnasiaYEsgrima
+namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     partial class InterfazAltaDeporte
     {
@@ -56,7 +56,7 @@ namespace ProjectGimnasiaYEsgrima
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(197, 22);
             this.txtNombreDeporte.TabIndex = 1;
-            
+
             // 
             // label2
             // 

@@ -1,10 +1,8 @@
-﻿using System;
+﻿using ProjectGimnasiaYEsgrima.BD;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjectGimnasiaYEsgrima
+namespace ProjectGimnasiaYEsgrima.Controlador
 {
     public class ControladorDeporte
     {
@@ -30,12 +28,12 @@ namespace ProjectGimnasiaYEsgrima
         public int ModificarDeporte(int id, string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {
             Deporte buscado = una_bddeporte.BuscarPorClavesUnicas(nombre);
-            if ( buscado != null && buscado.Id_deporte!=id)
+            if ( buscado != null && buscado.Iddeporte!=id)
                 return -2;
 
             Deporte un_deporte = new Deporte
             {
-                Id_deporte = id,
+                Iddeporte = id,
                 Nombre = nombre,
                 Descripcion = descripcion
             };

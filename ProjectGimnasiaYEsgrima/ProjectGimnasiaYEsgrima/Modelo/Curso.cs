@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectGimnasiaYEsgrima
 {
-    public class Curso
-    {
-        int id_curso { get; set; }
-        string nombre { get; set; }
-        DateTime fecha_inicio { get; set; }
-        DateTime fecha_fin { get; set; }
-        List<Socio> lista_socios { get; set; }
-        List<Profesor>lista_profesor { get; set; }
+    
 
+    [Table("curso")]
+    public partial class Curso
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Idcurso { get; set; }
+
+        [StringLength(50)]
+        public string Nombre { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? FechaInicio { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? FechaFin { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProjectGimnasiaYEsgrima.Utils;
+﻿using ProjectGimnasiaYEsgrima;
+using ProjectGimnasiaYEsgrima.Utils;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
@@ -39,12 +40,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.BotonBuscar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridViewDeporte = new System.Windows.Forms.DataGridView();
-            this.deporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iddeporteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LabelInfoDeporte = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deporteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewDeporte.AutoGenerateColumns = false;
             this.dataGridViewDeporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iddeporteDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.Modificar,
@@ -127,35 +127,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewDeporte.Size = new System.Drawing.Size(769, 204);
             this.dataGridViewDeporte.TabIndex = 4;
             this.dataGridViewDeporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // deporteBindingSource
-            // 
-            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Deporte);
-            // 
-            // iddeporteDataGridViewTextBoxColumn
-            // 
-            this.iddeporteDataGridViewTextBoxColumn.DataPropertyName = "Id_deporte";
-            this.iddeporteDataGridViewTextBoxColumn.HeaderText = "Id_deporte";
-            this.iddeporteDataGridViewTextBoxColumn.Name = "iddeporteDataGridViewTextBoxColumn";
-            this.iddeporteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iddeporteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 15;
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 50;
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Modificar
             // 
@@ -177,11 +148,45 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 24;
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 15;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deporteBindingSource
+            // 
+            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Deporte);
+            // 
+            // LabelInfoDeporte
+            // 
+            this.LabelInfoDeporte.AutoSize = true;
+            this.LabelInfoDeporte.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelInfoDeporte.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.LabelInfoDeporte.Location = new System.Drawing.Point(29, 367);
+            this.LabelInfoDeporte.Name = "LabelInfoDeporte";
+            this.LabelInfoDeporte.Size = new System.Drawing.Size(199, 24);
+            this.LabelInfoDeporte.TabIndex = 5;
+            this.LabelInfoDeporte.Text = "Acá se imprime algo";
+            // 
             // InterfazListaDeportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 369);
+            this.ClientSize = new System.Drawing.Size(796, 400);
+            this.Controls.Add(this.LabelInfoDeporte);
             this.Controls.Add(this.dataGridViewDeporte);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BotonBuscar);
@@ -210,10 +215,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridViewDeporte;
         private System.Windows.Forms.BindingSource deporteBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddeporteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Label LabelInfoDeporte;
     }
 }
