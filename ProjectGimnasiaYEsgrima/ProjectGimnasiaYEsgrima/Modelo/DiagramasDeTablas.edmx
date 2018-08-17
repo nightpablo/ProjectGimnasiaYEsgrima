@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DiagramasDeTablas.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+          <Property Name="FechaFin" Type="datetime" Nullable="false" />
+          <Property Name="DeporteIdDeporte" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deporte">
+          <Key>
+            <PropertyRef Name="IdDeporte" />
+          </Key>
+          <Property Name="IdDeporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CursoDeporte">
+          <End Role="Deporte" Type="Self.Deporte" Multiplicity="1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deporte">
+              <PropertyRef Name="IdDeporte" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="DeporteIdDeporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DiagramasDeTablasStoreContainer">
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deporte" EntityType="Self.Deporte" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CursoDeporte" Association="Self.FK_CursoDeporte">
+            <End Role="Deporte" EntitySet="Deporte" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DiagramasDeTablas" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DiagramasDeTablasContainer1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Curso" EntityType="DiagramasDeTablas.Curso" />
+          <EntitySet Name="Deporte" EntityType="DiagramasDeTablas.Deporte" />
+          <AssociationSet Name="CursoDeporte" Association="DiagramasDeTablas.CursoDeporte">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Deporte" EntitySet="Deporte" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="None" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Deporte" Relationship="DiagramasDeTablas.CursoDeporte" FromRole="Curso" ToRole="Deporte" />
+          <Property Name="DeporteIdDeporte" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deporte">
+          <Key>
+            <PropertyRef Name="IdDeporte" />
+          </Key>
+          <Property Name="IdDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Curso" Relationship="DiagramasDeTablas.CursoDeporte" FromRole="Deporte" ToRole="Curso" />
+        </EntityType>
+        <Association Name="CursoDeporte">
+          <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="*" />
+          <End Type="DiagramasDeTablas.Deporte" Role="Deporte" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Deporte">
+              <PropertyRef Name="IdDeporte" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="DeporteIdDeporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DiagramasDeTablasStoreContainer" CdmEntityContainer="DiagramasDeTablasContainer1">
+    <EntitySetMapping Name="Curso">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Curso)">
+        <MappingFragment StoreEntitySet="Curso">
+          <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="DeporteIdDeporte" ColumnName="DeporteIdDeporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deporte">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Deporte)">
+        <MappingFragment StoreEntitySet="Deporte">
+          <ScalarProperty Name="IdDeporte" ColumnName="IdDeporte" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

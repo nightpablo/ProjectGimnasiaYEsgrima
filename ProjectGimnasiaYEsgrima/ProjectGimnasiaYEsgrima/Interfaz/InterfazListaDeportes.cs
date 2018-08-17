@@ -4,6 +4,7 @@ using ProjectGimnasiaYEsgrima.Controlador;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using ProjectGimnasiaYEsgrima.Modelo;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {

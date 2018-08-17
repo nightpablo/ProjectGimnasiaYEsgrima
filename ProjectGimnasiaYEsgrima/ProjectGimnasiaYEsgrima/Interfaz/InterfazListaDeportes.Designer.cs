@@ -168,7 +168,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // deporteBindingSource
             // 
-            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Deporte);
+            this.deporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.Deporte);
             // 
             // LabelInfoDeporte
             // 

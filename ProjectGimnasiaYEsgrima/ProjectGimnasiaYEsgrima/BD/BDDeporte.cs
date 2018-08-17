@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectGimnasiaYEsgrima.Modelo;
+
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
@@ -11,7 +13,7 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public int Crear(Deporte entrada)
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
                 context.Deportes.Add(entrada);
                 context.SaveChanges();
@@ -21,9 +23,9 @@ namespace ProjectGimnasiaYEsgrima.BD
         
         public int Actualizar(Deporte entrada)
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
-                var un_deporte = context.Deportes.FirstOrDefault(b => b.Iddeporte == entrada.Iddeporte);
+                var un_deporte = context.Deportes.Find(entrada.IdDeporte);
                 un_deporte.Nombre = entrada.Nombre;
                 un_deporte.Descripcion = entrada.Descripcion;
                 context.SaveChanges();
@@ -33,9 +35,9 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public int Eliminar(Deporte entrada)
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
-                var un_deporte = context.Deportes.FirstOrDefault(b => b.Iddeporte == entrada.Iddeporte);
+                var un_deporte = context.Deportes.Find(entrada.IdDeporte);
                 context.Deportes.Remove(un_deporte);
                 context.SaveChanges();
                 return 1;
@@ -44,7 +46,7 @@ namespace ProjectGimnasiaYEsgrima.BD
         
         public List<Deporte> ListarTodos()
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Deportes.ToList();
             }
@@ -52,7 +54,7 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public List<Deporte> ListarPorFiltro(params object[] parametros)
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Deportes.AsEnumerable()
                     .Where(b => b.Nombre.Contains((string)parametros[0]))
@@ -63,11 +65,12 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public Deporte BuscarPorClavesUnicas(params object[] parametros)
         {
-            using (var context = new Model1())
+            using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Deportes.AsEnumerable()
                     .FirstOrDefault(b => b.Nombre.Contains((string)parametros[0]));
             }
         }
+        
     }
 }

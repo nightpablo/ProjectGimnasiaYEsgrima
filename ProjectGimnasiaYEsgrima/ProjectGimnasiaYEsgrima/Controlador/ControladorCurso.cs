@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima;
 using ProjectGimnasiaYEsgrima.BD;
+using ProjectGimnasiaYEsgrima.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

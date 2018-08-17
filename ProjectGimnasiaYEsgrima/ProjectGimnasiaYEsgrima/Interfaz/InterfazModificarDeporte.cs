@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectGimnasiaYEsgrima.Modelo;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
@@ -53,7 +54,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            var resultado = un_controlador_deporte.ModificarDeporte(deporte.Iddeporte, nombre, descripcion);
+            var resultado = un_controlador_deporte.ModificarDeporte(deporte.IdDeporte, nombre, descripcion);
             if (resultado > 0)
             {
                 //MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
