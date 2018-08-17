@@ -13,13 +13,13 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 {
     public class ControladorCurso
     {
-        public int CrearCurso(string unNombre, string unaFechaInicio, string unaFechaFin)
+        public int CrearCurso(string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin)
         {
             Curso unCurso = new Curso()
             {
                 Nombre = unNombre,
-                //FechaInicio = unaFechaInicio,
-                //FechaFin = unaFechaFin
+                FechaInicio = unaFechaInicio,
+               FechaFin = unaFechaFin
 
             };
 

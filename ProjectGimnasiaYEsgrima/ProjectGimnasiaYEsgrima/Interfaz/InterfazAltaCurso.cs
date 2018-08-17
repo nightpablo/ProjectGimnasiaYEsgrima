@@ -25,13 +25,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BotonGuardarCurso_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombreCurso.Text;
-            string fechaInicio = FechaInicioCurso.SelectionRange.Start.ToString("dd/MM/yyyy");
-            string fechaFin = FechaFinCurso.SelectionRange.Start.ToString("dd/MM/yyyy");
+            
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
 
-            un_controlador_curso.CrearCurso(nombre, fechaInicio, fechaFin);
+            un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value);
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }
