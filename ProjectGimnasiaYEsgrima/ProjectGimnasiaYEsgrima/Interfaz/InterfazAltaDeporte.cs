@@ -14,10 +14,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAltaDeporte : Form
     {
-        private Form padre;
-        public InterfazAltaDeporte(Form padre)
+        private InterfazListaDeportes Padre;
+        public InterfazAltaDeporte(InterfazListaDeportes interfazListaDeportes)
         {
-            this.padre = padre;
+            this.Padre = interfazListaDeportes;
             InitializeComponent();
 
             this.txtNombreDeporte.Focus();
@@ -50,7 +50,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_deporte.CrearDeporte(nombre, descripcion);
             if ( resultado > 0)
             {
-                ((InterfazListaDeportes)padre).ModificarMensaje("Se ha creado un nuevo DEPORTE");
+                ((InterfazListaDeportes)Padre).ModificarMensaje("Se ha creado un nuevo DEPORTE");
                 //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }
@@ -64,6 +64,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             Dispose();
         }
-       
+
+        private void labelAltaDeporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

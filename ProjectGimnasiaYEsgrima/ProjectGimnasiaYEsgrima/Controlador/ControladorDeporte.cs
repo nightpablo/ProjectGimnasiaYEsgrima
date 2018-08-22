@@ -14,18 +14,15 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             if (una_bddeporte.BuscarPorClavesUnicas(nombre) != null)
                 return -2;
 
-
             Deporte un_deporte = new Deporte
             {
                 Nombre = nombre,
                 Descripcion = descripcion
             };
-
-
-
-            
+                        
             return una_bddeporte.Crear(un_deporte);
         }
+
 
         public int ModificarDeporte(int id, string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {

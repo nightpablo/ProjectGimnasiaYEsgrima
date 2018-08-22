@@ -26,5 +26,10 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Curso> Curso { get; set; }
+
+        public static explicit operator Deporte(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

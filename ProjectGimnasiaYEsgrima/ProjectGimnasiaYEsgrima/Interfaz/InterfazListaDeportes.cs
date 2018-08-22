@@ -91,5 +91,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             LabelInfoDeporte.Text = entrada;
         }
+
+        private void txtNombreDeporte_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

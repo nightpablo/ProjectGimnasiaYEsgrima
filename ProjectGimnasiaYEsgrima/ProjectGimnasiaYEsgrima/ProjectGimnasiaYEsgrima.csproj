@@ -67,11 +67,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\BDDeporte.cs" />
+    <Compile Include="BD\BDCurso.cs" />
     <Compile Include="BD\INterfaceBD.cs" />
     <Compile Include="BD\ConexionBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
     <Compile Include="Controlador\ControladorCurso.cs" />
+    <Compile Include="dbGimnasiaYEsgrimaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbGimnasiaYEsgrimaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Interfaz\InterfazListarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListarCurso.Designer.cs">
+      <DependentUpon>InterfazListarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazAltaCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </Compile>
     <Compile Include="Interfaz\InterfazListaDeportes.Designer.cs">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarCurso.Designer.cs">
+      <DependentUpon>InterfazModificarCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazModificarDeporte.cs">
       <SubType>Form</SubType>
@@ -129,6 +147,12 @@
     <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazListarCurso.resx">
+      <DependentUpon>InterfazListarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazModificarCurso.resx">
+      <DependentUpon>InterfazModificarCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazModificarDeporte.resx">
       <DependentUpon>InterfazModificarDeporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +169,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="dbGimnasiaYEsgrimaDataSet.xsc">
+      <DependentUpon>dbGimnasiaYEsgrimaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbGimnasiaYEsgrimaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbGimnasiaYEsgrimaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbGimnasiaYEsgrimaDataSet.xss">
+      <DependentUpon>dbGimnasiaYEsgrimaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Modelo\DiagramasDeTablas.edmx.diagram">
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </None>

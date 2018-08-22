@@ -25,9 +25,10 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                var un_deporte = context.Deportes.Find(entrada.IdDeporte);
-                un_deporte.Nombre = entrada.Nombre;
-                un_deporte.Descripcion = entrada.Descripcion;
+                //var un_deporte = context.Deportes.Find(entrada.IdDeporte);
+                // un_deporte.Nombre = entrada.Nombre;
+                //un_deporte.Descripcion = entrada.Descripcion;
+                context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
                 return 1;
             }

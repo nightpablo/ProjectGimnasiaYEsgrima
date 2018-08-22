@@ -29,102 +29,101 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelAltaDeporte = new System.Windows.Forms.Label();
             this.txtNombreDeporte = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelAltaDeporteDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcionDeporte = new System.Windows.Forms.TextBox();
             this.BotonGuardarDeporte = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.botonCancelarDeporte = new System.Windows.Forms.Button();
+            this.labelAltaDeporteNombbre = new System.Windows.Forms.Label();
+            this.BotonCancelarDeporte = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // errorProvider1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(92, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alta  Deporte";
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // labelAltaDeporte
+            // 
+            this.labelAltaDeporte.AutoSize = true;
+            this.labelAltaDeporte.Location = new System.Drawing.Point(69, 30);
+            this.labelAltaDeporte.Name = "labelAltaDeporte";
+            this.labelAltaDeporte.Size = new System.Drawing.Size(69, 13);
+            this.labelAltaDeporte.TabIndex = 0;
+            this.labelAltaDeporte.Text = "Alta  Deporte";
+            this.labelAltaDeporte.Click += new System.EventHandler(this.labelAltaDeporte_Click);
             // 
             // txtNombreDeporte
             // 
-            this.txtNombreDeporte.Location = new System.Drawing.Point(204, 87);
-            this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreDeporte.Location = new System.Drawing.Point(153, 71);
             this.txtNombreDeporte.Name = "txtNombreDeporte";
-            this.txtNombreDeporte.Size = new System.Drawing.Size(197, 22);
+            this.txtNombreDeporte.Size = new System.Drawing.Size(149, 20);
             this.txtNombreDeporte.TabIndex = 1;
-
             // 
-            // label2
+            // labelAltaDeporteDescripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 151);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Descripcion ";
+            this.labelAltaDeporteDescripcion.AutoSize = true;
+            this.labelAltaDeporteDescripcion.Location = new System.Drawing.Point(47, 123);
+            this.labelAltaDeporteDescripcion.Name = "labelAltaDeporteDescripcion";
+            this.labelAltaDeporteDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.labelAltaDeporteDescripcion.TabIndex = 2;
+            this.labelAltaDeporteDescripcion.Text = "Descripcion ";
             // 
             // txtDescripcionDeporte
             // 
-            this.txtDescripcionDeporte.Location = new System.Drawing.Point(204, 148);
-            this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcionDeporte.Location = new System.Drawing.Point(153, 120);
             this.txtDescripcionDeporte.Name = "txtDescripcionDeporte";
-            this.txtDescripcionDeporte.Size = new System.Drawing.Size(196, 22);
+            this.txtDescripcionDeporte.Size = new System.Drawing.Size(148, 20);
             this.txtDescripcionDeporte.TabIndex = 3;
             // 
             // BotonGuardarDeporte
             // 
-            this.BotonGuardarDeporte.Location = new System.Drawing.Point(67, 206);
-            this.BotonGuardarDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.BotonGuardarDeporte.Location = new System.Drawing.Point(50, 167);
             this.BotonGuardarDeporte.Name = "BotonGuardarDeporte";
-            this.BotonGuardarDeporte.Size = new System.Drawing.Size(141, 38);
+            this.BotonGuardarDeporte.Size = new System.Drawing.Size(106, 31);
             this.BotonGuardarDeporte.TabIndex = 4;
             this.BotonGuardarDeporte.Text = "Guardar";
             this.BotonGuardarDeporte.UseVisualStyleBackColor = true;
             this.BotonGuardarDeporte.Click += new System.EventHandler(this.BotonGuardarDeporte_Click);
             // 
-            // label3
+            // labelAltaDeporteNombbre
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nombre";
+            this.labelAltaDeporteNombbre.AutoSize = true;
+            this.labelAltaDeporteNombbre.Location = new System.Drawing.Point(69, 78);
+            this.labelAltaDeporteNombbre.Name = "labelAltaDeporteNombbre";
+            this.labelAltaDeporteNombbre.Size = new System.Drawing.Size(44, 13);
+            this.labelAltaDeporteNombbre.TabIndex = 5;
+            this.labelAltaDeporteNombbre.Text = "Nombre";
             // 
-            // botonCancelarDeporte
+            // BotonCancelarDeporte
             // 
-            this.botonCancelarDeporte.Cursor = System.Windows.Forms.Cursors.Default;
-            this.botonCancelarDeporte.Location = new System.Drawing.Point(253, 202);
-            this.botonCancelarDeporte.Margin = new System.Windows.Forms.Padding(4);
-            this.botonCancelarDeporte.Name = "botonCancelarDeporte";
-            this.botonCancelarDeporte.Size = new System.Drawing.Size(149, 42);
-            this.botonCancelarDeporte.TabIndex = 6;
-            this.botonCancelarDeporte.Text = "Cancelar";
-            this.botonCancelarDeporte.UseVisualStyleBackColor = true;
-            this.botonCancelarDeporte.Click += new System.EventHandler(this.BotonCancelarDeporte_Click);
+            this.BotonCancelarDeporte.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BotonCancelarDeporte.Location = new System.Drawing.Point(190, 164);
+            this.BotonCancelarDeporte.Name = "BotonCancelarDeporte";
+            this.BotonCancelarDeporte.Size = new System.Drawing.Size(112, 34);
+            this.BotonCancelarDeporte.TabIndex = 6;
+            this.BotonCancelarDeporte.Text = "Cancelar";
+            this.BotonCancelarDeporte.UseVisualStyleBackColor = true;
+            this.BotonCancelarDeporte.Click += new System.EventHandler(this.BotonCancelarDeporte_Click);
             // 
             // InterfazAltaDeporte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.botonCancelarDeporte);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BotonCancelarDeporte);
+            this.Controls.Add(this.labelAltaDeporteNombbre);
             this.Controls.Add(this.BotonGuardarDeporte);
             this.Controls.Add(this.txtDescripcionDeporte);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelAltaDeporteDescripcion);
             this.Controls.Add(this.txtNombreDeporte);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.labelAltaDeporte);
             this.Name = "InterfazAltaDeporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion Deportes";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,13 +131,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelAltaDeporte;
         private System.Windows.Forms.TextBox txtNombreDeporte;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAltaDeporteDescripcion;
         private System.Windows.Forms.TextBox txtDescripcionDeporte;
         private System.Windows.Forms.Button BotonGuardarDeporte;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button botonCancelarDeporte;
+        private System.Windows.Forms.Label labelAltaDeporteNombbre;
+        private System.Windows.Forms.Button BotonCancelarDeporte;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

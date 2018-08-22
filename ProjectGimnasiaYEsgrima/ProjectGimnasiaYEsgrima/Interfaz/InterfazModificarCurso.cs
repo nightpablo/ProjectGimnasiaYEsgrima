@@ -1,6 +1,5 @@
 ﻿using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
-using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,24 +12,33 @@ using System.Windows.Forms;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    public partial class InterfazAltaCurso : Form
+    public partial class InterfazModificarCurso : Form
     {
-        private InterfazListarCurso Padre;
-        public InterfazAltaCurso(InterfazListarCurso interfazListaCurso)
+        private Form padre;
+        private Curso curso;
+        public InterfazModificarCurso(Form padre, Curso curso)
         {
-            this.Padre = interfazListaCurso;
+            this.padre = padre;
+            this.curso = curso;
             InitializeComponent();
-            
+            txtNombreCurso.Text = curso.Nombre;
+            DateTimeInicio.Value = curso.FechaInicio;
+            dateTimeFin.Value = curso.FechaInicio;
+
+
             ControladorDeporte Cdeporte = new ControladorDeporte();
             List<Deporte> lista = new List<Deporte>();
             lista = Cdeporte.ListarTodosDeportes();
-
+            lista.Insert(0, new Deporte() { IdDeporte = 0, Nombre = "Seleccione un deporte" });
             ComboBoxDeporte.DataSource = lista;
             ComboBoxDeporte.ValueMember = "IdDeporte";
             ComboBoxDeporte.DisplayMember = "Nombre";
+            ComboBoxDeporte.Focus();
 
-            this.txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
-            
+            //ComboBoxDeporte.SelectedIndex = ComboBoxDeporte.FindString(curso.Deporte.Nombre);
+            //(Deporte) Convert.ToInt32(ComboBoxDeporte.SelectedValue) = curso.DeporteIdDeporte;
+
+
         }
 
         private void BotonGuardarCurso_Click(object sender, EventArgs e)
@@ -52,7 +60,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
+            var resultado = un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
             if (resultado > 0)
             {
                 //((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
@@ -64,14 +72,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         }
 
-        private void ComboBoxDeporte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
         private void BotonCancelarCurso_Click(object sender, EventArgs e)
         {
             Dispose();
         }
     }
-    
 }
+
