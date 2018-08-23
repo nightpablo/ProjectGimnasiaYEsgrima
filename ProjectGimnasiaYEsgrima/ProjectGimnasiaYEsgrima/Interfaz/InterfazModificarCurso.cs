@@ -29,12 +29,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ControladorDeporte Cdeporte = new ControladorDeporte();
             List<Deporte> lista = new List<Deporte>();
             lista = Cdeporte.ListarTodosDeportes();
-            lista.Insert(0, new Deporte() { IdDeporte = 0, Nombre = "Seleccione un deporte" });
             ComboBoxDeporte.DataSource = lista;
             ComboBoxDeporte.ValueMember = "IdDeporte";
             ComboBoxDeporte.DisplayMember = "Nombre";
             ComboBoxDeporte.Focus();
-
+            foreach (Deporte i in ComboBoxDeporte.Items)
+            {
+                if (i.IdDeporte.Equals(curso.DeporteIdDeporte))
+                {
+                    ComboBoxDeporte.SelectedItem = i;
+                    break;
+                }
+            }
             //ComboBoxDeporte.SelectedIndex = ComboBoxDeporte.FindString(curso.Deporte.Nombre);
             //(Deporte) Convert.ToInt32(ComboBoxDeporte.SelectedValue) = curso.DeporteIdDeporte;
 
@@ -60,10 +66,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado = un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
+            var resultado = un_controlador_curso.ModificarCurso(curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
             if (resultado > 0)
             {
-                //((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
+                ((InterfazListarCurso)padre).ModificarMensaje("Se ha modificado el Curso");
                 //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }

@@ -18,8 +18,9 @@ namespace ProjectGimnasiaYEsgrima
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Application.Run(new InterfazPrincipal());
             //Application.Run(new InterfazListaDeportes());// INcremento 1
-            Application.Run(new InterfazListarCurso());
+            //Application.Run(new InterfazListarCurso());
             //Application.Run(new InterfazAltaCurso());
         }
     }

@@ -20,6 +20,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             DataGridListarCursos.AllowUserToAddRows = false;
             DataGridListarCursos.Visible = false;
+            LabelInfoCurso.Text = "";
 
             ControladorDeporte Cdeporte = new ControladorDeporte();
             List<Deporte> lista = new List<Deporte>();
@@ -99,12 +100,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     ControladorCurso controladorCurso = new ControladorCurso();
                     if (controladorCurso.EliminarCurso((Curso)DataGridListarCursos.CurrentRow.DataBoundItem) > 0)
                     {
-                        //this.ModificarMensaje("Se ha eliminado el DEPORTE");
-                        //MessageBox.Show(this, "Se ha eliminado el DEPORTE", "Deporte");
+                        this.ModificarMensaje("Se ha eliminado el CURSO");
                     }
                 }
 
             }
+            BotonBuscarCurso_Click(sender, e);
+        }
+
+        public void ModificarMensaje(string v)
+        {
+            LabelInfoCurso.Text = v;
         }
     }
 }

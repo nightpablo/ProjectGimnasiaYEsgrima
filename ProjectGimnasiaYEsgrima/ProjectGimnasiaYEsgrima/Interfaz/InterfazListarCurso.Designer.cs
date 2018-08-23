@@ -32,14 +32,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             this.components = new System.ComponentModel.Container();
             this.DataGridListarCursos = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AgregarSocio = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AgregarProfesor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelDeporteListarCurso = new System.Windows.Forms.Label();
             this.labelCursoListarCurso = new System.Windows.Forms.Label();
             this.comboBoxDeporte = new System.Windows.Forms.ComboBox();
@@ -48,9 +40,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.botonCrearCurso = new System.Windows.Forms.Button();
             this.dbGimnasiaYEsgrimaDataSet = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet();
             this.cursoTableAdapter = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSetTableAdapters.CursoTableAdapter();
+            this.LabelInfoCurso = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AgregarSocio = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AgregarProfesor = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridListarCursos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridListarCursos
@@ -71,68 +73,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.DataGridListarCursos.Size = new System.Drawing.Size(647, 148);
             this.DataGridListarCursos.TabIndex = 0;
             this.DataGridListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridListarCursos_CellContentClick);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // fechaInicioDataGridViewTextBoxColumn
-            // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "FechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "FechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
-            // 
-            // fechaFinDataGridViewTextBoxColumn
-            // 
-            this.fechaFinDataGridViewTextBoxColumn.DataPropertyName = "FechaFin";
-            this.fechaFinDataGridViewTextBoxColumn.HeaderText = "FechaFin";
-            this.fechaFinDataGridViewTextBoxColumn.Name = "fechaFinDataGridViewTextBoxColumn";
-            // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 21;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 21;
-            // 
-            // AgregarSocio
-            // 
-            this.AgregarSocio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AgregarSocio.HeaderText = "";
-            this.AgregarSocio.Name = "AgregarSocio";
-            this.AgregarSocio.ReadOnly = true;
-            this.AgregarSocio.Text = "Agregar Socio";
-            this.AgregarSocio.UseColumnTextForButtonValue = true;
-            this.AgregarSocio.Width = 21;
-            // 
-            // AgregarProfesor
-            // 
-            this.AgregarProfesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AgregarProfesor.HeaderText = "";
-            this.AgregarProfesor.Name = "AgregarProfesor";
-            this.AgregarProfesor.ReadOnly = true;
-            this.AgregarProfesor.Text = "Agregar Profesor";
-            this.AgregarProfesor.UseColumnTextForButtonValue = true;
-            this.AgregarProfesor.Width = 21;
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.Curso);
             // 
             // labelDeporteListarCurso
             // 
@@ -199,11 +139,92 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
             // 
+            // LabelInfoCurso
+            // 
+            this.LabelInfoCurso.AutoSize = true;
+            this.LabelInfoCurso.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelInfoCurso.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.LabelInfoCurso.Location = new System.Drawing.Point(79, 290);
+            this.LabelInfoCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelInfoCurso.Name = "LabelInfoCurso";
+            this.LabelInfoCurso.Size = new System.Drawing.Size(165, 19);
+            this.LabelInfoCurso.TabIndex = 8;
+            this.LabelInfoCurso.Text = "Acá se imprime algo";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Deporte";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Deporte";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.Curso);
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // fechaInicioDataGridViewTextBoxColumn
+            // 
+            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "FechaInicio";
+            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "FechaInicio";
+            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
+            // 
+            // fechaFinDataGridViewTextBoxColumn
+            // 
+            this.fechaFinDataGridViewTextBoxColumn.DataPropertyName = "FechaFin";
+            this.fechaFinDataGridViewTextBoxColumn.HeaderText = "FechaFin";
+            this.fechaFinDataGridViewTextBoxColumn.Name = "fechaFinDataGridViewTextBoxColumn";
+            // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 21;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 21;
+            // 
+            // AgregarSocio
+            // 
+            this.AgregarSocio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AgregarSocio.HeaderText = "";
+            this.AgregarSocio.Name = "AgregarSocio";
+            this.AgregarSocio.ReadOnly = true;
+            this.AgregarSocio.Text = "Agregar Socio";
+            this.AgregarSocio.UseColumnTextForButtonValue = true;
+            this.AgregarSocio.Width = 21;
+            // 
+            // AgregarProfesor
+            // 
+            this.AgregarProfesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AgregarProfesor.HeaderText = "";
+            this.AgregarProfesor.Name = "AgregarProfesor";
+            this.AgregarProfesor.ReadOnly = true;
+            this.AgregarProfesor.Text = "Agregar Profesor";
+            this.AgregarProfesor.UseColumnTextForButtonValue = true;
+            this.AgregarProfesor.Width = 21;
+            // 
             // InterfazListarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LabelInfoCurso);
             this.Controls.Add(this.botonCrearCurso);
             this.Controls.Add(this.BotonBuscarCurso);
             this.Controls.Add(this.txtNombreCurso);
@@ -215,8 +236,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.InterfazListarCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridListarCursos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +260,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private dbGimnasiaYEsgrimaDataSet dbGimnasiaYEsgrimaDataSet;
         private System.Windows.Forms.BindingSource cursoBindingSource;
         private dbGimnasiaYEsgrimaDataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
+        private System.Windows.Forms.Label LabelInfoCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinDataGridViewTextBoxColumn;
@@ -246,5 +268,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridViewButtonColumn AgregarSocio;
         private System.Windows.Forms.DataGridViewButtonColumn AgregarProfesor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

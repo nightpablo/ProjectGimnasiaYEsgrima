@@ -55,7 +55,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
             if (resultado > 0)
             {
-                //((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
+                ((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
                 //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }

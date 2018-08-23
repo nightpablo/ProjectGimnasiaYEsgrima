@@ -20,6 +20,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime FechaFin { get; set; }
         public int DeporteIdDeporte { get; set; }
     
-        public virtual Deporte Deporte { get; set; }
+        public virtual Deporte Deporte { get; internal set; }
     }
 }

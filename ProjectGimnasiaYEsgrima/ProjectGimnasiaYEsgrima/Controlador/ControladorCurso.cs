@@ -62,8 +62,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.Actualizar(unCurso);
 
         }
-
-        internal int EliminarCurso(Curso unCurso)
+        
+        public int EliminarCurso(Curso unCurso)
         {
             return BdCurso.Eliminar(unCurso);
         }
