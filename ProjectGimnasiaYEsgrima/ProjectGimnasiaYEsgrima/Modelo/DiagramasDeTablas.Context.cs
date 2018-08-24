@@ -27,5 +27,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
         public virtual DbSet<Curso> Cursos { get; set; }
         public virtual DbSet<Deporte> Deportes { get; set; }
+        public virtual DbSet<Persona> Personas { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
     }
 }
