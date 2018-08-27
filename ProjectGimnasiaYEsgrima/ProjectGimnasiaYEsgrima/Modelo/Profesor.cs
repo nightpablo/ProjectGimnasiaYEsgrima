@@ -12,19 +12,17 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Deporte
+    public partial class Profesor : Empleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Deporte()
+        public Profesor()
         {
-            this.Curso = new HashSet<Curso>();
+            this.Cursos = new HashSet<Curso>();
         }
     
-        public int IdDeporte { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
     
+        public virtual Deporte Deporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Curso> Curso { get; set; }
+        public virtual ICollection<Curso> Cursos { get; set; }
     }
 }
