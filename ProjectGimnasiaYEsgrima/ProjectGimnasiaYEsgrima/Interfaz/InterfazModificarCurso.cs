@@ -82,6 +82,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             Dispose();
         }
+
+        private void ComboBoxDeporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

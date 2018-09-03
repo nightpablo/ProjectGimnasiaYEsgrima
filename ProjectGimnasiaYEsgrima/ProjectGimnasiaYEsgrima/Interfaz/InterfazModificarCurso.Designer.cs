@@ -80,6 +80,7 @@
             this.ComboBoxDeporte.Name = "ComboBoxDeporte";
             this.ComboBoxDeporte.Size = new System.Drawing.Size(179, 21);
             this.ComboBoxDeporte.TabIndex = 11;
+            this.ComboBoxDeporte.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDeporte_SelectedIndexChanged);
             // 
             // labelFechaInicioCurso
             // 

@@ -39,7 +39,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.BotonBuscarCurso = new System.Windows.Forms.Button();
             this.botonCrearCurso = new System.Windows.Forms.Button();
             this.dbGimnasiaYEsgrimaDataSet = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet();
-            this.cursoTableAdapter = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSetTableAdapters.CursoTableAdapter();
             this.LabelInfoCurso = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -137,7 +136,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // cursoTableAdapter
             // 
-            this.cursoTableAdapter.ClearBeforeFill = true;
             // 
             // LabelInfoCurso
             // 
@@ -259,7 +257,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.Button botonCrearCurso;
         private dbGimnasiaYEsgrimaDataSet dbGimnasiaYEsgrimaDataSet;
         private System.Windows.Forms.BindingSource cursoBindingSource;
-        private dbGimnasiaYEsgrimaDataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
         private System.Windows.Forms.Label LabelInfoCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;

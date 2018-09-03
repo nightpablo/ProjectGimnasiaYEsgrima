@@ -24,8 +24,8 @@ namespace ProjectGimnasiaYEsgrima
             //Application.Run(new InterfazPrincipal());
             //Application.Run(new InterfazListaDeportes());// INcremento 1
             //Application.Run(new InterfazListarCurso());
-            //Application.Run(new InterfazAltaCurso());
-            Application.Run(new InterfazAltaEmpleado());
+           //Application.Run(new InterfazAltaCurso());
+           Application.Run(new InterfazAltaEmpleado());
             //ejecute();
         }
 
@@ -56,7 +56,7 @@ namespace ProjectGimnasiaYEsgrima
                 context.Entry(deporte).State = System.Data.Entity.EntityState.Added;
                 context.SaveChanges();
                 Deporte buscado = context.Deportes.FirstOrDefault(b => b.Nombre.Equals("Futbol"));
-                ((Profesor)prof).Deporte = buscado;
+                //((Profesor)prof).Deporte = buscado;
                 prof.Persona = per;
                 secr.Persona = per;
                 //context.Entry(per).State = System.Data.Entity.EntityState.Added;

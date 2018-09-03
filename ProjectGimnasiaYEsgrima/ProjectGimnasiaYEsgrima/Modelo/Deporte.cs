@@ -23,6 +23,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int IdDeporte { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public Nullable<int> ProfesorIdEmpleado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Curso> Curso { get; set; }

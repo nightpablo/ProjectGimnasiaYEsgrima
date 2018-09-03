@@ -68,10 +68,13 @@
   <ItemGroup>
     <Compile Include="BD\BDDeporte.cs" />
     <Compile Include="BD\BDCurso.cs" />
+    <Compile Include="BD\BDEmpleado.cs" />
+    <Compile Include="BD\BDPersona.cs" />
     <Compile Include="BD\INterfaceBD.cs" />
     <Compile Include="BD\ConexionBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
     <Compile Include="Controlador\ControladorCurso.cs" />
+    <Compile Include="Controlador\ControladorEmpleado.cs" />
     <Compile Include="dbGimnasiaYEsgrimaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
