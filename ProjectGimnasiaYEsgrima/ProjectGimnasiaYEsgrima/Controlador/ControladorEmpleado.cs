@@ -12,7 +12,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
     {
         BDEmpleado bdEmpleado = new BDEmpleado();
 
-        public int crearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio)
+        public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio)
         {
             Persona unaPersona = new Persona
             {
@@ -33,7 +33,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 return 0;
         }
 
-        public int crearProfesor(string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, List<Deporte> listaEmpleados)
+        public int CrearProfesor(string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, List<Deporte> listaDeportes)
         {
             Persona unaPersona = new Persona
             {
@@ -42,14 +42,17 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 FechaNacimiento = fechaNacimiento,
                 DNI = documento
             };
-¡
-                Profesor unEmpleado = new Profesor
-                {
-                    FechaInicio = fechaInicio,
-                    DescripcionTarea = descripcion,
-                    Persona = unaPersona
-                };
-                bdEmpleado.Crear(unEmpleado);
+
+            Profesor unEmpleado = new Profesor
+            {
+                FechaInicio = fechaInicio,
+                DescripcionTarea = descripcion,
+                Persona = unaPersona,
+                Deportes = listaDeportes
+            };
+            
+
+            bdEmpleado.Crear(unEmpleado);
           
             
             return 0;

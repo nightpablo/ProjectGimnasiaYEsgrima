@@ -21,7 +21,13 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public int Crear(Persona entrada)
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                //context.Empleados.Add(entrada);
+                context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
+                context.SaveChanges();
+                return 1;
+            }
         }
 
         public int Eliminar(Persona entrada)

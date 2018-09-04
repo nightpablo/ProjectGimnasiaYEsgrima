@@ -14,18 +14,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
     public partial class Deporte
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Deporte()
-        {
-            this.Curso = new HashSet<Curso>();
-        }
-    
         public int IdDeporte { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<int> ProfesorIdEmpleado { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Curso> Curso { get; set; }
     }
 }

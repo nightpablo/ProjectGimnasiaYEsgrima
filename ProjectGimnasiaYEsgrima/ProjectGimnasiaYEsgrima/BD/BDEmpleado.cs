@@ -23,7 +23,11 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                context.Empleados.Add(entrada);
+                if(entrada is Profesor)             
+                    foreach (var item in ((Profesor)entrada).Deportes)
+                        context.Entry(item).State = System.Data.Entity.EntityState.Unchanged;
+                    
+                context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
                 context.SaveChanges();
                 return 1;
             }

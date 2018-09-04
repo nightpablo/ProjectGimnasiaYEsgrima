@@ -26,8 +26,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime FechaFin { get; set; }
         public int DeporteIdDeporte { get; set; }
     
-        public virtual Deporte Deporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profesor> Profesores { get; set; }
+        public virtual Deporte Deporte { get; set; }
     }
 }

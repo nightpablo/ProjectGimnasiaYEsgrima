@@ -246,6 +246,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Modelo\DeleteTable.sql" />
     <Content Include="Modelo\DiagramasDeTablas.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Context.cs</LastGenOutput>
@@ -257,6 +258,7 @@
       <LastGenOutput>DiagramasDeTablas.cs</LastGenOutput>
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </Content>
+    <Content Include="Modelo\InsertData.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,6 +72,15 @@ namespace ProjectGimnasiaYEsgrima.BD
                     .FirstOrDefault(b => b.Nombre.Contains((string)parametros[0]));
             }
         }
-        
+
+        public Deporte BuscarPorId(int id)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                Deporte d = context.Deportes.Find(id);
+                context.Entry(d).State = System.Data.Entity.EntityState.Unchanged;
+                return d;
+            }
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAltaEmpleado : Form
     {
-        public List<Deporte> listaDeportes = new List<Deporte>();
-        //public var selected = new List<Deporte>();
 
+        //public var selected = new List<Deporte>();
+        public List<Deporte> listaDeportes = new List<Deporte>();
         public ControladorDeporte CDeporte = new ControladorDeporte();
 
         public InterfazAltaEmpleado()
@@ -32,11 +32,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.checkedListBox1.DataSource = lista.ToList();
             this.checkedListBox1.DisplayMember = "Nombre";
             this.checkedListBox1.ValueMember = "";
-            foreach (var item in this.checkedListBox1.CheckedItems)
-            {
-                Deporte deporte = (Deporte)(item);
-                MessageBox.Show(deporte.Nombre + Environment.NewLine);
-            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,12 +50,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {     
-    /*           for (int x = 0; x <= checkedListBox1.CheckedItems.Count - 1; x++)
-            {
-             listaDeportes.Add(CDeporte.BuscarDeportePorClavesUnicas(checkedListBox1.CheckedItems[x].ToString()));
-            }*/
-            
+        {
+
             foreach (int index in checkedListBox1.SelectedIndices)
             {
                 listaDeportes.Add((Deporte)checkedListBox1.Items[index]);
@@ -69,15 +61,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         public void botonGuardarEmpleado_Click(object sender, EventArgs e)
         {
+            
+            
             ControladorEmpleado Cempleado = new ControladorEmpleado();
 
             if (((string)ComboboxTipoEmpleado.SelectedItem).Equals("Secretaria"))
             {
-                Cempleado.crearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value);
+                Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value);
             }
             else
             {
-                Cempleado.crearProfesor(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value,listaDeportes);
+                Cempleado.CrearProfesor(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value,listaDeportes);
             }
         }
 
