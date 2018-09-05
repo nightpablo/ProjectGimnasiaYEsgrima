@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,73 +17,52 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     {
 
         //public var selected = new List<Deporte>();
-        public List<Deporte> listaDeportes = new List<Deporte>();
-        public ControladorDeporte CDeporte = new ControladorDeporte();
+        private bool CargoPersona = false;
 
         public InterfazAltaEmpleado()
         {
             InitializeComponent();
-            labelDeportes.Visible = false;
-            checkedListBox1.Visible = false;
 
-            ControladorDeporte Cdeporte = new ControladorDeporte();
-            List<Deporte> lista = new List<Deporte>();
-            lista = Cdeporte.ListarTodosDeportes();
-
-            this.checkedListBox1.DataSource = lista.ToList();
-            this.checkedListBox1.DisplayMember = "Nombre";
-            this.checkedListBox1.ValueMember = "";
+            ComboboxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void BotonGuardarEmpleado_Click(object sender, EventArgs e)
         {
-            if (((string)ComboboxTipoEmpleado.SelectedItem).Equals("Profesor"))
-            {
-                labelDeportes.Visible = true;
-                checkedListBox1.Visible = true;
-            }
-            else
-            {
-                labelDeportes.Visible = false;
-                checkedListBox1.Visible = false;
-            }
-        }
+            EnumTipoEmpleado tipoEmpleado;
+            Enum.TryParse<EnumTipoEmpleado>(ComboboxTipoEmpleado.SelectedValue.ToString(), out tipoEmpleado);
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            foreach (int index in checkedListBox1.SelectedIndices)
-            {
-                listaDeportes.Add((Deporte)checkedListBox1.Items[index]);
-            }
-
-        }
-
-        public void botonGuardarEmpleado_Click(object sender, EventArgs e)
-        {
-            
-            
             ControladorEmpleado Cempleado = new ControladorEmpleado();
+            Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
+            
+        }
 
-            if (((string)ComboboxTipoEmpleado.SelectedItem).Equals("Secretaria"))
+        private void textBoxDocumento_Leave(object sender, EventArgs e)
+        {
+            if (!textBoxDocumento.Text.Equals("") && new Regex("[0-9]*").IsMatch(textBoxDocumento.Text))
             {
-                Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value);
-            }
-            else
-            {
-                Cempleado.CrearProfesor(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value,listaDeportes);
+                ControladorPersona Cpersona = new ControladorPersona();
+                Persona persona = Cpersona.BuscarPersonaPorClavesUnicas(Int32.Parse(textBoxDocumento.Text));
+                if(persona !=null && !CargoPersona)
+                {
+                    if(MessageBox.Show("La persona ya existe (tiene el mismo DNI), ¿desea cargarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        textBoxNombreEmpleado.Text = persona.Nombre;
+                        textBoxApellidoEmpleado.Text = persona.Apellido;
+                        dateTimeNacimiento.Value = persona.FechaNacimiento;
+                        CargoPersona = true;
+                    }
+                }
             }
         }
 
-        public void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBoxNombreEmpleado_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
+            if (CargoPersona)
+            {
+                textBoxDocumento.Text = "";
+                CargoPersona = false;
+            }
         }
     }
 }

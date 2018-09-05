@@ -17,6 +17,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int IdEmpleado { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public string DescripcionTarea { get; set; }
+        public EnumTipoEmpleado TipoEmpleado { get; set; }
     
         public virtual Persona Persona { get; set; }
     }

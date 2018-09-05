@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/03/2018 18:36:33
+-- Date Created: 09/05/2018 13:26:36
 -- Generated from EDMX file: C:\Users\NightCrawler-Nbook\Source\Repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_CursoDeporte]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Cursos] DROP CONSTRAINT [FK_CursoDeporte];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ProfesorCurso_Profesor]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProfesorCurso] DROP CONSTRAINT [FK_ProfesorCurso_Profesor];
 GO
@@ -29,11 +26,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_PersonaEmpleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Empleados] DROP CONSTRAINT [FK_PersonaEmpleado];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProfesorDeporte_Profesor]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProfesorDeporte] DROP CONSTRAINT [FK_ProfesorDeporte_Profesor];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProfesorDeporte_Deporte]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProfesorDeporte] DROP CONSTRAINT [FK_ProfesorDeporte_Deporte];
+IF OBJECT_ID(N'[dbo].[FK_CursoDeporte]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cursos] DROP CONSTRAINT [FK_CursoDeporte];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Profesor_inherits_Empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Empleados_Profesor] DROP CONSTRAINT [FK_Profesor_inherits_Empleado];
@@ -66,9 +60,6 @@ IF OBJECT_ID(N'[dbo].[Empleados_Secretaria]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ProfesorCurso]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProfesorCurso];
-GO
-IF OBJECT_ID(N'[dbo].[ProfesorDeporte]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProfesorDeporte];
 GO
 
 -- --------------------------------------------------
@@ -109,6 +100,7 @@ CREATE TABLE [dbo].[Empleados] (
     [IdEmpleado] int IDENTITY(1,1) NOT NULL,
     [FechaInicio] datetime  NOT NULL,
     [DescripcionTarea] nvarchar(max)  NULL,
+    [TipoEmpleado] int  NOT NULL,
     [Persona_IdPersona] int  NOT NULL
 );
 GO
@@ -129,13 +121,6 @@ GO
 CREATE TABLE [dbo].[ProfesorCurso] (
     [Profesores_IdEmpleado] int  NOT NULL,
     [Cursos_IdCurso] int  NOT NULL
-);
-GO
-
--- Creating table 'ProfesorDeporte'
-CREATE TABLE [dbo].[ProfesorDeporte] (
-    [ProfesorDeporte_Deporte_IdEmpleado] int  NOT NULL,
-    [Deportes_IdDeporte] int  NOT NULL
 );
 GO
 
@@ -185,12 +170,6 @@ ADD CONSTRAINT [PK_ProfesorCurso]
     PRIMARY KEY CLUSTERED ([Profesores_IdEmpleado], [Cursos_IdCurso] ASC);
 GO
 
--- Creating primary key on [ProfesorDeporte_Deporte_IdEmpleado], [Deportes_IdDeporte] in table 'ProfesorDeporte'
-ALTER TABLE [dbo].[ProfesorDeporte]
-ADD CONSTRAINT [PK_ProfesorDeporte]
-    PRIMARY KEY CLUSTERED ([ProfesorDeporte_Deporte_IdEmpleado], [Deportes_IdDeporte] ASC);
-GO
-
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -232,30 +211,6 @@ GO
 CREATE INDEX [IX_FK_PersonaEmpleado]
 ON [dbo].[Empleados]
     ([Persona_IdPersona]);
-GO
-
--- Creating foreign key on [ProfesorDeporte_Deporte_IdEmpleado] in table 'ProfesorDeporte'
-ALTER TABLE [dbo].[ProfesorDeporte]
-ADD CONSTRAINT [FK_ProfesorDeporte_Profesor]
-    FOREIGN KEY ([ProfesorDeporte_Deporte_IdEmpleado])
-    REFERENCES [dbo].[Empleados_Profesor]
-        ([IdEmpleado])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Deportes_IdDeporte] in table 'ProfesorDeporte'
-ALTER TABLE [dbo].[ProfesorDeporte]
-ADD CONSTRAINT [FK_ProfesorDeporte_Deporte]
-    FOREIGN KEY ([Deportes_IdDeporte])
-    REFERENCES [dbo].[Deportes]
-        ([IdDeporte])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProfesorDeporte_Deporte'
-CREATE INDEX [IX_FK_ProfesorDeporte_Deporte]
-ON [dbo].[ProfesorDeporte]
-    ([Deportes_IdDeporte]);
 GO
 
 -- Creating foreign key on [Deporte_IdDeporte] in table 'Cursos'

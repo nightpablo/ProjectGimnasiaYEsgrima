@@ -32,6 +32,3 @@ GO
 IF OBJECT_ID(N'[dbo].[ProfesorCurso]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProfesorCurso];
 GO
-IF OBJECT_ID(N'[dbo].[ProfesorDeporte]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProfesorDeporte];
-GO

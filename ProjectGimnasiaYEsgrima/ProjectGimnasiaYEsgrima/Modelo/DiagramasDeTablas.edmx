@@ -13,7 +13,6 @@
     <EntitySet Name="Empleados_Profesor" EntityType="DiagramasDeTablas.Store.Empleados_Profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Secretaria" EntityType="DiagramasDeTablas.Store.Empleados_Secretaria" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProfesorCurso" EntityType="DiagramasDeTablas.Store.ProfesorCurso" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProfesorDeporte" EntityType="DiagramasDeTablas.Store.ProfesorDeporte" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_ProfesorCurso_Profesor" Association="DiagramasDeTablas.Store.FK_ProfesorCurso_Profesor">
       <End Role="Profesor" EntitySet="Empleados_Profesor" />
       <End Role="ProfesorCurso" EntitySet="ProfesorCurso" />
@@ -25,14 +24,6 @@
     <AssociationSet Name="PersonaEmpleado" Association="DiagramasDeTablas.Store.PersonaEmpleado">
       <End Role="Persona" EntitySet="Personas" />
       <End Role="Empleado" EntitySet="Empleados" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProfesorDeporte_Profesor" Association="DiagramasDeTablas.Store.FK_ProfesorDeporte_Profesor">
-      <End Role="Profesor" EntitySet="Empleados_Profesor" />
-      <End Role="ProfesorDeporte" EntitySet="ProfesorDeporte" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProfesorDeporte_Deporte" Association="DiagramasDeTablas.Store.FK_ProfesorDeporte_Deporte">
-      <End Role="Deporte" EntitySet="Deportes" />
-      <End Role="ProfesorDeporte" EntitySet="ProfesorDeporte" />
     </AssociationSet>
     <AssociationSet Name="CursoDeporte" Association="DiagramasDeTablas.Store.CursoDeporte">
       <End Role="Curso" EntitySet="Cursos" />
@@ -83,6 +74,7 @@
     <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="DescripcionTarea" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TipoEmpleado" Type="int" Nullable="false" />
     <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Empleados_Profesor">
@@ -104,14 +96,6 @@
     </Key>
     <Property Name="Profesores_IdEmpleado" Type="int" Nullable="false" />
     <Property Name="Cursos_IdCurso" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProfesorDeporte">
-    <Key>
-      <PropertyRef Name="ProfesorDeporte_Deporte_IdEmpleado" />
-      <PropertyRef Name="Deportes_IdDeporte" />
-    </Key>
-    <Property Name="ProfesorDeporte_Deporte_IdEmpleado" Type="int" Nullable="false" />
-    <Property Name="Deportes_IdDeporte" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PersonaEmpleado">
     <End Role="Persona" Type="DiagramasDeTablas.Store.Personas" Multiplicity="1" />
@@ -161,30 +145,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProfesorDeporte_Profesor">
-    <End Role="Profesor" Type="DiagramasDeTablas.Store.Empleados_Profesor" Multiplicity="1" />
-    <End Role="ProfesorDeporte" Type="DiagramasDeTablas.Store.ProfesorDeporte" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesor">
-        <PropertyRef Name="IdEmpleado" />
-      </Principal>
-      <Dependent Role="ProfesorDeporte">
-        <PropertyRef Name="ProfesorDeporte_Deporte_IdEmpleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProfesorDeporte_Deporte">
-    <End Role="ProfesorDeporte" Type="DiagramasDeTablas.Store.ProfesorDeporte" Multiplicity="*" />
-    <End Role="Deporte" Type="DiagramasDeTablas.Store.Deportes" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Deporte">
-        <PropertyRef Name="IdDeporte" />
-      </Principal>
-      <Dependent Role="ProfesorDeporte">
-        <PropertyRef Name="Deportes_IdDeporte" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Profesor_inherits_Empleado">
     <End Role="Empleado" Type="DiagramasDeTablas.Store.Empleados" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -230,10 +190,6 @@
             <End Role="Persona" EntitySet="Personas" />
             <End Role="Empleado" EntitySet="Empleados" />
           </AssociationSet>
-          <AssociationSet Name="ProfesorDeporte" Association="DiagramasDeTablas.ProfesorDeporte">
-            <End Role="Profesor" EntitySet="Empleados" />
-            <End Role="Deporte" EntitySet="Deportes" />
-          </AssociationSet>
           <AssociationSet Name="CursoDeporte" Association="DiagramasDeTablas.CursoDeporte">
             <End Role="Curso" EntitySet="Cursos" />
             <End Role="Deporte" EntitySet="Deportes" />
@@ -277,27 +233,23 @@
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
           <Property Name="DescripcionTarea" Type="String" Nullable="true" />
           <NavigationProperty Name="Persona" Relationship="DiagramasDeTablas.PersonaEmpleado" FromRole="Empleado" ToRole="Persona" />
+          <Property Name="TipoEmpleado" Type="DiagramasDeTablas.EnumTipoEmpleado" Nullable="false" />
         </EntityType>
         <EntityType Name="Profesor" BaseType="DiagramasDeTablas.Empleado" >
           <NavigationProperty Name="Cursos" Relationship="DiagramasDeTablas.ProfesorCurso" FromRole="Profesor" ToRole="Curso" />
-          <NavigationProperty Name="Deportes" Relationship="DiagramasDeTablas.ProfesorDeporte" FromRole="Profesor" ToRole="Deporte" />
         </EntityType>
         <Association Name="ProfesorCurso">
           <End Type="DiagramasDeTablas.Profesor" Role="Profesor" Multiplicity="*" />
           <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="*" />
         </Association>
         <EntityType Name="Secretaria" BaseType="DiagramasDeTablas.Empleado" />
-        <EnumType Name="TipoEmpleado">
+        <EnumType Name="EnumTipoEmpleado">
           <Member Name="Profesor" Value="1" />
           <Member Name="Secretaria" Value="2" />
         </EnumType>
         <Association Name="PersonaEmpleado">
           <End Type="DiagramasDeTablas.Persona" Role="Persona" Multiplicity="1" />
           <End Type="DiagramasDeTablas.Empleado" Role="Empleado" Multiplicity="0..1" />
-        </Association>
-        <Association Name="ProfesorDeporte">
-          <End Type="DiagramasDeTablas.Profesor" Role="Profesor" Multiplicity="*" />
-          <End Type="DiagramasDeTablas.Deporte" Role="Deporte" Multiplicity="*" />
         </Association>
         <Association Name="CursoDeporte">
           <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="*" />
@@ -346,6 +298,7 @@
           <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
           <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
           <ScalarProperty Name="DescripcionTarea" ColumnName="DescripcionTarea" />
+          <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Profesor)">
@@ -373,14 +326,6 @@
       </EndProperty>
       <EndProperty Name="Empleado">
         <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesorDeporte" TypeName="DiagramasDeTablas.ProfesorDeporte" StoreEntitySet="ProfesorDeporte">
-      <EndProperty Name="Profesor">
-        <ScalarProperty Name="IdEmpleado" ColumnName="ProfesorDeporte_Deporte_IdEmpleado" />
-      </EndProperty>
-      <EndProperty Name="Deporte">
-        <ScalarProperty Name="IdDeporte" ColumnName="Deportes_IdDeporte" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="CursoDeporte" TypeName="DiagramasDeTablas.CursoDeporte" StoreEntitySet="Cursos">

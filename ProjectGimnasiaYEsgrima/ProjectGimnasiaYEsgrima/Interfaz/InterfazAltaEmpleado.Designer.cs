@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ComboboxTipoEmpleado = new System.Windows.Forms.ComboBox();
             this.textBoxNombreEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,23 +45,27 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.labelDeportes = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.botonGuardarEmpleado = new System.Windows.Forms.Button();
+            this.dbGimnasiaYEsgrimaDataSet = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet();
+            this.dbGimnasiaYEsgrimaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbGimnasiaYEsgrimaDataSet1 = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet1();
+            this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empleadosTableAdapter = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ComboboxTipoEmpleado
             // 
             this.ComboboxTipoEmpleado.FormattingEnabled = true;
-            this.ComboboxTipoEmpleado.Items.AddRange(new object[] {
-            "Profesor",
-            "Secretaria"});
             this.ComboboxTipoEmpleado.Location = new System.Drawing.Point(157, 250);
             this.ComboboxTipoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboboxTipoEmpleado.Name = "ComboboxTipoEmpleado";
             this.ComboboxTipoEmpleado.Size = new System.Drawing.Size(251, 24);
             this.ComboboxTipoEmpleado.TabIndex = 0;
-            this.ComboboxTipoEmpleado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ComboboxTipoEmpleado.Text = "Seleccione un tipo de empleado";
             // 
             // textBoxNombreEmpleado
             // 
@@ -69,6 +74,7 @@
             this.textBoxNombreEmpleado.Name = "textBoxNombreEmpleado";
             this.textBoxNombreEmpleado.Size = new System.Drawing.Size(251, 22);
             this.textBoxNombreEmpleado.TabIndex = 1;
+            this.textBoxNombreEmpleado.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
             // 
             // label1
             // 
@@ -86,7 +92,7 @@
             this.textBoxApellidoEmpleado.Name = "textBoxApellidoEmpleado";
             this.textBoxApellidoEmpleado.Size = new System.Drawing.Size(251, 22);
             this.textBoxApellidoEmpleado.TabIndex = 1;
-            this.textBoxApellidoEmpleado.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxApellidoEmpleado.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
             // 
             // label2
             // 
@@ -104,6 +110,8 @@
             this.textBoxDocumento.Name = "textBoxDocumento";
             this.textBoxDocumento.Size = new System.Drawing.Size(251, 22);
             this.textBoxDocumento.TabIndex = 1;
+            this.textBoxDocumento.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
+            this.textBoxDocumento.Leave += new System.EventHandler(this.textBoxDocumento_Leave);
             // 
             // label3
             // 
@@ -130,6 +138,7 @@
             this.dateTimeNacimiento.Name = "dateTimeNacimiento";
             this.dateTimeNacimiento.Size = new System.Drawing.Size(251, 22);
             this.dateTimeNacimiento.TabIndex = 3;
+            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
             // 
             // label5
             // 
@@ -164,7 +173,6 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(251, 22);
             this.textBoxDescripcion.TabIndex = 1;
-            this.textBoxDescripcion.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
             // 
@@ -193,49 +201,52 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Detalle Empleado";
             // 
-            // labelDeportes
-            // 
-            this.labelDeportes.AutoSize = true;
-            this.labelDeportes.Location = new System.Drawing.Point(91, 283);
-            this.labelDeportes.Name = "labelDeportes";
-            this.labelDeportes.Size = new System.Drawing.Size(59, 17);
-            this.labelDeportes.TabIndex = 2;
-            this.labelDeportes.Text = "Deporte";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(157, 283);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(249, 89);
-            this.checkedListBox1.TabIndex = 4;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
             // botonGuardarEmpleado
             // 
-            this.botonGuardarEmpleado.Location = new System.Drawing.Point(157, 426);
-            this.botonGuardarEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.botonGuardarEmpleado.Location = new System.Drawing.Point(133, 293);
+            this.botonGuardarEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.botonGuardarEmpleado.Name = "botonGuardarEmpleado";
             this.botonGuardarEmpleado.Size = new System.Drawing.Size(100, 28);
             this.botonGuardarEmpleado.TabIndex = 5;
             this.botonGuardarEmpleado.Text = "Guardar";
             this.botonGuardarEmpleado.UseVisualStyleBackColor = true;
-            this.botonGuardarEmpleado.Click += new System.EventHandler(this.botonGuardarEmpleado_Click);
+            this.botonGuardarEmpleado.Click += new System.EventHandler(this.BotonGuardarEmpleado_Click);
+            // 
+            // dbGimnasiaYEsgrimaDataSet
+            // 
+            this.dbGimnasiaYEsgrimaDataSet.DataSetName = "dbGimnasiaYEsgrimaDataSet";
+            this.dbGimnasiaYEsgrimaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbGimnasiaYEsgrimaDataSetBindingSource
+            // 
+            this.dbGimnasiaYEsgrimaDataSetBindingSource.DataSource = this.dbGimnasiaYEsgrimaDataSet;
+            this.dbGimnasiaYEsgrimaDataSetBindingSource.Position = 0;
+            // 
+            // dbGimnasiaYEsgrimaDataSet1
+            // 
+            this.dbGimnasiaYEsgrimaDataSet1.DataSetName = "dbGimnasiaYEsgrimaDataSet1";
+            this.dbGimnasiaYEsgrimaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empleadosBindingSource
+            // 
+            this.empleadosBindingSource.DataMember = "Empleados";
+            this.empleadosBindingSource.DataSource = this.dbGimnasiaYEsgrimaDataSet1;
+            // 
+            // empleadosTableAdapter
+            // 
+            this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
             // InterfazAltaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 484);
+            this.ClientSize = new System.Drawing.Size(484, 336);
             this.Controls.Add(this.botonGuardarEmpleado);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.dateTimeInicioEmpleado);
             this.Controls.Add(this.dateTimeNacimiento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelDeportes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
@@ -250,6 +261,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InterfazAltaEmpleado";
             this.Text = "InterfazAltaEmpleado";
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,8 +288,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label labelDeportes;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button botonGuardarEmpleado;
+        private System.Windows.Forms.BindingSource dbGimnasiaYEsgrimaDataSetBindingSource;
+        private dbGimnasiaYEsgrimaDataSet dbGimnasiaYEsgrimaDataSet;
+        private dbGimnasiaYEsgrimaDataSet1 dbGimnasiaYEsgrimaDataSet1;
+        private System.Windows.Forms.BindingSource empleadosBindingSource;
+        private dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
     }
 }

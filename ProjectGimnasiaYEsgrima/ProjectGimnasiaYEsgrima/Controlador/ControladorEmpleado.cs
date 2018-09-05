@@ -1,4 +1,5 @@
 ﻿using ProjectGimnasiaYEsgrima.BD;
+using ProjectGimnasiaYEsgrima.Interfaz;
 using ProjectGimnasiaYEsgrima.Modelo;
 using System;
 using System.Collections.Generic;
@@ -11,53 +12,43 @@ namespace ProjectGimnasiaYEsgrima.Controlador
     class ControladorEmpleado
     {
         BDEmpleado bdEmpleado = new BDEmpleado();
+        ControladorPersona controladorPersona = new ControladorPersona();
 
-        public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio)
+        public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
-            Persona unaPersona = new Persona
+            Persona unaPersona = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
+            if (unaPersona==null)
+            { 
+                unaPersona = new Persona
+                    {
+                        Nombre = nombre,
+                        Apellido = apellido,
+                        FechaNacimiento = fechaNacimiento,
+                        DNI = documento
+                    };
+            }
+            Empleado unEmpleado = null;
+            switch (tipoEmpleado)
             {
-                Nombre = nombre,
-                Apellido = apellido,
-                FechaNacimiento = fechaNacimiento,
-                DNI = documento
-            };
+                case EnumTipoEmpleado.Secretaria:
+                    unEmpleado = new Secretaria();
+                    break;
+                case EnumTipoEmpleado.Profesor:
+                    unEmpleado = new Profesor();
+                    break;
+                default:
+                    return -1;
+            }
 
-            Secretaria unEmpleado = new Secretaria
-            {
-                FechaInicio = fechaInicio,
-                DescripcionTarea = descripcion,
-                Persona = unaPersona
-            };
+            unEmpleado.FechaInicio = fechaInicio;
+            unEmpleado.DescripcionTarea = descripcion;
+            unEmpleado.TipoEmpleado = tipoEmpleado;
+            unEmpleado.Persona = unaPersona;            
 
             bdEmpleado.Crear(unEmpleado);
-                return 0;
+            return 1;
         }
 
-        public int CrearProfesor(string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, List<Deporte> listaDeportes)
-        {
-            Persona unaPersona = new Persona
-            {
-                Nombre = nombre,
-                Apellido = apellido,
-                FechaNacimiento = fechaNacimiento,
-                DNI = documento
-            };
 
-            Profesor unEmpleado = new Profesor
-            {
-                FechaInicio = fechaInicio,
-                DescripcionTarea = descripcion,
-                Persona = unaPersona,
-                Deportes = listaDeportes
-            };
-            
-
-            bdEmpleado.Crear(unEmpleado);
-          
-            
-            return 0;
-        }
-
-       
     }
 }

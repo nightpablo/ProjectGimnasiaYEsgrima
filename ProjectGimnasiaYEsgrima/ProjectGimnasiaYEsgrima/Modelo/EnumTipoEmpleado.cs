@@ -11,7 +11,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
     
-    public enum TipoEmpleado : int
+    public enum EnumTipoEmpleado : int
     {
         Profesor = 1,
         Secretaria = 2

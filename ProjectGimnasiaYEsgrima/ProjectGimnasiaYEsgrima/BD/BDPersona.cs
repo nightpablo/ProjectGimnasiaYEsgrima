@@ -16,7 +16,11 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public Persona BuscarPorClavesUnicas(params object[] parametros)
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Personas.AsEnumerable()
+                    .FirstOrDefault(b => b.DNI==(int)parametros[0]);
+            }
         }
 
         public int Crear(Persona entrada)

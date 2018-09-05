@@ -18,13 +18,10 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public Profesor()
         {
             this.Cursos = new HashSet<Curso>();
-            this.Deportes = new HashSet<Deporte>();
         }
     
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Curso> Cursos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Deporte> Deportes { get; set; }
     }
 }
