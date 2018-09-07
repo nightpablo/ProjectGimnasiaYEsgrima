@@ -18,10 +18,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         //public var selected = new List<Deporte>();
         private bool CargoPersona = false;
+        private InterfazListaEmpleado Padre;
 
-        public InterfazAltaEmpleado()
+        public InterfazAltaEmpleado(InterfazListaEmpleado padre)
         {
             InitializeComponent();
+            Padre = padre;
+
 
             ComboboxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
 
@@ -34,10 +37,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             ControladorEmpleado Cempleado = new ControladorEmpleado();
             Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
-            
+            Dispose();
         }
 
-        private void textBoxDocumento_Leave(object sender, EventArgs e)
+        private void TextBoxDocumento_Leave(object sender, EventArgs e)
         {
             if (!textBoxDocumento.Text.Equals("") && new Regex("[0-9]*").IsMatch(textBoxDocumento.Text))
             {
@@ -56,7 +59,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
         }
 
-        private void textBoxNombreEmpleado_TextChanged(object sender, EventArgs e)
+        private void TextBoxNombreEmpleado_TextChanged(object sender, EventArgs e)
         {
             if (CargoPersona)
             {

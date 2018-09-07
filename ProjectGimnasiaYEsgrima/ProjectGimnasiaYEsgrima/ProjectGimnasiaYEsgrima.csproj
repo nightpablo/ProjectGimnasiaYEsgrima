@@ -93,6 +93,12 @@
     <Compile Include="Interfaz\InterfazAltaEmpleado.Designer.cs">
       <DependentUpon>InterfazAltaEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazListaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListaEmpleado.Designer.cs">
+      <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazListarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,7 @@
     <Compile Include="Modelo\Empleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
@@ -185,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazListaEmpleado.resx">
+      <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListarCurso.resx">
       <DependentUpon>InterfazListarCurso.cs</DependentUpon>
@@ -238,6 +248,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Deporte.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.EmpleadoPersona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

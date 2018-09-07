@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima.Modelo;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,25 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public List<Empleado> ListarTodos()
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Empleados.ToList();
+            }
+        }
+
+        public List<ModelEmpleadoPersona> ListarEmpleadosPersonas()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Empleados.Select(e => new ModelEmpleadoPersona()
+                {
+                    Nombre = e.Persona.Nombre,
+                    Apellido = e.Persona.Apellido,
+                    DNI = e.Persona.DNI,
+                    TipoEmpleado = e.TipoEmpleado,
+                    MiEmpleado = e
+                }).ToList();
+            }
         }
     }
 }

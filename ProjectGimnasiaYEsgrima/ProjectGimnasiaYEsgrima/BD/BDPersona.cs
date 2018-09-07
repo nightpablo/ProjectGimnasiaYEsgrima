@@ -46,7 +46,10 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public List<Persona> ListarTodos()
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Personas.ToList();
+            }
         }
     }
 }

@@ -74,7 +74,7 @@
             this.textBoxNombreEmpleado.Name = "textBoxNombreEmpleado";
             this.textBoxNombreEmpleado.Size = new System.Drawing.Size(251, 22);
             this.textBoxNombreEmpleado.TabIndex = 1;
-            this.textBoxNombreEmpleado.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
+            this.textBoxNombreEmpleado.TextChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             this.textBoxApellidoEmpleado.Name = "textBoxApellidoEmpleado";
             this.textBoxApellidoEmpleado.Size = new System.Drawing.Size(251, 22);
             this.textBoxApellidoEmpleado.TabIndex = 1;
-            this.textBoxApellidoEmpleado.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
+            this.textBoxApellidoEmpleado.TextChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             // 
             // label2
             // 
@@ -110,8 +110,8 @@
             this.textBoxDocumento.Name = "textBoxDocumento";
             this.textBoxDocumento.Size = new System.Drawing.Size(251, 22);
             this.textBoxDocumento.TabIndex = 1;
-            this.textBoxDocumento.TextChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
-            this.textBoxDocumento.Leave += new System.EventHandler(this.textBoxDocumento_Leave);
+            this.textBoxDocumento.TextChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
+            this.textBoxDocumento.Leave += new System.EventHandler(this.TextBoxDocumento_Leave);
             // 
             // label3
             // 
@@ -138,7 +138,7 @@
             this.dateTimeNacimiento.Name = "dateTimeNacimiento";
             this.dateTimeNacimiento.Size = new System.Drawing.Size(251, 22);
             this.dateTimeNacimiento.TabIndex = 3;
-            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.textBoxNombreEmpleado_TextChanged);
+            this.dateTimeNacimiento.ValueChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             // 
             // label5
             // 

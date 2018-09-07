@@ -23,9 +23,10 @@ namespace ProjectGimnasiaYEsgrima
 
             //Application.Run(new InterfazPrincipal());
             //Application.Run(new InterfazListaDeportes());// INcremento 1
-            //Application.Run(new InterfazListarCurso());
-           //Application.Run(new InterfazAltaCurso());
-           Application.Run(new InterfazAltaEmpleado());
+            //Application.Run(new InterfazListaCurso());
+            //Application.Run(new InterfazAltaCurso());
+            //Application.Run(new InterfazAltaEmpleado());
+            Application.Run(new InterfazListaEmpleado());
             //ejecute();
         }
 

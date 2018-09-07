@@ -2,6 +2,7 @@
 using ProjectGimnasiaYEsgrima.Interfaz;
 using ProjectGimnasiaYEsgrima.Modelo;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
             bdEmpleado.Crear(unEmpleado);
             return 1;
+        }
+
+        public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista()
+        {
+            return bdEmpleado.ListarEmpleadosPersonas();
         }
 
 
