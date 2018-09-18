@@ -13,14 +13,17 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int DNI { get; set; }
         public EnumTipoEmpleado TipoEmpleado { get; set; }
         public Empleado MiEmpleado { get; set; }
+        public Persona MiPersona { get; set; }
         public ModelEmpleadoPersona() { }
         public ModelEmpleadoPersona(Empleado entry)
         {
             MiEmpleado = entry;
+            MiPersona = entry.Persona;
             Nombre = entry.Persona.Nombre;
             Apellido = entry.Persona.Apellido;
             DNI = entry.Persona.DNI;
             TipoEmpleado = entry.TipoEmpleado;
+            
         }
     }
 }

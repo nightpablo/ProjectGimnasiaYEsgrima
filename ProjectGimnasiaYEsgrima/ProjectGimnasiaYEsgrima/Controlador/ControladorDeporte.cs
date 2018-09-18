@@ -52,7 +52,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public List<Deporte> ListarTodosDeportesPorFiltros(params Object[] parametros)
         {
-            if (parametros.Length <= 1) return null;
+            if (parametros.Length <= 1)
+                return null;
             return una_bddeporte.ListarPorFiltro(parametros);
         }
 

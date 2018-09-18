@@ -14,6 +14,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazListaEmpleado : Form
     {
+        ControladorEmpleado CEmpleado = new ControladorEmpleado();
         public InterfazListaEmpleado()
         {
             InitializeComponent();
@@ -27,10 +28,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonBuscarEmpleado_Click(object sender, EventArgs e)
         {
             dataGridViewEmpleadoPersona.Visible = true;
-            List<ModelEmpleadoPersona> lista = null;
-            if(txtNombre.Text.Equals("") && txtApellido.Text.Equals("") && txtDNI.Text.Equals(""))
-                dataGridViewEmpleadoPersona.DataSource = new ControladorEmpleado().ExtraerEmpleadosAVista();
-            //falta hacer la de listar segun filtros, y a ese primer if hay que verificar la condiccion de seleccion de profesor secretaria o nada
+            List<Empleado> lista = null;
+            if(txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals(""))
+            { 
+                dataGridViewEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista();
+            }
+            else
+            {
+                string nombre = txtNombreEmpleado.Text.ToString();
+                //if (ComboBoxTipoEmpleado.Text.ToString().Equals("Profesor")) ;
+                lista = CEmpleado.ListarTodosEmpleadosPorFiltros(nombre);
+            }
+
         }
 
         private void BotonCrearEmpleado_Click(object sender, EventArgs e)
@@ -48,11 +57,35 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 InterfazModificarEmpleado interfazModificar = new InterfazModificarEmpleado(this, (ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem);
                 interfazModificar.ShowDialog();
             }
+            else if(dataGridViewEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
+            {
+                if (MessageBox.Show("¿Seguro que desea Eliminar este Empleado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ControladorEmpleado CEmpleado = new ControladorEmpleado();
+                    if(CEmpleado.EliminarEmpleado(((ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado) > 0)
+                    {
+                        this.ModificarMensaje("Se ha eliminado el Empleado");
+                        
+                    }
+                }
+
+            }
         }
 
         private void ComboBoxTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LabelInfoEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        public void ModificarMensaje(string v)
+        {
+            LabelInfoEmpleado.Text = v;
         }
     }
 }

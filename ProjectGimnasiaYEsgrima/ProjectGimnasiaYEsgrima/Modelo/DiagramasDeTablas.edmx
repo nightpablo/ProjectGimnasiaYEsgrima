@@ -10,6 +10,7 @@
     <EntitySet Name="Deportes" EntityType="DiagramasDeTablas.Store.Deportes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Personas" EntityType="DiagramasDeTablas.Store.Personas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados" EntityType="DiagramasDeTablas.Store.Empleados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RegistroIngresoEgresoes" EntityType="DiagramasDeTablas.Store.RegistroIngresoEgresoes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Profesor" EntityType="DiagramasDeTablas.Store.Empleados_Profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Secretaria" EntityType="DiagramasDeTablas.Store.Empleados_Secretaria" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProfesorCurso" EntityType="DiagramasDeTablas.Store.ProfesorCurso" store:Type="Tables" Schema="dbo" />
@@ -28,6 +29,10 @@
     <AssociationSet Name="CursoDeporte" Association="DiagramasDeTablas.Store.CursoDeporte">
       <End Role="Curso" EntitySet="Cursos" />
       <End Role="Deporte" EntitySet="Deportes" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoRegistroIngresoSalida" Association="DiagramasDeTablas.Store.EmpleadoRegistroIngresoSalida">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="RegistroIngresoSalida" EntitySet="RegistroIngresoEgresoes" />
     </AssociationSet>
     <AssociationSet Name="FK_Profesor_inherits_Empleado" Association="DiagramasDeTablas.Store.FK_Profesor_inherits_Empleado">
       <End Role="Empleado" EntitySet="Empleados" />
@@ -77,6 +82,16 @@
     <Property Name="TipoEmpleado" Type="int" Nullable="false" />
     <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="RegistroIngresoEgresoes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ingreso" Type="datetime" Nullable="false" />
+    <Property Name="Salida" Type="datetime" Nullable="false" />
+    <Property Name="EmpleadoIdEmpleado" Type="int" Nullable="false" />
+    <Property Name="EntradaSalida" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Empleados_Profesor">
     <Key>
       <PropertyRef Name="IdEmpleado" />
@@ -118,6 +133,18 @@
       </Principal>
       <Dependent Role="Curso">
         <PropertyRef Name="Deporte_IdDeporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpleadoRegistroIngresoSalida">
+    <End Role="Empleado" Type="DiagramasDeTablas.Store.Empleados" Multiplicity="1" />
+    <End Role="RegistroIngresoSalida" Type="DiagramasDeTablas.Store.RegistroIngresoEgresoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="RegistroIngresoSalida">
+        <PropertyRef Name="EmpleadoIdEmpleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -194,6 +221,11 @@
             <End Role="Curso" EntitySet="Cursos" />
             <End Role="Deporte" EntitySet="Deportes" />
           </AssociationSet>
+          <EntitySet Name="RegistroIngresoEgresoes" EntityType="DiagramasDeTablas.RegistroIngresoEgreso" />
+          <AssociationSet Name="EmpleadoRegistroIngresoSalida" Association="DiagramasDeTablas.EmpleadoRegistroIngresoSalida">
+            <End Role="Empleado" EntitySet="Empleados" />
+            <End Role="RegistroIngresoSalida" EntitySet="RegistroIngresoEgresoes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Curso">
           <Key>
@@ -255,6 +287,29 @@
           <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="*" />
           <End Type="DiagramasDeTablas.Deporte" Role="Deporte" Multiplicity="1" />
         </Association>
+        <EntityType Name="RegistroIngresoEgreso">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ingreso" Type="DateTime" Nullable="false" />
+          <Property Name="Salida" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="DiagramasDeTablas.EmpleadoRegistroIngresoSalida" FromRole="RegistroIngresoSalida" ToRole="Empleado" />
+          <Property Name="EmpleadoIdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="EntradaSalida" Type="Binary" Nullable="false" />
+        </EntityType>
+        <Association Name="EmpleadoRegistroIngresoSalida">
+          <End Type="DiagramasDeTablas.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="DiagramasDeTablas.RegistroIngresoEgreso" Role="RegistroIngresoSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="RegistroIngresoSalida">
+              <PropertyRef Name="EmpleadoIdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -309,6 +364,17 @@
       <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Secretaria)">
         <MappingFragment StoreEntitySet="Empleados_Secretaria">
           <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroIngresoEgresoes">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.RegistroIngresoEgreso)">
+        <MappingFragment StoreEntitySet="RegistroIngresoEgresoes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="EmpleadoIdEmpleado" ColumnName="EmpleadoIdEmpleado" />
+          <ScalarProperty Name="EntradaSalida" ColumnName="EntradaSalida" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

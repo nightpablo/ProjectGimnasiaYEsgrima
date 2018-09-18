@@ -55,11 +55,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdEmpleado.ListarEmpleadosPersonas();
         }
 
-        public int ModificarEmpleado(string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
+        public int ModificarEmpleado(int idPersona, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
 
             Persona buscado = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
-            if (buscado != null && buscado.DNI != documento)
+            if (buscado != null && buscado.IdPersona != idPersona)
             {
                 return -2;
             }
@@ -67,11 +67,14 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             {
                 Persona unaPersona = new Persona
                 {
+                    IdPersona = idPersona,
                     Nombre = nombre,
                     Apellido = apellido,
                     FechaNacimiento = fechaNacimiento,
                     DNI = documento
                 };
+
+
                 Empleado unEmpleado = null;
                 switch (tipoEmpleado)
                 {
@@ -89,6 +92,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 unEmpleado.DescripcionTarea = descripcion;
                 unEmpleado.TipoEmpleado = tipoEmpleado;
                 unEmpleado.Persona = unaPersona;
+                unEmpleado.IdEmpleado = idEmpleado;
 
                 bdEmpleado.Actualizar(unEmpleado);
             }
@@ -97,6 +101,18 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return 1;
         }
 
+        public int EliminarEmpleado(Empleado empleado)
+        {
+            bdEmpleado.Eliminar(empleado);
+            return 0;
+        }
 
+        public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
+        {
+            if (parametros.Length <= 1)
+                return null;
+            return bdEmpleado.ListarPorFiltro(parametros);
+            
+        }
     }
 }

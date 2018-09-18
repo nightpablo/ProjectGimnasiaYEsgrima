@@ -36,8 +36,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Enum.TryParse<EnumTipoEmpleado>(ComboboxTipoEmpleado.SelectedValue.ToString(), out tipoEmpleado);
 
             ControladorEmpleado Cempleado = new ControladorEmpleado();
-            Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
+            int resultado = Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
             Dispose();
+            if (resultado > 0)
+            {
+                //MessageBox.Show(this, "Se ha creado el EMPLEADO", "Empleado");
+                ((InterfazListaEmpleado)Padre).ModificarMensaje("Se ha creado el EMPLEADO");
+                Dispose();
+            }
+            else if (resultado == -2)
+                MessageBox.Show(this, "No se pudo crear el EMPLEADO", "Empleado");
+        
+      
         }
 
         private void TextBoxDocumento_Leave(object sender, EventArgs e)

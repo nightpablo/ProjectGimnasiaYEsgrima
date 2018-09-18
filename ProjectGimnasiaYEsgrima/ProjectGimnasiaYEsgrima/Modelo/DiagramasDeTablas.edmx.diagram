@@ -16,6 +16,8 @@
         <InheritanceConnector EntityType="DiagramasDeTablas.Secretaria" />
         <AssociationConnector Association="DiagramasDeTablas.PersonaEmpleado" />
         <AssociationConnector Association="DiagramasDeTablas.CursoDeporte" />
+        <EntityTypeShape EntityType="DiagramasDeTablas.RegistroIngresoEgreso" Width="1.5" PointX="12.375" PointY="3.125" />
+        <AssociationConnector Association="DiagramasDeTablas.EmpleadoRegistroIngresoSalida" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,60 +26,58 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InitializeComponent();
             textBoxNombreEmpleado.Text = empleado.Nombre;
             textBoxApellidoEmpleado.Text = empleado.Apellido;
-            //dateTimeNacimiento.Value = empleado.MiEmpleado.Persona.FechaNacimiento;
+            dateTimeNacimiento.Value = empleado.MiPersona.FechaNacimiento;
             textBoxDocumento.Text = Convert.ToString(empleado.DNI);
             textBoxDescripcion.Text = empleado.MiEmpleado.DescripcionTarea;
-            //dateTimeInicioEmpleado.Value = empleado.MiEmpleado.FechaInicio;
+            dateTimeInicioEmpleado.Value = empleado.MiEmpleado.FechaInicio;
 
-            List<string> lista = Enum.GetNames(typeof(EnumTipoEmpleado)).ToList();
-            lista.Insert(0, "");
-            ComboboxTipoEmpleado.DataSource = lista;
+            ComboboxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
 
             this.textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxNombreEmpleado);
             this.textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxApellidoEmpleado, 50);
-            this.textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDocumento);
+            this.textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDocumento,8);
             this.textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDescripcion);
-            //this.dateTimeNacimiento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
-            //this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+            //this.dateTimeNacimiento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, dateTimeNacimiento);
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* var hayError = false;
+            var hayError = false;
             if (textBoxNombreEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxNombreEmpleado, "El nombre del empleado debe tener entre 3 y 50 caracteres");
+                errorProvider2.SetError(textBoxNombreEmpleado, "El nombre del empleado debe tener entre 3 y 50 caracteres");
             }
             else
             {
-                errorProvider1.SetError(textBoxNombreEmpleado, "");
+                errorProvider2.SetError(textBoxNombreEmpleado, "");
             }
 
 
             if (textBoxApellidoEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxApellidoEmpleado, "El apellido del empleado debe tener entre 3 y 50 caracteres");
+                errorProvider2.SetError(textBoxApellidoEmpleado, "El apellido del empleado debe tener entre 3 y 50 caracteres");
             }
             else
             {
-                errorProvider1.SetError(textBoxApellidoEmpleado, "");
+                errorProvider2.SetError(textBoxApellidoEmpleado, "");
             }
 
             if (textBoxDescripcion.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxDescripcion, "La descripcion del empleado debe tener entre 3 y 100 caracteres");
+                errorProvider2.SetError(textBoxDescripcion, "La descripcion del empleado debe tener entre 3 y 100 caracteres");
             }
             else
             {
-                errorProvider1.SetError(textBoxDescripcion, "");
+                errorProvider2.SetError(textBoxDescripcion, "");
             }
 
             if (hayError)
-                return;*/
+                return;
 
             string nombre = textBoxNombreEmpleado.Text;
             string descripcion = textBoxApellidoEmpleado.Text;
@@ -90,11 +88,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ControladorEmpleado Cempleado = new ControladorEmpleado();
 
 
-            var resultado = Cempleado.ModificarEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
+            var resultado = Cempleado.ModificarEmpleado(empleado.MiPersona.IdPersona,empleado.MiEmpleado.IdEmpleado,textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
             if (resultado > 0)
             {
-                //MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
-                //  ((InterfazListaDeportes)padre).ModificarMensaje("Se ha modificado el EMPLEADO");
+                ((InterfazListaEmpleado)padre).ModificarMensaje("Se ha modificado el EMPLEADO");
                 Dispose();
             }
             else if (resultado == -2)
@@ -102,6 +99,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         }
 
         private void Button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             Dispose();
         }

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/07/2018 08:11:19
--- Generated from EDMX file: C:\Users\Giorgi\source\repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
+-- Date Created: 09/18/2018 17:10:05
+-- Generated from EDMX file: C:\Users\NightCrawler-Nbook\Source\Repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -29,6 +29,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_CursoDeporte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Cursos] DROP CONSTRAINT [FK_CursoDeporte];
 GO
+IF OBJECT_ID(N'[dbo].[FK_EmpleadoRegistroIngresoSalida]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RegistroIngresoEgresoes] DROP CONSTRAINT [FK_EmpleadoRegistroIngresoSalida];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Profesor_inherits_Empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Empleados_Profesor] DROP CONSTRAINT [FK_Profesor_inherits_Empleado];
 GO
@@ -51,6 +54,9 @@ IF OBJECT_ID(N'[dbo].[Personas]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Empleados]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Empleados];
+GO
+IF OBJECT_ID(N'[dbo].[RegistroIngresoEgresoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RegistroIngresoEgresoes];
 GO
 IF OBJECT_ID(N'[dbo].[Empleados_Profesor]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Empleados_Profesor];
@@ -105,6 +111,16 @@ CREATE TABLE [dbo].[Empleados] (
 );
 GO
 
+-- Creating table 'RegistroIngresoEgresoes'
+CREATE TABLE [dbo].[RegistroIngresoEgresoes] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Ingreso] datetime  NOT NULL,
+    [Salida] datetime  NOT NULL,
+    [EmpleadoIdEmpleado] int  NOT NULL,
+    [EntradaSalida] varbinary(max)  NOT NULL
+);
+GO
+
 -- Creating table 'Empleados_Profesor'
 CREATE TABLE [dbo].[Empleados_Profesor] (
     [IdEmpleado] int  NOT NULL
@@ -150,6 +166,12 @@ GO
 ALTER TABLE [dbo].[Empleados]
 ADD CONSTRAINT [PK_Empleados]
     PRIMARY KEY CLUSTERED ([IdEmpleado] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'RegistroIngresoEgresoes'
+ALTER TABLE [dbo].[RegistroIngresoEgresoes]
+ADD CONSTRAINT [PK_RegistroIngresoEgresoes]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- Creating primary key on [IdEmpleado] in table 'Empleados_Profesor'
@@ -226,6 +248,21 @@ GO
 CREATE INDEX [IX_FK_CursoDeporte]
 ON [dbo].[Cursos]
     ([Deporte_IdDeporte]);
+GO
+
+-- Creating foreign key on [EmpleadoIdEmpleado] in table 'RegistroIngresoEgresoes'
+ALTER TABLE [dbo].[RegistroIngresoEgresoes]
+ADD CONSTRAINT [FK_EmpleadoRegistroIngresoSalida]
+    FOREIGN KEY ([EmpleadoIdEmpleado])
+    REFERENCES [dbo].[Empleados]
+        ([IdEmpleado])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoRegistroIngresoSalida'
+CREATE INDEX [IX_FK_EmpleadoRegistroIngresoSalida]
+ON [dbo].[RegistroIngresoEgresoes]
+    ([EmpleadoIdEmpleado]);
 GO
 
 -- Creating foreign key on [IdEmpleado] in table 'Empleados_Profesor'

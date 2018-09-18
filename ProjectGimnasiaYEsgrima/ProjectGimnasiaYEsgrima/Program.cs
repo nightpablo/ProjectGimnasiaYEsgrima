@@ -21,12 +21,12 @@ namespace ProjectGimnasiaYEsgrima
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new InterfazPrincipal());
+            Application.Run(new InterfazPrincipal());
            // Application.Run(new InterfazListaDeportes());// INcremento 1
             //Application.Run(new InterfazListaCurso());
             //Application.Run(new InterfazAltaCurso());
             //Application.Run(new InterfazAltaEmpleado());
-            Application.Run(new InterfazListaEmpleado());
+            //Application.Run(new InterfazListaEmpleado());
             //ejecute();
         }
 
