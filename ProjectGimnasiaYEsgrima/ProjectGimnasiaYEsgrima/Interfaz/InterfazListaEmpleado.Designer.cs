@@ -57,18 +57,18 @@
             this.LabelInfoEmpleado.AutoSize = true;
             this.LabelInfoEmpleado.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelInfoEmpleado.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.LabelInfoEmpleado.Location = new System.Drawing.Point(27, 356);
+            this.LabelInfoEmpleado.Location = new System.Drawing.Point(20, 289);
+            this.LabelInfoEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelInfoEmpleado.Name = "LabelInfoEmpleado";
-            this.LabelInfoEmpleado.Size = new System.Drawing.Size(199, 24);
+            this.LabelInfoEmpleado.Size = new System.Drawing.Size(165, 19);
             this.LabelInfoEmpleado.TabIndex = 16;
             this.LabelInfoEmpleado.Text = "Acá se imprime algo";
             // 
             // botonCrearEmpleado
             // 
-            this.botonCrearEmpleado.Location = new System.Drawing.Point(760, 123);
-            this.botonCrearEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.botonCrearEmpleado.Location = new System.Drawing.Point(570, 100);
             this.botonCrearEmpleado.Name = "botonCrearEmpleado";
-            this.botonCrearEmpleado.Size = new System.Drawing.Size(136, 28);
+            this.botonCrearEmpleado.Size = new System.Drawing.Size(102, 23);
             this.botonCrearEmpleado.TabIndex = 15;
             this.botonCrearEmpleado.Text = "Crear Empleado";
             this.botonCrearEmpleado.UseVisualStyleBackColor = true;
@@ -76,10 +76,9 @@
             // 
             // BotonBuscarEmpleado
             // 
-            this.BotonBuscarEmpleado.Location = new System.Drawing.Point(619, 123);
-            this.BotonBuscarEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.BotonBuscarEmpleado.Location = new System.Drawing.Point(464, 100);
             this.BotonBuscarEmpleado.Name = "BotonBuscarEmpleado";
-            this.BotonBuscarEmpleado.Size = new System.Drawing.Size(133, 28);
+            this.BotonBuscarEmpleado.Size = new System.Drawing.Size(100, 23);
             this.BotonBuscarEmpleado.TabIndex = 14;
             this.BotonBuscarEmpleado.Text = "Buscar";
             this.BotonBuscarEmpleado.UseVisualStyleBackColor = true;
@@ -87,75 +86,70 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(133, 98);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNI.Location = new System.Drawing.Point(100, 80);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(160, 22);
+            this.txtDNI.Size = new System.Drawing.Size(121, 20);
             this.txtDNI.TabIndex = 13;
             // 
             // labelEmpleadoListarEmpleado
             // 
             this.labelEmpleadoListarEmpleado.AutoSize = true;
-            this.labelEmpleadoListarEmpleado.Location = new System.Drawing.Point(29, 101);
-            this.labelEmpleadoListarEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEmpleadoListarEmpleado.Location = new System.Drawing.Point(22, 82);
             this.labelEmpleadoListarEmpleado.Name = "labelEmpleadoListarEmpleado";
-            this.labelEmpleadoListarEmpleado.Size = new System.Drawing.Size(31, 17);
+            this.labelEmpleadoListarEmpleado.Size = new System.Drawing.Size(26, 13);
             this.labelEmpleadoListarEmpleado.TabIndex = 11;
             this.labelEmpleadoListarEmpleado.Text = "DNI";
             // 
             // labelDeporteListarEmpleado
             // 
             this.labelDeporteListarEmpleado.AutoSize = true;
-            this.labelDeporteListarEmpleado.Location = new System.Drawing.Point(29, 41);
-            this.labelDeporteListarEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDeporteListarEmpleado.Location = new System.Drawing.Point(22, 33);
             this.labelDeporteListarEmpleado.Name = "labelDeporteListarEmpleado";
-            this.labelDeporteListarEmpleado.Size = new System.Drawing.Size(58, 17);
+            this.labelDeporteListarEmpleado.Size = new System.Drawing.Size(44, 13);
             this.labelDeporteListarEmpleado.TabIndex = 10;
             this.labelDeporteListarEmpleado.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(133, 38);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(100, 31);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(160, 22);
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Apellido";
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(133, 68);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellido.Location = new System.Drawing.Point(100, 55);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(160, 22);
+            this.txtApellido.Size = new System.Drawing.Size(121, 20);
             this.txtApellido.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 41);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(254, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 17);
+            this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Tipo de empleado";
             // 
             // ComboBoxTipoEmpleado
             // 
             this.ComboBoxTipoEmpleado.FormattingEnabled = true;
-            this.ComboBoxTipoEmpleado.Location = new System.Drawing.Point(467, 38);
+            this.ComboBoxTipoEmpleado.Location = new System.Drawing.Point(350, 31);
+            this.ComboBoxTipoEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxTipoEmpleado.Name = "ComboBoxTipoEmpleado";
-            this.ComboBoxTipoEmpleado.Size = new System.Drawing.Size(185, 24);
+            this.ComboBoxTipoEmpleado.Size = new System.Drawing.Size(140, 21);
             this.ComboBoxTipoEmpleado.TabIndex = 17;
+            this.ComboBoxTipoEmpleado.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTipoEmpleado_SelectedIndexChanged);
             // 
             // dataGridViewEmpleadoPersona
             // 
@@ -169,11 +163,13 @@
             this.Modificar,
             this.Eliminar});
             this.dataGridViewEmpleadoPersona.DataSource = this.empleadoPersonaBindingSource;
-            this.dataGridViewEmpleadoPersona.Location = new System.Drawing.Point(31, 159);
+            this.dataGridViewEmpleadoPersona.Location = new System.Drawing.Point(23, 129);
+            this.dataGridViewEmpleadoPersona.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmpleadoPersona.Name = "dataGridViewEmpleadoPersona";
             this.dataGridViewEmpleadoPersona.RowTemplate.Height = 24;
-            this.dataGridViewEmpleadoPersona.Size = new System.Drawing.Size(865, 194);
+            this.dataGridViewEmpleadoPersona.Size = new System.Drawing.Size(649, 158);
             this.dataGridViewEmpleadoPersona.TabIndex = 18;
+            this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmpleadoPersona_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -221,9 +217,9 @@
             // 
             // InterfazListaEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 413);
+            this.ClientSize = new System.Drawing.Size(698, 336);
             this.Controls.Add(this.dataGridViewEmpleadoPersona);
             this.Controls.Add(this.ComboBoxTipoEmpleado);
             this.Controls.Add(this.LabelInfoEmpleado);
@@ -236,6 +232,7 @@
             this.Controls.Add(this.labelEmpleadoListarEmpleado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelDeporteListarEmpleado);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InterfazListaEmpleado";
             this.Text = "InterfazListaEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).EndInit();

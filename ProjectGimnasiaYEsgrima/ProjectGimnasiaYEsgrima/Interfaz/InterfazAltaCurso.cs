@@ -16,6 +16,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazAltaCurso : Form
     {
         private InterfazListarCurso Padre;
+        private InterfazListaCurso interfazListaCurso;
+
         public InterfazAltaCurso(InterfazListarCurso interfazListaCurso)
         {
             this.Padre = interfazListaCurso;

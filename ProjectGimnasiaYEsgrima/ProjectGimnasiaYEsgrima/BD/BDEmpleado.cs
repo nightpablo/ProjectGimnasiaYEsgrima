@@ -12,7 +12,12 @@ namespace ProjectGimnasiaYEsgrima.BD
     {
         public int Actualizar(Empleado entrada)
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+                return 1;
+            }
         }
 
         public Empleado BuscarPorClavesUnicas(params object[] parametros)

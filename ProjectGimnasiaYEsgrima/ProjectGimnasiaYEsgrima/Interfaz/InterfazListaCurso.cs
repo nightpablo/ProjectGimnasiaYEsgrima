@@ -78,10 +78,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void botonCrearCurso_Click(object sender, EventArgs e)
         {
-            InterfazAltaCurso interfazCurso = new InterfazAltaCurso(this);
+           /*InterfazAltaCurso interfazCurso = new InterfazAltaCurso(this);
             interfazCurso.ShowDialog();
             if (DataGridListarCursos.Visible)
-                BotonBuscarCurso_Click(sender, e);
+                BotonBuscarCurso_Click(sender, e);*/
         }
 
         private void DataGridListarCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)

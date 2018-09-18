@@ -40,5 +40,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (dataGridViewEmpleadoPersona.Visible)
                 BotonBuscarEmpleado_Click(sender, e);
         }
+
+        private void dataGridViewEmpleadoPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("Modificar"))
+            {
+                InterfazModificarEmpleado interfazModificar = new InterfazModificarEmpleado(this, (ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem);
+                interfazModificar.ShowDialog();
+            }
+        }
+
+        private void ComboBoxTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

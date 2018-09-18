@@ -55,6 +55,48 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdEmpleado.ListarEmpleadosPersonas();
         }
 
+        public int ModificarEmpleado(string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
+        {
+
+            Persona buscado = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
+            if (buscado != null && buscado.DNI != documento)
+            {
+                return -2;
+            }
+            else
+            {
+                Persona unaPersona = new Persona
+                {
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    FechaNacimiento = fechaNacimiento,
+                    DNI = documento
+                };
+                Empleado unEmpleado = null;
+                switch (tipoEmpleado)
+                {
+                    case EnumTipoEmpleado.Secretaria:
+                        unEmpleado = new Secretaria();
+                        break;
+                    case EnumTipoEmpleado.Profesor:
+                        unEmpleado = new Profesor();
+                        break;
+                    default:
+                        return -1;
+                }
+
+                unEmpleado.FechaInicio = fechaInicio;
+                unEmpleado.DescripcionTarea = descripcion;
+                unEmpleado.TipoEmpleado = tipoEmpleado;
+                unEmpleado.Persona = unaPersona;
+
+                bdEmpleado.Actualizar(unEmpleado);
+            }
+
+       
+            return 1;
+        }
+
 
     }
 }

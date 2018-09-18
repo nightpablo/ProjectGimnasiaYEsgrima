@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Controlador\ControladorPersona.cs" />
+    <Compile Include="Interfaz\InterfazListaCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListaCurso.Designer.cs">
+      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazAltaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="Interfaz\InterfazAltaDeporte.Designer.cs">
       <DependentUpon>InterfazAltaDeporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarEmpleado.Designer.cs">
+      <DependentUpon>InterfazModificarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazPrincipal.cs">
       <SubType>Form</SubType>
@@ -187,6 +199,9 @@
     <EmbeddedResource Include="Interfaz\InterfazAltaDeporte.resx">
       <DependentUpon>InterfazAltaDeporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazListaCurso.resx">
+      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaEmpleado.resx">
       <DependentUpon>InterfazAltaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazModificarDeporte.resx">
       <DependentUpon>InterfazModificarDeporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazModificarEmpleado.resx">
+      <DependentUpon>InterfazModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
