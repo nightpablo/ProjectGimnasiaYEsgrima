@@ -32,12 +32,12 @@
             this.LabelInfoEmpleado = new System.Windows.Forms.Label();
             this.botonCrearEmpleado = new System.Windows.Forms.Button();
             this.BotonBuscarEmpleado = new System.Windows.Forms.Button();
-            this.txtDNIEmpleado = new System.Windows.Forms.MaskedTextBox();
+            this.txtDNIEmpleado = new System.Windows.Forms.TextBox();
             this.labelEmpleadoListarEmpleado = new System.Windows.Forms.Label();
             this.labelDeporteListarEmpleado = new System.Windows.Forms.Label();
-            this.txtNombreEmpleado = new System.Windows.Forms.MaskedTextBox();
+            this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtApellidoEmpleado = new System.Windows.Forms.MaskedTextBox();
+            this.txtApellidoEmpleado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ComboBoxTipoEmpleado = new System.Windows.Forms.ComboBox();
             this.dataGridViewEmpleadoPersona = new System.Windows.Forms.DataGridView();
@@ -62,7 +62,6 @@
             this.LabelInfoEmpleado.Size = new System.Drawing.Size(199, 24);
             this.LabelInfoEmpleado.TabIndex = 16;
             this.LabelInfoEmpleado.Text = "Acá se imprime algo";
-            this.LabelInfoEmpleado.Click += new System.EventHandler(this.LabelInfoEmpleado_Click);
             // 
             // botonCrearEmpleado
             // 
@@ -158,7 +157,6 @@
             this.ComboBoxTipoEmpleado.Name = "ComboBoxTipoEmpleado";
             this.ComboBoxTipoEmpleado.Size = new System.Drawing.Size(185, 24);
             this.ComboBoxTipoEmpleado.TabIndex = 17;
-            this.ComboBoxTipoEmpleado.SelectedIndexChanged += new System.EventHandler(this.ComboBoxTipoEmpleado_SelectedIndexChanged);
             // 
             // dataGridViewEmpleadoPersona
             // 
@@ -178,7 +176,7 @@
             this.dataGridViewEmpleadoPersona.RowTemplate.Height = 24;
             this.dataGridViewEmpleadoPersona.Size = new System.Drawing.Size(865, 194);
             this.dataGridViewEmpleadoPersona.TabIndex = 18;
-            this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmpleadoPersona_CellContentClick);
+            this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmpleadoPersona_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -234,8 +232,8 @@
             this.Controls.Add(this.LabelInfoEmpleado);
             this.Controls.Add(this.botonCrearEmpleado);
             this.Controls.Add(this.BotonBuscarEmpleado);
-            this.Controls.Add(this.txtApellidoEmpleado);
             this.Controls.Add(this.txtNombreEmpleado);
+            this.Controls.Add(this.txtApellidoEmpleado);
             this.Controls.Add(this.txtDNIEmpleado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelEmpleadoListarEmpleado);
@@ -256,12 +254,12 @@
         private System.Windows.Forms.Label LabelInfoEmpleado;
         private System.Windows.Forms.Button botonCrearEmpleado;
         private System.Windows.Forms.Button BotonBuscarEmpleado;
-        private System.Windows.Forms.MaskedTextBox txtDNIEmpleado;
+        private System.Windows.Forms.TextBox txtDNIEmpleado;
         private System.Windows.Forms.Label labelEmpleadoListarEmpleado;
         private System.Windows.Forms.Label labelDeporteListarEmpleado;
-        private System.Windows.Forms.MaskedTextBox txtNombreEmpleado;
+        private System.Windows.Forms.TextBox txtNombreEmpleado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtApellidoEmpleado;
+        private System.Windows.Forms.TextBox txtApellidoEmpleado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ComboBoxTipoEmpleado;
         private System.Windows.Forms.DataGridView dataGridViewEmpleadoPersona;

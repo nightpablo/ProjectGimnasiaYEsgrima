@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,19 +32,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             comboBoxDeporte.DisplayMember = "Nombre";
 
 
-
-        }
-
-        private void InterfazListarCurso_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'dbGimnasiaYEsgrimaDataSet.Curso' Puede moverla o quitarla según sea necesario.
-            //this.cursoTableAdapter.Fill(this.dbGimnasiaYEsgrimaDataSet.Curso);
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscarCurso);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 50);
         }
 
         private void BotonBuscarCurso_Click(object sender, EventArgs e)
@@ -58,7 +48,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else
             {
-                listaCurso = controladorCurso.ListarTodosCursosFiltro(txtNombreCurso.Text.ToString(), ((Deporte)comboBoxDeporte.SelectedItem).IdDeporte);
+                listaCurso = controladorCurso.ListarTodosCursosFiltro(txtNombreCurso.Text.ToString(), (Deporte)comboBoxDeporte.SelectedItem);
             }
 
             foreach (var i in listaCurso)
@@ -71,12 +61,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         }
 
-        private void TextBoxCurso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void botonCrearCurso_Click(object sender, EventArgs e)
+        private void BotonCrearCurso_Click(object sender, EventArgs e)
         {
             InterfazAltaCurso interfazCurso = new InterfazAltaCurso(this);
             interfazCurso.ShowDialog();

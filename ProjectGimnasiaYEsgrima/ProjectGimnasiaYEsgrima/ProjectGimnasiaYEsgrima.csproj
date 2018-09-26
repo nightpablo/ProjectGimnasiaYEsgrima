@@ -88,12 +88,6 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Controlador\ControladorPersona.cs" />
-    <Compile Include="Interfaz\InterfazListaCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\InterfazListaCurso.Designer.cs">
-      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaz\InterfazAltaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaDeporte.resx">
       <DependentUpon>InterfazAltaDeporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazListaCurso.resx">
-      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaEmpleado.resx">
       <DependentUpon>InterfazAltaEmpleado.cs</DependentUpon>

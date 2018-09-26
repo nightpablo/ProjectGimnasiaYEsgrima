@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,21 +24,28 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<string> lista = Enum.GetNames(typeof(EnumTipoEmpleado)).ToList();
             lista.Insert(0, "");
             ComboBoxTipoEmpleado.DataSource = lista;
+            LabelInfoEmpleado.Text = "";
+
+            txtNombreEmpleado.Focus();
+            txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoEmpleado);
+            txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtNombreEmpleado, 50);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDNIEmpleado);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoEmpleado, 50);
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscarEmpleado);
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIEmpleado, 8);
         }
 
         private void BotonBuscarEmpleado_Click(object sender, EventArgs e)
         {
             dataGridViewEmpleadoPersona.Visible = true;
-            List<Empleado> lista = null;
-            if(txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals(""))
+            if(txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals("") && ComboBoxTipoEmpleado.SelectedIndex==0)
             { 
                 dataGridViewEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista();
             }
             else
             {
-                string nombre = txtNombreEmpleado.Text.ToString();
-                //if (ComboBoxTipoEmpleado.Text.ToString().Equals("Profesor")) ;
-                lista = CEmpleado.ListarTodosEmpleadosPorFiltros(nombre);
+                dataGridViewEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
+                    txtDNIEmpleado.Text,ComboBoxTipoEmpleado.SelectedItem);
             }
 
         }
@@ -50,7 +58,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 BotonBuscarEmpleado_Click(sender, e);
         }
 
-        private void dataGridViewEmpleadoPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewEmpleadoPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
@@ -70,18 +78,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
+            if (dataGridViewEmpleadoPersona.Visible)
+                BotonBuscarEmpleado_Click(sender, e);
         }
-
-        private void ComboBoxTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LabelInfoEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         public void ModificarMensaje(string v)
         {

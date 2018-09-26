@@ -15,6 +15,7 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
+                
                 context.Deportes.Add(entrada);
                 context.SaveChanges();
                 return 1;

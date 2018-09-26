@@ -35,7 +35,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.labelDeporteListarCurso = new System.Windows.Forms.Label();
             this.labelCursoListarCurso = new System.Windows.Forms.Label();
             this.comboBoxDeporte = new System.Windows.Forms.ComboBox();
-            this.txtNombreCurso = new System.Windows.Forms.MaskedTextBox();
+            this.txtNombreCurso = new System.Windows.Forms.TextBox();
             this.BotonBuscarCurso = new System.Windows.Forms.Button();
             this.botonCrearCurso = new System.Windows.Forms.Button();
             this.dbGimnasiaYEsgrimaDataSet = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet();
@@ -99,7 +99,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.comboBoxDeporte.Name = "comboBoxDeporte";
             this.comboBoxDeporte.Size = new System.Drawing.Size(121, 21);
             this.comboBoxDeporte.TabIndex = 4;
-            this.comboBoxDeporte.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtNombreCurso
             // 
@@ -107,7 +106,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(121, 20);
             this.txtNombreCurso.TabIndex = 5;
-            this.txtNombreCurso.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TextBoxCurso_MaskInputRejected);
             // 
             // BotonBuscarCurso
             // 
@@ -127,7 +125,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.botonCrearCurso.TabIndex = 7;
             this.botonCrearCurso.Text = "Crear Curso";
             this.botonCrearCurso.UseVisualStyleBackColor = true;
-            this.botonCrearCurso.Click += new System.EventHandler(this.botonCrearCurso_Click);
+            this.botonCrearCurso.Click += new System.EventHandler(this.BotonCrearCurso_Click);
             // 
             // dbGimnasiaYEsgrimaDataSet
             // 
@@ -232,7 +230,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Controls.Add(this.DataGridListarCursos);
             this.Name = "InterfazListarCurso";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.InterfazListarCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridListarCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
@@ -252,7 +249,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.Label labelDeporteListarCurso;
         private System.Windows.Forms.Label labelCursoListarCurso;
         private System.Windows.Forms.ComboBox comboBoxDeporte;
-        private System.Windows.Forms.MaskedTextBox txtNombreCurso;
+        private System.Windows.Forms.TextBox txtNombreCurso;
         private System.Windows.Forms.Button BotonBuscarCurso;
         private System.Windows.Forms.Button botonCrearCurso;
         private dbGimnasiaYEsgrimaDataSet dbGimnasiaYEsgrimaDataSet;

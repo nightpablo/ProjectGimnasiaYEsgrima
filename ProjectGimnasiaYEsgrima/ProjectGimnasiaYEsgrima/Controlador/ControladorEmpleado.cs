@@ -55,6 +55,17 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdEmpleado.ListarEmpleadosPersonas();
         }
 
+        public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista(params Object[] parametros)
+        {
+            if (parametros.Length < 4)
+                return null;
+            if (parametros[3].ToString().Equals(""))
+                parametros[3] = 0;
+            else
+                parametros[3] = Enum.Parse(typeof(EnumTipoEmpleado), (string)parametros[3]);
+            return bdEmpleado.ListarEmpleadosPersonas(parametros);
+        }
+
         public int ModificarEmpleado(int idPersona, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
 
@@ -109,9 +120,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
         {
-            if (parametros.Length <= 1)
-                return null;
-            return bdEmpleado.ListarPorFiltro(parametros);
+
+            return null;
             
         }
     }

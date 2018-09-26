@@ -13,21 +13,19 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
+                context.Entry(entrada.Deporte).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
-                //context.Cursos.Add(entrada);
+                
                 context.SaveChanges();
                 return 1;
-                throw new NotImplementedException();
             }
         }
 
         public int Actualizar(Curso entrada)
         {
-            //var unCurso = context.Cursos.Find(entrada.IdCurso);
-            //unCurso.Nombre = entrada.Nombre;
-            // unCurso
             using (var context = new DiagramasDeTablasContainer1())
             {
+                context.Entry(entrada.Deporte).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
                 return 1;
@@ -56,20 +54,13 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                //return context.Cursos.ToList();
                  var j = context.Cursos.AsEnumerable()
                  .Where(b => b.Nombre.Contains((string)parametros[0]))
                                 .ToList();
-                var iddep = Convert.ToInt32(parametros[1]);
-                return iddep==0? j : j.Where(b => b.DeporteIdDeporte == iddep).ToList();
+                var iddep = ((Deporte) parametros[1]).IdDeporte;
+                return iddep==0? j : j.Where(b => b.Deporte.IdDeporte == iddep).ToList();
 
             }
-            /* return context.Cursos.AsEnumerable()
-                 .Where(b => (b.Deporte.IdDeporte) == Convert.ToInt32(parametros[0])).ToList();
-
-             return context.Cursos.AsEnumerable()
-                 .Where(b => b.Nombre.Contains((string)parametros[1]))
-                                .ToList();*/
         }
 
         public Curso BuscarPorClavesUnicas(params object[] parametros)

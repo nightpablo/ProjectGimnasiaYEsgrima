@@ -15,7 +15,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
     {
         BDCurso BdCurso = new BDCurso();
 
-        public int CrearCurso(string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, int  unIdDeporte)
+        public int CrearCurso(string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             if (BdCurso.BuscarPorClavesUnicas(unNombre) != null)
                 return -2;
@@ -25,7 +25,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                FechaFin = unaFechaFin,
-               DeporteIdDeporte = unIdDeporte
+               Deporte = deporte
             };
 
             BdCurso.Crear(unCurso);
@@ -36,6 +36,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public List<Curso> ListarTodosCursosFiltro(params Object[] parametros)
         {
+            if (parametros.Length < 2)
+                return null;
             return BdCurso.ListarPorFiltro(parametros);
         }
 
@@ -45,7 +47,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.ListarTodos();
         }
 
-        public int ModificarCurso(int id, string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, int unIdDeporte)
+        public int ModificarCurso(int id, string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
             if (buscado != null && buscado.IdCurso != id)
@@ -57,7 +59,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                 FechaFin = unaFechaFin,
-                DeporteIdDeporte = unIdDeporte
+                Deporte = deporte,
+                DeporteIdDeporte = deporte.IdDeporte
             };
             return BdCurso.Actualizar(unCurso);
 

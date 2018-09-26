@@ -66,11 +66,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado = un_controlador_curso.ModificarCurso(curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
+            var resultado = un_controlador_curso.ModificarCurso(curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
                 ((InterfazListarCurso)padre).ModificarMensaje("Se ha modificado el Curso");
-                //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
                 Dispose();
             }
             else if (resultado == -2)

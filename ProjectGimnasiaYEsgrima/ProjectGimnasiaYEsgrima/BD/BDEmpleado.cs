@@ -71,6 +71,29 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public List<ModelEmpleadoPersona> ListarEmpleadosPersonas(params object[] parametros)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                var j = context.Empleados
+                    .Select(e => new ModelEmpleadoPersona()
+                {
+                    Nombre = e.Persona.Nombre,
+                    Apellido = e.Persona.Apellido,
+                    DNI = e.Persona.DNI,
+                    TipoEmpleado = e.TipoEmpleado,
+                    MiEmpleado = e,
+                    MiPersona = e.Persona
+                }).AsEnumerable()
+                    .Where(b => b.MiPersona.Nombre.Contains((string)parametros[0]))
+                    .Where(b => b.MiPersona.Apellido.Contains((string)parametros[1]))
+                    .Where(b => b.MiPersona.DNI.ToString().Contains((string)parametros[2]))
+                    .ToList();
+                var tipoemp = Convert.ToInt32(parametros[3]);
+                return tipoemp==0? j : j.Where(b => (int)b.TipoEmpleado == tipoemp).ToList();
+            }
+        }
+
 
         public List<Empleado> ListarPorFiltro(params object[] parametros)
         {

@@ -16,7 +16,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazAltaCurso : Form
     {
         private InterfazListarCurso Padre;
-        private InterfazListaCurso interfazListaCurso;
 
         public InterfazAltaCurso(InterfazListarCurso interfazListaCurso)
         {
@@ -54,7 +53,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, Convert.ToInt32(ComboBoxDeporte.SelectedValue));
+            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
                 ((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
