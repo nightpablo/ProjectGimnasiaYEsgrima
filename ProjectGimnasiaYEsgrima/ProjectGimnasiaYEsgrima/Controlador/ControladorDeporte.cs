@@ -42,7 +42,9 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int EliminarDeporte(Deporte deporte)
         {
-            return una_bddeporte.Eliminar(deporte);
+            if(!una_bddeporte.PerteneceAlgunCurso(deporte))
+                return una_bddeporte.Eliminar(deporte);
+            return -2;
         }
 
         public List<Deporte> ListarTodosDeportes()
@@ -63,5 +65,6 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return una_bddeporte.BuscarPorClavesUnicas(parametros);
         }
 
+      
     }
 }

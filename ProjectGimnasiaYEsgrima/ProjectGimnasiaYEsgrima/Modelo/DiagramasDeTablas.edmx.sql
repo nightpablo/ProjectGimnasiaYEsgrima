@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/18/2018 17:10:05
+-- Date Created: 09/28/2018 15:15:21
 -- Generated from EDMX file: C:\Users\NightCrawler-Nbook\Source\Repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
@@ -78,7 +78,7 @@ CREATE TABLE [dbo].[Cursos] (
     [Nombre] nvarchar(max)  NOT NULL,
     [FechaInicio] datetime  NOT NULL,
     [FechaFin] datetime  NOT NULL,
-    [DeporteIdDeporte] int  NOT NULL,
+    [EstadoCurso] int  NOT NULL,
     [Deporte_IdDeporte] int  NOT NULL
 );
 GO

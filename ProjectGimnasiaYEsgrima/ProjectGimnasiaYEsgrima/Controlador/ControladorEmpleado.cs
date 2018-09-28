@@ -17,17 +17,6 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
-            Persona unaPersona = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
-            if (unaPersona==null)
-            { 
-                unaPersona = new Persona
-                    {
-                        Nombre = nombre,
-                        Apellido = apellido,
-                        FechaNacimiento = fechaNacimiento,
-                        DNI = documento
-                    };
-            }
             Empleado unEmpleado = null;
             switch (tipoEmpleado)
             {
@@ -44,8 +33,25 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             unEmpleado.FechaInicio = fechaInicio;
             unEmpleado.DescripcionTarea = descripcion;
             unEmpleado.TipoEmpleado = tipoEmpleado;
-            unEmpleado.Persona = unaPersona;            
+            Persona unaPersona = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
+            if (unaPersona==null)
+            { 
+                unaPersona = new Persona
+                    {
+                        Nombre = nombre,
+                        Apellido = apellido,
+                        FechaNacimiento = fechaNacimiento,
+                        DNI = documento
+                    };
+                new BDPersona().Crear(unaPersona);
+            }
+            else if (bdEmpleado.existeEmpleado(unEmpleado, unaPersona)) { 
+                return -2;
+            }
 
+
+
+            unEmpleado.Persona = unaPersona;
             bdEmpleado.Crear(unEmpleado);
             return 1;
         }
@@ -104,6 +110,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 unEmpleado.TipoEmpleado = tipoEmpleado;
                 unEmpleado.Persona = unaPersona;
                 unEmpleado.IdEmpleado = idEmpleado;
+
 
                 bdEmpleado.Actualizar(unEmpleado);
             }

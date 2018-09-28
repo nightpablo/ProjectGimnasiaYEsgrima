@@ -87,7 +87,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(138, 20);
             this.txtNombreDeporte.TabIndex = 2;
-            this.txtNombreDeporte.TextChanged += new System.EventHandler(this.txtNombreDeporte_TextChanged);
             // 
             // txtDescripcionDeporte
             // 

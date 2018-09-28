@@ -30,7 +30,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ComboBoxDeporte.ValueMember = "IdDeporte";
             ComboBoxDeporte.DisplayMember = "Nombre";
 
-            this.txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            DateTimeInicio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            DateTimeFin.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
             
         }
 
@@ -42,22 +46,23 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
             }
-            else
+            else errorProvider1.SetError(txtNombreCurso, "");
+            /*if (DateTimeFin.Value.CompareTo(DateTimeInicio) < 1)
             {
-                errorProvider1.SetError(txtNombreCurso, "");
+                hayError = true;
+                errorProvider1.SetError(DateTimeInicio, "El dia de comienzo debe ser antes que el dia de fin del curso");
+                errorProvider1.SetError(DateTimeFin, "El dia de comienzo debe ser antes que el dia de fin del curso");
             }
-
+            else { errorProvider1.SetError(DateTimeInicio, ""); errorProvider1.SetError(DateTimeFin, ""); }
+            */
             if (hayError)
                 return;
-            string nombre = txtNombreCurso.Text;
-            string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
             var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
-                ((InterfazListarCurso)Padre).ModificarMensaje("Se ha creado un nuevo Curso");
-                //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
+                Padre.ModificarMensaje("Se ha creado un nuevo Curso");
                 Dispose();
             }
             else if (resultado == -2)

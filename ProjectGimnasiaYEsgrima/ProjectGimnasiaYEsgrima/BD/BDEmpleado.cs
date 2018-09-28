@@ -30,6 +30,7 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
+                context.Entry(entrada.Persona).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
                 context.SaveChanges();
                 return 1;
@@ -110,6 +111,16 @@ namespace ProjectGimnasiaYEsgrima.BD
 
                 return i; //ddep == 0 ? i : i.Where(b => b.Persona.IdPersona == iddep).ToList();
 
+            }
+        }
+
+        public bool existeEmpleado(Empleado emp, Persona pers)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                var i = context.Empleados.AsEnumerable().FirstOrDefault(b => b.Persona.DNI.Equals(pers.DNI) && b.TipoEmpleado.Equals(emp.TipoEmpleado));
+
+                return i!=null;
             }
         }
     }

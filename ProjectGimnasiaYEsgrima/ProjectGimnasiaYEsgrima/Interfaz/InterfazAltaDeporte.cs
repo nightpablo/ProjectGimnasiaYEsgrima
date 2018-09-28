@@ -17,14 +17,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private InterfazListaDeportes Padre;
         public InterfazAltaDeporte(InterfazListaDeportes interfazListaDeportes)
         {
-            this.Padre = interfazListaDeportes;
+            Padre = interfazListaDeportes;
             InitializeComponent();
 
-            this.txtNombreDeporte.Focus();
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+            txtNombreDeporte.Focus();
+            txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
+
+            txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
 
 
         }
@@ -36,22 +37,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreDeporte, "El nombre debe ser con carácter entre 3 y 50");
             }
-            else
-            {
-                errorProvider1.SetError(txtNombreDeporte, "");
-            }
+            else errorProvider1.SetError(txtNombreDeporte, "");
 
             if (hayError)
                 return;
-            string nombre = txtNombreDeporte.Text;
-            string descripcion = txtDescripcionDeporte.Text;
 
             ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-            var resultado = un_controlador_deporte.CrearDeporte(nombre, descripcion);
+            var resultado = un_controlador_deporte.CrearDeporte(txtNombreDeporte.Text, txtDescripcionDeporte.Text);
             if ( resultado > 0)
             {
-                ((InterfazListaDeportes)Padre).ModificarMensaje("Se ha creado un nuevo DEPORTE");
-                //MessageBox.Show(this, "Se ha creado un nuevo DEPORTE", "Deporte");
+                Padre.ModificarMensaje("Se ha creado un nuevo DEPORTE");
                 Dispose();
             }
             else if(resultado == -2)
@@ -63,11 +58,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonCancelarDeporte_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
-
-        private void labelAltaDeporte_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

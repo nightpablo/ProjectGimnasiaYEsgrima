@@ -220,7 +220,7 @@
             // 
             // empleadoPersonaBindingSource
             // 
-            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            
             // 
             // InterfazListaEmpleado
             // 

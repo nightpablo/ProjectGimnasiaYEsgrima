@@ -53,7 +53,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.labelAltaDeporte.Size = new System.Drawing.Size(69, 13);
             this.labelAltaDeporte.TabIndex = 0;
             this.labelAltaDeporte.Text = "Alta  Deporte";
-            this.labelAltaDeporte.Click += new System.EventHandler(this.labelAltaDeporte_Click);
             // 
             // txtNombreDeporte
             // 
@@ -113,12 +112,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BotonCancelarDeporte);
-            this.Controls.Add(this.labelAltaDeporteNombbre);
-            this.Controls.Add(this.BotonGuardarDeporte);
-            this.Controls.Add(this.txtDescripcionDeporte);
-            this.Controls.Add(this.labelAltaDeporteDescripcion);
             this.Controls.Add(this.txtNombreDeporte);
+            this.Controls.Add(this.txtDescripcionDeporte);
+            this.Controls.Add(this.BotonCancelarDeporte);
+            this.Controls.Add(this.BotonGuardarDeporte);
+            this.Controls.Add(this.labelAltaDeporteNombbre);
+            this.Controls.Add(this.labelAltaDeporteDescripcion);
             this.Controls.Add(this.labelAltaDeporte);
             this.Name = "InterfazAltaDeporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -155,7 +155,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // cursoBindingSource
             // 
-            this.cursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.Curso);
+            
             // 
             // nombreDataGridViewTextBoxColumn
             // 

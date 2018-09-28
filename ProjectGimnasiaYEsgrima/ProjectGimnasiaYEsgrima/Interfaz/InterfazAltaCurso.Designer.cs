@@ -164,11 +164,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 232);
             this.Controls.Add(this.ComboBoxDeporte);
-            this.Controls.Add(this.DateTimeFin);
-            this.Controls.Add(this.DateTimeInicio);
-            this.Controls.Add(this.BotonCancelarCurso);
-            this.Controls.Add(this.BotonGuardarCurso);
             this.Controls.Add(this.txtNombreCurso);
+            this.Controls.Add(this.DateTimeInicio);
+            this.Controls.Add(this.DateTimeFin);
+            this.Controls.Add(this.BotonGuardarCurso);
+            this.Controls.Add(this.BotonCancelarCurso);
             this.Controls.Add(this.labelFechaFinCurso);
             this.Controls.Add(this.labelFechaInicioCurso);
             this.Controls.Add(this.labelAltaCursoDeporte);

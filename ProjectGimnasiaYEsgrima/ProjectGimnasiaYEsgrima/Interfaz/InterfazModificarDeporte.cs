@@ -17,19 +17,22 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazModificarDeporte : Form
     {
 
-        private Form padre;
+        private InterfazListaDeportes Padre;
         private Deporte deporte;
-        public InterfazModificarDeporte(Form padre, Deporte deporte)
+        public InterfazModificarDeporte(InterfazListaDeportes padre, Deporte deporte)
         {
-            this.padre = padre;
+            Padre = padre;
             this.deporte = deporte;
             InitializeComponent();
             txtNombreDeporte.Text = deporte.Nombre;
             txtDescripcionDeporte.Text = deporte.Descripcion;
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+
+            txtNombreDeporte.Focus();
+            txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
+
+            txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
 
         }
        
@@ -42,10 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreDeporte, "El nombre debe ser con carácter entre 3 y 50");
             }
-            else
-            {
-                errorProvider1.SetError(txtNombreDeporte, "");
-            }
+            else errorProvider1.SetError(txtNombreDeporte, "");
 
             if (hayError)
                 return;
@@ -57,8 +57,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_deporte.ModificarDeporte(deporte.IdDeporte, nombre, descripcion);
             if (resultado > 0)
             {
-                //MessageBox.Show(this, "Se ha modificado el DEPORTE", "Deporte");
-                ((InterfazListaDeportes)padre).ModificarMensaje("Se ha modificado el DEPORTE");
+                Padre.ModificarMensaje("Se ha modificado el DEPORTE");
                 Dispose();
             }
             else if (resultado == -2)

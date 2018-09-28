@@ -26,6 +26,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ComboBoxTipoEmpleado.DataSource = lista;
             LabelInfoEmpleado.Text = "";
 
+            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
             txtNombreEmpleado.Focus();
             txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoEmpleado);
             txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtNombreEmpleado, 50);
@@ -72,7 +73,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     ControladorEmpleado CEmpleado = new ControladorEmpleado();
                     if(CEmpleado.EliminarEmpleado(((ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado) > 0)
                     {
-                        this.ModificarMensaje("Se ha eliminado el Empleado");
+                        ModificarMensaje("Se ha eliminado el Empleado");
                         
                     }
                 }

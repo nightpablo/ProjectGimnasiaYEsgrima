@@ -68,11 +68,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 if(MessageBox.Show("¿Seguro que desea Eliminar este deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    ControladorDeporte un_controlador_deporte = new ControladorDeporte();
-                    if (un_controlador_deporte.EliminarDeporte((Deporte)dataGridViewDeporte.CurrentRow.DataBoundItem) > 0)
+                    var resultado = new ControladorDeporte().EliminarDeporte((Deporte)dataGridViewDeporte.CurrentRow.DataBoundItem);
+                    if (resultado > 0)
                     {
-                        this.ModificarMensaje("Se ha eliminado el DEPORTE");
-                        //MessageBox.Show(this, "Se ha eliminado el DEPORTE", "Deporte");
+                        ModificarMensaje("Se ha eliminado el DEPORTE");
+                    }
+                    else if (resultado == -2)
+                    {
+                        ModificarMensaje("No se puede eliminar el DEPORTE porque hay un CURSO relaccionado");
                     }
                 }
             }
@@ -92,9 +95,5 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             LabelInfoDeporte.Text = entrada;
         }
 
-        private void txtNombreDeporte_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

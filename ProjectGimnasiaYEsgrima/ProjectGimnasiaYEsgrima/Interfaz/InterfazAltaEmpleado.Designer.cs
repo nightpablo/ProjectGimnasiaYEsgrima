@@ -51,10 +51,12 @@
             this.dbGimnasiaYEsgrimaDataSet1 = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet1();
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ComboboxTipoEmpleado
@@ -236,14 +238,16 @@
             // 
             this.empleadosTableAdapter.ClearBeforeFill = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // InterfazAltaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 336);
             this.Controls.Add(this.botonGuardarEmpleado);
-            this.Controls.Add(this.dateTimeInicioEmpleado);
-            this.Controls.Add(this.dateTimeNacimiento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
@@ -253,10 +257,12 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxDescripcion);
-            this.Controls.Add(this.textBoxDocumento);
-            this.Controls.Add(this.textBoxApellidoEmpleado);
             this.Controls.Add(this.textBoxNombreEmpleado);
+            this.Controls.Add(this.textBoxApellidoEmpleado);
+            this.Controls.Add(this.textBoxDocumento);
+            this.Controls.Add(this.dateTimeNacimiento);
+            this.Controls.Add(this.dateTimeInicioEmpleado);
+            this.Controls.Add(this.textBoxDescripcion);
             this.Controls.Add(this.ComboboxTipoEmpleado);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InterfazAltaEmpleado";
@@ -265,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +301,6 @@
         private dbGimnasiaYEsgrimaDataSet1 dbGimnasiaYEsgrimaDataSet1;
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

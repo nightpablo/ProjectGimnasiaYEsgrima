@@ -15,13 +15,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazModificarEmpleado : Form
     {
-        private Form padre;
+        private InterfazListaEmpleado Padre;
         private ModelEmpleadoPersona empleado;
 
-        public InterfazModificarEmpleado(Form padre, ModelEmpleadoPersona empleado)
+        public InterfazModificarEmpleado(InterfazListaEmpleado padre, ModelEmpleadoPersona empleado)
         {
 
-            this.padre = padre;
+            this.Padre = padre;
             this.empleado = empleado;
             InitializeComponent();
             textBoxNombreEmpleado.Text = empleado.Nombre;
@@ -31,59 +31,49 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             textBoxDescripcion.Text = empleado.MiEmpleado.DescripcionTarea;
             dateTimeInicioEmpleado.Value = empleado.MiEmpleado.FechaInicio;
 
-            ComboboxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
+            txtTipoEmpleado.Text = empleado.TipoEmpleado.ToString();
+            txtTipoEmpleado.ReadOnly = true;
 
-            this.textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxNombreEmpleado);
-            this.textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxApellidoEmpleado, 50);
-            this.textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDocumento,8);
-            this.textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDescripcion);
-            //this.dateTimeNacimiento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, dateTimeNacimiento);
-            
+            textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxApellidoEmpleado);
+            textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDocumento);
+            textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDescripcion);
+            textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonModificarEmpleado);
+
+            textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxNombreEmpleado, 50);
+            textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxApellidoEmpleado, 50);
+            textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDocumento,8);
+            textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDescripcion, 500);
+
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             var hayError = false;
             if (textBoxNombreEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider2.SetError(textBoxNombreEmpleado, "El nombre del empleado debe tener entre 3 y 50 caracteres");
+                errorProvider1.SetError(textBoxNombreEmpleado, "El nombre debe ser con carácter entre 3 y 50");
             }
-            else
-            {
-                errorProvider2.SetError(textBoxNombreEmpleado, "");
-            }
-
-
+            else errorProvider1.SetError(textBoxNombreEmpleado, "");
             if (textBoxApellidoEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider2.SetError(textBoxApellidoEmpleado, "El apellido del empleado debe tener entre 3 y 50 caracteres");
+                errorProvider1.SetError(textBoxApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
             }
-            else
-            {
-                errorProvider2.SetError(textBoxApellidoEmpleado, "");
-            }
-
-            if (textBoxDescripcion.Text.Length < 3)
+            else errorProvider1.SetError(textBoxApellidoEmpleado, "");
+            if (textBoxDocumento.Text.Length < 6)
             {
                 hayError = true;
-                errorProvider2.SetError(textBoxDescripcion, "La descripcion del empleado debe tener entre 3 y 100 caracteres");
+                errorProvider1.SetError(textBoxDocumento, "El DNI debe ser con número entre 6 y 8");
             }
-            else
-            {
-                errorProvider2.SetError(textBoxDescripcion, "");
-            }
+            else errorProvider1.SetError(textBoxDocumento, "");
+
 
             if (hayError)
                 return;
 
-            string nombre = textBoxNombreEmpleado.Text;
-            string descripcion = textBoxApellidoEmpleado.Text;
-
-            EnumTipoEmpleado tipoEmpleado;
-            Enum.TryParse<EnumTipoEmpleado>(ComboboxTipoEmpleado.SelectedValue.ToString(), out tipoEmpleado);
+            Enum.TryParse<EnumTipoEmpleado>(txtTipoEmpleado.Text, out EnumTipoEmpleado tipoEmpleado);
 
             ControladorEmpleado Cempleado = new ControladorEmpleado();
 
@@ -91,19 +81,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = Cempleado.ModificarEmpleado(empleado.MiPersona.IdPersona,empleado.MiEmpleado.IdEmpleado,textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
             if (resultado > 0)
             {
-                ((InterfazListaEmpleado)padre).ModificarMensaje("Se ha modificado el EMPLEADO");
+                Padre.ModificarMensaje("Se ha modificado el EMPLEADO");
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el nombre del EMPLEADO", "Empleado");
+                MessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Dispose();
         }

@@ -51,7 +51,7 @@
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaFin" Type="datetime" Nullable="false" />
-    <Property Name="DeporteIdDeporte" Type="int" Nullable="false" />
+    <Property Name="EstadoCurso" Type="int" Nullable="false" />
     <Property Name="Deporte_IdDeporte" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Deportes">
@@ -235,9 +235,9 @@
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="None" Precision="3" />
           <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DeporteIdDeporte" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Profesores" Relationship="DiagramasDeTablas.ProfesorCurso" FromRole="Curso" ToRole="Profesor" />
           <NavigationProperty Name="Deporte" Relationship="DiagramasDeTablas.CursoDeporte" FromRole="Curso" ToRole="Deporte" />
+          <Property Name="EstadoCurso" Type="DiagramasDeTablas.EnumEstadoCurso" Nullable="false" />
         </EntityType>
         <EntityType Name="Deporte">
           <Key>
@@ -310,6 +310,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EnumType Name="EnumEstadoCurso">
+          <Member Name="Inicial" Value="1" />
+          <Member Name="Pendiente" Value="2" />
+          <Member Name="Activo" Value="3" />
+          <Member Name="Finalizado" Value="4" />
+          <Member Name="Anulado" Value="5" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -323,7 +330,7 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
           <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
-          <ScalarProperty Name="DeporteIdDeporte" ColumnName="DeporteIdDeporte" />
+          <ScalarProperty Name="EstadoCurso" ColumnName="EstadoCurso" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

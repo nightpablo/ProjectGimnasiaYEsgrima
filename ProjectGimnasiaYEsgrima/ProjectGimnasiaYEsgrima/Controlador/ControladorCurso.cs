@@ -25,6 +25,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                FechaFin = unaFechaFin,
+               EstadoCurso = EnumEstadoCurso.Inicial,
                Deporte = deporte
             };
 
@@ -34,7 +35,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
           
         }
 
-        public List<Curso> ListarTodosCursosFiltro(params Object[] parametros)
+        public List<ModelCurso> ListarTodosCursosFiltro(params Object[] parametros)
         {
             if (parametros.Length < 2)
                 return null;
@@ -42,7 +43,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         }
 
 
-        public List<Curso> ListarTodosCursos()
+        public List<ModelCurso> ListarTodosCursos()
         {
             return BdCurso.ListarTodos();
         }
@@ -59,8 +60,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                 FechaFin = unaFechaFin,
-                Deporte = deporte,
-                DeporteIdDeporte = deporte.IdDeporte
+                Deporte = deporte
             };
             return BdCurso.Actualizar(unCurso);
 
@@ -75,6 +75,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         {
             if (parametros.Length == 0) return null;
             return BdCurso.BuscarPorClavesUnicas(parametros);
+        }
+
+        public Curso BuscarCursoPorID(int id)
+        {
+            return BdCurso.BuscarPorID(id);
         }
     }
 }

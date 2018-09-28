@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +15,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazModificarCurso : Form
     {
-        private Form padre;
-        private Curso curso;
-        public InterfazModificarCurso(Form padre, Curso curso)
+        private InterfazListarCurso Padre;
+        private Curso Curso;
+        public InterfazModificarCurso(InterfazListarCurso padre, Curso curso)
         {
-            this.padre = padre;
-            this.curso = curso;
+            Padre = padre;
+            Curso = new ControladorCurso().BuscarCursoPorID(curso.IdCurso);
             InitializeComponent();
             txtNombreCurso.Text = curso.Nombre;
             DateTimeInicio.Value = curso.FechaInicio;
-            dateTimeFin.Value = curso.FechaInicio;
+            DateTimeFin.Value = curso.FechaInicio;
 
 
             ControladorDeporte Cdeporte = new ControladorDeporte();
@@ -35,15 +36,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ComboBoxDeporte.Focus();
             foreach (Deporte i in ComboBoxDeporte.Items)
             {
-                if (i.IdDeporte.Equals(curso.DeporteIdDeporte))
+                if (i.IdDeporte.Equals(Curso.Deporte.IdDeporte))
                 {
                     ComboBoxDeporte.SelectedItem = i;
                     break;
                 }
             }
-            //ComboBoxDeporte.SelectedIndex = ComboBoxDeporte.FindString(curso.Deporte.Nombre);
-            //(Deporte) Convert.ToInt32(ComboBoxDeporte.SelectedValue) = curso.DeporteIdDeporte;
 
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            DateTimeInicio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            DateTimeFin.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
 
         }
 
@@ -55,21 +59,23 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
             }
-            else
+            else errorProvider1.SetError(txtNombreCurso, "");
+            /*if (DateTimeFin.Value.CompareTo(DateTimeInicio) < 1)
             {
-                errorProvider1.SetError(txtNombreCurso, "");
+                hayError = true;
+                errorProvider1.SetError(DateTimeInicio, "El dia de comienzo debe ser antes que el dia de fin del curso");
+                errorProvider1.SetError(DateTimeFin, "El dia de comienzo debe ser antes que el dia de fin del curso");
             }
-
+            else { errorProvider1.SetError(DateTimeInicio, ""); errorProvider1.SetError(DateTimeFin, ""); }
+            */
             if (hayError)
                 return;
-            string nombre = txtNombreCurso.Text;
-            string descripcion = txtNombreCurso.Text;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado = un_controlador_curso.ModificarCurso(curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, dateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
+            var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
-                ((InterfazListarCurso)padre).ModificarMensaje("Se ha modificado el Curso");
+                Padre.ModificarMensaje("Se ha modificado el Curso");
                 Dispose();
             }
             else if (resultado == -2)
@@ -82,10 +88,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Dispose();
         }
 
-        private void ComboBoxDeporte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

@@ -15,13 +15,13 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                
+
                 context.Deportes.Add(entrada);
                 context.SaveChanges();
                 return 1;
             }
         }
-        
+
         public int Actualizar(Deporte entrada)
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -45,7 +45,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return 1;
             }
         }
-        
+
         public List<Deporte> ListarTodos()
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -82,6 +82,16 @@ namespace ProjectGimnasiaYEsgrima.BD
                 context.Entry(d).State = System.Data.Entity.EntityState.Unchanged;
                 return d;
             }
+        }
+
+        public bool PerteneceAlgunCurso(Deporte deporte)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                Curso c = context.Cursos.AsEnumerable().FirstOrDefault(b => b.Deporte.IdDeporte == deporte.IdDeporte);
+                return c != null;
+            }
+
         }
     }
 }

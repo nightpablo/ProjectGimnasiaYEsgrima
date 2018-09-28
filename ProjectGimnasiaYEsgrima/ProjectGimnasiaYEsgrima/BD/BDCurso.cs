@@ -15,7 +15,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             {
                 context.Entry(entrada.Deporte).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
-                
+
                 context.SaveChanges();
                 return 1;
             }
@@ -33,7 +33,7 @@ namespace ProjectGimnasiaYEsgrima.BD
         }
 
         public int Eliminar(Curso entrada)
-         {
+        {
             using (var context = new DiagramasDeTablasContainer1())
             {
                 context.Entry(context.Cursos.Find(entrada.IdCurso)).State = System.Data.Entity.EntityState.Deleted;
@@ -42,23 +42,43 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        public List<Curso> ListarTodos()
+        
+
+        public List<ModelCurso> ListarTodos()
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                return context.Cursos.ToList();
+                return context.Cursos.Select(e => new ModelCurso()
+                {
+                    IdCurso = e.IdCurso,
+                    Nombre = e.Nombre,
+                    FechaInicio = e.FechaInicio,
+                    FechaFin = e.FechaFin,
+                    EstadoCurso = e.EstadoCurso,
+                    Deporte = e.Deporte
+                }).ToList();
             }
         }
 
-        public List<Curso> ListarPorFiltro(params object[] parametros)
+        public List<ModelCurso> ListarPorFiltro(params object[] parametros)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                 var j = context.Cursos.AsEnumerable()
-                 .Where(b => b.Nombre.Contains((string)parametros[0]))
-                                .ToList();
-                var iddep = ((Deporte) parametros[1]).IdDeporte;
-                return iddep==0? j : j.Where(b => b.Deporte.IdDeporte == iddep).ToList();
+                var j = context.Cursos.AsEnumerable()
+                .Where(b => b.Nombre.Contains((string)parametros[0]))
+                               .ToList();
+                var iddep = ((Deporte)parametros[1]).IdDeporte;
+                var k = j.Select(e => new ModelCurso()
+                {
+                    IdCurso = e.IdCurso,
+                    Nombre = e.Nombre,
+                    FechaInicio = e.FechaInicio,
+                    FechaFin = e.FechaFin,
+                    Profesores = new List<Profesor>(e.Profesores),
+                    EstadoCurso = e.EstadoCurso,
+                    Deporte = e.Deporte
+                }).ToList();
+                return iddep == 0 ? k : k.Where(b => b.Deporte.IdDeporte == iddep).ToList();
 
             }
         }
@@ -70,6 +90,24 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return context.Cursos.AsEnumerable()
                     .FirstOrDefault(b => b.Nombre.Contains((string)parametros[0]));
             }
+        }
+
+        public Curso BuscarPorID(int id)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Cursos.Find(id);
+            }
+        }
+
+        List<Curso> INterfaceBD<Curso>.ListarTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Curso> INterfaceBD<Curso>.ListarPorFiltro(params object[] parametros)
+        {
+            throw new NotImplementedException();
         }
     }
 

@@ -36,7 +36,7 @@
             this.labelFechaInicioCurso = new System.Windows.Forms.Label();
             this.DateTimeInicio = new System.Windows.Forms.DateTimePicker();
             this.labelFechaFinCurso = new System.Windows.Forms.Label();
-            this.dateTimeFin = new System.Windows.Forms.DateTimePicker();
+            this.DateTimeFin = new System.Windows.Forms.DateTimePicker();
             this.labelModificarCursoNombre = new System.Windows.Forms.Label();
             this.BotonGuardarCurso = new System.Windows.Forms.Button();
             this.BotonCancelarCurso = new System.Windows.Forms.Button();
@@ -80,7 +80,6 @@
             this.ComboBoxDeporte.Name = "ComboBoxDeporte";
             this.ComboBoxDeporte.Size = new System.Drawing.Size(179, 21);
             this.ComboBoxDeporte.TabIndex = 11;
-            this.ComboBoxDeporte.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDeporte_SelectedIndexChanged);
             // 
             // labelFechaInicioCurso
             // 
@@ -112,11 +111,11 @@
             // 
             // dateTimeFin
             // 
-            this.dateTimeFin.Location = new System.Drawing.Point(256, 201);
-            this.dateTimeFin.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimeFin.Name = "dateTimeFin";
-            this.dateTimeFin.Size = new System.Drawing.Size(151, 20);
-            this.dateTimeFin.TabIndex = 15;
+            this.DateTimeFin.Location = new System.Drawing.Point(256, 201);
+            this.DateTimeFin.Margin = new System.Windows.Forms.Padding(2);
+            this.DateTimeFin.Name = "dateTimeFin";
+            this.DateTimeFin.Size = new System.Drawing.Size(151, 20);
+            this.DateTimeFin.TabIndex = 15;
             // 
             // labelModificarCursoNombre
             // 
@@ -159,15 +158,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BotonCancelarCurso);
-            this.Controls.Add(this.BotonGuardarCurso);
-            this.Controls.Add(this.labelModificarCursoNombre);
-            this.Controls.Add(this.dateTimeFin);
-            this.Controls.Add(this.labelFechaFinCurso);
-            this.Controls.Add(this.DateTimeInicio);
-            this.Controls.Add(this.labelFechaInicioCurso);
             this.Controls.Add(this.ComboBoxDeporte);
             this.Controls.Add(this.txtNombreCurso);
+            this.Controls.Add(this.DateTimeInicio);
+            this.Controls.Add(this.DateTimeFin);
+            this.Controls.Add(this.BotonGuardarCurso);
+            this.Controls.Add(this.BotonCancelarCurso);
+            this.Controls.Add(this.labelModificarCursoNombre);            
+            this.Controls.Add(this.labelFechaFinCurso);            
+            this.Controls.Add(this.labelFechaInicioCurso);
             this.Controls.Add(this.labelModificarCursoDeporte);
             this.Controls.Add(this.labelModificarCurso);
             this.Name = "InterfazModificarCurso";
@@ -187,7 +186,7 @@
         private System.Windows.Forms.Label labelFechaInicioCurso;
         private System.Windows.Forms.DateTimePicker DateTimeInicio;
         private System.Windows.Forms.Label labelFechaFinCurso;
-        private System.Windows.Forms.DateTimePicker dateTimeFin;
+        private System.Windows.Forms.DateTimePicker DateTimeFin;
         private System.Windows.Forms.Label labelModificarCursoNombre;
         private System.Windows.Forms.Button BotonGuardarCurso;
         private System.Windows.Forms.Button BotonCancelarCurso;

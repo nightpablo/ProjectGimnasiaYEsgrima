@@ -30,15 +30,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.components = new System.ComponentModel.Container();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcionDeporte = new System.Windows.Forms.TextBox();
             this.txtNombreDeporte = new System.Windows.Forms.TextBox();
             this.BotonGuardarDeporte = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BotonCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // label2
             // 
@@ -82,7 +88,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(197, 22);
             this.txtNombreDeporte.TabIndex = 6;
-            this.txtNombreDeporte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(new CampoConRestriccion().PermiteLetrasYNumerosYSeparador);
             // 
             // BotonGuardarDeporte
             // 
@@ -95,32 +100,33 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.BotonGuardarDeporte.UseVisualStyleBackColor = true;
             this.BotonGuardarDeporte.Click += new System.EventHandler(this.BotonGuardarDeporte_Click);
             // 
-            // button1
+            // BotonCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(255, 212);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 38);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.BotonCancelar.Location = new System.Drawing.Point(255, 212);
+            this.BotonCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.BotonCancelar.Name = "BotonCancelar";
+            this.BotonCancelar.Size = new System.Drawing.Size(141, 38);
+            this.BotonCancelar.TabIndex = 8;
+            this.BotonCancelar.Text = "Cancelar";
+            this.BotonCancelar.UseVisualStyleBackColor = true;
+            this.BotonCancelar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // InterfazModificarDeporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 475);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.BotonGuardarDeporte);
             this.Controls.Add(this.txtNombreDeporte);
             this.Controls.Add(this.txtDescripcionDeporte);
+            this.Controls.Add(this.BotonGuardarDeporte);
+            this.Controls.Add(this.BotonCancelar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "InterfazModificarDeporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "InterfazModificarDeporte";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +140,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.TextBox txtDescripcionDeporte;
         private System.Windows.Forms.TextBox txtNombreDeporte;
         private System.Windows.Forms.Button BotonGuardarDeporte;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BotonCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

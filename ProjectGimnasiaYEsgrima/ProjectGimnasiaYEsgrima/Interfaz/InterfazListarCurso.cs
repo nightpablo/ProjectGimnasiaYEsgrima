@@ -31,7 +31,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             comboBoxDeporte.ValueMember = "IdDeporte";
             comboBoxDeporte.DisplayMember = "Nombre";
 
-
+            this.cursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscarCurso);
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 50);
         }
@@ -39,7 +39,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonBuscarCurso_Click(object sender, EventArgs e)
         {
             ControladorCurso controladorCurso = new ControladorCurso();
-            List<Curso> listaCurso = null;
+            List<ModelCurso> listaCurso = null;
             cursoBindingSource.Clear();
 
             if (txtNombreCurso.Text.ToString().Equals("") && ((Deporte)comboBoxDeporte.SelectedItem).IdDeporte == 0)
@@ -88,6 +88,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                         this.ModificarMensaje("Se ha eliminado el CURSO");
                     }
                 }
+
+            }
+            else if (DataGridListarCursos.Columns[e.ColumnIndex].Name.Equals("Agregar Profesor"))
+            {
 
             }
             BotonBuscarCurso_Click(sender, e);

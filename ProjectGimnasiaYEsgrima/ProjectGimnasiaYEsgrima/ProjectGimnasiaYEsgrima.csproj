@@ -178,6 +178,10 @@
     <Compile Include="Modelo\Empleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\EnumEstadoCurso.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModelCurso.cs" />
     <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
