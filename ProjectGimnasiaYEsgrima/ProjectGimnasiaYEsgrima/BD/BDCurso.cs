@@ -55,7 +55,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                     FechaInicio = e.FechaInicio,
                     FechaFin = e.FechaFin,
                     EstadoCurso = e.EstadoCurso,
-                    Deporte = e.Deporte
+                    Deporte = e.Deporte,
+                    Curso = e
                 }).ToList();
             }
         }
@@ -76,7 +77,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                     FechaFin = e.FechaFin,
                     Profesores = new List<Profesor>(e.Profesores),
                     EstadoCurso = e.EstadoCurso,
-                    Deporte = e.Deporte
+                    Deporte = e.Deporte,
+                    Curso = e
                 }).ToList();
                 return iddep == 0 ? k : k.Where(b => b.Deporte.IdDeporte == iddep).ToList();
 
@@ -108,6 +110,40 @@ namespace ProjectGimnasiaYEsgrima.BD
         List<Curso> INterfaceBD<Curso>.ListarPorFiltro(params object[] parametros)
         {
             throw new NotImplementedException();
+        }
+
+        public List<ModelCurso> ListarTodosPorEmpleado(Empleado emp)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Entry(emp).State = System.Data.Entity.EntityState.Modified;
+                return context.Cursos.AsEnumerable().Where(b=>b.Profesores.Contains((Profesor)emp)).
+                    Select(e => new ModelCurso()
+                {
+                    IdCurso = e.IdCurso,
+                    Nombre = e.Nombre,
+                    FechaInicio = e.FechaInicio,
+                    FechaFin = e.FechaFin,
+                    EstadoCurso = e.EstadoCurso,
+                    Deporte = e.Deporte,
+                    Curso = e
+                }).ToList();
+            }
+        }
+
+        public int AsignarEmpleado(Empleado emp, Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Empleados.Attach(emp);
+                ((Profesor)emp).Cursos.Add(
+                    context.Cursos.AsEnumerable().FirstOrDefault(c=>c.IdCurso==curso.IdCurso)
+                    );
+                context.SaveChanges();
+                return 1;
+
+
+            }
         }
     }
 

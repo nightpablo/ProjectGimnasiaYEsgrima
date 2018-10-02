@@ -13,9 +13,15 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime FechaInicio { get; set; }
         public System.DateTime FechaFin { get; set; }
         public EnumEstadoCurso EstadoCurso { get; set; }
+        public Curso Curso;
 
         public List<Profesor> Profesores { get; set; }
         public Deporte Deporte { get; set; }
+
+        public ModelCurso()
+        {
+            Profesores = new List<Profesor>();
+        }
 
     }
 }

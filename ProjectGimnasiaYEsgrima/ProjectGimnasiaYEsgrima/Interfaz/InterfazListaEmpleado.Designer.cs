@@ -41,13 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ComboBoxTipoEmpleado = new System.Windows.Forms.ComboBox();
             this.dataGridViewEmpleadoPersona = new System.Windows.Forms.DataGridView();
+            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AgregarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -167,6 +168,7 @@
             this.apellidoDataGridViewTextBoxColumn,
             this.dNIDataGridViewTextBoxColumn,
             this.tipoEmpleadoDataGridViewTextBoxColumn,
+            this.AgregarCurso,
             this.Modificar,
             this.Eliminar});
             this.dataGridViewEmpleadoPersona.DataSource = this.empleadoPersonaBindingSource;
@@ -177,6 +179,10 @@
             this.dataGridViewEmpleadoPersona.Size = new System.Drawing.Size(865, 194);
             this.dataGridViewEmpleadoPersona.TabIndex = 18;
             this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmpleadoPersona_CellContentClick);
+            // 
+            // empleadoPersonaBindingSource
+            // 
+            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -202,6 +208,14 @@
             this.tipoEmpleadoDataGridViewTextBoxColumn.HeaderText = "TipoEmpleado";
             this.tipoEmpleadoDataGridViewTextBoxColumn.Name = "tipoEmpleadoDataGridViewTextBoxColumn";
             // 
+            // AgregarCurso
+            // 
+            this.AgregarCurso.HeaderText = "";
+            this.AgregarCurso.Name = "AgregarCurso";
+            this.AgregarCurso.ReadOnly = true;
+            this.AgregarCurso.Text = "Agregar Curso";
+            this.AgregarCurso.UseColumnTextForButtonValue = true;
+            // 
             // Modificar
             // 
             this.Modificar.HeaderText = "";
@@ -217,10 +231,6 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
-            // 
-            // empleadoPersonaBindingSource
-            // 
-            
             // 
             // InterfazListaEmpleado
             // 
@@ -263,12 +273,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ComboBoxTipoEmpleado;
         private System.Windows.Forms.DataGridView dataGridViewEmpleadoPersona;
+        private System.Windows.Forms.BindingSource empleadoPersonaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn AgregarCurso;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.BindingSource empleadoPersonaBindingSource;
     }
 }

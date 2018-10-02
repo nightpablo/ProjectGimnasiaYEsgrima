@@ -48,6 +48,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.ListarTodos();
         }
 
+        public List<ModelCurso> ListarTodosCursosDelEmpleado(Empleado emp)
+        {
+            return BdCurso.ListarTodosPorEmpleado(emp);
+        }
+
         public int ModificarCurso(int id, string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
@@ -80,6 +85,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         public Curso BuscarCursoPorID(int id)
         {
             return BdCurso.BuscarPorID(id);
+        }
+
+        public int AsignarEmpleadoAlCurso(Empleado emp, Curso curso)
+        {
+            return BdCurso.AsignarEmpleado(emp, curso);
         }
     }
 }

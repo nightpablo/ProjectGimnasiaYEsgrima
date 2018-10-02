@@ -52,8 +52,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
 
             unEmpleado.Persona = unaPersona;
-            bdEmpleado.Crear(unEmpleado);
-            return 1;
+            return bdEmpleado.Crear(unEmpleado);
         }
 
         public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista()
@@ -112,17 +111,15 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 unEmpleado.IdEmpleado = idEmpleado;
 
 
-                bdEmpleado.Actualizar(unEmpleado);
+                return bdEmpleado.Actualizar(unEmpleado);
             }
 
        
-            return 1;
         }
 
         public int EliminarEmpleado(Empleado empleado)
         {
-            bdEmpleado.Eliminar(empleado);
-            return 0;
+            return bdEmpleado.Eliminar(empleado);
         }
 
         public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
