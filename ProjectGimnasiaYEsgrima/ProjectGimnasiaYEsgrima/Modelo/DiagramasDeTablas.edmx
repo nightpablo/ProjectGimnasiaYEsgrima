@@ -246,6 +246,7 @@
           <Property Name="IdDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descripcion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Estado" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Persona">
           <Key>
@@ -316,6 +317,10 @@
           <Member Name="Activo" Value="3" />
           <Member Name="Finalizado" Value="4" />
           <Member Name="Anulado" Value="5" />
+        </EnumType>
+        <EnumType Name="EnumEstadoDeporte">
+          <Member Name="Baja" Value="0" />
+          <Member Name="Creada" Value="1" />
         </EnumType>
       </Schema>
     </edmx:ConceptualModels>

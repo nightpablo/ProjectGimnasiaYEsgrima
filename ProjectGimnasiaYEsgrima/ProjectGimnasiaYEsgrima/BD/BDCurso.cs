@@ -145,6 +145,21 @@ namespace ProjectGimnasiaYEsgrima.BD
 
             }
         }
+
+        public int EliminarEmpleado(Empleado emp, Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Empleados.Attach(emp);
+                ((Profesor)emp).Cursos.Remove(
+                    context.Cursos.AsEnumerable().FirstOrDefault(c => c.IdCurso == curso.IdCurso)
+                    );
+                context.SaveChanges();
+                return 1;
+
+
+            }
+        }
     }
 
 }

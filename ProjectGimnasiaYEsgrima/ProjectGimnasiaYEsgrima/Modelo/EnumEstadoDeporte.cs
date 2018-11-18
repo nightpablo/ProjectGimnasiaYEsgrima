@@ -10,13 +10,10 @@
 namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Deporte
+    public enum EnumEstadoDeporte : int
     {
-        public int IdDeporte { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public string Estado { get; set; }
+        Baja = 0,
+        Creada = 1
     }
 }
