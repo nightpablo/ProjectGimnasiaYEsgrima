@@ -10,14 +10,13 @@
 namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
+    using System.Collections.Generic;
     
-    public enum EnumEstadoCurso : int
+    public partial class ValorCuotaInicial
     {
-        Baja = 0,
-        Activo = 1,
-        Pendiente = 2,
-        Iniciado = 3,
-        Cancelado = 4,
-        Terminado = 5
+        public int IdCuotaInicial { get; set; }
+        public System.DateTime FechaInicio { get; set; }
+        public System.DateTime FechaFin { get; set; }
+        public double Importe { get; set; }
     }
 }

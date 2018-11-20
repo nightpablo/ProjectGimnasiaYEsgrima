@@ -25,7 +25,7 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                context.Entry(entrada.Deporte).State = System.Data.Entity.EntityState.Modified;
+                
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
                 return 1;
@@ -48,7 +48,12 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                return context.Cursos.Select(e => new ModelCurso()
+                return context.Cursos
+                    .AsEnumerable()
+                    .Where(b=>b.EstadoCurso != EnumEstadoCurso.Baja)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Cancelado)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Terminado)
+                    .Select(e => new ModelCurso()
                 {
                     IdCurso = e.IdCurso,
                     Nombre = e.Nombre,
@@ -69,7 +74,12 @@ namespace ProjectGimnasiaYEsgrima.BD
                 .Where(b => b.Nombre.Contains((string)parametros[0]))
                                .ToList();
                 var iddep = ((Deporte)parametros[1]).IdDeporte;
-                var k = j.Select(e => new ModelCurso()
+                var k = j
+                    .AsEnumerable()
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Baja)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Cancelado)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Terminado)
+                    .Select(e => new ModelCurso()
                 {
                     IdCurso = e.IdCurso,
                     Nombre = e.Nombre,
@@ -117,8 +127,12 @@ namespace ProjectGimnasiaYEsgrima.BD
             using (var context = new DiagramasDeTablasContainer1())
             {
                 context.Entry(emp).State = System.Data.Entity.EntityState.Modified;
-                return context.Cursos.AsEnumerable().Where(b=>b.Profesores.Contains((Profesor)emp)).
-                    Select(e => new ModelCurso()
+                return context.Cursos.AsEnumerable().Where(b=>b.Profesores.Contains((Profesor)emp))
+                    .AsEnumerable()
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Baja)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Cancelado)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Terminado)
+                    .Select(e => new ModelCurso()
                 {
                     IdCurso = e.IdCurso,
                     Nombre = e.Nombre,
@@ -158,6 +172,31 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return 1;
 
 
+            }
+        }
+
+        public int DarBajaPorDeporte(Deporte deporte)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                List<Curso> cursos = context.Cursos.AsEnumerable()
+                    .Where(b => b.Deporte.IdDeporte == deporte.IdDeporte)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Baja)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Cancelado)
+                    .Where(b => b.EstadoCurso != EnumEstadoCurso.Terminado)
+                    .ToList();
+
+                foreach (var i in cursos)
+                {
+                    if (i.EstadoCurso == EnumEstadoCurso.Activo || i.EstadoCurso == EnumEstadoCurso.Pendiente)
+                        i.EstadoCurso = EnumEstadoCurso.Baja;
+                    else
+                        i.EstadoCurso = EnumEstadoCurso.Cancelado;
+                    context.Entry(i).State = System.Data.Entity.EntityState.Modified;
+
+                }
+                context.SaveChanges();
+                return 1;
             }
         }
     }

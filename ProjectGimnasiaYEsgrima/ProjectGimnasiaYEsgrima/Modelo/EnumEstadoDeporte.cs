@@ -14,6 +14,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     public enum EnumEstadoDeporte : int
     {
         Baja = 0,
-        Creada = 1
+        Activo = 1
     }
 }

@@ -18,6 +18,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public Curso()
         {
             this.Profesores = new HashSet<Profesor>();
+            this.Socios = new HashSet<Socio>();
         }
     
         public int IdCurso { get; set; }
@@ -25,9 +26,12 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime FechaInicio { get; set; }
         public System.DateTime FechaFin { get; set; }
         public EnumEstadoCurso EstadoCurso { get; set; }
+        public double Costo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Profesor> Profesores { get; set; }
         public virtual Deporte Deporte { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Socio> Socios { get; set; }
     }
 }

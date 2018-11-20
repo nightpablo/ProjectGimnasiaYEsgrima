@@ -17,19 +17,27 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int CrearCurso(string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
-            if (BdCurso.BuscarPorClavesUnicas(unNombre) != null)
+            Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
+            if (buscado != null && buscado.EstadoCurso == EnumEstadoCurso.Baja) { 
+                buscado.EstadoCurso = EnumEstadoCurso.Activo;
+                buscado.FechaInicio = unaFechaInicio;
+                buscado.FechaFin = unaFechaFin;
+                BdCurso.Actualizar(buscado);
+                return -1;
+            }
+            else if(buscado !=null)
                 return -2;
 
-            Curso unCurso = new Curso()
+            buscado = new Curso()
             {
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                FechaFin = unaFechaFin,
-               EstadoCurso = EnumEstadoCurso.Inicial,
+               EstadoCurso = EnumEstadoCurso.Activo,
                Deporte = deporte
             };
 
-            BdCurso.Crear(unCurso);
+            BdCurso.Crear(buscado);
 
             return 1;
           
@@ -55,10 +63,6 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int ModificarCurso(int id, string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
-            Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
-            if (buscado != null && buscado.IdCurso != id)
-                return -2;
-
             Curso unCurso = new Curso()
             {
                 IdCurso = id,
@@ -73,7 +77,14 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         
         public int EliminarCurso(Curso unCurso)
         {
-            return BdCurso.Eliminar(unCurso);
+            if(unCurso.EstadoCurso == EnumEstadoCurso.Activo || unCurso.EstadoCurso == EnumEstadoCurso.Pendiente)
+                unCurso.EstadoCurso = EnumEstadoCurso.Baja;
+            else if (unCurso.EstadoCurso == EnumEstadoCurso.Iniciado)
+                unCurso.EstadoCurso = EnumEstadoCurso.Cancelado;
+
+
+            return BdCurso.Actualizar(unCurso);
+            //return BdCurso.Eliminar(unCurso);
         }
 
         public Curso BuscarCursoPorClavesUnicas(params object[] parametros)

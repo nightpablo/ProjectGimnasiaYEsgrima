@@ -17,6 +17,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int IdDeporte { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public string Estado { get; set; }
+        public EnumEstadoDeporte EstadoDeporte { get; set; }
     }
 }

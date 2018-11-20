@@ -14,11 +14,10 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
     public partial class RegistroIngresoEgreso
     {
-        public int Id { get; set; }
-        public System.DateTime Ingreso { get; set; }
-        public System.DateTime Salida { get; set; }
-        public int EmpleadoIdEmpleado { get; set; }
-        public byte[] EntradaSalida { get; set; }
+        public int IdRegistro { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public System.DateTime HoraIngreso { get; set; }
+        public System.DateTime HoraEgreso { get; set; }
     
         public virtual Empleado Empleado { get; set; }
     }

@@ -11,9 +11,13 @@
     <EntitySet Name="Personas" EntityType="DiagramasDeTablas.Store.Personas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados" EntityType="DiagramasDeTablas.Store.Empleados" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RegistroIngresoEgresoes" EntityType="DiagramasDeTablas.Store.RegistroIngresoEgresoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Socios" EntityType="DiagramasDeTablas.Store.Socios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CuotaSocios" EntityType="DiagramasDeTablas.Store.CuotaSocios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ValorCuotaInicials" EntityType="DiagramasDeTablas.Store.ValorCuotaInicials" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Profesor" EntityType="DiagramasDeTablas.Store.Empleados_Profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Secretaria" EntityType="DiagramasDeTablas.Store.Empleados_Secretaria" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProfesorCurso" EntityType="DiagramasDeTablas.Store.ProfesorCurso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SocioCurso" EntityType="DiagramasDeTablas.Store.SocioCurso" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_ProfesorCurso_Profesor" Association="DiagramasDeTablas.Store.FK_ProfesorCurso_Profesor">
       <End Role="Profesor" EntitySet="Empleados_Profesor" />
       <End Role="ProfesorCurso" EntitySet="ProfesorCurso" />
@@ -30,9 +34,29 @@
       <End Role="Curso" EntitySet="Cursos" />
       <End Role="Deporte" EntitySet="Deportes" />
     </AssociationSet>
-    <AssociationSet Name="EmpleadoRegistroIngresoSalida" Association="DiagramasDeTablas.Store.EmpleadoRegistroIngresoSalida">
+    <AssociationSet Name="SocioPersona" Association="DiagramasDeTablas.Store.SocioPersona">
+      <End Role="Socio" EntitySet="Socios" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SocioCurso_Socio" Association="DiagramasDeTablas.Store.FK_SocioCurso_Socio">
+      <End Role="Socio" EntitySet="Socios" />
+      <End Role="SocioCurso" EntitySet="SocioCurso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SocioCurso_Curso" Association="DiagramasDeTablas.Store.FK_SocioCurso_Curso">
+      <End Role="Curso" EntitySet="Cursos" />
+      <End Role="SocioCurso" EntitySet="SocioCurso" />
+    </AssociationSet>
+    <AssociationSet Name="CuotaSocioValorCuotaInicial" Association="DiagramasDeTablas.Store.CuotaSocioValorCuotaInicial">
+      <End Role="CuotaSocio" EntitySet="CuotaSocios" />
+      <End Role="ValorCuotaInicial" EntitySet="ValorCuotaInicials" />
+    </AssociationSet>
+    <AssociationSet Name="CuotaSocioSocio" Association="DiagramasDeTablas.Store.CuotaSocioSocio">
+      <End Role="CuotaSocio" EntitySet="CuotaSocios" />
+      <End Role="Socio" EntitySet="Socios" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoRegistroIngresoEgreso" Association="DiagramasDeTablas.Store.EmpleadoRegistroIngresoEgreso">
       <End Role="Empleado" EntitySet="Empleados" />
-      <End Role="RegistroIngresoSalida" EntitySet="RegistroIngresoEgresoes" />
+      <End Role="RegistroIngresoEgreso" EntitySet="RegistroIngresoEgresoes" />
     </AssociationSet>
     <AssociationSet Name="FK_Profesor_inherits_Empleado" Association="DiagramasDeTablas.Store.FK_Profesor_inherits_Empleado">
       <End Role="Empleado" EntitySet="Empleados" />
@@ -52,6 +76,7 @@
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaFin" Type="datetime" Nullable="false" />
     <Property Name="EstadoCurso" Type="int" Nullable="false" />
+    <Property Name="Costo" Type="float" Nullable="false" />
     <Property Name="Deporte_IdDeporte" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Deportes">
@@ -61,6 +86,7 @@
     <Property Name="IdDeporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EstadoDeporte" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personas">
     <Key>
@@ -80,17 +106,49 @@
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="DescripcionTarea" Type="nvarchar(max)" Nullable="true" />
     <Property Name="TipoEmpleado" Type="int" Nullable="false" />
+    <Property Name="EstadoEmpleado" Type="int" Nullable="false" />
     <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RegistroIngresoEgresoes">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdRegistro" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Ingreso" Type="datetime" Nullable="false" />
-    <Property Name="Salida" Type="datetime" Nullable="false" />
-    <Property Name="EmpleadoIdEmpleado" Type="int" Nullable="false" />
-    <Property Name="EntradaSalida" Type="varbinary(max)" Nullable="false" />
+    <Property Name="IdRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="HoraIngreso" Type="datetime" Nullable="false" />
+    <Property Name="HoraEgreso" Type="datetime" Nullable="false" />
+    <Property Name="Empleado_IdEmpleado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Socios">
+    <Key>
+      <PropertyRef Name="IdSocio" />
+    </Key>
+    <Property Name="IdSocio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="CategoriaSocio" Type="int" Nullable="false" />
+    <Property Name="EstadoSocio" Type="int" Nullable="false" />
+    <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuotaSocios">
+    <Key>
+      <PropertyRef Name="IdCuota" />
+    </Key>
+    <Property Name="IdCuota" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+    <Property Name="FechaCobro" Type="datetime" Nullable="false" />
+    <Property Name="Importe" Type="float" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="ValorCuotaInicial_IdCuotaInicial" Type="int" Nullable="false" />
+    <Property Name="Socio_IdSocio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ValorCuotaInicials">
+    <Key>
+      <PropertyRef Name="IdCuotaInicial" />
+    </Key>
+    <Property Name="IdCuotaInicial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFin" Type="datetime" Nullable="false" />
+    <Property Name="Importe" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Empleados_Profesor">
     <Key>
@@ -111,6 +169,14 @@
     </Key>
     <Property Name="Profesores_IdEmpleado" Type="int" Nullable="false" />
     <Property Name="Cursos_IdCurso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SocioCurso">
+    <Key>
+      <PropertyRef Name="Socios_IdSocio" />
+      <PropertyRef Name="SocioCurso_Socio_IdCurso" />
+    </Key>
+    <Property Name="Socios_IdSocio" Type="int" Nullable="false" />
+    <Property Name="SocioCurso_Socio_IdCurso" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PersonaEmpleado">
     <End Role="Persona" Type="DiagramasDeTablas.Store.Personas" Multiplicity="1" />
@@ -136,15 +202,51 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="EmpleadoRegistroIngresoSalida">
-    <End Role="Empleado" Type="DiagramasDeTablas.Store.Empleados" Multiplicity="1" />
-    <End Role="RegistroIngresoSalida" Type="DiagramasDeTablas.Store.RegistroIngresoEgresoes" Multiplicity="*" />
+  <Association Name="SocioPersona">
+    <End Role="Socio" Type="DiagramasDeTablas.Store.Socios" Multiplicity="*" />
+    <End Role="Persona" Type="DiagramasDeTablas.Store.Personas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="Socio">
+        <PropertyRef Name="Persona_IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CuotaSocioValorCuotaInicial">
+    <End Role="CuotaSocio" Type="DiagramasDeTablas.Store.CuotaSocios" Multiplicity="*" />
+    <End Role="ValorCuotaInicial" Type="DiagramasDeTablas.Store.ValorCuotaInicials" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ValorCuotaInicial">
+        <PropertyRef Name="IdCuotaInicial" />
+      </Principal>
+      <Dependent Role="CuotaSocio">
+        <PropertyRef Name="ValorCuotaInicial_IdCuotaInicial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CuotaSocioSocio">
+    <End Role="CuotaSocio" Type="DiagramasDeTablas.Store.CuotaSocios" Multiplicity="*" />
+    <End Role="Socio" Type="DiagramasDeTablas.Store.Socios" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="IdSocio" />
+      </Principal>
+      <Dependent Role="CuotaSocio">
+        <PropertyRef Name="Socio_IdSocio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpleadoRegistroIngresoEgreso">
+    <End Role="Empleado" Type="DiagramasDeTablas.Store.Empleados" Multiplicity="0..1" />
+    <End Role="RegistroIngresoEgreso" Type="DiagramasDeTablas.Store.RegistroIngresoEgresoes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Empleado">
         <PropertyRef Name="IdEmpleado" />
       </Principal>
-      <Dependent Role="RegistroIngresoSalida">
-        <PropertyRef Name="EmpleadoIdEmpleado" />
+      <Dependent Role="RegistroIngresoEgreso">
+        <PropertyRef Name="Empleado_IdEmpleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -169,6 +271,30 @@
       </Principal>
       <Dependent Role="ProfesorCurso">
         <PropertyRef Name="Cursos_IdCurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SocioCurso_Socio">
+    <End Role="Socio" Type="DiagramasDeTablas.Store.Socios" Multiplicity="1" />
+    <End Role="SocioCurso" Type="DiagramasDeTablas.Store.SocioCurso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="IdSocio" />
+      </Principal>
+      <Dependent Role="SocioCurso">
+        <PropertyRef Name="Socios_IdSocio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SocioCurso_Curso">
+    <End Role="SocioCurso" Type="DiagramasDeTablas.Store.SocioCurso" Multiplicity="*" />
+    <End Role="Curso" Type="DiagramasDeTablas.Store.Cursos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="IdCurso" />
+      </Principal>
+      <Dependent Role="SocioCurso">
+        <PropertyRef Name="SocioCurso_Socio_IdCurso" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -222,9 +348,28 @@
             <End Role="Deporte" EntitySet="Deportes" />
           </AssociationSet>
           <EntitySet Name="RegistroIngresoEgresoes" EntityType="DiagramasDeTablas.RegistroIngresoEgreso" />
-          <AssociationSet Name="EmpleadoRegistroIngresoSalida" Association="DiagramasDeTablas.EmpleadoRegistroIngresoSalida">
+          <EntitySet Name="Socios" EntityType="DiagramasDeTablas.Socio" />
+          <AssociationSet Name="SocioPersona" Association="DiagramasDeTablas.SocioPersona">
+            <End Role="Socio" EntitySet="Socios" />
+            <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="SocioCurso" Association="DiagramasDeTablas.SocioCurso">
+            <End Role="Socio" EntitySet="Socios" />
+            <End Role="Curso" EntitySet="Cursos" />
+          </AssociationSet>
+          <EntitySet Name="CuotaSocios" EntityType="DiagramasDeTablas.CuotaSocio" />
+          <EntitySet Name="ValorCuotaInicials" EntityType="DiagramasDeTablas.ValorCuotaInicial" />
+          <AssociationSet Name="CuotaSocioValorCuotaInicial" Association="DiagramasDeTablas.CuotaSocioValorCuotaInicial">
+            <End Role="CuotaSocio" EntitySet="CuotaSocios" />
+            <End Role="ValorCuotaInicial" EntitySet="ValorCuotaInicials" />
+          </AssociationSet>
+          <AssociationSet Name="CuotaSocioSocio" Association="DiagramasDeTablas.CuotaSocioSocio">
+            <End Role="CuotaSocio" EntitySet="CuotaSocios" />
+            <End Role="Socio" EntitySet="Socios" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadoRegistroIngresoEgreso" Association="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso">
             <End Role="Empleado" EntitySet="Empleados" />
-            <End Role="RegistroIngresoSalida" EntitySet="RegistroIngresoEgresoes" />
+            <End Role="RegistroIngresoEgreso" EntitySet="RegistroIngresoEgresoes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Curso">
@@ -238,6 +383,8 @@
           <NavigationProperty Name="Profesores" Relationship="DiagramasDeTablas.ProfesorCurso" FromRole="Curso" ToRole="Profesor" />
           <NavigationProperty Name="Deporte" Relationship="DiagramasDeTablas.CursoDeporte" FromRole="Curso" ToRole="Deporte" />
           <Property Name="EstadoCurso" Type="DiagramasDeTablas.EnumEstadoCurso" Nullable="false" />
+          <Property Name="Costo" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Socios" Relationship="DiagramasDeTablas.SocioCurso" FromRole="Curso" ToRole="Socio" />
         </EntityType>
         <EntityType Name="Deporte">
           <Key>
@@ -246,7 +393,7 @@
           <Property Name="IdDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Descripcion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Estado" Type="String" Nullable="false" />
+          <Property Name="EstadoDeporte" Type="DiagramasDeTablas.EnumEstadoDeporte" Nullable="false" />
         </EntityType>
         <EntityType Name="Persona">
           <Key>
@@ -267,6 +414,7 @@
           <Property Name="DescripcionTarea" Type="String" Nullable="true" />
           <NavigationProperty Name="Persona" Relationship="DiagramasDeTablas.PersonaEmpleado" FromRole="Empleado" ToRole="Persona" />
           <Property Name="TipoEmpleado" Type="DiagramasDeTablas.EnumTipoEmpleado" Nullable="false" />
+          <Property Name="EstadoEmpleado" Type="DiagramasDeTablas.EnumEstadoEmpleado" Nullable="false" />
         </EntityType>
         <EntityType Name="Profesor" BaseType="DiagramasDeTablas.Empleado" >
           <NavigationProperty Name="Cursos" Relationship="DiagramasDeTablas.ProfesorCurso" FromRole="Profesor" ToRole="Curso" />
@@ -290,38 +438,91 @@
         </Association>
         <EntityType Name="RegistroIngresoEgreso">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdRegistro" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ingreso" Type="DateTime" Nullable="false" />
-          <Property Name="Salida" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="DiagramasDeTablas.EmpleadoRegistroIngresoSalida" FromRole="RegistroIngresoSalida" ToRole="Empleado" />
-          <Property Name="EmpleadoIdEmpleado" Type="Int32" Nullable="false" />
-          <Property Name="EntradaSalida" Type="Binary" Nullable="false" />
+          <Property Name="IdRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="HoraIngreso" Type="DateTime" Nullable="false" />
+          <Property Name="HoraEgreso" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" FromRole="RegistroIngresoEgreso" ToRole="Empleado" />
         </EntityType>
-        <Association Name="EmpleadoRegistroIngresoSalida">
-          <End Type="DiagramasDeTablas.Empleado" Role="Empleado" Multiplicity="1" />
-          <End Type="DiagramasDeTablas.RegistroIngresoEgreso" Role="RegistroIngresoSalida" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="IdEmpleado" />
-            </Principal>
-            <Dependent Role="RegistroIngresoSalida">
-              <PropertyRef Name="EmpleadoIdEmpleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EnumType Name="EnumEstadoCurso">
-          <Member Name="Inicial" Value="1" />
+          <Member Name="Baja" Value="0" />
+          <Member Name="Activo" Value="1" />
           <Member Name="Pendiente" Value="2" />
-          <Member Name="Activo" Value="3" />
-          <Member Name="Finalizado" Value="4" />
-          <Member Name="Anulado" Value="5" />
+          <Member Name="Iniciado" Value="3" />
+          <Member Name="Cancelado" Value="4" />
+          <Member Name="Terminado" Value="5" />
         </EnumType>
         <EnumType Name="EnumEstadoDeporte">
           <Member Name="Baja" Value="0" />
-          <Member Name="Creada" Value="1" />
+          <Member Name="Activo" Value="1" />
         </EnumType>
+        <EnumType Name="EnumEstadoEmpleado" >
+          <Member Name="Baja" Value="0" />
+          <Member Name="Activo" Value="1" />
+        </EnumType>
+        <EnumType Name="EnumEstadoSocio" >
+          <Member Name="Baja" Value="0" />
+          <Member Name="Activo" Value="1" />
+          <Member Name="Deudor" Value="2" />
+        </EnumType>
+        <EnumType Name="EnumCategoriaSocio" />
+        <EnumType Name="EnumEstadoCuotaSocio" >
+          <Member Name="NoPagado" Value="0" />
+          <Member Name="Pagado" Value="1" />
+        </EnumType>
+        <EntityType Name="Socio">
+          <Key>
+            <PropertyRef Name="IdSocio" />
+          </Key>
+          <Property Name="IdSocio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="CategoriaSocio" Type="DiagramasDeTablas.EnumCategoriaSocio" Nullable="false" />
+          <Property Name="EstadoSocio" Type="DiagramasDeTablas.EnumEstadoSocio" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="DiagramasDeTablas.SocioPersona" FromRole="Socio" ToRole="Persona" />
+        </EntityType>
+        <Association Name="SocioPersona">
+          <End Type="DiagramasDeTablas.Socio" Role="Socio" Multiplicity="0..1" />
+          <End Type="DiagramasDeTablas.Persona" Role="Persona" Multiplicity="1" />
+        </Association>
+        <Association Name="SocioCurso">
+          <End Type="DiagramasDeTablas.Socio" Role="Socio" Multiplicity="*" />
+          <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="*" />
+        </Association>
+        <EntityType Name="CuotaSocio">
+          <Key>
+            <PropertyRef Name="IdCuota" />
+          </Key>
+          <Property Name="IdCuota" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" />
+          <Property Name="FechaCobro" Type="DateTime" Nullable="false" />
+          <Property Name="Importe" Type="Double" Nullable="false" />
+          <Property Name="Estado" Type="DiagramasDeTablas.EnumEstadoCuotaSocio" Nullable="false" />
+          <NavigationProperty Name="ValorCuotaInicial" Relationship="DiagramasDeTablas.CuotaSocioValorCuotaInicial" FromRole="CuotaSocio" ToRole="ValorCuotaInicial" />
+          <NavigationProperty Name="Socio" Relationship="DiagramasDeTablas.CuotaSocioSocio" FromRole="CuotaSocio" ToRole="Socio" />
+        </EntityType>
+        <EntityType Name="ValorCuotaInicial">
+          <Key>
+            <PropertyRef Name="IdCuotaInicial" />
+          </Key>
+          <Property Name="IdCuotaInicial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" />
+          <Property Name="Importe" Type="Double" Nullable="false" />
+        </EntityType>
+        <Association Name="CuotaSocioValorCuotaInicial">
+          <End Type="DiagramasDeTablas.CuotaSocio" Role="CuotaSocio" Multiplicity="*" />
+          <End Type="DiagramasDeTablas.ValorCuotaInicial" Role="ValorCuotaInicial" Multiplicity="1" />
+        </Association>
+        <Association Name="CuotaSocioSocio">
+          <End Type="DiagramasDeTablas.CuotaSocio" Role="CuotaSocio" Multiplicity="*" />
+          <End Type="DiagramasDeTablas.Socio" Role="Socio" Multiplicity="1" />
+        </Association>
+        <Association Name="EmpleadoRegistroIngresoEgreso">
+          <End Type="DiagramasDeTablas.Empleado" Role="Empleado" Multiplicity="0..1" />
+          <End Type="DiagramasDeTablas.RegistroIngresoEgreso" Role="RegistroIngresoEgreso" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -336,6 +537,7 @@
           <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
           <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
           <ScalarProperty Name="EstadoCurso" ColumnName="EstadoCurso" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -345,6 +547,7 @@
           <ScalarProperty Name="IdDeporte" ColumnName="IdDeporte" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstadoDeporte" ColumnName="EstadoDeporte" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -366,6 +569,7 @@
           <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
           <ScalarProperty Name="DescripcionTarea" ColumnName="DescripcionTarea" />
           <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
+          <ScalarProperty Name="EstadoEmpleado" ColumnName="EstadoEmpleado" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Profesor)">
@@ -382,11 +586,41 @@
     <EntitySetMapping Name="RegistroIngresoEgresoes">
       <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.RegistroIngresoEgreso)">
         <MappingFragment StoreEntitySet="RegistroIngresoEgresoes">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Ingreso" ColumnName="Ingreso" />
-          <ScalarProperty Name="Salida" ColumnName="Salida" />
-          <ScalarProperty Name="EmpleadoIdEmpleado" ColumnName="EmpleadoIdEmpleado" />
-          <ScalarProperty Name="EntradaSalida" ColumnName="EntradaSalida" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="HoraIngreso" ColumnName="HoraIngreso" />
+          <ScalarProperty Name="HoraEgreso" ColumnName="HoraEgreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Socios">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Socio)">
+        <MappingFragment StoreEntitySet="Socios">
+          <ScalarProperty Name="IdSocio" ColumnName="IdSocio" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="CategoriaSocio" ColumnName="CategoriaSocio" />
+          <ScalarProperty Name="EstadoSocio" ColumnName="EstadoSocio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuotaSocios">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.CuotaSocio)">
+        <MappingFragment StoreEntitySet="CuotaSocios">
+          <ScalarProperty Name="IdCuota" ColumnName="IdCuota" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="FechaCobro" ColumnName="FechaCobro" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ValorCuotaInicials">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.ValorCuotaInicial)">
+        <MappingFragment StoreEntitySet="ValorCuotaInicials">
+          <ScalarProperty Name="IdCuotaInicial" ColumnName="IdCuotaInicial" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -413,6 +647,47 @@
       <EndProperty Name="Curso">
         <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
       </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SocioPersona" TypeName="DiagramasDeTablas.SocioPersona" StoreEntitySet="Socios">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="IdPersona" ColumnName="Persona_IdPersona" />
+      </EndProperty>
+      <EndProperty Name="Socio">
+        <ScalarProperty Name="IdSocio" ColumnName="IdSocio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SocioCurso" TypeName="DiagramasDeTablas.SocioCurso" StoreEntitySet="SocioCurso">
+      <EndProperty Name="Socio">
+        <ScalarProperty Name="IdSocio" ColumnName="Socios_IdSocio" />
+      </EndProperty>
+      <EndProperty Name="Curso">
+        <ScalarProperty Name="IdCurso" ColumnName="SocioCurso_Socio_IdCurso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CuotaSocioValorCuotaInicial" TypeName="DiagramasDeTablas.CuotaSocioValorCuotaInicial" StoreEntitySet="CuotaSocios">
+      <EndProperty Name="ValorCuotaInicial">
+        <ScalarProperty Name="IdCuotaInicial" ColumnName="ValorCuotaInicial_IdCuotaInicial" />
+      </EndProperty>
+      <EndProperty Name="CuotaSocio">
+        <ScalarProperty Name="IdCuota" ColumnName="IdCuota" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CuotaSocioSocio" TypeName="DiagramasDeTablas.CuotaSocioSocio" StoreEntitySet="CuotaSocios">
+      <EndProperty Name="Socio">
+        <ScalarProperty Name="IdSocio" ColumnName="Socio_IdSocio" />
+      </EndProperty>
+      <EndProperty Name="CuotaSocio">
+        <ScalarProperty Name="IdCuota" ColumnName="IdCuota" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmpleadoRegistroIngresoEgreso" TypeName="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" StoreEntitySet="RegistroIngresoEgresoes">
+      <EndProperty Name="Empleado">
+        <ScalarProperty Name="IdEmpleado" ColumnName="Empleado_IdEmpleado" />
+      </EndProperty>
+      <EndProperty Name="RegistroIngresoEgreso">
+        <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+      </EndProperty>
+      <Condition ColumnName="Empleado_IdEmpleado" IsNull="false" />
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

@@ -18,6 +18,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public DiagramasDeTablasContainer1()
             : base("name=DiagramasDeTablasContainer1")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,5 +31,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public virtual DbSet<Persona> Personas { get; set; }
         public virtual DbSet<Empleado> Empleados { get; set; }
         public virtual DbSet<RegistroIngresoEgreso> RegistroIngresoEgresoes { get; set; }
+        public virtual DbSet<Socio> Socios { get; set; }
+        public virtual DbSet<CuotaSocio> CuotaSocios { get; set; }
+        public virtual DbSet<ValorCuotaInicial> ValorCuotaInicials { get; set; }
     }
 }

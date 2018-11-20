@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/28/2018 15:15:21
--- Generated from EDMX file: C:\Users\NightCrawler-Nbook\Source\Repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
+-- Date Created: 11/20/2018 16:06:40
+-- Generated from EDMX file: C:\Users\NightCrawler-NBOOK\source\repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -79,6 +79,7 @@ CREATE TABLE [dbo].[Cursos] (
     [FechaInicio] datetime  NOT NULL,
     [FechaFin] datetime  NOT NULL,
     [EstadoCurso] int  NOT NULL,
+    [Costo] float  NOT NULL,
     [Deporte_IdDeporte] int  NOT NULL
 );
 GO
@@ -87,7 +88,8 @@ GO
 CREATE TABLE [dbo].[Deportes] (
     [IdDeporte] int IDENTITY(1,1) NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
-    [Descripcion] nvarchar(max)  NULL
+    [Descripcion] nvarchar(max)  NULL,
+    [EstadoDeporte] int  NOT NULL
 );
 GO
 
@@ -107,17 +109,49 @@ CREATE TABLE [dbo].[Empleados] (
     [FechaInicio] datetime  NOT NULL,
     [DescripcionTarea] nvarchar(max)  NULL,
     [TipoEmpleado] int  NOT NULL,
+    [EstadoEmpleado] int  NOT NULL,
     [Persona_IdPersona] int  NOT NULL
 );
 GO
 
 -- Creating table 'RegistroIngresoEgresoes'
 CREATE TABLE [dbo].[RegistroIngresoEgresoes] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Ingreso] datetime  NOT NULL,
-    [Salida] datetime  NOT NULL,
-    [EmpleadoIdEmpleado] int  NOT NULL,
-    [EntradaSalida] varbinary(max)  NOT NULL
+    [IdRegistro] int IDENTITY(1,1) NOT NULL,
+    [Fecha] datetime  NOT NULL,
+    [HoraIngreso] datetime  NOT NULL,
+    [HoraEgreso] datetime  NOT NULL,
+    [Empleado_IdEmpleado] int  NULL
+);
+GO
+
+-- Creating table 'Socios'
+CREATE TABLE [dbo].[Socios] (
+    [IdSocio] int IDENTITY(1,1) NOT NULL,
+    [FechaInicio] datetime  NOT NULL,
+    [CategoriaSocio] int  NOT NULL,
+    [EstadoSocio] int  NOT NULL,
+    [Persona_IdPersona] int  NOT NULL
+);
+GO
+
+-- Creating table 'CuotaSocios'
+CREATE TABLE [dbo].[CuotaSocios] (
+    [IdCuota] int IDENTITY(1,1) NOT NULL,
+    [FechaEmision] datetime  NOT NULL,
+    [FechaCobro] datetime  NOT NULL,
+    [Importe] float  NOT NULL,
+    [Estado] int  NOT NULL,
+    [ValorCuotaInicial_IdCuotaInicial] int  NOT NULL,
+    [Socio_IdSocio] int  NOT NULL
+);
+GO
+
+-- Creating table 'ValorCuotaInicials'
+CREATE TABLE [dbo].[ValorCuotaInicials] (
+    [IdCuotaInicial] int IDENTITY(1,1) NOT NULL,
+    [FechaInicio] datetime  NOT NULL,
+    [FechaFin] datetime  NOT NULL,
+    [Importe] float  NOT NULL
 );
 GO
 
@@ -137,6 +171,13 @@ GO
 CREATE TABLE [dbo].[ProfesorCurso] (
     [Profesores_IdEmpleado] int  NOT NULL,
     [Cursos_IdCurso] int  NOT NULL
+);
+GO
+
+-- Creating table 'SocioCurso'
+CREATE TABLE [dbo].[SocioCurso] (
+    [Socios_IdSocio] int  NOT NULL,
+    [SocioCurso_Socio_IdCurso] int  NOT NULL
 );
 GO
 
@@ -168,10 +209,28 @@ ADD CONSTRAINT [PK_Empleados]
     PRIMARY KEY CLUSTERED ([IdEmpleado] ASC);
 GO
 
--- Creating primary key on [Id] in table 'RegistroIngresoEgresoes'
+-- Creating primary key on [IdRegistro] in table 'RegistroIngresoEgresoes'
 ALTER TABLE [dbo].[RegistroIngresoEgresoes]
 ADD CONSTRAINT [PK_RegistroIngresoEgresoes]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdRegistro] ASC);
+GO
+
+-- Creating primary key on [IdSocio] in table 'Socios'
+ALTER TABLE [dbo].[Socios]
+ADD CONSTRAINT [PK_Socios]
+    PRIMARY KEY CLUSTERED ([IdSocio] ASC);
+GO
+
+-- Creating primary key on [IdCuota] in table 'CuotaSocios'
+ALTER TABLE [dbo].[CuotaSocios]
+ADD CONSTRAINT [PK_CuotaSocios]
+    PRIMARY KEY CLUSTERED ([IdCuota] ASC);
+GO
+
+-- Creating primary key on [IdCuotaInicial] in table 'ValorCuotaInicials'
+ALTER TABLE [dbo].[ValorCuotaInicials]
+ADD CONSTRAINT [PK_ValorCuotaInicials]
+    PRIMARY KEY CLUSTERED ([IdCuotaInicial] ASC);
 GO
 
 -- Creating primary key on [IdEmpleado] in table 'Empleados_Profesor'
@@ -190,6 +249,12 @@ GO
 ALTER TABLE [dbo].[ProfesorCurso]
 ADD CONSTRAINT [PK_ProfesorCurso]
     PRIMARY KEY CLUSTERED ([Profesores_IdEmpleado], [Cursos_IdCurso] ASC);
+GO
+
+-- Creating primary key on [Socios_IdSocio], [SocioCurso_Socio_IdCurso] in table 'SocioCurso'
+ALTER TABLE [dbo].[SocioCurso]
+ADD CONSTRAINT [PK_SocioCurso]
+    PRIMARY KEY CLUSTERED ([Socios_IdSocio], [SocioCurso_Socio_IdCurso] ASC);
 GO
 
 -- --------------------------------------------------
@@ -250,19 +315,88 @@ ON [dbo].[Cursos]
     ([Deporte_IdDeporte]);
 GO
 
--- Creating foreign key on [EmpleadoIdEmpleado] in table 'RegistroIngresoEgresoes'
+-- Creating foreign key on [Persona_IdPersona] in table 'Socios'
+ALTER TABLE [dbo].[Socios]
+ADD CONSTRAINT [FK_SocioPersona]
+    FOREIGN KEY ([Persona_IdPersona])
+    REFERENCES [dbo].[Personas]
+        ([IdPersona])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SocioPersona'
+CREATE INDEX [IX_FK_SocioPersona]
+ON [dbo].[Socios]
+    ([Persona_IdPersona]);
+GO
+
+-- Creating foreign key on [Socios_IdSocio] in table 'SocioCurso'
+ALTER TABLE [dbo].[SocioCurso]
+ADD CONSTRAINT [FK_SocioCurso_Socio]
+    FOREIGN KEY ([Socios_IdSocio])
+    REFERENCES [dbo].[Socios]
+        ([IdSocio])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [SocioCurso_Socio_IdCurso] in table 'SocioCurso'
+ALTER TABLE [dbo].[SocioCurso]
+ADD CONSTRAINT [FK_SocioCurso_Curso]
+    FOREIGN KEY ([SocioCurso_Socio_IdCurso])
+    REFERENCES [dbo].[Cursos]
+        ([IdCurso])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SocioCurso_Curso'
+CREATE INDEX [IX_FK_SocioCurso_Curso]
+ON [dbo].[SocioCurso]
+    ([SocioCurso_Socio_IdCurso]);
+GO
+
+-- Creating foreign key on [ValorCuotaInicial_IdCuotaInicial] in table 'CuotaSocios'
+ALTER TABLE [dbo].[CuotaSocios]
+ADD CONSTRAINT [FK_CuotaSocioValorCuotaInicial]
+    FOREIGN KEY ([ValorCuotaInicial_IdCuotaInicial])
+    REFERENCES [dbo].[ValorCuotaInicials]
+        ([IdCuotaInicial])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CuotaSocioValorCuotaInicial'
+CREATE INDEX [IX_FK_CuotaSocioValorCuotaInicial]
+ON [dbo].[CuotaSocios]
+    ([ValorCuotaInicial_IdCuotaInicial]);
+GO
+
+-- Creating foreign key on [Socio_IdSocio] in table 'CuotaSocios'
+ALTER TABLE [dbo].[CuotaSocios]
+ADD CONSTRAINT [FK_CuotaSocioSocio]
+    FOREIGN KEY ([Socio_IdSocio])
+    REFERENCES [dbo].[Socios]
+        ([IdSocio])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CuotaSocioSocio'
+CREATE INDEX [IX_FK_CuotaSocioSocio]
+ON [dbo].[CuotaSocios]
+    ([Socio_IdSocio]);
+GO
+
+-- Creating foreign key on [Empleado_IdEmpleado] in table 'RegistroIngresoEgresoes'
 ALTER TABLE [dbo].[RegistroIngresoEgresoes]
-ADD CONSTRAINT [FK_EmpleadoRegistroIngresoSalida]
-    FOREIGN KEY ([EmpleadoIdEmpleado])
+ADD CONSTRAINT [FK_EmpleadoRegistroIngresoEgreso]
+    FOREIGN KEY ([Empleado_IdEmpleado])
     REFERENCES [dbo].[Empleados]
         ([IdEmpleado])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoRegistroIngresoSalida'
-CREATE INDEX [IX_FK_EmpleadoRegistroIngresoSalida]
+-- Creating non-clustered index for FOREIGN KEY 'FK_EmpleadoRegistroIngresoEgreso'
+CREATE INDEX [IX_FK_EmpleadoRegistroIngresoEgreso]
 ON [dbo].[RegistroIngresoEgresoes]
-    ([EmpleadoIdEmpleado]);
+    ([Empleado_IdEmpleado]);
 GO
 
 -- Creating foreign key on [IdEmpleado] in table 'Empleados_Profesor'

@@ -160,6 +160,9 @@
     <Compile Include="Interfaz\InterfazRegistrarEntradaSalida.Designer.cs">
       <DependentUpon>InterfazRegistrarEntradaSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\CuotaSocio.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Curso.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
@@ -184,17 +187,29 @@
     <Compile Include="Modelo\Empleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\EnumCategoriaSocio.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\EnumEstadoCuotaSocio.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\EnumEstadoCurso.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\EnumEstadoDeporte.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\ModelCurso.cs" />
-    <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
+    <Compile Include="Modelo\EnumEstadoEmpleado.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\EnumEstadoSocio.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\ModelCurso.cs" />
+    <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
     <Compile Include="Modelo\Persona.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
@@ -205,6 +220,12 @@
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Secretaria.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Socio.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ValorCuotaInicial.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

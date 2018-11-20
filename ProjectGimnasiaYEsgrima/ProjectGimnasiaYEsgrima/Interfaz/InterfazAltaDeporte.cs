@@ -49,6 +49,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 Padre.ModificarMensaje("Se ha creado un nuevo DEPORTE");
                 Dispose();
             }
+            else if(resultado == -1)
+            {
+                Padre.ModificarMensaje("Se ha recuperado el DEPORTE");
+                Dispose();
+            }
             else if(resultado == -2)
                 MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
 

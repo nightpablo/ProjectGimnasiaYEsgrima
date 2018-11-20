@@ -47,92 +47,89 @@
             // labelModificarCurso
             // 
             this.labelModificarCurso.AutoSize = true;
-            this.labelModificarCurso.Location = new System.Drawing.Point(57, 34);
-            this.labelModificarCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelModificarCurso.Location = new System.Drawing.Point(76, 42);
             this.labelModificarCurso.Name = "labelModificarCurso";
-            this.labelModificarCurso.Size = new System.Drawing.Size(80, 13);
+            this.labelModificarCurso.Size = new System.Drawing.Size(106, 17);
             this.labelModificarCurso.TabIndex = 1;
             this.labelModificarCurso.Text = "Modificar Curso";
             // 
             // labelModificarCursoDeporte
             // 
             this.labelModificarCursoDeporte.AutoSize = true;
-            this.labelModificarCursoDeporte.Location = new System.Drawing.Point(67, 67);
-            this.labelModificarCursoDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelModificarCursoDeporte.Location = new System.Drawing.Point(89, 82);
             this.labelModificarCursoDeporte.Name = "labelModificarCursoDeporte";
-            this.labelModificarCursoDeporte.Size = new System.Drawing.Size(45, 13);
+            this.labelModificarCursoDeporte.Size = new System.Drawing.Size(59, 17);
             this.labelModificarCursoDeporte.TabIndex = 2;
             this.labelModificarCursoDeporte.Text = "Deporte";
             // 
             // txtNombreCurso
             // 
-            this.txtNombreCurso.Location = new System.Drawing.Point(161, 101);
-            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreCurso.Enabled = false;
+            this.txtNombreCurso.Location = new System.Drawing.Point(215, 124);
+            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.Size = new System.Drawing.Size(179, 20);
+            this.txtNombreCurso.Size = new System.Drawing.Size(237, 22);
             this.txtNombreCurso.TabIndex = 7;
             // 
             // ComboBoxDeporte
             // 
+            this.ComboBoxDeporte.Enabled = false;
             this.ComboBoxDeporte.FormattingEnabled = true;
-            this.ComboBoxDeporte.Location = new System.Drawing.Point(161, 59);
-            this.ComboBoxDeporte.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxDeporte.Location = new System.Drawing.Point(215, 73);
+            this.ComboBoxDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxDeporte.Name = "ComboBoxDeporte";
-            this.ComboBoxDeporte.Size = new System.Drawing.Size(179, 21);
+            this.ComboBoxDeporte.Size = new System.Drawing.Size(237, 24);
             this.ComboBoxDeporte.TabIndex = 11;
             // 
             // labelFechaInicioCurso
             // 
             this.labelFechaInicioCurso.AutoSize = true;
-            this.labelFechaInicioCurso.Location = new System.Drawing.Point(57, 173);
-            this.labelFechaInicioCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaInicioCurso.Location = new System.Drawing.Point(76, 213);
             this.labelFechaInicioCurso.Name = "labelFechaInicioCurso";
-            this.labelFechaInicioCurso.Size = new System.Drawing.Size(95, 13);
+            this.labelFechaInicioCurso.Size = new System.Drawing.Size(124, 17);
             this.labelFechaInicioCurso.TabIndex = 12;
             this.labelFechaInicioCurso.Text = "Fecha Inicio Curso";
             // 
             // DateTimeInicio
             // 
-            this.DateTimeInicio.Location = new System.Drawing.Point(60, 201);
-            this.DateTimeInicio.Margin = new System.Windows.Forms.Padding(2);
+            this.DateTimeInicio.Location = new System.Drawing.Point(80, 247);
+            this.DateTimeInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTimeInicio.Name = "DateTimeInicio";
-            this.DateTimeInicio.Size = new System.Drawing.Size(151, 20);
+            this.DateTimeInicio.Size = new System.Drawing.Size(200, 22);
             this.DateTimeInicio.TabIndex = 13;
             // 
             // labelFechaFinCurso
             // 
             this.labelFechaFinCurso.AutoSize = true;
-            this.labelFechaFinCurso.Location = new System.Drawing.Point(256, 173);
-            this.labelFechaFinCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaFinCurso.Location = new System.Drawing.Point(341, 213);
             this.labelFechaFinCurso.Name = "labelFechaFinCurso";
-            this.labelFechaFinCurso.Size = new System.Drawing.Size(84, 13);
+            this.labelFechaFinCurso.Size = new System.Drawing.Size(111, 17);
             this.labelFechaFinCurso.TabIndex = 14;
             this.labelFechaFinCurso.Text = "Fecha Fin Curso";
             // 
-            // dateTimeFin
+            // DateTimeFin
             // 
-            this.DateTimeFin.Location = new System.Drawing.Point(256, 201);
-            this.DateTimeFin.Margin = new System.Windows.Forms.Padding(2);
-            this.DateTimeFin.Name = "dateTimeFin";
-            this.DateTimeFin.Size = new System.Drawing.Size(151, 20);
+            this.DateTimeFin.Location = new System.Drawing.Point(341, 247);
+            this.DateTimeFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DateTimeFin.Name = "DateTimeFin";
+            this.DateTimeFin.Size = new System.Drawing.Size(200, 22);
             this.DateTimeFin.TabIndex = 15;
             // 
             // labelModificarCursoNombre
             // 
             this.labelModificarCursoNombre.AutoSize = true;
-            this.labelModificarCursoNombre.Location = new System.Drawing.Point(68, 108);
-            this.labelModificarCursoNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelModificarCursoNombre.Location = new System.Drawing.Point(91, 133);
             this.labelModificarCursoNombre.Name = "labelModificarCursoNombre";
-            this.labelModificarCursoNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelModificarCursoNombre.Size = new System.Drawing.Size(58, 17);
             this.labelModificarCursoNombre.TabIndex = 16;
             this.labelModificarCursoNombre.Text = "Nombre";
             // 
             // BotonGuardarCurso
             // 
-            this.BotonGuardarCurso.Location = new System.Drawing.Point(60, 249);
-            this.BotonGuardarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonGuardarCurso.Location = new System.Drawing.Point(80, 306);
+            this.BotonGuardarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BotonGuardarCurso.Name = "BotonGuardarCurso";
-            this.BotonGuardarCurso.Size = new System.Drawing.Size(106, 32);
+            this.BotonGuardarCurso.Size = new System.Drawing.Size(141, 39);
             this.BotonGuardarCurso.TabIndex = 17;
             this.BotonGuardarCurso.Text = "Guardar";
             this.BotonGuardarCurso.UseVisualStyleBackColor = true;
@@ -140,10 +137,10 @@
             // 
             // BotonCancelarCurso
             // 
-            this.BotonCancelarCurso.Location = new System.Drawing.Point(259, 249);
-            this.BotonCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonCancelarCurso.Location = new System.Drawing.Point(345, 306);
+            this.BotonCancelarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BotonCancelarCurso.Name = "BotonCancelarCurso";
-            this.BotonCancelarCurso.Size = new System.Drawing.Size(106, 32);
+            this.BotonCancelarCurso.Size = new System.Drawing.Size(141, 39);
             this.BotonCancelarCurso.TabIndex = 18;
             this.BotonCancelarCurso.Text = "Cancelar";
             this.BotonCancelarCurso.UseVisualStyleBackColor = true;
@@ -155,20 +152,21 @@
             // 
             // InterfazModificarCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ComboBoxDeporte);
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.DateTimeInicio);
             this.Controls.Add(this.DateTimeFin);
             this.Controls.Add(this.BotonGuardarCurso);
             this.Controls.Add(this.BotonCancelarCurso);
-            this.Controls.Add(this.labelModificarCursoNombre);            
-            this.Controls.Add(this.labelFechaFinCurso);            
+            this.Controls.Add(this.labelModificarCursoNombre);
+            this.Controls.Add(this.labelFechaFinCurso);
             this.Controls.Add(this.labelFechaInicioCurso);
             this.Controls.Add(this.labelModificarCursoDeporte);
             this.Controls.Add(this.labelModificarCurso);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InterfazModificarCurso";
             this.Text = "InterfazModificarCurso";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

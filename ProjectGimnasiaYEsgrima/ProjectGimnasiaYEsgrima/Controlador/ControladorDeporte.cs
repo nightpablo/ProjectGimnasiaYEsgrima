@@ -11,40 +11,44 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int CrearDeporte(string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {
-            if (una_bddeporte.BuscarPorClavesUnicas(nombre) != null)
+            Deporte UnDeporte = una_bddeporte.BuscarPorClavesUnicas(nombre);
+            if (UnDeporte != null && UnDeporte.EstadoDeporte == EnumEstadoDeporte.Baja) {
+                UnDeporte.EstadoDeporte = EnumEstadoDeporte.Activo;
+                una_bddeporte.Actualizar(UnDeporte);
+                return -1;
+            }
+            else if (UnDeporte != null)
                 return -2;
 
-            Deporte un_deporte = new Deporte
+            UnDeporte = new Deporte
             {
                 Nombre = nombre,
-                Descripcion = descripcion
+                Descripcion = descripcion,
+                EstadoDeporte = EnumEstadoDeporte.Activo
             };
                         
-            return una_bddeporte.Crear(un_deporte);
+            return una_bddeporte.Crear(UnDeporte);
         }
 
 
         public int ModificarDeporte(int id, string nombre, string descripcion) //Falta empezar a generar las condiciones if's para que no fallen
         {
             Deporte buscado = una_bddeporte.BuscarPorClavesUnicas(nombre);
-            if ( buscado != null && buscado.IdDeporte!=id)
-                return -2;
+            buscado.Descripcion = descripcion;
 
-            Deporte un_deporte = new Deporte
-            {
-                IdDeporte = id,
-                Nombre = nombre,
-                Descripcion = descripcion
-            };
+            
 
-            return una_bddeporte.Actualizar(un_deporte);
+            return una_bddeporte.Actualizar(buscado);
         }
 
         public int EliminarDeporte(Deporte deporte)
         {
-            if(!una_bddeporte.PerteneceAlgunCurso(deporte))
-                return una_bddeporte.Eliminar(deporte);
-            return -2;
+            Deporte buscado = una_bddeporte.BuscarPorClavesUnicas(deporte.Nombre);
+            new BDCurso().DarBajaPorDeporte(buscado);
+            buscado.EstadoDeporte = EnumEstadoDeporte.Baja;
+            
+            return una_bddeporte.Actualizar(buscado);
+            
         }
 
         public List<Deporte> ListarTodosDeportes()
