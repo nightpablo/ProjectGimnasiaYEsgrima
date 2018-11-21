@@ -17,14 +17,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     {
         private InterfazListarCurso Padre;
         private Curso Curso;
-        public InterfazModificarCurso(InterfazListarCurso padre, Curso curso)
+        public InterfazModificarCurso(InterfazListarCurso padre, ModelCurso curso)
         {
             Padre = padre;
             Curso = new ControladorCurso().BuscarCursoPorID(curso.IdCurso);
             InitializeComponent();
             txtNombreCurso.Text = curso.Nombre;
             DateTimeInicio.Value = curso.FechaInicio;
-            DateTimeFin.Value = curso.FechaInicio;
+            DateTimeFin.Value = curso.FechaFin;
 
 
             ControladorDeporte Cdeporte = new ControladorDeporte();
@@ -36,14 +36,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ComboBoxDeporte.Focus();
             foreach (Deporte i in ComboBoxDeporte.Items)
             {
-                if (i.IdDeporte.Equals(Curso.Deporte.IdDeporte))
+                if (i.IdDeporte.Equals(curso.Deporte.IdDeporte))
                 {
                     ComboBoxDeporte.SelectedItem = i;
                     break;
                 }
             }
 
-            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtImporteMensualCurso);
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
             DateTimeInicio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
             DateTimeFin.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
 
@@ -59,6 +60,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
             }
+            if (txtImporteMensualCurso.Text.Equals("") || Int32.Parse(txtImporteMensualCurso.Text)==0)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
+            }
             else errorProvider1.SetError(txtNombreCurso, "");
             /*if (DateTimeFin.Value.CompareTo(DateTimeInicio) < 1)
             {
@@ -72,7 +78,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
+            var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text,Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el Curso");

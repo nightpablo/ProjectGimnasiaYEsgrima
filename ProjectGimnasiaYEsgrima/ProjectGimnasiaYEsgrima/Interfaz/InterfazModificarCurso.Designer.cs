@@ -41,6 +41,8 @@
             this.BotonGuardarCurso = new System.Windows.Forms.Button();
             this.BotonCancelarCurso = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtImporteMensualCurso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             // labelModificarCursoNombre
             // 
             this.labelModificarCursoNombre.AutoSize = true;
-            this.labelModificarCursoNombre.Location = new System.Drawing.Point(91, 133);
+            this.labelModificarCursoNombre.Location = new System.Drawing.Point(90, 127);
             this.labelModificarCursoNombre.Name = "labelModificarCursoNombre";
             this.labelModificarCursoNombre.Size = new System.Drawing.Size(58, 17);
             this.labelModificarCursoNombre.TabIndex = 16;
@@ -150,16 +152,37 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(77, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Importe Mensual";
+            // 
+            // txtImporteMensualCurso
+            // 
+            this.txtImporteMensualCurso.Enabled = false;
+            this.txtImporteMensualCurso.Location = new System.Drawing.Point(215, 169);
+            this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
+            this.txtImporteMensualCurso.Size = new System.Drawing.Size(237, 22);
+            this.txtImporteMensualCurso.TabIndex = 7;
+            this.txtImporteMensualCurso.Text = "0";
+            // 
             // InterfazModificarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ComboBoxDeporte);
+            this.Controls.Add(this.txtImporteMensualCurso);
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.DateTimeInicio);
             this.Controls.Add(this.DateTimeFin);
             this.Controls.Add(this.BotonGuardarCurso);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BotonCancelarCurso);
             this.Controls.Add(this.labelModificarCursoNombre);
             this.Controls.Add(this.labelFechaFinCurso);
@@ -189,5 +212,7 @@
         private System.Windows.Forms.Button BotonGuardarCurso;
         private System.Windows.Forms.Button BotonCancelarCurso;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtImporteMensualCurso;
+        private System.Windows.Forms.Label label1;
     }
 }

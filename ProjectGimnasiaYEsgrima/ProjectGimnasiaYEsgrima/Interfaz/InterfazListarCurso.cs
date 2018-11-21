@@ -73,7 +73,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             if (DataGridListarCursos.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
-                InterfazModificarCurso interfazModificar = new InterfazModificarCurso(this, (Curso)DataGridListarCursos.CurrentRow.DataBoundItem);
+                ModelCurso seleccionado = (ModelCurso)DataGridListarCursos.CurrentRow.DataBoundItem;
+                if (seleccionado.EstadoCurso == EnumEstadoCurso.Iniciado) { 
+                    this.ModificarMensaje("No se puede modificar un CURSO Iniciado");
+                    return;
+                }
+                InterfazModificarCurso interfazModificar = new InterfazModificarCurso(this, (ModelCurso)DataGridListarCursos.CurrentRow.DataBoundItem);
                 interfazModificar.ShowDialog();
 
             }

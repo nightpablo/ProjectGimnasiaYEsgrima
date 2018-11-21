@@ -15,13 +15,14 @@ namespace ProjectGimnasiaYEsgrima.Controlador
     {
         BDCurso BdCurso = new BDCurso();
 
-        public int CrearCurso(string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
+        public int CrearCurso(string unNombre,int importe, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
             if (buscado != null && buscado.EstadoCurso == EnumEstadoCurso.Baja) { 
                 buscado.EstadoCurso = EnumEstadoCurso.Activo;
                 buscado.FechaInicio = unaFechaInicio;
                 buscado.FechaFin = unaFechaFin;
+                buscado.Costo = importe;
                 BdCurso.Actualizar(buscado);
                 return -1;
             }
@@ -31,6 +32,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             buscado = new Curso()
             {
                 Nombre = unNombre,
+                Costo = importe,
                 FechaInicio = unaFechaInicio,
                FechaFin = unaFechaFin,
                EstadoCurso = EnumEstadoCurso.Activo,
@@ -61,11 +63,12 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.ListarTodosPorEmpleado(emp);
         }
 
-        public int ModificarCurso(int id, string unNombre, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
+        public int ModificarCurso(int id, string unNombre,int importe, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             Curso unCurso = new Curso()
             {
                 IdCurso = id,
+                Costo = importe,
                 Nombre = unNombre,
                 FechaInicio = unaFechaInicio,
                 FechaFin = unaFechaFin,

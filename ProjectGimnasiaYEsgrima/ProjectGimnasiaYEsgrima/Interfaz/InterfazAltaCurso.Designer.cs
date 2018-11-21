@@ -43,16 +43,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.labelAltaCursoDeporte = new System.Windows.Forms.Label();
             this.ComboBoxDeporte = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtImporteMensualCurso = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAltaCurso
             // 
             this.labelAltaCurso.AutoSize = true;
-            this.labelAltaCurso.Location = new System.Drawing.Point(38, 24);
-            this.labelAltaCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAltaCurso.Location = new System.Drawing.Point(51, 30);
             this.labelAltaCurso.Name = "labelAltaCurso";
-            this.labelAltaCurso.Size = new System.Drawing.Size(55, 13);
+            this.labelAltaCurso.Size = new System.Drawing.Size(73, 17);
             this.labelAltaCurso.TabIndex = 0;
             this.labelAltaCurso.Text = "Alta Curso";
             this.labelAltaCurso.Click += new System.EventHandler(this.label1_Click);
@@ -60,47 +61,44 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // labelAltaCursoNombre
             // 
             this.labelAltaCursoNombre.AutoSize = true;
-            this.labelAltaCursoNombre.Location = new System.Drawing.Point(38, 93);
-            this.labelAltaCursoNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAltaCursoNombre.Location = new System.Drawing.Point(66, 113);
             this.labelAltaCursoNombre.Name = "labelAltaCursoNombre";
-            this.labelAltaCursoNombre.Size = new System.Drawing.Size(44, 13);
+            this.labelAltaCursoNombre.Size = new System.Drawing.Size(58, 17);
             this.labelAltaCursoNombre.TabIndex = 1;
             this.labelAltaCursoNombre.Text = "Nombre";
             // 
             // labelFechaInicioCurso
             // 
             this.labelFechaInicioCurso.AutoSize = true;
-            this.labelFechaInicioCurso.Location = new System.Drawing.Point(38, 132);
-            this.labelFechaInicioCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaInicioCurso.Location = new System.Drawing.Point(51, 184);
             this.labelFechaInicioCurso.Name = "labelFechaInicioCurso";
-            this.labelFechaInicioCurso.Size = new System.Drawing.Size(95, 13);
+            this.labelFechaInicioCurso.Size = new System.Drawing.Size(124, 17);
             this.labelFechaInicioCurso.TabIndex = 3;
             this.labelFechaInicioCurso.Text = "Fecha Inicio Curso";
             // 
             // labelFechaFinCurso
             // 
             this.labelFechaFinCurso.AutoSize = true;
-            this.labelFechaFinCurso.Location = new System.Drawing.Point(262, 132);
-            this.labelFechaFinCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFechaFinCurso.Location = new System.Drawing.Point(349, 184);
             this.labelFechaFinCurso.Name = "labelFechaFinCurso";
-            this.labelFechaFinCurso.Size = new System.Drawing.Size(84, 13);
+            this.labelFechaFinCurso.Size = new System.Drawing.Size(111, 17);
             this.labelFechaFinCurso.TabIndex = 5;
             this.labelFechaFinCurso.Text = "Fecha Fin Curso";
             // 
             // txtNombreCurso
             // 
-            this.txtNombreCurso.Location = new System.Drawing.Point(100, 89);
-            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreCurso.Location = new System.Drawing.Point(133, 110);
+            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.Size = new System.Drawing.Size(179, 20);
+            this.txtNombreCurso.Size = new System.Drawing.Size(237, 22);
             this.txtNombreCurso.TabIndex = 6;
             // 
             // BotonGuardarCurso
             // 
-            this.BotonGuardarCurso.Location = new System.Drawing.Point(88, 190);
-            this.BotonGuardarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonGuardarCurso.Location = new System.Drawing.Point(117, 256);
+            this.BotonGuardarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BotonGuardarCurso.Name = "BotonGuardarCurso";
-            this.BotonGuardarCurso.Size = new System.Drawing.Size(106, 32);
+            this.BotonGuardarCurso.Size = new System.Drawing.Size(141, 39);
             this.BotonGuardarCurso.TabIndex = 7;
             this.BotonGuardarCurso.Text = "Guardar";
             this.BotonGuardarCurso.UseVisualStyleBackColor = true;
@@ -108,10 +106,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // BotonCancelarCurso
             // 
-            this.BotonCancelarCurso.Location = new System.Drawing.Point(275, 190);
-            this.BotonCancelarCurso.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonCancelarCurso.Location = new System.Drawing.Point(367, 256);
+            this.BotonCancelarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BotonCancelarCurso.Name = "BotonCancelarCurso";
-            this.BotonCancelarCurso.Size = new System.Drawing.Size(106, 32);
+            this.BotonCancelarCurso.Size = new System.Drawing.Size(141, 39);
             this.BotonCancelarCurso.TabIndex = 8;
             this.BotonCancelarCurso.Text = "Cancelar";
             this.BotonCancelarCurso.UseVisualStyleBackColor = true;
@@ -119,27 +117,26 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // DateTimeInicio
             // 
-            this.DateTimeInicio.Location = new System.Drawing.Point(52, 152);
-            this.DateTimeInicio.Margin = new System.Windows.Forms.Padding(2);
+            this.DateTimeInicio.Location = new System.Drawing.Point(69, 209);
+            this.DateTimeInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTimeInicio.Name = "DateTimeInicio";
-            this.DateTimeInicio.Size = new System.Drawing.Size(151, 20);
+            this.DateTimeInicio.Size = new System.Drawing.Size(200, 22);
             this.DateTimeInicio.TabIndex = 9;
             // 
             // DateTimeFin
             // 
-            this.DateTimeFin.Location = new System.Drawing.Point(278, 150);
-            this.DateTimeFin.Margin = new System.Windows.Forms.Padding(2);
+            this.DateTimeFin.Location = new System.Drawing.Point(371, 207);
+            this.DateTimeFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTimeFin.Name = "DateTimeFin";
-            this.DateTimeFin.Size = new System.Drawing.Size(151, 20);
+            this.DateTimeFin.Size = new System.Drawing.Size(200, 22);
             this.DateTimeFin.TabIndex = 9;
             // 
             // labelAltaCursoDeporte
             // 
             this.labelAltaCursoDeporte.AutoSize = true;
-            this.labelAltaCursoDeporte.Location = new System.Drawing.Point(38, 61);
-            this.labelAltaCursoDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAltaCursoDeporte.Location = new System.Drawing.Point(65, 76);
             this.labelAltaCursoDeporte.Name = "labelAltaCursoDeporte";
-            this.labelAltaCursoDeporte.Size = new System.Drawing.Size(45, 13);
+            this.labelAltaCursoDeporte.Size = new System.Drawing.Size(59, 17);
             this.labelAltaCursoDeporte.TabIndex = 1;
             this.labelAltaCursoDeporte.Text = "Deporte";
             this.labelAltaCursoDeporte.Click += new System.EventHandler(this.label5_Click);
@@ -147,10 +144,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // ComboBoxDeporte
             // 
             this.ComboBoxDeporte.FormattingEnabled = true;
-            this.ComboBoxDeporte.Location = new System.Drawing.Point(100, 59);
-            this.ComboBoxDeporte.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxDeporte.Location = new System.Drawing.Point(133, 73);
+            this.ComboBoxDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxDeporte.Name = "ComboBoxDeporte";
-            this.ComboBoxDeporte.Size = new System.Drawing.Size(179, 21);
+            this.ComboBoxDeporte.Size = new System.Drawing.Size(237, 24);
             this.ComboBoxDeporte.TabIndex = 10;
             this.ComboBoxDeporte.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDeporte_SelectedIndexChanged);
             // 
@@ -158,11 +155,32 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtImporteMensualCurso
+            // 
+            this.txtImporteMensualCurso.Location = new System.Drawing.Point(133, 147);
+            this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
+            this.txtImporteMensualCurso.Size = new System.Drawing.Size(237, 22);
+            this.txtImporteMensualCurso.TabIndex = 12;
+            this.txtImporteMensualCurso.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Importe Mensual";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // InterfazAltaCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 232);
+            this.ClientSize = new System.Drawing.Size(617, 313);
+            this.Controls.Add(this.txtImporteMensualCurso);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxDeporte);
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.DateTimeInicio);
@@ -174,7 +192,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Controls.Add(this.labelAltaCursoDeporte);
             this.Controls.Add(this.labelAltaCursoNombre);
             this.Controls.Add(this.labelAltaCurso);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InterfazAltaCurso";
             this.Text = "InterfazAltaCurso";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -207,5 +225,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.Label labelAltaCursoDeporte;
         private System.Windows.Forms.ComboBox ComboBoxDeporte;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtImporteMensualCurso;
+        private System.Windows.Forms.Label label1;
     }
 }

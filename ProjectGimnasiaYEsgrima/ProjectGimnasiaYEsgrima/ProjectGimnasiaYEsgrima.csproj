@@ -280,6 +280,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Diagramas de clases\Incremento 1\Version 0.0.cd" />
     <None Include="dbGimnasiaYEsgrimaDataSet.xsc">
       <DependentUpon>dbGimnasiaYEsgrimaDataSet.xsd</DependentUpon>
     </None>

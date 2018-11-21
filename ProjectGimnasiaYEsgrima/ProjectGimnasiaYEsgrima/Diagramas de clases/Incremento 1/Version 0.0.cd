@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProjectGimnasiaYEsgrima.Modelo.Deporte">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <Members>
+      <Property Name="EstadoDeporte" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\Deporte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectGimnasiaYEsgrima.BD.BDDeporte">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <Members>
+      <Method Name="BuscarPorId" Hidden="true" />
+      <Method Name="PerteneceAlgunCurso" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAwAAAAAAAAAAAGBAAAAAAAIAAAAAAAAAIA=</HashCode>
+      <FileName>BD\BDDeporte.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ProjectGimnasiaYEsgrima.Interfaz.InterfazAltaDeporte">
+    <Position X="15.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="errorProvider1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Method Name="InterfazAltaDeporte" Hidden="true" />
+      <Field Name="labelAltaDeporte" Hidden="true" />
+      <Field Name="labelAltaDeporteDescripcion" Hidden="true" />
+      <Field Name="labelAltaDeporteNombbre" Hidden="true" />
+      <Field Name="Padre" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAQAAAAACAAAAAABALAACAiAAAwAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>Interfaz\InterfazAltaDeporte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

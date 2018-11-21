@@ -62,7 +62,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                     EstadoCurso = e.EstadoCurso,
                     Deporte = e.Deporte,
                     Curso = e
-                }).ToList();
+                })
+                .ToList();
             }
         }
 

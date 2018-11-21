@@ -30,12 +30,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ComboBoxDeporte.ValueMember = "IdDeporte";
             ComboBoxDeporte.DisplayMember = "Nombre";
 
-            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtImporteMensualCurso);
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
             DateTimeInicio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
             DateTimeFin.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
 
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
-            
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender,e);
         }
 
         private void BotonGuardarCurso_Click(object sender, EventArgs e)
@@ -45,6 +46,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 hayError = true;
                 errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
+            }
+            if (txtImporteMensualCurso.Text.Equals(""))
+            {
+                hayError = true;
+                errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
             }
             else errorProvider1.SetError(txtNombreCurso, "");
             /*if (DateTimeFin.Value.CompareTo(DateTimeInicio) < 1)
@@ -57,9 +63,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             */
             if (hayError)
                 return;
-
+            
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
+            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado un nuevo CURSO");
@@ -82,6 +88,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonCancelarCurso_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
     
