@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDCurso : INterfaceBD<Curso>
+    public class BDCurso : InterfaceBD<Curso>
     {
         public int Crear(Curso entrada)
         {
@@ -25,7 +25,6 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                
                 context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
                 return 1;
@@ -113,12 +112,12 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        List<Curso> INterfaceBD<Curso>.ListarTodos()
+        List<Curso> InterfaceBD<Curso>.ListarTodos()
         {
             throw new NotImplementedException();
         }
 
-        List<Curso> INterfaceBD<Curso>.ListarPorFiltro(params object[] parametros)
+        List<Curso> InterfaceBD<Curso>.ListarPorFiltro(params object[] parametros)
         {
             throw new NotImplementedException();
         }
@@ -160,11 +159,19 @@ namespace ProjectGimnasiaYEsgrima.BD
 
             }
         }
+        
 
         public int EliminarEmpleado(Empleado emp, Curso curso)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
+                /*context.Cursos.Attach(curso);
+                Profesor profesor = context.Empleados.OfType<Profesor>().AsEnumerable().FirstOrDefault(b => b.IdEmpleado == emp.IdEmpleado);
+                curso.Profesores.Remove(profesor);*/
+
+
+
+                
                 context.Empleados.Attach(emp);
                 ((Profesor)emp).Cursos.Remove(
                     context.Cursos.AsEnumerable().FirstOrDefault(c => c.IdCurso == curso.IdCurso)
@@ -176,6 +183,16 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public List<int> ListarIdProfesores(Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+
+                Curso buscado = context.Cursos.AsEnumerable().FirstOrDefault(b => b.IdCurso==curso.IdCurso);
+                return buscado.Profesores.AsEnumerable().Select(b => b.IdEmpleado).ToList();
+
+                }
+        }
         public int DarBajaPorDeporte(Deporte deporte)
         {
             using (var context = new DiagramasDeTablasContainer1())

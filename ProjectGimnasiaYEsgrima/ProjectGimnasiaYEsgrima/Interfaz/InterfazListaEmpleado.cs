@@ -79,13 +79,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
-            else if (dataGridViewEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("AgregarCurso"))
-            {
-                if(((ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado.TipoEmpleado == EnumTipoEmpleado.Profesor)
-                {
-                    new InterfazAgregarCursoEmpleado(this, ((ModelEmpleadoPersona)dataGridViewEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado).ShowDialog();
-                }
-            }
             if (dataGridViewEmpleadoPersona.Visible)
                 BotonBuscarEmpleado_Click(sender, e);
         }

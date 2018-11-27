@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDPersona : INterfaceBD<Persona>
+    public class BDPersona : InterfaceBD<Persona>
     {
         public int Actualizar(Persona entrada)
         {

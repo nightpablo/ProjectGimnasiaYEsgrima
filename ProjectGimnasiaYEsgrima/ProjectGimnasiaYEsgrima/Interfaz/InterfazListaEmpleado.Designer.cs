@@ -46,7 +46,6 @@
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AgregarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).BeginInit();
@@ -168,7 +167,6 @@
             this.apellidoDataGridViewTextBoxColumn,
             this.dNIDataGridViewTextBoxColumn,
             this.tipoEmpleadoDataGridViewTextBoxColumn,
-            this.AgregarCurso,
             this.Modificar,
             this.Eliminar});
             this.dataGridViewEmpleadoPersona.DataSource = this.empleadoPersonaBindingSource;
@@ -207,14 +205,6 @@
             this.tipoEmpleadoDataGridViewTextBoxColumn.DataPropertyName = "TipoEmpleado";
             this.tipoEmpleadoDataGridViewTextBoxColumn.HeaderText = "TipoEmpleado";
             this.tipoEmpleadoDataGridViewTextBoxColumn.Name = "tipoEmpleadoDataGridViewTextBoxColumn";
-            // 
-            // AgregarCurso
-            // 
-            this.AgregarCurso.HeaderText = "";
-            this.AgregarCurso.Name = "AgregarCurso";
-            this.AgregarCurso.ReadOnly = true;
-            this.AgregarCurso.Text = "Agregar Curso";
-            this.AgregarCurso.UseColumnTextForButtonValue = true;
             // 
             // Modificar
             // 
@@ -278,7 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoEmpleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn AgregarCurso;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }

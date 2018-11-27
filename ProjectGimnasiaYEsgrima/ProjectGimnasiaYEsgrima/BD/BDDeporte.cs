@@ -8,7 +8,7 @@ using ProjectGimnasiaYEsgrima.Modelo;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDDeporte : INterfaceBD<Deporte>
+    public class BDDeporte : InterfaceBD<Deporte>
     {
 
         public int Crear(Deporte entrada)

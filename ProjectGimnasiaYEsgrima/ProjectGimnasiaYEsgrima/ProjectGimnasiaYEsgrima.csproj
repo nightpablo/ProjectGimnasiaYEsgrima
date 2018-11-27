@@ -310,6 +310,7 @@
     <None Include="Properties\DataSources\Deporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.EmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCurso.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

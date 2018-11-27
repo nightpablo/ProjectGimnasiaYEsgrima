@@ -77,6 +77,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 Padre.ModificarMensaje("Se ha creado el EMPLEADO");
                 Dispose();
             }
+            else if(resultado == -1)
+            {
+                Padre.ModificarMensaje("Se ha recuperado el EMPLEADO");
+                Dispose();
+            }
             else if (resultado == -2)
                 MessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
         

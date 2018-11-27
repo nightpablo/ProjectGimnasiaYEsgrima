@@ -18,7 +18,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public DiagramasDeTablasContainer1()
             : base("name=DiagramasDeTablasContainer1")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            //this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

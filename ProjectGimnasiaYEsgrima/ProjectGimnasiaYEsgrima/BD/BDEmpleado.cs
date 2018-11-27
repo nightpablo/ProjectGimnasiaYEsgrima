@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDEmpleado : INterfaceBD<Empleado>
+    public class BDEmpleado : InterfaceBD<Empleado>
     {
         public int Actualizar(Empleado entrada)
         {
@@ -23,9 +23,11 @@ namespace ProjectGimnasiaYEsgrima.BD
 
         public Empleado BuscarPorClavesUnicas(params object[] parametros)
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Empleados.AsEnumerable().FirstOrDefault(b => b.Persona.DNI == (int)parametros[0]);
+            }
         }
-
         public int Crear(Empleado entrada)
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -60,7 +62,10 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                return context.Empleados.Select(e => new ModelEmpleadoPersona()
+                return context.Empleados
+                    .AsEnumerable()
+                    .Where(b=>b.EstadoEmpleado!=EnumEstadoEmpleado.Baja)
+                    .Select(e => new ModelEmpleadoPersona()
                 {
                     Nombre = e.Persona.Nombre,
                     Apellido = e.Persona.Apellido,
@@ -89,6 +94,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                     .Where(b => b.MiPersona.Nombre.Contains((string)parametros[0]))
                     .Where(b => b.MiPersona.Apellido.Contains((string)parametros[1]))
                     .Where(b => b.MiPersona.DNI.ToString().Contains((string)parametros[2]))
+                    .Where(b => b.MiEmpleado.EstadoEmpleado != EnumEstadoEmpleado.Baja)
                     .ToList();
                 var tipoemp = Convert.ToInt32(parametros[3]);
                 return tipoemp==0? j : j.Where(b => (int)b.TipoEmpleado == tipoemp).ToList();

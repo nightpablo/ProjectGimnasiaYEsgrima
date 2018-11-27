@@ -33,6 +33,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             txtTipoEmpleado.Text = empleado.TipoEmpleado.ToString();
             txtTipoEmpleado.ReadOnly = true;
+            textBoxDocumento.ReadOnly = true;
 
             textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxApellidoEmpleado);
             textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDocumento);
@@ -78,7 +79,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ControladorEmpleado Cempleado = new ControladorEmpleado();
 
 
-            var resultado = Cempleado.ModificarEmpleado(empleado.MiPersona.IdPersona,empleado.MiEmpleado.IdEmpleado,textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
+            var resultado = Cempleado.ModificarEmpleado(empleado.MiPersona.IdPersona,empleado.MiEmpleado.IdEmpleado,textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value, Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado,empleado.MiEmpleado.EstadoEmpleado);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el EMPLEADO");

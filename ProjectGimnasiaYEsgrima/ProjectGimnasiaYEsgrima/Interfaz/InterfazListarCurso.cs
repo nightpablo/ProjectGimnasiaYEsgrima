@@ -95,9 +95,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
-            else if (DataGridListarCursos.Columns[e.ColumnIndex].Name.Equals("Agregar Profesor"))
+            else if (DataGridListarCursos.Columns[e.ColumnIndex].Name.Equals("AgregarProfesor"))
             {
-
+                InterfazAgregarCursoEmpleado interfazAgregar = new InterfazAgregarCursoEmpleado(this, ((ModelCurso)DataGridListarCursos.CurrentRow.DataBoundItem).Curso);
+                interfazAgregar.ShowDialog();
             }
             BotonBuscarCurso_Click(sender, e);
         }

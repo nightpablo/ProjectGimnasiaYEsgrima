@@ -1,5 +1,6 @@
 ﻿using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,27 +15,23 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAgregarCursoEmpleado : Form
     {
-        private InterfazListaEmpleado Padre;
-        private Empleado Emp;
+        private InterfazListarCurso Padre;
+        private Curso MiCurso;
 
-        public InterfazAgregarCursoEmpleado(InterfazListaEmpleado padre, Empleado emp)
+        public InterfazAgregarCursoEmpleado(InterfazListarCurso padre, Curso curso)
         {
             Padre = padre;
-            Emp = emp;
+            MiCurso = curso;
             InitializeComponent();
 
-            ActualizarTabla();
-        }
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIEmpleado, 8);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoEmpleado, 50);
 
-        private void BotonAgregarCurso_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex == -1) { 
-                MessageBox.Show("No hay cursos para asignar");
-                return;
-            }
-            new ControladorCurso().AsignarEmpleadoAlCurso(Emp, ((ModelCurso)comboBox1.SelectedItem).Curso);
-            ActualizarTabla();
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoEmpleado);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnBuscar);
+
         }
+        
 
         private void BotonVolver_Click(object sender, EventArgs e)
         {
@@ -43,24 +40,55 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void ActualizarTabla()
         {
-            var lista = new ControladorCurso().ListarTodosCursosDelEmpleado(Emp);
-            dataGridViewListaCursosEmpleado.DataSource = lista;
-
-            comboBox1.DataSource = new ControladorCurso().ListarTodosCursos().AsEnumerable().Where(c => !lista.Select(d => d.IdCurso).Contains(c.IdCurso)).ToList();
+            dataGridViewEmpleadoProfesor.DataSource = new ControladorEmpleado().ExtraerEmpleadosAVista("", txtApellidoEmpleado.Text, txtDNIEmpleado.Text, "Profesor");
+            
         }
 
-        private void DataGridViewListaCursosEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea Eliminar este Curso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (dataGridViewEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("AsignarCurso"))
             {
-                ControladorCurso controladorCurso = new ControladorCurso();
-                /*if (controladorCurso.EliminarCurso((Curso)DataGridListarCursos.CurrentRow.DataBoundItem) > 0)
+                if (MessageBox.Show("¿Seguro que desea Asignar el curso "+MiCurso.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    this.ModificarMensaje("Se ha eliminado el CURSO");
-                    ActualizarTabla();
-                }*/
-
+                    ControladorCurso CCurso = new ControladorCurso();
+                    var resultado = CCurso.AsignarEmpleadoAlCurso(((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCurso);
+                    if (resultado > 0)
+                    {
+                        Padre.ModificarMensaje("Se ha asignado un Profesor Al CURSO");
+                        Dispose();
+                    }
+                    else if (resultado == -2)
+                    {
+                        MessageBox.Show(this, "Ya esta asignado el Profesor al CURSO", "Curso");
+                    }
+                }
+                
+            }
+            else if (dataGridViewEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("EliminarCurso"))
+            {
+                if (MessageBox.Show("¿Seguro que desea Eliminar del curso " + MiCurso.Nombre + " al Empleado " + ((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", " + ((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ControladorCurso CCurso = new ControladorCurso();
+                    var resultado = CCurso.EliminarEmpleadoDelCurso(((ModelEmpleadoPersona)dataGridViewEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCurso);
+                    if (resultado > 0)
+                    {
+                        Padre.ModificarMensaje("Se ha eliminado un Profesor Del CURSO");
+                        Dispose();
+                    }
+                    else if (resultado == -2)
+                    {
+                        MessageBox.Show(this, "El Profesor no está asignado al CURSO", "Curso");
+                    }
+                }
             }
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            ActualizarTabla();
+        }
+
+
     }
 }

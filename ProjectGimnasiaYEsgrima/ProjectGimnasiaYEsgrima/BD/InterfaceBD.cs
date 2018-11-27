@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public interface INterfaceBD<T>
+    public interface InterfaceBD<T>
     {
         int Crear(T entrada);
         int Actualizar(T entrada);

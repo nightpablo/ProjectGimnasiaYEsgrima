@@ -17,6 +17,21 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
+            Empleado buscado = bdEmpleado.BuscarPorClavesUnicas(documento);
+            if (buscado != null && buscado.EstadoEmpleado == EnumEstadoEmpleado.Baja)
+            {
+                buscado.EstadoEmpleado = EnumEstadoEmpleado.Activo;
+                buscado.Persona.Nombre = nombre;
+                buscado.Persona.Apellido = apellido;
+                buscado.Persona.FechaNacimiento = fechaNacimiento;
+                buscado.DescripcionTarea = descripcion;
+                buscado.TipoEmpleado = tipoEmpleado;
+                buscado.FechaInicio = fechaInicio;
+
+                bdEmpleado.Actualizar(buscado);
+                return -1;
+            }
+            else if (buscado != null) return -2;
             Empleado unEmpleado = null;
             switch (tipoEmpleado)
             {
@@ -33,24 +48,16 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             unEmpleado.FechaInicio = fechaInicio;
             unEmpleado.DescripcionTarea = descripcion;
             unEmpleado.TipoEmpleado = tipoEmpleado;
-            Persona unaPersona = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
-            if (unaPersona==null)
-            { 
-                unaPersona = new Persona
-                    {
-                        Nombre = nombre,
-                        Apellido = apellido,
-                        FechaNacimiento = fechaNacimiento,
-                        DNI = documento
-                    };
-                new BDPersona().Crear(unaPersona);
-            }
-            else if (bdEmpleado.existeEmpleado(unEmpleado, unaPersona)) { 
-                return -2;
-            }
-
-
-
+            unEmpleado.EstadoEmpleado = EnumEstadoEmpleado.Activo;
+            Persona unaPersona = new Persona
+            {
+                Nombre = nombre,
+                Apellido = apellido,
+                FechaNacimiento = fechaNacimiento,
+                DNI = documento
+            };
+            new BDPersona().Crear(unaPersona);
+            
             unEmpleado.Persona = unaPersona;
             return bdEmpleado.Crear(unEmpleado);
         }
@@ -71,55 +78,24 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdEmpleado.ListarEmpleadosPersonas(parametros);
         }
 
-        public int ModificarEmpleado(int idPersona, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
+        public int ModificarEmpleado(int idPersona, int idEmpleado, string nombre, string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado, EnumEstadoEmpleado estadoEmpleado)
         {
-
+            Empleado empleado = bdEmpleado.BuscarPorClavesUnicas(documento);
+            empleado.DescripcionTarea = descripcion;
+            empleado.FechaInicio = fechaInicio;
             Persona buscado = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
-            if (buscado != null && buscado.IdPersona != idPersona)
-            {
-                return -2;
-            }
-            else
-            {
-                Persona unaPersona = new Persona
-                {
-                    IdPersona = idPersona,
-                    Nombre = nombre,
-                    Apellido = apellido,
-                    FechaNacimiento = fechaNacimiento,
-                    DNI = documento
-                };
-
-
-                Empleado unEmpleado = null;
-                switch (tipoEmpleado)
-                {
-                    case EnumTipoEmpleado.Secretaria:
-                        unEmpleado = new Secretaria();
-                        break;
-                    case EnumTipoEmpleado.Profesor:
-                        unEmpleado = new Profesor();
-                        break;
-                    default:
-                        return -1;
-                }
-
-                unEmpleado.FechaInicio = fechaInicio;
-                unEmpleado.DescripcionTarea = descripcion;
-                unEmpleado.TipoEmpleado = tipoEmpleado;
-                unEmpleado.Persona = unaPersona;
-                unEmpleado.IdEmpleado = idEmpleado;
-
-
-                return bdEmpleado.Actualizar(unEmpleado);
-            }
-
+            buscado.Nombre = nombre;
+            buscado.Apellido = apellido;
+            buscado.FechaNacimiento = fechaNacimiento;
+            empleado.Persona = buscado;
+            return bdEmpleado.Actualizar(empleado);
        
         }
 
         public int EliminarEmpleado(Empleado empleado)
         {
-            return bdEmpleado.Eliminar(empleado);
+            empleado.EstadoEmpleado = EnumEstadoEmpleado.Baja;
+            return bdEmpleado.Actualizar(empleado);
         }
 
         public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
