@@ -25,16 +25,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtNombreCurso.Text = curso.Nombre;
             DateTimeInicio.Value = curso.FechaInicio;
             DateTimeFin.Value = curso.FechaFin;
+            txtImporteMensualCurso.Text = curso.Curso.Costo+"";
 
 
             ControladorDeporte Cdeporte = new ControladorDeporte();
-            List<Deporte> lista = new List<Deporte>();
+            List<ModelDeporte> lista = new List<ModelDeporte>();
             lista = Cdeporte.ListarTodosDeportes();
             ComboBoxDeporte.DataSource = lista;
             ComboBoxDeporte.ValueMember = "IdDeporte";
             ComboBoxDeporte.DisplayMember = "Nombre";
             ComboBoxDeporte.Focus();
-            foreach (Deporte i in ComboBoxDeporte.Items)
+            foreach (ModelDeporte i in ComboBoxDeporte.Items)
             {
                 if (i.IdDeporte.Equals(curso.Deporte.IdDeporte))
                 {
@@ -78,7 +79,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
 
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text,Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
+            var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text,Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, ((ModelDeporte)ComboBoxDeporte.SelectedItem).MiDeporte, Curso.EstadoCurso);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el Curso");

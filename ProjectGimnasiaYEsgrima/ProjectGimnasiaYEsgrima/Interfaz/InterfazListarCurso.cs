@@ -24,9 +24,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             LabelInfoCurso.Text = "";
 
             ControladorDeporte Cdeporte = new ControladorDeporte();
-            List<Deporte> lista = new List<Deporte>();
+            List<ModelDeporte> lista = new List<ModelDeporte>();
             lista = Cdeporte.ListarTodosDeportes();
-            lista.Insert(0, new Deporte() { IdDeporte = 0, Nombre = "Seleccione un deporte" });
+            lista.Insert(0, new ModelDeporte() { IdDeporte = 0, Nombre = "Seleccione un deporte" });
             comboBoxDeporte.DataSource = lista;
             comboBoxDeporte.ValueMember = "IdDeporte";
             comboBoxDeporte.DisplayMember = "Nombre";
@@ -42,20 +42,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelCurso> listaCurso = null;
             cursoBindingSource.Clear();
 
-            if (txtNombreCurso.Text.ToString().Equals("") && ((Deporte)comboBoxDeporte.SelectedItem).IdDeporte == 0)
+            if (txtNombreCurso.Text.ToString().Equals("") && ((ModelDeporte)comboBoxDeporte.SelectedItem).IdDeporte == 0)
             {
                 listaCurso = controladorCurso.ListarTodosCursos();
             }
             else
             {
-                listaCurso = controladorCurso.ListarTodosCursosFiltro(txtNombreCurso.Text.ToString(), (Deporte)comboBoxDeporte.SelectedItem);
+                listaCurso = controladorCurso.ListarTodosCursosFiltro(txtNombreCurso.Text.ToString(), ((ModelDeporte)comboBoxDeporte.SelectedItem).MiDeporte);
             }
 
-            foreach (var i in listaCurso)
+            if (listaCurso.Count == 0)
             {
-                cursoBindingSource.Add(i);
-
+                ModificarMensaje("No hay ningún curso con estos filtros");
+                return;
             }
+            else if(LabelInfoCurso.Text.Equals("No hay ningún curso con estos filtros"))
+            {
+                ModificarMensaje("");
+            }
+            DataGridListarCursos.DataSource = listaCurso;           
 
             DataGridListarCursos.Visible = true;
 
@@ -88,7 +93,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 if (MessageBox.Show("¿Seguro que desea Eliminar este Curso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ControladorCurso controladorCurso = new ControladorCurso();
-                    if (controladorCurso.EliminarCurso((Curso)DataGridListarCursos.CurrentRow.DataBoundItem) > 0)
+                    if (controladorCurso.EliminarCurso(((ModelCurso)DataGridListarCursos.CurrentRow.DataBoundItem).Curso) > 0)
                     {
                         this.ModificarMensaje("Se ha eliminado el CURSO");
                     }
@@ -106,6 +111,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         public void ModificarMensaje(string v)
         {
             LabelInfoCurso.Text = v;
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

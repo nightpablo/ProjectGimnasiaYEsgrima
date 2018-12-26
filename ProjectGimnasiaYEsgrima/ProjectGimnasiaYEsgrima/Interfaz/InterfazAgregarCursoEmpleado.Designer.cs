@@ -44,6 +44,7 @@
             this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.LabelInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoProfesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).BeginInit();
@@ -172,11 +173,23 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BotonVolver_Click);
             // 
+            // LabelInfoDeporte
+            // 
+            this.LabelInfo.AutoSize = true;
+            this.LabelInfo.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelInfo.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.LabelInfo.Location = new System.Drawing.Point(15, 295);
+            this.LabelInfo.Name = "LabelInfoDeporte";
+            this.LabelInfo.Size = new System.Drawing.Size(199, 24);
+            this.LabelInfo.TabIndex = 20;
+            this.LabelInfo.Text = "Acá se imprime algo";
+            // 
             // InterfazAgregarCursoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 296);
+            this.ClientSize = new System.Drawing.Size(873, 333);
+            this.Controls.Add(this.LabelInfo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dataGridViewEmpleadoProfesor);
@@ -211,5 +224,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn AsignarCurso;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarCurso;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label LabelInfo;
     }
 }

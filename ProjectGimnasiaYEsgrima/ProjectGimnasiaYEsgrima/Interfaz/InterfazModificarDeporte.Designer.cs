@@ -39,6 +39,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte = new System.Windows.Forms.TextBox();
             this.BotonGuardarDeporte = new System.Windows.Forms.Button();
             this.BotonCancelar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,9 +52,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(75, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre *";
             // 
             // label1
             // 
@@ -111,11 +112,22 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.BotonCancelar.UseVisualStyleBackColor = true;
             this.BotonCancelar.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(47, 254);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 15);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "* Los campos son obligatorios";
+            // 
             // InterfazModificarDeporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 475);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombreDeporte);
             this.Controls.Add(this.txtDescripcionDeporte);
             this.Controls.Add(this.BotonGuardarDeporte);
@@ -142,5 +154,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.Button BotonGuardarDeporte;
         private System.Windows.Forms.Button BotonCancelar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label4;
     }
 }

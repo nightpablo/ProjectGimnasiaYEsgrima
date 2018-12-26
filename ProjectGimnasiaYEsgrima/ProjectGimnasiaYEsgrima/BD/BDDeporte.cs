@@ -8,7 +8,7 @@ using ProjectGimnasiaYEsgrima.Modelo;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDDeporte : InterfaceBD<Deporte>
+    public class BDDeporte : InterfaceBD<Deporte,ModelDeporte>
     {
 
         public int Crear(Deporte entrada)
@@ -46,15 +46,28 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        public List<Deporte> ListarTodos()
+        public List<ModelDeporte> ListarTodos()
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                return context.Deportes.AsEnumerable().Where(b=>b.EstadoDeporte != EnumEstadoDeporte.Baja).ToList();
+                return context.Deportes
+                    .AsEnumerable()
+                    .Where(b => b.EstadoDeporte != EnumEstadoDeporte.Baja)
+                    .Select(b => new ModelDeporte()
+                    {
+                        IdDeporte = b.IdDeporte,
+                        Nombre = b.Nombre,
+                        Descripcion = b.Descripcion,
+                        EstadoDeporte = b.EstadoDeporte,
+                        MiDeporte = b
+
+                    })
+                    
+                    .ToList();
             }
         }
 
-        public List<Deporte> ListarPorFiltro(params object[] parametros)
+        public List<ModelDeporte> ListarPorFiltro(params object[] parametros)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
@@ -62,6 +75,15 @@ namespace ProjectGimnasiaYEsgrima.BD
                     .Where(b => b.Nombre.Contains((string)parametros[0]))
                     .Where(b => b.Descripcion.Contains((string)parametros[1]))
                     .Where(b => b.EstadoDeporte != EnumEstadoDeporte.Baja)
+                    .Select(b => new ModelDeporte()
+                    {
+                        IdDeporte = b.IdDeporte,
+                        Nombre = b.Nombre,
+                        Descripcion = b.Descripcion,
+                        EstadoDeporte = b.EstadoDeporte,
+                        MiDeporte = b
+
+                    })
                     .ToList();
             }
         }

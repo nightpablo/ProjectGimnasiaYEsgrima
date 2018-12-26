@@ -32,12 +32,13 @@
             this.buttonCursos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnSocio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonDeportes
             // 
             this.buttonDeportes.Location = new System.Drawing.Point(259, 121);
-            this.buttonDeportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDeportes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeportes.Name = "buttonDeportes";
             this.buttonDeportes.Size = new System.Drawing.Size(199, 59);
             this.buttonDeportes.TabIndex = 0;
@@ -48,7 +49,7 @@
             // buttonCursos
             // 
             this.buttonCursos.Location = new System.Drawing.Point(259, 214);
-            this.buttonCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCursos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCursos.Name = "buttonCursos";
             this.buttonCursos.Size = new System.Drawing.Size(199, 59);
             this.buttonCursos.TabIndex = 1;
@@ -76,16 +77,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnSocio
+            // 
+            this.btnSocio.Location = new System.Drawing.Point(259, 309);
+            this.btnSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSocio.Name = "btnSocio";
+            this.btnSocio.Size = new System.Drawing.Size(199, 59);
+            this.btnSocio.TabIndex = 4;
+            this.btnSocio.Text = "Socios";
+            this.btnSocio.UseVisualStyleBackColor = true;
+            this.btnSocio.Click += new System.EventHandler(this.button3_Click);
+            // 
             // InterfazPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnSocio);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCursos);
             this.Controls.Add(this.buttonDeportes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InterfazPrincipal";
             this.Text = "InterfazPrincipal";
             this.ResumeLayout(false);
@@ -98,5 +111,6 @@
         private System.Windows.Forms.Button buttonCursos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSocio;
     }
 }

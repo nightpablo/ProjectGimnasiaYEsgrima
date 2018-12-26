@@ -43,7 +43,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxNombreEmpleado, 50);
             textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxApellidoEmpleado, 50);
             textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDocumento,8);
-            textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDescripcion, 500);
+            textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, textBoxDescripcion, 500);
 
 
         }

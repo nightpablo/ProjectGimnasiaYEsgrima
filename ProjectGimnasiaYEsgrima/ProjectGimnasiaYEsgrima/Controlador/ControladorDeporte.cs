@@ -14,6 +14,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             Deporte UnDeporte = una_bddeporte.BuscarPorClavesUnicas(nombre);
             if (UnDeporte != null && UnDeporte.EstadoDeporte == EnumEstadoDeporte.Baja) {
                 UnDeporte.EstadoDeporte = EnumEstadoDeporte.Activo;
+                UnDeporte.Descripcion = descripcion;
                 una_bddeporte.Actualizar(UnDeporte);
                 return -1;
             }
@@ -51,12 +52,12 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             
         }
 
-        public List<Deporte> ListarTodosDeportes()
+        public List<ModelDeporte> ListarTodosDeportes()
         {
             return una_bddeporte.ListarTodos();
         }
 
-        public List<Deporte> ListarTodosDeportesPorFiltros(params Object[] parametros)
+        public List<ModelDeporte> ListarTodosDeportesPorFiltros(params Object[] parametros)
         {
             if (parametros.Length <= 1)
                 return null;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDCurso : InterfaceBD<Curso>
+    public class BDCurso : InterfaceBD<Curso,ModelCurso>
     {
         public int Crear(Curso entrada)
         {
@@ -110,16 +110,6 @@ namespace ProjectGimnasiaYEsgrima.BD
             {
                 return context.Cursos.Find(id);
             }
-        }
-
-        List<Curso> InterfaceBD<Curso>.ListarTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Curso> InterfaceBD<Curso>.ListarPorFiltro(params object[] parametros)
-        {
-            throw new NotImplementedException();
         }
 
         public List<ModelCurso> ListarTodosPorEmpleado(Empleado emp)

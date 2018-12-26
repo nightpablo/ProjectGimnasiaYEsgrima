@@ -18,6 +18,10 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime FechaInicio { get; set; }
         public EnumCategoriaSocio CategoriaSocio { get; set; }
         public EnumEstadoSocio EstadoSocio { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public string Localidad { get; set; }
+        public EnumTipoDocumento TipoDocumento { get; set; }
     
         public virtual Persona Persona { get; set; }
     }

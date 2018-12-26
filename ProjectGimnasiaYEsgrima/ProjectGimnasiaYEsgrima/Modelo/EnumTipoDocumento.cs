@@ -11,8 +11,12 @@ namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
     
-    public enum EnumCategoriaSocio : int
+    public enum EnumTipoDocumento : int
     {
-        Inactiva = 0
+        DNI = 1,
+        LC = 2,
+        LE = 3,
+        PASAPORTE = 4,
+        CI = 5
     }
 }

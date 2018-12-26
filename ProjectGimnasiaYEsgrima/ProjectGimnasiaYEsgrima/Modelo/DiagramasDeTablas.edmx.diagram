@@ -17,7 +17,7 @@
         <AssociationConnector Association="DiagramasDeTablas.PersonaEmpleado" />
         <AssociationConnector Association="DiagramasDeTablas.CursoDeporte" />
         <EntityTypeShape EntityType="DiagramasDeTablas.RegistroIngresoEgreso" Width="1.75" PointX="12.375" PointY="5.125" />
-        <EntityTypeShape EntityType="DiagramasDeTablas.Socio" Width="1.5" PointX="4.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DiagramasDeTablas.Socio" Width="2.25" PointX="4.375" PointY="0.875" />
         <AssociationConnector Association="DiagramasDeTablas.SocioPersona" />
         <AssociationConnector Association="DiagramasDeTablas.SocioCurso" />
         <EntityTypeShape EntityType="DiagramasDeTablas.CuotaSocio" Width="1.5" PointX="10.5" PointY="1" />

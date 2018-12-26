@@ -32,6 +32,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             this.components = new System.ComponentModel.Container();
             this.DataGridListarCursos = new System.Windows.Forms.DataGridView();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelDeporteListarCurso = new System.Windows.Forms.Label();
             this.labelCursoListarCurso = new System.Windows.Forms.Label();
             this.comboBoxDeporte = new System.Windows.Forms.ComboBox();
@@ -41,17 +42,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dbGimnasiaYEsgrimaDataSet = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet();
             this.LabelInfoCurso = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.AgregarSocio = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AgregarProfesor = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridListarCursos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridListarCursos
@@ -59,26 +62,28 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.DataGridListarCursos.AutoGenerateColumns = false;
             this.DataGridListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridListarCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn,
-            this.fechaInicioDataGridViewTextBoxColumn,
-            this.fechaFinDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.estadoCursoDataGridViewTextBoxColumn,
             this.Modificar,
             this.Eliminar,
-            this.AgregarSocio,
             this.AgregarProfesor});
-            this.DataGridListarCursos.DataSource = this.cursoBindingSource;
-            this.DataGridListarCursos.Location = new System.Drawing.Point(83, 130);
+            this.DataGridListarCursos.DataSource = this.modelCursoBindingSource;
+            this.DataGridListarCursos.Location = new System.Drawing.Point(111, 160);
+            this.DataGridListarCursos.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridListarCursos.Name = "DataGridListarCursos";
-            this.DataGridListarCursos.Size = new System.Drawing.Size(647, 148);
+            this.DataGridListarCursos.Size = new System.Drawing.Size(863, 182);
             this.DataGridListarCursos.TabIndex = 0;
             this.DataGridListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridListarCursos_CellContentClick);
             // 
             // labelDeporteListarCurso
             // 
             this.labelDeporteListarCurso.AutoSize = true;
-            this.labelDeporteListarCurso.Location = new System.Drawing.Point(80, 34);
+            this.labelDeporteListarCurso.Location = new System.Drawing.Point(107, 42);
+            this.labelDeporteListarCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDeporteListarCurso.Name = "labelDeporteListarCurso";
-            this.labelDeporteListarCurso.Size = new System.Drawing.Size(45, 13);
+            this.labelDeporteListarCurso.Size = new System.Drawing.Size(59, 17);
             this.labelDeporteListarCurso.TabIndex = 2;
             this.labelDeporteListarCurso.Text = "Deporte";
             this.labelDeporteListarCurso.Click += new System.EventHandler(this.label2_Click);
@@ -86,32 +91,36 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // labelCursoListarCurso
             // 
             this.labelCursoListarCurso.AutoSize = true;
-            this.labelCursoListarCurso.Location = new System.Drawing.Point(80, 73);
+            this.labelCursoListarCurso.Location = new System.Drawing.Point(107, 90);
+            this.labelCursoListarCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCursoListarCurso.Name = "labelCursoListarCurso";
-            this.labelCursoListarCurso.Size = new System.Drawing.Size(34, 13);
+            this.labelCursoListarCurso.Size = new System.Drawing.Size(45, 17);
             this.labelCursoListarCurso.TabIndex = 3;
             this.labelCursoListarCurso.Text = "Curso";
             // 
             // comboBoxDeporte
             // 
             this.comboBoxDeporte.FormattingEnabled = true;
-            this.comboBoxDeporte.Location = new System.Drawing.Point(158, 31);
+            this.comboBoxDeporte.Location = new System.Drawing.Point(211, 38);
+            this.comboBoxDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDeporte.Name = "comboBoxDeporte";
-            this.comboBoxDeporte.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDeporte.Size = new System.Drawing.Size(160, 24);
             this.comboBoxDeporte.TabIndex = 4;
             // 
             // txtNombreCurso
             // 
-            this.txtNombreCurso.Location = new System.Drawing.Point(158, 73);
+            this.txtNombreCurso.Location = new System.Drawing.Point(211, 90);
+            this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCurso.Name = "txtNombreCurso";
-            this.txtNombreCurso.Size = new System.Drawing.Size(121, 20);
+            this.txtNombreCurso.Size = new System.Drawing.Size(160, 22);
             this.txtNombreCurso.TabIndex = 5;
             // 
             // BotonBuscarCurso
             // 
-            this.BotonBuscarCurso.Location = new System.Drawing.Point(349, 73);
+            this.BotonBuscarCurso.Location = new System.Drawing.Point(465, 90);
+            this.BotonBuscarCurso.Margin = new System.Windows.Forms.Padding(4);
             this.BotonBuscarCurso.Name = "BotonBuscarCurso";
-            this.BotonBuscarCurso.Size = new System.Drawing.Size(100, 23);
+            this.BotonBuscarCurso.Size = new System.Drawing.Size(133, 28);
             this.BotonBuscarCurso.TabIndex = 6;
             this.BotonBuscarCurso.Text = "Buscar";
             this.BotonBuscarCurso.UseVisualStyleBackColor = true;
@@ -119,9 +128,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // botonCrearCurso
             // 
-            this.botonCrearCurso.Location = new System.Drawing.Point(481, 71);
+            this.botonCrearCurso.Location = new System.Drawing.Point(641, 87);
+            this.botonCrearCurso.Margin = new System.Windows.Forms.Padding(4);
             this.botonCrearCurso.Name = "botonCrearCurso";
-            this.botonCrearCurso.Size = new System.Drawing.Size(102, 23);
+            this.botonCrearCurso.Size = new System.Drawing.Size(136, 28);
             this.botonCrearCurso.TabIndex = 7;
             this.botonCrearCurso.Text = "Crear Curso";
             this.botonCrearCurso.UseVisualStyleBackColor = true;
@@ -132,18 +142,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dbGimnasiaYEsgrimaDataSet.DataSetName = "dbGimnasiaYEsgrimaDataSet";
             this.dbGimnasiaYEsgrimaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cursoTableAdapter
-            // 
-            // 
             // LabelInfoCurso
             // 
             this.LabelInfoCurso.AutoSize = true;
             this.LabelInfoCurso.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelInfoCurso.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.LabelInfoCurso.Location = new System.Drawing.Point(79, 290);
-            this.LabelInfoCurso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LabelInfoCurso.Location = new System.Drawing.Point(105, 357);
             this.LabelInfoCurso.Name = "LabelInfoCurso";
-            this.LabelInfoCurso.Size = new System.Drawing.Size(165, 19);
+            this.LabelInfoCurso.Size = new System.Drawing.Size(199, 24);
             this.LabelInfoCurso.TabIndex = 8;
             this.LabelInfoCurso.Text = "Acá se imprime algo";
             // 
@@ -153,27 +159,43 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewTextBoxColumn1.HeaderText = "Deporte";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // cursoBindingSource
+            // btnVolver
             // 
-            
+            this.btnVolver.Location = new System.Drawing.Point(799, 85);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(97, 32);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
-            // nombreDataGridViewTextBoxColumn
+            // modelCursoBindingSource
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
             // 
-            // fechaInicioDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.fechaInicioDataGridViewTextBoxColumn.DataPropertyName = "FechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.HeaderText = "FechaInicio";
-            this.fechaInicioDataGridViewTextBoxColumn.Name = "fechaInicioDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // fechaFinDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.fechaFinDataGridViewTextBoxColumn.DataPropertyName = "FechaFin";
-            this.fechaFinDataGridViewTextBoxColumn.HeaderText = "FechaFin";
-            this.fechaFinDataGridViewTextBoxColumn.Name = "fechaFinDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FechaInicio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn4.HeaderText = "FechaFin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // estadoCursoDataGridViewTextBoxColumn
+            // 
+            this.estadoCursoDataGridViewTextBoxColumn.DataPropertyName = "EstadoCurso";
+            this.estadoCursoDataGridViewTextBoxColumn.HeaderText = "EstadoCurso";
+            this.estadoCursoDataGridViewTextBoxColumn.Name = "estadoCursoDataGridViewTextBoxColumn";
             // 
             // Modificar
             // 
@@ -183,7 +205,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Modificar.ReadOnly = true;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 21;
+            this.Modificar.Width = 24;
             // 
             // Eliminar
             // 
@@ -193,17 +215,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 21;
-            // 
-            // AgregarSocio
-            // 
-            this.AgregarSocio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AgregarSocio.HeaderText = "";
-            this.AgregarSocio.Name = "AgregarSocio";
-            this.AgregarSocio.ReadOnly = true;
-            this.AgregarSocio.Text = "Agregar Socio";
-            this.AgregarSocio.UseColumnTextForButtonValue = true;
-            this.AgregarSocio.Width = 21;
+            this.Eliminar.Width = 24;
             // 
             // AgregarProfesor
             // 
@@ -213,13 +225,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.AgregarProfesor.ReadOnly = true;
             this.AgregarProfesor.Text = "Agregar Profesor";
             this.AgregarProfesor.UseColumnTextForButtonValue = true;
-            this.AgregarProfesor.Width = 21;
+            this.AgregarProfesor.Width = 24;
             // 
             // InterfazListarCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.LabelInfoCurso);
             this.Controls.Add(this.botonCrearCurso);
             this.Controls.Add(this.BotonBuscarCurso);
@@ -228,11 +241,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Controls.Add(this.labelCursoListarCurso);
             this.Controls.Add(this.labelDeporteListarCurso);
             this.Controls.Add(this.DataGridListarCursos);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InterfazListarCurso";
-            this.Text = "Form1";
+            this.Text = "InterfazListaCurso";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridListarCursos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,10 +273,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.DataGridViewButtonColumn AgregarSocio;
         private System.Windows.Forms.DataGridViewButtonColumn AgregarProfesor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource modelCursoBindingSource;
     }
 }

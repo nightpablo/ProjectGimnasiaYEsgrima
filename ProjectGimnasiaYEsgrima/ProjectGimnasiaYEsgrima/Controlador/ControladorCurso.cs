@@ -63,18 +63,20 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.ListarTodosPorEmpleado(emp);
         }
 
-        public int ModificarCurso(int id, string unNombre,int importe, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
+        public int ModificarCurso(int id, string unNombre,int importe, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte, EnumEstadoCurso estadoCurso)
         {
-            Curso unCurso = new Curso()
+            Curso buscado = BdCurso.BuscarPorClavesUnicas(unNombre);
+
+            if (buscado != null)
             {
-                IdCurso = id,
-                Costo = importe,
-                Nombre = unNombre,
-                FechaInicio = unaFechaInicio,
-                FechaFin = unaFechaFin,
-                Deporte = deporte
-            };
-            return BdCurso.Actualizar(unCurso);
+
+                buscado.Costo = importe;
+                buscado.FechaInicio = unaFechaInicio;
+                buscado.FechaFin = unaFechaFin;
+                
+            }
+
+            return BdCurso.Actualizar(buscado);
 
         }
         

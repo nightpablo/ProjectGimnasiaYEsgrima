@@ -70,12 +70,14 @@
     <Compile Include="BD\BDCurso.cs" />
     <Compile Include="BD\BDEmpleado.cs" />
     <Compile Include="BD\BDPersona.cs" />
+    <Compile Include="BD\BDSocio.cs" />
     <Compile Include="BD\INterfaceBD.cs" />
     <Compile Include="BD\ConexionBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
     <Compile Include="Controlador\ControladorCurso.cs" />
     <Compile Include="Controlador\ControladorEmpleado.cs" />
     <Compile Include="Controlador\ControladorEntradaSalida.cs" />
+    <Compile Include="Controlador\ControladorSocio.cs" />
     <Compile Include="dbGimnasiaYEsgrimaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +102,12 @@
     <Compile Include="Interfaz\InterfazAltaEmpleado.Designer.cs">
       <DependentUpon>InterfazAltaEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazAltaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazAltaSocio.Designer.cs">
+      <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazListaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +131,12 @@
     </Compile>
     <Compile Include="Interfaz\InterfazListaDeportes.Designer.cs">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazListaSocio.Designer.cs">
+      <DependentUpon>InterfazListaSocio.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazModificarCurso.cs">
       <SubType>Form</SubType>
@@ -205,11 +219,17 @@
     <Compile Include="Modelo\EnumEstadoSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\EnumTipoDocumento.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ModelCurso.cs" />
+    <Compile Include="Modelo\ModelDeporte.cs" />
     <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
+    <Compile Include="Modelo\ModelPersona.cs" />
+    <Compile Include="Modelo\ModelSocioPersona.cs" />
     <Compile Include="Modelo\Persona.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
@@ -243,6 +263,9 @@
     <EmbeddedResource Include="Interfaz\InterfazAltaEmpleado.resx">
       <DependentUpon>InterfazAltaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazAltaSocio.resx">
+      <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListarCurso.resx">
       <DependentUpon>InterfazListarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazListaSocio.resx">
+      <DependentUpon>InterfazListaSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazModificarCurso.resx">
       <DependentUpon>InterfazModificarCurso.cs</DependentUpon>
@@ -280,7 +306,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Diagramas de clases\Incremento 1\Version 0.0.cd" />
     <None Include="dbGimnasiaYEsgrimaDataSet.xsc">
       <DependentUpon>dbGimnasiaYEsgrimaDataSet.xsd</DependentUpon>
     </None>
@@ -310,7 +335,9 @@
     <None Include="Properties\DataSources\Deporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.EmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCurso.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelDeporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/20/2018 16:06:40
+-- Date Created: 12/26/2018 19:39:26
 -- Generated from EDMX file: C:\Users\NightCrawler-NBOOK\source\repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
@@ -29,8 +29,23 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_CursoDeporte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Cursos] DROP CONSTRAINT [FK_CursoDeporte];
 GO
-IF OBJECT_ID(N'[dbo].[FK_EmpleadoRegistroIngresoSalida]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RegistroIngresoEgresoes] DROP CONSTRAINT [FK_EmpleadoRegistroIngresoSalida];
+IF OBJECT_ID(N'[dbo].[FK_SocioPersona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Socios] DROP CONSTRAINT [FK_SocioPersona];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SocioCurso_Socio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SocioCurso] DROP CONSTRAINT [FK_SocioCurso_Socio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_SocioCurso_Curso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SocioCurso] DROP CONSTRAINT [FK_SocioCurso_Curso];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CuotaSocioValorCuotaInicial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CuotaSocios] DROP CONSTRAINT [FK_CuotaSocioValorCuotaInicial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CuotaSocioSocio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CuotaSocios] DROP CONSTRAINT [FK_CuotaSocioSocio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EmpleadoRegistroIngresoEgreso]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[RegistroIngresoEgresoes] DROP CONSTRAINT [FK_EmpleadoRegistroIngresoEgreso];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Profesor_inherits_Empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Empleados_Profesor] DROP CONSTRAINT [FK_Profesor_inherits_Empleado];
@@ -58,6 +73,15 @@ GO
 IF OBJECT_ID(N'[dbo].[RegistroIngresoEgresoes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RegistroIngresoEgresoes];
 GO
+IF OBJECT_ID(N'[dbo].[Socios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Socios];
+GO
+IF OBJECT_ID(N'[dbo].[CuotaSocios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CuotaSocios];
+GO
+IF OBJECT_ID(N'[dbo].[ValorCuotaInicials]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ValorCuotaInicials];
+GO
 IF OBJECT_ID(N'[dbo].[Empleados_Profesor]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Empleados_Profesor];
 GO
@@ -66,6 +90,9 @@ IF OBJECT_ID(N'[dbo].[Empleados_Secretaria]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ProfesorCurso]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProfesorCurso];
+GO
+IF OBJECT_ID(N'[dbo].[SocioCurso]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SocioCurso];
 GO
 
 -- --------------------------------------------------
@@ -130,6 +157,10 @@ CREATE TABLE [dbo].[Socios] (
     [FechaInicio] datetime  NOT NULL,
     [CategoriaSocio] int  NOT NULL,
     [EstadoSocio] int  NOT NULL,
+    [Direccion] nvarchar(max)  NOT NULL,
+    [Telefono] nvarchar(max)  NOT NULL,
+    [Localidad] nvarchar(max)  NOT NULL,
+    [TipoDocumento] int  NOT NULL,
     [Persona_IdPersona] int  NOT NULL
 );
 GO
@@ -142,7 +173,7 @@ CREATE TABLE [dbo].[CuotaSocios] (
     [Importe] float  NOT NULL,
     [Estado] int  NOT NULL,
     [ValorCuotaInicial_IdCuotaInicial] int  NOT NULL,
-    [Socio_IdSocio] int  NOT NULL
+    [Socio_IdSocio] int  NULL
 );
 GO
 

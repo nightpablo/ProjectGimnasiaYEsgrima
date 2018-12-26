@@ -32,7 +32,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void Button1_Click(object sender, EventArgs e)
         {
             ControladorDeporte controladorDeporte = new ControladorDeporte();
-            List<Deporte> lista;
+            List<ModelDeporte> lista;
             deporteBindingSource.Clear();
             
             if (txtNombreDeporte.Text.ToString().Equals("") && txtDescripcionDeporte.Text.ToString().Equals(""))
@@ -43,12 +43,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 lista = controladorDeporte.ListarTodosDeportesPorFiltros(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
             }
-            
-            foreach (var i in lista)
-            {
-                deporteBindingSource.Add(i);
 
+            if (lista.Count == 0) { 
+                ModificarMensaje("No hay ningún deporte con estos filtros");
+                return;
             }
+            else if (LabelInfoDeporte.Text.Equals("No hay ningún deporte con estos filtros"))
+            {
+                ModificarMensaje("");
+            }
+            dataGridViewDeporte.DataSource = lista;
+
 
 
             dataGridViewDeporte.Visible = true;
@@ -59,7 +64,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             if (dataGridViewDeporte.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
-                InterfazModificarDeporte interfazModificar = new InterfazModificarDeporte(this, (Deporte)dataGridViewDeporte.CurrentRow.DataBoundItem);
+                InterfazModificarDeporte interfazModificar = new InterfazModificarDeporte(this, ((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte);
                 interfazModificar.ShowDialog();
                 
             }
@@ -68,7 +73,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 if(MessageBox.Show("¿Seguro que desea Eliminar este deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var resultado = new ControladorDeporte().EliminarDeporte((Deporte)dataGridViewDeporte.CurrentRow.DataBoundItem);
+                    var resultado = new ControladorDeporte().EliminarDeporte(((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte);
                     if (resultado > 0)
                     {
                         ModificarMensaje("Se ha eliminado el DEPORTE");
@@ -95,5 +100,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             LabelInfoDeporte.Text = entrada;
         }
 
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

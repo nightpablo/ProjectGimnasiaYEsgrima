@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDPersona : InterfaceBD<Persona>
+    public class BDPersona : InterfaceBD<Persona,ModelPersona>
     {
         public int Actualizar(Persona entrada)
         {
@@ -39,16 +39,25 @@ namespace ProjectGimnasiaYEsgrima.BD
             throw new NotImplementedException();
         }
 
-        public List<Persona> ListarPorFiltro(params object[] parametros)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Persona> ListarTodos()
+        public List<ModelPersona> ListarPorFiltro(params object[] parametros)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                return context.Personas.ToList();
+                return context.Personas
+                    .AsEnumerable()
+                    .Select(b => new ModelPersona() { })
+                    .ToList();
+            }
+        }
+
+        public List<ModelPersona> ListarTodos()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Personas
+                    .AsEnumerable()
+                    .Select(b=>new ModelPersona() { })
+                    .ToList();
             }
         }
     }

@@ -39,16 +39,28 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonBuscarEmpleado_Click(object sender, EventArgs e)
         {
             dataGridViewEmpleadoPersona.Visible = true;
+            List<ModelEmpleadoPersona> lista = null;
             if(txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals("") && ComboBoxTipoEmpleado.SelectedIndex==0)
             { 
-                dataGridViewEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista();
+                lista = CEmpleado.ExtraerEmpleadosAVista();
+                
             }
             else
             {
-                dataGridViewEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
+                lista = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
                     txtDNIEmpleado.Text,ComboBoxTipoEmpleado.SelectedItem);
             }
-
+            
+            if (lista.Count == 0)
+            {
+                ModificarMensaje("No hay ningún empleado con estos filtros");
+                return;
+            }
+            else if (LabelInfoEmpleado.Text.Equals("No hay ningún empleado con estos filtros"))
+            {
+                ModificarMensaje("");
+            }
+            dataGridViewEmpleadoPersona.DataSource = lista;
         }
 
         private void BotonCrearEmpleado_Click(object sender, EventArgs e)
@@ -86,6 +98,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         public void ModificarMensaje(string v)
         {
             LabelInfoEmpleado.Text = v;
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

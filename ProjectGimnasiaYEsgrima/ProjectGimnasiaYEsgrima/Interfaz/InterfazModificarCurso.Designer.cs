@@ -43,6 +43,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtImporteMensualCurso = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +61,9 @@
             this.labelModificarCursoDeporte.AutoSize = true;
             this.labelModificarCursoDeporte.Location = new System.Drawing.Point(89, 82);
             this.labelModificarCursoDeporte.Name = "labelModificarCursoDeporte";
-            this.labelModificarCursoDeporte.Size = new System.Drawing.Size(59, 17);
+            this.labelModificarCursoDeporte.Size = new System.Drawing.Size(68, 17);
             this.labelModificarCursoDeporte.TabIndex = 2;
-            this.labelModificarCursoDeporte.Text = "Deporte";
+            this.labelModificarCursoDeporte.Text = "Deporte *";
             // 
             // txtNombreCurso
             // 
@@ -88,9 +89,9 @@
             this.labelFechaInicioCurso.AutoSize = true;
             this.labelFechaInicioCurso.Location = new System.Drawing.Point(76, 213);
             this.labelFechaInicioCurso.Name = "labelFechaInicioCurso";
-            this.labelFechaInicioCurso.Size = new System.Drawing.Size(124, 17);
+            this.labelFechaInicioCurso.Size = new System.Drawing.Size(133, 17);
             this.labelFechaInicioCurso.TabIndex = 12;
-            this.labelFechaInicioCurso.Text = "Fecha Inicio Curso";
+            this.labelFechaInicioCurso.Text = "Fecha Inicio Curso *";
             // 
             // DateTimeInicio
             // 
@@ -105,9 +106,9 @@
             this.labelFechaFinCurso.AutoSize = true;
             this.labelFechaFinCurso.Location = new System.Drawing.Point(341, 213);
             this.labelFechaFinCurso.Name = "labelFechaFinCurso";
-            this.labelFechaFinCurso.Size = new System.Drawing.Size(111, 17);
+            this.labelFechaFinCurso.Size = new System.Drawing.Size(120, 17);
             this.labelFechaFinCurso.TabIndex = 14;
-            this.labelFechaFinCurso.Text = "Fecha Fin Curso";
+            this.labelFechaFinCurso.Text = "Fecha Fin Curso *";
             // 
             // DateTimeFin
             // 
@@ -122,9 +123,9 @@
             this.labelModificarCursoNombre.AutoSize = true;
             this.labelModificarCursoNombre.Location = new System.Drawing.Point(90, 127);
             this.labelModificarCursoNombre.Name = "labelModificarCursoNombre";
-            this.labelModificarCursoNombre.Size = new System.Drawing.Size(58, 17);
+            this.labelModificarCursoNombre.Size = new System.Drawing.Size(67, 17);
             this.labelModificarCursoNombre.TabIndex = 16;
-            this.labelModificarCursoNombre.Text = "Nombre";
+            this.labelModificarCursoNombre.Text = "Nombre *";
             // 
             // BotonGuardarCurso
             // 
@@ -157,13 +158,12 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(77, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Importe Mensual";
+            this.label1.Text = "Importe Mensual *";
             // 
             // txtImporteMensualCurso
             // 
-            this.txtImporteMensualCurso.Enabled = false;
             this.txtImporteMensualCurso.Location = new System.Drawing.Point(215, 169);
             this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
@@ -171,11 +171,22 @@
             this.txtImporteMensualCurso.TabIndex = 7;
             this.txtImporteMensualCurso.Text = "0";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(59, 360);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 15);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "* Los campos son obligatorios";
+            // 
             // InterfazModificarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ComboBoxDeporte);
             this.Controls.Add(this.txtImporteMensualCurso);
             this.Controls.Add(this.txtNombreCurso);
@@ -189,7 +200,7 @@
             this.Controls.Add(this.labelFechaInicioCurso);
             this.Controls.Add(this.labelModificarCursoDeporte);
             this.Controls.Add(this.labelModificarCurso);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InterfazModificarCurso";
             this.Text = "InterfazModificarCurso";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -214,5 +225,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtImporteMensualCurso;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

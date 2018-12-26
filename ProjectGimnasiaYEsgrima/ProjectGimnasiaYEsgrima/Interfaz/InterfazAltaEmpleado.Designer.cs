@@ -52,6 +52,8 @@
             this.empleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empleadosTableAdapter = new ProjectGimnasiaYEsgrima.dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet1)).BeginInit();
@@ -68,6 +70,7 @@
             this.ComboboxTipoEmpleado.Size = new System.Drawing.Size(251, 24);
             this.ComboboxTipoEmpleado.TabIndex = 0;
             this.ComboboxTipoEmpleado.Text = "Seleccione un tipo de empleado";
+            this.ComboboxTipoEmpleado.SelectedIndexChanged += new System.EventHandler(this.ComboboxTipoEmpleado_SelectedIndexChanged);
             // 
             // textBoxNombreEmpleado
             // 
@@ -81,11 +84,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 42);
+            this.label1.Location = new System.Drawing.Point(90, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre *";
             // 
             // textBoxApellidoEmpleado
             // 
@@ -99,11 +102,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 71);
+            this.label2.Location = new System.Drawing.Point(90, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Apellido";
+            this.label2.Text = "Apellido *";
             // 
             // textBoxDocumento
             // 
@@ -118,20 +121,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(117, 98);
+            this.label3.Location = new System.Drawing.Point(114, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 17);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "DNI";
+            this.label3.Text = "DNI *";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 128);
+            this.label4.Location = new System.Drawing.Point(7, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 17);
+            this.label4.Size = new System.Drawing.Size(148, 17);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Fecha de nacimiento";
+            this.label4.Text = "Fecha de nacimiento *";
             // 
             // dateTimeNacimiento
             // 
@@ -145,20 +148,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 254);
+            this.label5.Location = new System.Drawing.Point(21, 254);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 17);
+            this.label5.Size = new System.Drawing.Size(132, 17);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Tipo de Empleado";
+            this.label5.Text = "Tipo de Empleado *";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 194);
+            this.label6.Location = new System.Drawing.Point(41, 194);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 17);
+            this.label6.Size = new System.Drawing.Size(112, 17);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Fecha de inicio";
+            this.label6.Text = "Fecha de inicio *";
             // 
             // dateTimeInicioEmpleado
             // 
@@ -242,11 +245,33 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(25, 329);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(172, 15);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "* Los campos son obligatorios";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(267, 291);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(97, 32);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // InterfazAltaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 336);
+            this.ClientSize = new System.Drawing.Size(484, 353);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.botonGuardarEmpleado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
@@ -302,5 +327,7 @@
         private System.Windows.Forms.BindingSource empleadosBindingSource;
         private dbGimnasiaYEsgrimaDataSet1TableAdapters.EmpleadosTableAdapter empleadosTableAdapter;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

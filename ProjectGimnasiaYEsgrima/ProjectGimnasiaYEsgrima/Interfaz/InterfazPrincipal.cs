@@ -40,5 +40,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Form interfaz = new InterfazRegistrarEntradaSalida();
             interfaz.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form interfaz = new InterfazListaSocio();
+            interfaz.Show();
+        }
     }
 }

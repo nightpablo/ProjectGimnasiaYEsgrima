@@ -41,13 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ComboBoxTipoEmpleado = new System.Windows.Forms.ComboBox();
             this.dataGridViewEmpleadoPersona = new System.Windows.Forms.DataGridView();
-            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -178,10 +179,6 @@
             this.dataGridViewEmpleadoPersona.TabIndex = 18;
             this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmpleadoPersona_CellContentClick);
             // 
-            // empleadoPersonaBindingSource
-            // 
-            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
@@ -222,11 +219,26 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             // 
+            // empleadoPersonaBindingSource
+            // 
+            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(799, 358);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(97, 32);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
             // InterfazListaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 414);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dataGridViewEmpleadoPersona);
             this.Controls.Add(this.ComboBoxTipoEmpleado);
             this.Controls.Add(this.LabelInfoEmpleado);
@@ -270,5 +282,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

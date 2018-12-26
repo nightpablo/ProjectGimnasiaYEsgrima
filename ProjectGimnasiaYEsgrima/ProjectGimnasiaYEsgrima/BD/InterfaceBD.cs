@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public interface InterfaceBD<T>
+    public interface InterfaceBD<T,K>
     {
         int Crear(T entrada);
         int Actualizar(T entrada);
         int Eliminar(T entrada);
-        List<T> ListarTodos();
-        List<T> ListarPorFiltro(params Object[] parametros);
+        List<K> ListarTodos();
+        List<K> ListarPorFiltro(params Object[] parametros);
         T BuscarPorClavesUnicas(params Object[] parametros);
     }
 }

@@ -23,7 +23,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InitializeComponent();
             
             ControladorDeporte Cdeporte = new ControladorDeporte();
-            List<Deporte> lista = new List<Deporte>();
+            List<ModelDeporte> lista = new List<ModelDeporte>();
             lista = Cdeporte.ListarTodosDeportes();
 
             ComboBoxDeporte.DataSource = lista;
@@ -65,7 +65,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
             
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, (Deporte)ComboBoxDeporte.SelectedItem);
+            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, ((ModelDeporte)ComboBoxDeporte.SelectedItem).MiDeporte);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado un nuevo CURSO");

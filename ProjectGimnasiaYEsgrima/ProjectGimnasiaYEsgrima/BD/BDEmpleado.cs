@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.BD
 {
-    public class BDEmpleado : InterfaceBD<Empleado>
+    public class BDEmpleado : InterfaceBD<Empleado,ModelEmpleadoPersona>
     {
         public int Actualizar(Empleado entrada)
         {
@@ -50,15 +50,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        public List<Empleado> ListarTodos()
-        {
-            using (var context = new DiagramasDeTablasContainer1())
-            {
-                return context.Empleados.ToList();
-            }
-        }
-
-        public List<ModelEmpleadoPersona> ListarEmpleadosPersonas()
+        public List<ModelEmpleadoPersona> ListarTodos()
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
@@ -77,7 +69,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        public List<ModelEmpleadoPersona> ListarEmpleadosPersonas(params object[] parametros)
+        public List<ModelEmpleadoPersona> ListarPorFiltro(params object[] parametros)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
@@ -101,24 +93,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-
-        public List<Empleado> ListarPorFiltro(params object[] parametros)
-        {
-            using (var context = new DiagramasDeTablasContainer1())
-            {
-                //return context.Cursos.ToList();
-                var i = context.Empleados.AsEnumerable()
-                .Where(b => b.Persona.Nombre.Contains((string)parametros[0]))
-                               .ToList();
-                /* var j = context.Empleados.AsEnumerable()
-                 .Where(b => b.Persona.Apellido.Contains((string)parametros[1]))
-                                .ToList();*/
-                //var iddep = Convert.ToInt32(parametros[2]);
-
-                return i; //ddep == 0 ? i : i.Where(b => b.Persona.IdPersona == iddep).ToList();
-
-            }
-        }
+        
 
         public bool existeEmpleado(Empleado emp, Persona pers)
         {

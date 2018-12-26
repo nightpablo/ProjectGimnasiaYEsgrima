@@ -115,5 +115,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 CargoPersona = false;
             }
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void ComboboxTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

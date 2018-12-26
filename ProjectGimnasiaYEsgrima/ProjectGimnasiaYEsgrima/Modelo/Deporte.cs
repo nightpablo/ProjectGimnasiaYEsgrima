@@ -11,7 +11,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Deporte
     {
         public int IdDeporte { get; set; }

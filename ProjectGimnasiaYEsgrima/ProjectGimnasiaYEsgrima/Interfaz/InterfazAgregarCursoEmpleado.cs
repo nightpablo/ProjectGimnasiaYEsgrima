@@ -30,6 +30,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoEmpleado);
             txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnBuscar);
 
+            dataGridViewEmpleadoProfesor.AllowUserToAddRows = false;
+            dataGridViewEmpleadoProfesor.Visible = false;
+            LabelInfo.Text = "";
         }
         
 
@@ -40,8 +43,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void ActualizarTabla()
         {
-            dataGridViewEmpleadoProfesor.DataSource = new ControladorEmpleado().ExtraerEmpleadosAVista("", txtApellidoEmpleado.Text, txtDNIEmpleado.Text, "Profesor");
-            
+            List<ModelEmpleadoPersona> lista = new ControladorEmpleado().ExtraerEmpleadosAVista("", txtApellidoEmpleado.Text, txtDNIEmpleado.Text, "Profesor");
+            LabelInfo.Text = "";
+            if (lista.Count == 0)
+            {
+                LabelInfo.Text = "No hay ningún profesor con estos filtros";
+                return;
+            }
+
+            dataGridViewEmpleadoProfesor.DataSource = lista;
+            if(dataGridViewEmpleadoProfesor.Visible == false)
+                dataGridViewEmpleadoProfesor.Visible = true;
         }
 
         

@@ -45,6 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtImporteMensualCurso = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,31 +64,31 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.labelAltaCursoNombre.AutoSize = true;
             this.labelAltaCursoNombre.Location = new System.Drawing.Point(66, 113);
             this.labelAltaCursoNombre.Name = "labelAltaCursoNombre";
-            this.labelAltaCursoNombre.Size = new System.Drawing.Size(58, 17);
+            this.labelAltaCursoNombre.Size = new System.Drawing.Size(67, 17);
             this.labelAltaCursoNombre.TabIndex = 1;
-            this.labelAltaCursoNombre.Text = "Nombre";
+            this.labelAltaCursoNombre.Text = "Nombre *";
             // 
             // labelFechaInicioCurso
             // 
             this.labelFechaInicioCurso.AutoSize = true;
             this.labelFechaInicioCurso.Location = new System.Drawing.Point(51, 184);
             this.labelFechaInicioCurso.Name = "labelFechaInicioCurso";
-            this.labelFechaInicioCurso.Size = new System.Drawing.Size(124, 17);
+            this.labelFechaInicioCurso.Size = new System.Drawing.Size(133, 17);
             this.labelFechaInicioCurso.TabIndex = 3;
-            this.labelFechaInicioCurso.Text = "Fecha Inicio Curso";
+            this.labelFechaInicioCurso.Text = "Fecha Inicio Curso *";
             // 
             // labelFechaFinCurso
             // 
             this.labelFechaFinCurso.AutoSize = true;
             this.labelFechaFinCurso.Location = new System.Drawing.Point(349, 184);
             this.labelFechaFinCurso.Name = "labelFechaFinCurso";
-            this.labelFechaFinCurso.Size = new System.Drawing.Size(111, 17);
+            this.labelFechaFinCurso.Size = new System.Drawing.Size(120, 17);
             this.labelFechaFinCurso.TabIndex = 5;
-            this.labelFechaFinCurso.Text = "Fecha Fin Curso";
+            this.labelFechaFinCurso.Text = "Fecha Fin Curso *";
             // 
             // txtNombreCurso
             // 
-            this.txtNombreCurso.Location = new System.Drawing.Point(133, 110);
+            this.txtNombreCurso.Location = new System.Drawing.Point(136, 110);
             this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(237, 22);
@@ -136,15 +137,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.labelAltaCursoDeporte.AutoSize = true;
             this.labelAltaCursoDeporte.Location = new System.Drawing.Point(65, 76);
             this.labelAltaCursoDeporte.Name = "labelAltaCursoDeporte";
-            this.labelAltaCursoDeporte.Size = new System.Drawing.Size(59, 17);
+            this.labelAltaCursoDeporte.Size = new System.Drawing.Size(68, 17);
             this.labelAltaCursoDeporte.TabIndex = 1;
-            this.labelAltaCursoDeporte.Text = "Deporte";
+            this.labelAltaCursoDeporte.Text = "Deporte *";
             this.labelAltaCursoDeporte.Click += new System.EventHandler(this.label5_Click);
             // 
             // ComboBoxDeporte
             // 
             this.ComboBoxDeporte.FormattingEnabled = true;
-            this.ComboBoxDeporte.Location = new System.Drawing.Point(133, 73);
+            this.ComboBoxDeporte.Location = new System.Drawing.Point(136, 73);
             this.ComboBoxDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxDeporte.Name = "ComboBoxDeporte";
             this.ComboBoxDeporte.Size = new System.Drawing.Size(237, 24);
@@ -157,7 +158,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // txtImporteMensualCurso
             // 
-            this.txtImporteMensualCurso.Location = new System.Drawing.Point(133, 147);
+            this.txtImporteMensualCurso.Location = new System.Drawing.Point(136, 147);
             this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
             this.txtImporteMensualCurso.Size = new System.Drawing.Size(237, 22);
@@ -169,16 +170,27 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(121, 17);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Importe Mensual";
+            this.label1.Text = "Importe Mensual *";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 300);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "* Los campos son obligatorios";
             // 
             // InterfazAltaCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 313);
+            this.ClientSize = new System.Drawing.Size(617, 321);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtImporteMensualCurso);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ComboBoxDeporte);
@@ -227,5 +239,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtImporteMensualCurso;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
