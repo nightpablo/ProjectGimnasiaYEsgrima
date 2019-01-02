@@ -36,16 +36,18 @@
             this.txtDNISocio = new System.Windows.Forms.TextBox();
             this.txtApellidoSocio = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.dataGridViewEmpleadoPersona = new System.Windows.Forms.DataGridView();
             this.botonCrearSocio = new System.Windows.Forms.Button();
             this.BotonBuscarSocio = new System.Windows.Forms.Button();
-            this.modelSocioPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewSocioPersona = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).BeginInit();
+            this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.modelSocioPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,31 +107,12 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(736, 327);
+            this.btnVolver.Location = new System.Drawing.Point(736, 376);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(97, 32);
             this.btnVolver.TabIndex = 24;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewEmpleadoPersona
-            // 
-            this.dataGridViewEmpleadoPersona.AutoGenerateColumns = false;
-            this.dataGridViewEmpleadoPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmpleadoPersona.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Modificar,
-            this.Eliminar,
-            this.nombreDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn,
-            this.dNIDataGridViewTextBoxColumn});
-            this.dataGridViewEmpleadoPersona.DataSource = this.modelSocioPersonaBindingSource;
-            this.dataGridViewEmpleadoPersona.Location = new System.Drawing.Point(-32, 128);
-            this.dataGridViewEmpleadoPersona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewEmpleadoPersona.Name = "dataGridViewEmpleadoPersona";
-            this.dataGridViewEmpleadoPersona.RowTemplate.Height = 24;
-            this.dataGridViewEmpleadoPersona.Size = new System.Drawing.Size(865, 194);
-            this.dataGridViewEmpleadoPersona.TabIndex = 23;
-            this.dataGridViewEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmpleadoPersona_CellContentClick);
             // 
             // botonCrearSocio
             // 
@@ -152,9 +135,23 @@
             this.BotonBuscarSocio.UseVisualStyleBackColor = true;
             this.BotonBuscarSocio.Click += new System.EventHandler(this.BotonBuscarEmpleado_Click);
             // 
-            // modelSocioPersonaBindingSource
+            // dataGridViewSocioPersona
             // 
-            this.modelSocioPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
+            this.dataGridViewSocioPersona.AutoGenerateColumns = false;
+            this.dataGridViewSocioPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSocioPersona.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.dNIDataGridViewTextBoxColumn,
+            this.Modificar,
+            this.Eliminar});
+            this.dataGridViewSocioPersona.DataSource = this.modelSocioPersonaBindingSource1;
+            this.dataGridViewSocioPersona.Location = new System.Drawing.Point(46, 165);
+            this.dataGridViewSocioPersona.Name = "dataGridViewSocioPersona";
+            this.dataGridViewSocioPersona.RowTemplate.Height = 24;
+            this.dataGridViewSocioPersona.Size = new System.Drawing.Size(735, 185);
+            this.dataGridViewSocioPersona.TabIndex = 25;
+            this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
             // 
             // Modificar
             // 
@@ -190,13 +187,21 @@
             this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
             this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
+            // modelSocioPersonaBindingSource1
+            // 
+            this.modelSocioPersonaBindingSource1.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
+            // 
+            // modelSocioPersonaBindingSource
+            // 
+            this.modelSocioPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
+            // 
             // InterfazListaSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 450);
+            this.Controls.Add(this.dataGridViewSocioPersona);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.dataGridViewEmpleadoPersona);
             this.Controls.Add(this.botonCrearSocio);
             this.Controls.Add(this.BotonBuscarSocio);
             this.Controls.Add(this.txtNombreSocio);
@@ -207,7 +212,8 @@
             this.Controls.Add(this.labelDeporteListarEmpleado);
             this.Name = "InterfazListaSocio";
             this.Text = "InterfazListaSocio";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoPersona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,14 +229,15 @@
         private System.Windows.Forms.TextBox txtDNISocio;
         private System.Windows.Forms.TextBox txtApellidoSocio;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DataGridView dataGridViewEmpleadoPersona;
         private System.Windows.Forms.Button botonCrearSocio;
         private System.Windows.Forms.Button BotonBuscarSocio;
         private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource;
-        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridView dataGridViewSocioPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Modificar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource1;
     }
 }

@@ -162,6 +162,12 @@
     <Compile Include="Interfaz\InterfazModificarEmpleado.Designer.cs">
       <DependentUpon>InterfazModificarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazModificarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazModificarSocio.Designer.cs">
+      <DependentUpon>InterfazModificarSocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazModificarEmpleado.resx">
       <DependentUpon>InterfazModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazModificarSocio.resx">
+      <DependentUpon>InterfazModificarSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>

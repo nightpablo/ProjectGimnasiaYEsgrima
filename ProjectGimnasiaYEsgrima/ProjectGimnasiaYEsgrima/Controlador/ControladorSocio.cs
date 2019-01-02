@@ -72,6 +72,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdSocio.ListarPorFiltro(parametros);
         }
 
+        public int EliminarSocio(Socio socio)
+        {
+            socio.EstadoSocio = EnumEstadoSocio.Baja;
+            return bdSocio.Actualizar(socio);
+        }
 
     }
 }
