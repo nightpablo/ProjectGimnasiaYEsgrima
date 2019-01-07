@@ -14,32 +14,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAltaSocio : Form
     {
-      
 
-        public InterfazAltaSocio()
+        InterfazListaSocio Padre;
+        public InterfazAltaSocio(InterfazListaSocio padre)
         {
+            Padre = padre;
             InitializeComponent();
             comboBoxTipoDocumentoSocio.DataSource = Enum.GetValues(typeof(EnumTipoDocumento));
-        }
-
-        private void labelNombreSocio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InterfazAltaSocio_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonGuardarSocio_Click(object sender, EventArgs e)
@@ -97,16 +78,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 textBoxTelefonoSocio.Text, tipoDocumento);
             if (resultado > 0)
             {
-                //Padre.ModificarMensaje("Se ha creado el EMPLEADO");
+                Padre.ModificarMensaje("Se ha creado el SOCIO");
                 Dispose();
-            }
+            }   
             else if (resultado == -1)
             {
-                //Padre.ModificarMensaje("Se ha recuperado el EMPLEADO");
+                Padre.ModificarMensaje("Se ha recuperado el SOCIO");
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
+                MessageBox.Show(this, "Ya existe el SOCIO", "Socio");
+        }
+
+        private void buttonVolverSocio_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

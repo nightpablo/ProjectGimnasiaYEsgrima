@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxModificarNombreSocio = new System.Windows.Forms.TextBox();
             this.textBoxModificarDireccionSocio = new System.Windows.Forms.TextBox();
             this.textBoxModificarApellidoSocio = new System.Windows.Forms.TextBox();
@@ -35,7 +36,6 @@
             this.labelApellidoSocioModificar = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxModificarTipoDocSocio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +46,9 @@
             this.textBoxModificarLocalidadSocio = new System.Windows.Forms.TextBox();
             this.buttonModificarSocio = new System.Windows.Forms.Button();
             this.buttonVolverModificarSocio = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textBoxModificarTipoDocSocio = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxModificarNombreSocio
@@ -102,14 +105,6 @@
             this.label1.Size = new System.Drawing.Size(141, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Fecha de Nacimiento";
-            // 
-            // comboBoxModificarTipoDocSocio
-            // 
-            this.comboBoxModificarTipoDocSocio.FormattingEnabled = true;
-            this.comboBoxModificarTipoDocSocio.Location = new System.Drawing.Point(309, 185);
-            this.comboBoxModificarTipoDocSocio.Name = "comboBoxModificarTipoDocSocio";
-            this.comboBoxModificarTipoDocSocio.Size = new System.Drawing.Size(257, 24);
-            this.comboBoxModificarTipoDocSocio.TabIndex = 7;
             // 
             // label2
             // 
@@ -195,6 +190,18 @@
             this.buttonVolverModificarSocio.TabIndex = 17;
             this.buttonVolverModificarSocio.Text = "Volver";
             this.buttonVolverModificarSocio.UseVisualStyleBackColor = true;
+            this.buttonVolverModificarSocio.Click += new System.EventHandler(this.buttonVolverModificarSocio_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // textBoxModificarTipoDocSocio
+            // 
+            this.textBoxModificarTipoDocSocio.Location = new System.Drawing.Point(309, 184);
+            this.textBoxModificarTipoDocSocio.Name = "textBoxModificarTipoDocSocio";
+            this.textBoxModificarTipoDocSocio.Size = new System.Drawing.Size(257, 22);
+            this.textBoxModificarTipoDocSocio.TabIndex = 13;
             // 
             // InterfazModificarSocio
             // 
@@ -205,13 +212,13 @@
             this.Controls.Add(this.buttonModificarSocio);
             this.Controls.Add(this.textBoxModificarLocalidadSocio);
             this.Controls.Add(this.textBoxModificarTelefonoSocio);
+            this.Controls.Add(this.textBoxModificarTipoDocSocio);
             this.Controls.Add(this.textBoxModificarNroDocSocio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxModificarTipoDocSocio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelApellidoSocioModificar);
@@ -221,6 +228,7 @@
             this.Controls.Add(this.textBoxModificarNombreSocio);
             this.Name = "InterfazModificarSocio";
             this.Text = "InterfazModificarSocio";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +243,6 @@
         private System.Windows.Forms.Label labelApellidoSocioModificar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxModificarTipoDocSocio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -246,5 +253,7 @@
         private System.Windows.Forms.TextBox textBoxModificarLocalidadSocio;
         private System.Windows.Forms.Button buttonModificarSocio;
         private System.Windows.Forms.Button buttonVolverModificarSocio;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox textBoxModificarTipoDocSocio;
     }
 }

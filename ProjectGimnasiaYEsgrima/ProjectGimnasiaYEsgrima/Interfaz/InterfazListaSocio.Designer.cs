@@ -39,13 +39,14 @@
             this.botonCrearSocio = new System.Windows.Forms.Button();
             this.BotonBuscarSocio = new System.Windows.Forms.Button();
             this.dataGridViewSocioPersona = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modelSocioPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelInfoSocio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).BeginInit();
@@ -123,6 +124,7 @@
             this.botonCrearSocio.TabIndex = 22;
             this.botonCrearSocio.Text = "Crear Socio";
             this.botonCrearSocio.UseVisualStyleBackColor = true;
+            this.botonCrearSocio.Click += new System.EventHandler(this.botonCrearSocio_Click);
             // 
             // BotonBuscarSocio
             // 
@@ -133,7 +135,7 @@
             this.BotonBuscarSocio.TabIndex = 21;
             this.BotonBuscarSocio.Text = "Buscar";
             this.BotonBuscarSocio.UseVisualStyleBackColor = true;
-            this.BotonBuscarSocio.Click += new System.EventHandler(this.BotonBuscarEmpleado_Click);
+            this.BotonBuscarSocio.Click += new System.EventHandler(this.BotonBuscarSocio_Click);
             // 
             // dataGridViewSocioPersona
             // 
@@ -153,22 +155,6 @@
             this.dataGridViewSocioPersona.TabIndex = 25;
             this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
             // 
-            // Modificar
-            // 
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
@@ -187,6 +173,22 @@
             this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
             this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // modelSocioPersonaBindingSource1
             // 
             this.modelSocioPersonaBindingSource1.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
@@ -195,11 +197,23 @@
             // 
             this.modelSocioPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
             // 
+            // labelInfoSocio
+            // 
+            this.labelInfoSocio.AutoSize = true;
+            this.labelInfoSocio.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold);
+            this.labelInfoSocio.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.labelInfoSocio.Location = new System.Drawing.Point(48, 360);
+            this.labelInfoSocio.Name = "labelInfoSocio";
+            this.labelInfoSocio.Size = new System.Drawing.Size(199, 24);
+            this.labelInfoSocio.TabIndex = 26;
+            this.labelInfoSocio.Text = "Aca se imprime algo";
+            // 
             // InterfazListaSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 450);
+            this.Controls.Add(this.labelInfoSocio);
             this.Controls.Add(this.dataGridViewSocioPersona);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.botonCrearSocio);
@@ -239,5 +253,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource1;
+        private System.Windows.Forms.Label labelInfoSocio;
     }
 }

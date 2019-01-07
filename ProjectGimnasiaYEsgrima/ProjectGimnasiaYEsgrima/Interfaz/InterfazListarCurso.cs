@@ -115,7 +115,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            Dispose();
+                        Dispose();
         }
     }
 }

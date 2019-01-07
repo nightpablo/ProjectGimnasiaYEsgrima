@@ -16,25 +16,42 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public int CrearSocio(string nombre, string apellido, DateTime fechaNacimiento, int nroDocumento, string domicilio, string localidad, string telefono, EnumTipoDocumento tipoDocumento)
         {
-           Socio buscado = bdSocio.BuscarPorClavesUnicas(nroDocumento);
 
-            if (buscado != null )
+
+
+            Socio buscado = bdSocio.BuscarPorClavesUnicas(nroDocumento);
+
+            if (buscado != null && buscado.EstadoSocio == EnumEstadoSocio.Baja)
             {
                 buscado.Persona.Nombre = nombre;
                 buscado.Persona.Apellido = apellido;
                 buscado.Persona.FechaNacimiento = fechaNacimiento;
-                buscado.TipoDocumento = tipoDocumento;
                 buscado.Localidad = localidad;
                 buscado.Direccion = domicilio;
                 buscado.Telefono = telefono;
-
+                buscado.EstadoSocio = EnumEstadoSocio.Activo;
                 bdSocio.Actualizar(buscado);
                 return -1;
             }
-            else  return -2;
-            Socio unSocio = null;
+            if (buscado != null)
+            {
+                return -2;
+            }
 
-            unSocio = new Socio {
+            Persona pers = controladorPersona.BuscarPersonaPorClavesUnicas(nroDocumento);
+
+            if(pers == null)
+            {
+                pers = new Persona
+                {
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    FechaNacimiento = fechaNacimiento,
+                    DNI = nroDocumento
+                };
+            }
+
+            Socio unSocio = new Socio {
                 Direccion = domicilio,
                 Localidad = localidad,
                 Telefono = telefono,
@@ -44,16 +61,10 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 TipoDocumento = tipoDocumento
             };
             
-            Persona unaPersona = new Persona
-            {
-                Nombre = nombre,
-                Apellido = apellido,
-                FechaNacimiento = fechaNacimiento,
-                DNI = nroDocumento
-            };
-            new BDPersona().Crear(unaPersona);
+            
+            new BDPersona().Crear(pers);
 
-           unSocio.Persona = unaPersona;
+            unSocio.Persona = pers;
 
             return bdSocio.Crear(unSocio);
         }
@@ -76,6 +87,22 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         {
             socio.EstadoSocio = EnumEstadoSocio.Baja;
             return bdSocio.Actualizar(socio);
+        }
+
+        public int ModificarSocio(int idPersona, int idSocio, string nombre, string apellido, DateTime fechaNacimiento, int documento, string direccion,string localidad, string telefono)
+        {
+            Socio socio = bdSocio.BuscarPorClavesUnicas(documento);
+            socio.Direccion = direccion;
+            socio.Localidad = localidad;
+            socio.Telefono = telefono;
+            
+            Persona buscado = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
+            buscado.Nombre = nombre;
+            buscado.Apellido = apellido;
+            buscado.FechaNacimiento = fechaNacimiento;
+            socio.Persona = buscado;
+            return bdSocio.Actualizar(socio);
+
         }
 
     }

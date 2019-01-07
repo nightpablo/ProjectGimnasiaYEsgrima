@@ -19,6 +19,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InitializeComponent();
             dataGridViewSocioPersona.AllowUserToAddRows = false;
             dataGridViewSocioPersona.Visible = false;
+            labelInfoSocio.Text = "";
 
         }
 
@@ -27,7 +28,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         }
 
-        private void BotonBuscarEmpleado_Click(object sender, EventArgs e)
+        private void BotonBuscarSocio_Click(object sender, EventArgs e)
         {
             ControladorSocio CSocio = new ControladorSocio();
             dataGridViewSocioPersona.Visible = true;
@@ -45,12 +46,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (lista.Count == 0)
             {
-                //ModificarMensaje("No hay ningún empleado con estos filtros");
+                    ModificarMensaje("No hay ningún empleado con estos filtros");
                 return;
             }
-           // else if (LabelInfoEmpleado.Text.Equals("No hay ningún empleado con estos filtros"))
+            else if (labelInfoSocio.Text.Equals("No hay ningún empleado con estos filtros"))
             {
-            //    ModificarMensaje("");
+                ModificarMensaje("");
             }
             dataGridViewSocioPersona.DataSource = lista;
         }
@@ -67,7 +68,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 if (MessageBox.Show("¿Seguro que desea Eliminar este Socio?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ControladorSocio CSocio = new ControladorSocio();
-                    if (CSocio.EliminarSocio(((ModelEmpleadoPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem).MiEmpleado) > 0)
+                    if (CSocio.EliminarSocio(((ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem).MiSocio) > 0)
                     {
                         ModificarMensaje("Se ha eliminado el Socio");
 
@@ -75,8 +76,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
-            if (dataGridViewEmpleadoPersona.Visible)
-                BotonBuscarEmpleado_Click(sender, e);
+            if (dataGridViewSocioPersona.Visible)
+                BotonBuscarSocio_Click(sender, e);
+        }
+        public void ModificarMensaje(string v)
+        {
+            labelInfoSocio.Text = v;
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void botonCrearSocio_Click(object sender, EventArgs e)
+        {
+            InterfazAltaSocio interfazAltaSocio = new InterfazAltaSocio(this);
+            interfazAltaSocio.ShowDialog();
+            if (dataGridViewSocioPersona.Visible)
+                BotonBuscarSocio_Click(sender, e);
         }
     }
 }

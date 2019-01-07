@@ -59,7 +59,6 @@
             this.labelNombreSocio.Size = new System.Drawing.Size(65, 17);
             this.labelNombreSocio.TabIndex = 0;
             this.labelNombreSocio.Text = "Nombres";
-            this.labelNombreSocio.Click += new System.EventHandler(this.labelNombreSocio_Click);
             // 
             // labelApellidoSocio
             // 
@@ -78,7 +77,6 @@
             this.labelTipoDocumentooSocio.Size = new System.Drawing.Size(112, 17);
             this.labelTipoDocumentooSocio.TabIndex = 2;
             this.labelTipoDocumentooSocio.Text = "Tipo Documento";
-            this.labelTipoDocumentooSocio.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelDireccionSocio
             // 
@@ -97,7 +95,6 @@
             this.labelNumeroDocumentoSocio.Size = new System.Drawing.Size(134, 17);
             this.labelNumeroDocumentoSocio.TabIndex = 4;
             this.labelNumeroDocumentoSocio.Text = "Numero Documento";
-            this.labelNumeroDocumentoSocio.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
@@ -199,8 +196,9 @@
             this.buttonVolverSocio.Name = "buttonVolverSocio";
             this.buttonVolverSocio.Size = new System.Drawing.Size(104, 44);
             this.buttonVolverSocio.TabIndex = 20;
-            this.buttonVolverSocio.Text = "Volver";
+            this.buttonVolverSocio.Text = "Cancelar";
             this.buttonVolverSocio.UseVisualStyleBackColor = true;
+            this.buttonVolverSocio.Click += new System.EventHandler(this.buttonVolverSocio_Click);
             // 
             // errorProvider1
             // 
@@ -231,7 +229,6 @@
             this.Controls.Add(this.labelNombreSocio);
             this.Name = "InterfazAltaSocio";
             this.Text = "InterfazAltaSocio";
-            this.Load += new System.EventHandler(this.InterfazAltaSocio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
