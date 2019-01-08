@@ -24,19 +24,37 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Padre = padre;
             this.deporte = deporte;
             InitializeComponent();
-            txtNombreDeporte.Text = deporte.Nombre;
-            txtDescripcionDeporte.Text = deporte.Descripcion;
+            txtNombreDeporte.Text = this.deporte.Nombre;
+            txtDescripcionDeporte.Text = this.deporte.Descripcion;
+            txtNombreDeporte.ReadOnly = true;
+           
 
+            CargarCamposFocus();
+            CargarInterfazBuena();
+
+        }
+
+        private void CargarCamposFocus()
+        {
             txtNombreDeporte.Focus();
             txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
-            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarDeporte);
 
             txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
             txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
-
-            txtNombreDeporte.Enabled = false;
         }
-       
+
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloDeporte);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreDeporte, lblDescripcionDeporte);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtDescripcionDeporte);
+            interfaz.TransformarBotonPersonalizadoTodos(btnGuardarDeporte, btnCancelarDeporte);
+            interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtNombreDeporte);
+        }
+
 
         private void BotonGuardarDeporte_Click(object sender, EventArgs e)
         {
@@ -65,7 +83,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BotonCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
         }

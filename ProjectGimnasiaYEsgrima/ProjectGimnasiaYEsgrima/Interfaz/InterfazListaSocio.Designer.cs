@@ -29,113 +29,125 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.labelDeporteListarEmpleado = new System.Windows.Forms.Label();
+            this.lblNombreSocio = new System.Windows.Forms.Label();
             this.txtNombreSocio = new System.Windows.Forms.TextBox();
-            this.labelEmpleadoListarEmpleado = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDNISocio = new System.Windows.Forms.Label();
+            this.lblApellidoSocio = new System.Windows.Forms.Label();
             this.txtDNISocio = new System.Windows.Forms.TextBox();
             this.txtApellidoSocio = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.botonCrearSocio = new System.Windows.Forms.Button();
-            this.BotonBuscarSocio = new System.Windows.Forms.Button();
+            this.btnCrearSocio = new System.Windows.Forms.Button();
+            this.btnBuscarSocio = new System.Windows.Forms.Button();
             this.dataGridViewSocioPersona = new System.Windows.Forms.DataGridView();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.lblInfoSocio = new System.Windows.Forms.Label();
+            this.labelTituloVentana = new System.Windows.Forms.Label();
+            this.ContenedorHijo = new System.Windows.Forms.Panel();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modelSocioPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelInfoSocio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).BeginInit();
+            this.ContenedorHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelDeporteListarEmpleado
+            // lblNombreSocio
             // 
-            this.labelDeporteListarEmpleado.AutoSize = true;
-            this.labelDeporteListarEmpleado.Location = new System.Drawing.Point(53, 35);
-            this.labelDeporteListarEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDeporteListarEmpleado.Name = "labelDeporteListarEmpleado";
-            this.labelDeporteListarEmpleado.Size = new System.Drawing.Size(58, 17);
-            this.labelDeporteListarEmpleado.TabIndex = 16;
-            this.labelDeporteListarEmpleado.Text = "Nombre";
+            this.lblNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreSocio.Location = new System.Drawing.Point(29, 40);
+            this.lblNombreSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreSocio.Name = "lblNombreSocio";
+            this.lblNombreSocio.Size = new System.Drawing.Size(101, 29);
+            this.lblNombreSocio.TabIndex = 16;
+            this.lblNombreSocio.Text = "Nombre";
+            this.lblNombreSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNombreSocio
             // 
-            this.txtNombreSocio.Location = new System.Drawing.Point(157, 32);
+            this.txtNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreSocio.Location = new System.Drawing.Point(153, 40);
             this.txtNombreSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreSocio.Name = "txtNombreSocio";
-            this.txtNombreSocio.Size = new System.Drawing.Size(160, 22);
+            this.txtNombreSocio.Size = new System.Drawing.Size(160, 34);
             this.txtNombreSocio.TabIndex = 18;
             // 
-            // labelEmpleadoListarEmpleado
+            // lblDNISocio
             // 
-            this.labelEmpleadoListarEmpleado.AutoSize = true;
-            this.labelEmpleadoListarEmpleado.Location = new System.Drawing.Point(53, 95);
-            this.labelEmpleadoListarEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEmpleadoListarEmpleado.Name = "labelEmpleadoListarEmpleado";
-            this.labelEmpleadoListarEmpleado.Size = new System.Drawing.Size(31, 17);
-            this.labelEmpleadoListarEmpleado.TabIndex = 17;
-            this.labelEmpleadoListarEmpleado.Text = "DNI";
+            this.lblDNISocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNISocio.Location = new System.Drawing.Point(76, 112);
+            this.lblDNISocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNISocio.Name = "lblDNISocio";
+            this.lblDNISocio.Size = new System.Drawing.Size(54, 29);
+            this.lblDNISocio.TabIndex = 17;
+            this.lblDNISocio.Text = "DNI";
+            this.lblDNISocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lblApellidoSocio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 65);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Apellido";
+            this.lblApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoSocio.Location = new System.Drawing.Point(28, 77);
+            this.lblApellidoSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoSocio.Name = "lblApellidoSocio";
+            this.lblApellidoSocio.Size = new System.Drawing.Size(102, 29);
+            this.lblApellidoSocio.TabIndex = 14;
+            this.lblApellidoSocio.Text = "Apellido";
+            this.lblApellidoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtDNISocio
             // 
-            this.txtDNISocio.Location = new System.Drawing.Point(157, 92);
+            this.txtDNISocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNISocio.Location = new System.Drawing.Point(153, 112);
             this.txtDNISocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNISocio.Name = "txtDNISocio";
-            this.txtDNISocio.Size = new System.Drawing.Size(160, 22);
+            this.txtDNISocio.Size = new System.Drawing.Size(160, 34);
             this.txtDNISocio.TabIndex = 20;
             // 
             // txtApellidoSocio
             // 
-            this.txtApellidoSocio.Location = new System.Drawing.Point(157, 62);
+            this.txtApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoSocio.Location = new System.Drawing.Point(153, 77);
             this.txtApellidoSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoSocio.Name = "txtApellidoSocio";
-            this.txtApellidoSocio.Size = new System.Drawing.Size(160, 22);
+            this.txtApellidoSocio.Size = new System.Drawing.Size(160, 34);
             this.txtApellidoSocio.TabIndex = 19;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(736, 376);
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(672, 368);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 32);
+            this.btnVolver.Size = new System.Drawing.Size(97, 40);
             this.btnVolver.TabIndex = 24;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             // 
-            // botonCrearSocio
+            // btnCrearSocio
             // 
-            this.botonCrearSocio.Location = new System.Drawing.Point(697, 92);
-            this.botonCrearSocio.Margin = new System.Windows.Forms.Padding(4);
-            this.botonCrearSocio.Name = "botonCrearSocio";
-            this.botonCrearSocio.Size = new System.Drawing.Size(136, 28);
-            this.botonCrearSocio.TabIndex = 22;
-            this.botonCrearSocio.Text = "Crear Socio";
-            this.botonCrearSocio.UseVisualStyleBackColor = true;
-            this.botonCrearSocio.Click += new System.EventHandler(this.botonCrearSocio_Click);
+            this.btnCrearSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearSocio.Location = new System.Drawing.Point(608, 112);
+            this.btnCrearSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearSocio.Name = "btnCrearSocio";
+            this.btnCrearSocio.Size = new System.Drawing.Size(160, 36);
+            this.btnCrearSocio.TabIndex = 22;
+            this.btnCrearSocio.Text = "Crear Socio";
+            this.btnCrearSocio.UseVisualStyleBackColor = true;
+            this.btnCrearSocio.Click += new System.EventHandler(this.botonCrearSocio_Click);
             // 
-            // BotonBuscarSocio
+            // btnBuscarSocio
             // 
-            this.BotonBuscarSocio.Location = new System.Drawing.Point(556, 92);
-            this.BotonBuscarSocio.Margin = new System.Windows.Forms.Padding(4);
-            this.BotonBuscarSocio.Name = "BotonBuscarSocio";
-            this.BotonBuscarSocio.Size = new System.Drawing.Size(133, 28);
-            this.BotonBuscarSocio.TabIndex = 21;
-            this.BotonBuscarSocio.Text = "Buscar";
-            this.BotonBuscarSocio.UseVisualStyleBackColor = true;
-            this.BotonBuscarSocio.Click += new System.EventHandler(this.BotonBuscarSocio_Click);
+            this.btnBuscarSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarSocio.Location = new System.Drawing.Point(472, 112);
+            this.btnBuscarSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarSocio.Name = "btnBuscarSocio";
+            this.btnBuscarSocio.Size = new System.Drawing.Size(133, 36);
+            this.btnBuscarSocio.TabIndex = 21;
+            this.btnBuscarSocio.Text = "Buscar";
+            this.btnBuscarSocio.UseVisualStyleBackColor = true;
+            this.btnBuscarSocio.Click += new System.EventHandler(this.BotonBuscarSocio_Click);
             // 
             // dataGridViewSocioPersona
             // 
@@ -148,30 +160,12 @@
             this.Modificar,
             this.Eliminar});
             this.dataGridViewSocioPersona.DataSource = this.modelSocioPersonaBindingSource1;
-            this.dataGridViewSocioPersona.Location = new System.Drawing.Point(46, 165);
+            this.dataGridViewSocioPersona.Location = new System.Drawing.Point(8, 165);
             this.dataGridViewSocioPersona.Name = "dataGridViewSocioPersona";
             this.dataGridViewSocioPersona.RowTemplate.Height = 24;
-            this.dataGridViewSocioPersona.Size = new System.Drawing.Size(735, 185);
+            this.dataGridViewSocioPersona.Size = new System.Drawing.Size(784, 185);
             this.dataGridViewSocioPersona.TabIndex = 25;
             this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
             // Modificar
             // 
@@ -189,6 +183,58 @@
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
             // 
+            // lblInfoSocio
+            // 
+            this.lblInfoSocio.AutoSize = true;
+            this.lblInfoSocio.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold);
+            this.lblInfoSocio.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblInfoSocio.Location = new System.Drawing.Point(48, 360);
+            this.lblInfoSocio.Name = "lblInfoSocio";
+            this.lblInfoSocio.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoSocio.TabIndex = 26;
+            this.lblInfoSocio.Text = "Aca se imprime algo";
+            // 
+            // labelTituloVentana
+            // 
+            this.labelTituloVentana.AutoSize = true;
+            this.labelTituloVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloVentana.Location = new System.Drawing.Point(48, 0);
+            this.labelTituloVentana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTituloVentana.Name = "labelTituloVentana";
+            this.labelTituloVentana.Size = new System.Drawing.Size(207, 32);
+            this.labelTituloVentana.TabIndex = 27;
+            this.labelTituloVentana.Text = "Gestion Socios";
+            // 
+            // ContenedorHijo
+            // 
+            this.ContenedorHijo.Controls.Add(this.labelTituloVentana);
+            this.ContenedorHijo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContenedorHijo.Location = new System.Drawing.Point(0, 0);
+            this.ContenedorHijo.Name = "ContenedorHijo";
+            this.ContenedorHijo.Size = new System.Drawing.Size(797, 450);
+            this.ContenedorHijo.TabIndex = 28;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            this.dNIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            // 
             // modelSocioPersonaBindingSource1
             // 
             this.modelSocioPersonaBindingSource1.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
@@ -197,36 +243,28 @@
             // 
             this.modelSocioPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
             // 
-            // labelInfoSocio
-            // 
-            this.labelInfoSocio.AutoSize = true;
-            this.labelInfoSocio.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold);
-            this.labelInfoSocio.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.labelInfoSocio.Location = new System.Drawing.Point(48, 360);
-            this.labelInfoSocio.Name = "labelInfoSocio";
-            this.labelInfoSocio.Size = new System.Drawing.Size(199, 24);
-            this.labelInfoSocio.TabIndex = 26;
-            this.labelInfoSocio.Text = "Aca se imprime algo";
-            // 
             // InterfazListaSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 450);
-            this.Controls.Add(this.labelInfoSocio);
+            this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.lblInfoSocio);
             this.Controls.Add(this.dataGridViewSocioPersona);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.botonCrearSocio);
-            this.Controls.Add(this.BotonBuscarSocio);
+            this.Controls.Add(this.btnCrearSocio);
+            this.Controls.Add(this.btnBuscarSocio);
             this.Controls.Add(this.txtNombreSocio);
             this.Controls.Add(this.txtApellidoSocio);
             this.Controls.Add(this.txtDNISocio);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelEmpleadoListarEmpleado);
-            this.Controls.Add(this.labelDeporteListarEmpleado);
+            this.Controls.Add(this.lblApellidoSocio);
+            this.Controls.Add(this.lblDNISocio);
+            this.Controls.Add(this.lblNombreSocio);
+            this.Controls.Add(this.ContenedorHijo);
             this.Name = "InterfazListaSocio";
             this.Text = "InterfazListaSocio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).EndInit();
+            this.ContenedorHijo.ResumeLayout(false);
+            this.ContenedorHijo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -236,23 +274,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelDeporteListarEmpleado;
+        private System.Windows.Forms.Label lblNombreSocio;
         private System.Windows.Forms.TextBox txtNombreSocio;
-        private System.Windows.Forms.Label labelEmpleadoListarEmpleado;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDNISocio;
+        private System.Windows.Forms.Label lblApellidoSocio;
         private System.Windows.Forms.TextBox txtDNISocio;
         private System.Windows.Forms.TextBox txtApellidoSocio;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button botonCrearSocio;
-        private System.Windows.Forms.Button BotonBuscarSocio;
+        private System.Windows.Forms.Button btnCrearSocio;
+        private System.Windows.Forms.Button btnBuscarSocio;
         private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewSocioPersona;
+        private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource1;
+        private System.Windows.Forms.Label lblInfoSocio;
+        private System.Windows.Forms.Label labelTituloVentana;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.BindingSource modelSocioPersonaBindingSource1;
-        private System.Windows.Forms.Label labelInfoSocio;
+        private System.Windows.Forms.Panel ContenedorHijo;
     }
 }

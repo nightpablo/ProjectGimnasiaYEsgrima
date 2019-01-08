@@ -114,11 +114,11 @@
     <Compile Include="Interfaz\InterfazListaEmpleado.Designer.cs">
       <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazListarCurso.cs">
+    <Compile Include="Interfaz\InterfazListaCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazListarCurso.Designer.cs">
-      <DependentUpon>InterfazListarCurso.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazListaCurso.Designer.cs">
+      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazAltaCurso.cs">
       <SubType>Form</SubType>
@@ -179,6 +179,18 @@
     </Compile>
     <Compile Include="Interfaz\InterfazRegistrarEntradaSalida.Designer.cs">
       <DependentUpon>InterfazRegistrarEntradaSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\MyMessageBox.designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Ventana.Designer.cs">
+      <DependentUpon>Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\CuotaSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
@@ -257,6 +269,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CampoConRestriccion.cs" />
+    <Compile Include="Utils\InterfazBuena.cs" />
     <EmbeddedResource Include="Interfaz\InterfazAgregarCursoEmpleado.resx">
       <DependentUpon>InterfazAgregarCursoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,8 +291,8 @@
     <EmbeddedResource Include="Interfaz\InterfazListaEmpleado.resx">
       <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazListarCurso.resx">
-      <DependentUpon>InterfazListarCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazListaCurso.resx">
+      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaSocio.resx">
       <DependentUpon>InterfazListaSocio.cs</DependentUpon>
@@ -301,6 +314,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazRegistrarEntradaSalida.resx">
       <DependentUpon>InterfazRegistrarEntradaSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Ventana.resx">
+      <DependentUpon>Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -385,6 +404,15 @@
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </Content>
     <Content Include="Modelo\InsertData.sql" />
+    <Content Include="Utils\Imagenes\Cursos.png" />
+    <Content Include="Utils\Imagenes\Empleados.png" />
+    <Content Include="Utils\Imagenes\EscudoGimnasiaYEsgrima.jpg" />
+    <Content Include="Utils\Imagenes\Information.png" />
+    <Content Include="Utils\Imagenes\menu %281%29.png" />
+    <Content Include="Utils\Imagenes\menu-button.png" />
+    <Content Include="Utils\Imagenes\Pelota.png" />
+    <Content Include="Utils\Imagenes\Pregunta.png" />
+    <Content Include="Utils\Imagenes\Pregunta1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

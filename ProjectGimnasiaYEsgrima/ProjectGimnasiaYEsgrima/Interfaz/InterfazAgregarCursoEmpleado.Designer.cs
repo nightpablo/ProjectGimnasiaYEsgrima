@@ -29,135 +29,101 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtApellidoEmpleado = new System.Windows.Forms.TextBox();
-            this.txtDNIEmpleado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelEmpleadoListarEmpleado = new System.Windows.Forms.Label();
-            this.dataGridViewEmpleadoProfesor = new System.Windows.Forms.DataGridView();
+            this.lblTituloProfesor = new System.Windows.Forms.Label();
+            this.txtApellidoProfesor = new System.Windows.Forms.TextBox();
+            this.txtDNIProfesor = new System.Windows.Forms.TextBox();
+            this.lblApellidoProfesor = new System.Windows.Forms.Label();
+            this.lblDNIProfesor = new System.Windows.Forms.Label();
+            this.dgvEmpleadoProfesor = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblInfoProfesor = new System.Windows.Forms.Label();
+            this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.LabelInfo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoProfesor)).BeginInit();
+            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // modelCursoBindingSource
+            // lblTituloProfesor
             // 
-            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
+            this.lblTituloProfesor.AutoSize = true;
+            this.lblTituloProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloProfesor.Location = new System.Drawing.Point(8, 8);
+            this.lblTituloProfesor.Name = "lblTituloProfesor";
+            this.lblTituloProfesor.Size = new System.Drawing.Size(256, 32);
+            this.lblTituloProfesor.TabIndex = 1;
+            this.lblTituloProfesor.Text = "Lista de profesores";
             // 
-            // label1
+            // txtApellidoProfesor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lista de profesores";
+            this.txtApellidoProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoProfesor.Location = new System.Drawing.Point(146, 93);
+            this.txtApellidoProfesor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidoProfesor.Name = "txtApellidoProfesor";
+            this.txtApellidoProfesor.Size = new System.Drawing.Size(160, 34);
+            this.txtApellidoProfesor.TabIndex = 16;
             // 
-            // txtApellidoEmpleado
+            // txtDNIProfesor
             // 
-            this.txtApellidoEmpleado.Location = new System.Drawing.Point(146, 87);
-            this.txtApellidoEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
-            this.txtApellidoEmpleado.Size = new System.Drawing.Size(160, 22);
-            this.txtApellidoEmpleado.TabIndex = 16;
+            this.txtDNIProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNIProfesor.Location = new System.Drawing.Point(146, 57);
+            this.txtDNIProfesor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNIProfesor.Name = "txtDNIProfesor";
+            this.txtDNIProfesor.Size = new System.Drawing.Size(160, 34);
+            this.txtDNIProfesor.TabIndex = 17;
             // 
-            // txtDNIEmpleado
+            // lblApellidoProfesor
             // 
-            this.txtDNIEmpleado.Location = new System.Drawing.Point(146, 57);
-            this.txtDNIEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDNIEmpleado.Name = "txtDNIEmpleado";
-            this.txtDNIEmpleado.Size = new System.Drawing.Size(160, 22);
-            this.txtDNIEmpleado.TabIndex = 17;
+            this.lblApellidoProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoProfesor.Location = new System.Drawing.Point(0, 96);
+            this.lblApellidoProfesor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoProfesor.Name = "lblApellidoProfesor";
+            this.lblApellidoProfesor.Size = new System.Drawing.Size(120, 30);
+            this.lblApellidoProfesor.TabIndex = 14;
+            this.lblApellidoProfesor.Text = "Apellido";
+            this.lblApellidoProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblDNIProfesor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Apellido";
+            this.lblDNIProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNIProfesor.Location = new System.Drawing.Point(32, 60);
+            this.lblDNIProfesor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNIProfesor.Name = "lblDNIProfesor";
+            this.lblDNIProfesor.Size = new System.Drawing.Size(88, 28);
+            this.lblDNIProfesor.TabIndex = 15;
+            this.lblDNIProfesor.Text = "DNI";
+            this.lblDNIProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelEmpleadoListarEmpleado
+            // dgvEmpleadoProfesor
             // 
-            this.labelEmpleadoListarEmpleado.AutoSize = true;
-            this.labelEmpleadoListarEmpleado.Location = new System.Drawing.Point(42, 60);
-            this.labelEmpleadoListarEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEmpleadoListarEmpleado.Name = "labelEmpleadoListarEmpleado";
-            this.labelEmpleadoListarEmpleado.Size = new System.Drawing.Size(31, 17);
-            this.labelEmpleadoListarEmpleado.TabIndex = 15;
-            this.labelEmpleadoListarEmpleado.Text = "DNI";
-            // 
-            // dataGridViewEmpleadoProfesor
-            // 
-            this.dataGridViewEmpleadoProfesor.AutoGenerateColumns = false;
-            this.dataGridViewEmpleadoProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmpleadoProfesor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEmpleadoProfesor.AutoGenerateColumns = false;
+            this.dgvEmpleadoProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleadoProfesor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.dNIDataGridViewTextBoxColumn,
             this.AsignarCurso,
             this.EliminarCurso});
-            this.dataGridViewEmpleadoProfesor.DataSource = this.modelEmpleadoPersonaBindingSource;
-            this.dataGridViewEmpleadoProfesor.Location = new System.Drawing.Point(15, 133);
-            this.dataGridViewEmpleadoProfesor.Name = "dataGridViewEmpleadoProfesor";
-            this.dataGridViewEmpleadoProfesor.RowTemplate.Height = 24;
-            this.dataGridViewEmpleadoProfesor.Size = new System.Drawing.Size(848, 150);
-            this.dataGridViewEmpleadoProfesor.TabIndex = 18;
-            this.dataGridViewEmpleadoProfesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            // 
-            // AsignarCurso
-            // 
-            this.AsignarCurso.HeaderText = "";
-            this.AsignarCurso.Name = "AsignarCurso";
-            this.AsignarCurso.Text = "Asignar Curso";
-            this.AsignarCurso.UseColumnTextForButtonValue = true;
-            // 
-            // EliminarCurso
-            // 
-            this.EliminarCurso.HeaderText = "";
-            this.EliminarCurso.Name = "EliminarCurso";
-            this.EliminarCurso.Text = "Eliminar Curso";
-            this.EliminarCurso.UseColumnTextForButtonValue = true;
-            // 
-            // modelEmpleadoPersonaBindingSource
-            // 
-            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            this.dgvEmpleadoProfesor.DataSource = this.modelEmpleadoPersonaBindingSource;
+            this.dgvEmpleadoProfesor.Location = new System.Drawing.Point(8, 208);
+            this.dgvEmpleadoProfesor.Name = "dgvEmpleadoProfesor";
+            this.dgvEmpleadoProfesor.RowTemplate.Height = 24;
+            this.dgvEmpleadoProfesor.Size = new System.Drawing.Size(816, 150);
+            this.dgvEmpleadoProfesor.TabIndex = 18;
+            this.dgvEmpleadoProfesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(314, 77);
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(400, 144);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(173, 33);
+            this.btnBuscar.Size = new System.Drawing.Size(173, 48);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -165,44 +131,92 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(493, 77);
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(616, 144);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(173, 33);
+            this.btnVolver.Size = new System.Drawing.Size(173, 48);
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BotonVolver_Click);
             // 
-            // LabelInfoDeporte
+            // lblInfoProfesor
             // 
-            this.LabelInfo.AutoSize = true;
-            this.LabelInfo.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelInfo.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.LabelInfo.Location = new System.Drawing.Point(15, 295);
-            this.LabelInfo.Name = "LabelInfoDeporte";
-            this.LabelInfo.Size = new System.Drawing.Size(199, 24);
-            this.LabelInfo.TabIndex = 20;
-            this.LabelInfo.Text = "Acá se imprime algo";
+            this.lblInfoProfesor.AutoSize = true;
+            this.lblInfoProfesor.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoProfesor.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblInfoProfesor.Location = new System.Drawing.Point(8, 376);
+            this.lblInfoProfesor.Name = "lblInfoProfesor";
+            this.lblInfoProfesor.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoProfesor.TabIndex = 20;
+            this.lblInfoProfesor.Text = "Acá se imprime algo";
+            // 
+            // AsignarCurso
+            // 
+            this.AsignarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AsignarCurso.HeaderText = "";
+            this.AsignarCurso.Name = "AsignarCurso";
+            this.AsignarCurso.Text = "Asignar Curso";
+            this.AsignarCurso.UseColumnTextForButtonValue = true;
+            this.AsignarCurso.Width = 24;
+            // 
+            // EliminarCurso
+            // 
+            this.EliminarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EliminarCurso.HeaderText = "";
+            this.EliminarCurso.Name = "EliminarCurso";
+            this.EliminarCurso.Text = "Eliminar Curso";
+            this.EliminarCurso.UseColumnTextForButtonValue = true;
+            this.EliminarCurso.Width = 24;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            this.dNIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            // 
+            // modelEmpleadoPersonaBindingSource
+            // 
+            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            // 
+            // modelCursoBindingSource
+            // 
+            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
             // 
             // InterfazAgregarCursoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 333);
-            this.Controls.Add(this.LabelInfo);
+            this.ClientSize = new System.Drawing.Size(836, 412);
+            this.Controls.Add(this.lblInfoProfesor);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridViewEmpleadoProfesor);
-            this.Controls.Add(this.txtApellidoEmpleado);
-            this.Controls.Add(this.txtDNIEmpleado);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelEmpleadoListarEmpleado);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvEmpleadoProfesor);
+            this.Controls.Add(this.txtApellidoProfesor);
+            this.Controls.Add(this.txtDNIProfesor);
+            this.Controls.Add(this.lblApellidoProfesor);
+            this.Controls.Add(this.lblDNIProfesor);
+            this.Controls.Add(this.lblTituloProfesor);
             this.Name = "InterfazAgregarCursoEmpleado";
             this.Text = "InterfazAgregarCursoEmpleado";
-            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleadoProfesor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,20 +224,20 @@
 
         #endregion
         private System.Windows.Forms.BindingSource modelCursoBindingSource;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtApellidoEmpleado;
-        private System.Windows.Forms.TextBox txtDNIEmpleado;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelEmpleadoListarEmpleado;
-        private System.Windows.Forms.DataGridView dataGridViewEmpleadoProfesor;
+        private System.Windows.Forms.Label lblTituloProfesor;
+        private System.Windows.Forms.TextBox txtApellidoProfesor;
+        private System.Windows.Forms.TextBox txtDNIProfesor;
+        private System.Windows.Forms.Label lblApellidoProfesor;
+        private System.Windows.Forms.Label lblDNIProfesor;
+        private System.Windows.Forms.DataGridView dgvEmpleadoProfesor;
         private System.Windows.Forms.BindingSource modelEmpleadoPersonaBindingSource;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblInfoProfesor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn AsignarCurso;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarCurso;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label LabelInfo;
     }
 }

@@ -29,205 +29,248 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBoxModificarNombreSocio = new System.Windows.Forms.TextBox();
-            this.textBoxModificarDireccionSocio = new System.Windows.Forms.TextBox();
-            this.textBoxModificarApellidoSocio = new System.Windows.Forms.TextBox();
-            this.labelNombreModificarSocio = new System.Windows.Forms.Label();
-            this.labelApellidoSocioModificar = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxModificarNroDocSocio = new System.Windows.Forms.TextBox();
-            this.textBoxModificarTelefonoSocio = new System.Windows.Forms.TextBox();
-            this.textBoxModificarLocalidadSocio = new System.Windows.Forms.TextBox();
-            this.buttonModificarSocio = new System.Windows.Forms.Button();
-            this.buttonVolverModificarSocio = new System.Windows.Forms.Button();
+            this.lblNombreSocio = new System.Windows.Forms.Label();
+            this.lblApellidoSocio = new System.Windows.Forms.Label();
+            this.lblTipoDocumentoSocio = new System.Windows.Forms.Label();
+            this.lblDireccionSocio = new System.Windows.Forms.Label();
+            this.lblNumeroDocumentoSocio = new System.Windows.Forms.Label();
+            this.lblFechaNacimientoSocio = new System.Windows.Forms.Label();
+            this.lblLocalidadSocio = new System.Windows.Forms.Label();
+            this.lblTelefonoSocio = new System.Windows.Forms.Label();
+            this.txtNombreSocio = new System.Windows.Forms.TextBox();
+            this.txtApellidoSocio = new System.Windows.Forms.TextBox();
+            this.dtFechaNacimientoSocio = new System.Windows.Forms.DateTimePicker();
+            this.txtDocumentoSocio = new System.Windows.Forms.TextBox();
+            this.txtDireccionSocio = new System.Windows.Forms.TextBox();
+            this.txtLocalidadSocio = new System.Windows.Forms.TextBox();
+            this.txtTelefonoSocio = new System.Windows.Forms.TextBox();
+            this.btnGuardarSocio = new System.Windows.Forms.Button();
+            this.btnVolverSocio = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBoxModificarTipoDocSocio = new System.Windows.Forms.TextBox();
+            this.lblTituloSocio = new System.Windows.Forms.Label();
+            this.txtTipoDocSocio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxModificarNombreSocio
+            // lblNombreSocio
             // 
-            this.textBoxModificarNombreSocio.Location = new System.Drawing.Point(309, 33);
-            this.textBoxModificarNombreSocio.Name = "textBoxModificarNombreSocio";
-            this.textBoxModificarNombreSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarNombreSocio.TabIndex = 0;
+            this.lblNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreSocio.Location = new System.Drawing.Point(167, 72);
+            this.lblNombreSocio.Name = "lblNombreSocio";
+            this.lblNombreSocio.Size = new System.Drawing.Size(121, 29);
+            this.lblNombreSocio.TabIndex = 0;
+            this.lblNombreSocio.Text = "Nombre *";
+            this.lblNombreSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxModificarDireccionSocio
+            // lblApellidoSocio
             // 
-            this.textBoxModificarDireccionSocio.Location = new System.Drawing.Point(309, 280);
-            this.textBoxModificarDireccionSocio.Name = "textBoxModificarDireccionSocio";
-            this.textBoxModificarDireccionSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarDireccionSocio.TabIndex = 1;
+            this.lblApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidoSocio.Location = new System.Drawing.Point(151, 112);
+            this.lblApellidoSocio.Name = "lblApellidoSocio";
+            this.lblApellidoSocio.Size = new System.Drawing.Size(137, 29);
+            this.lblApellidoSocio.TabIndex = 0;
+            this.lblApellidoSocio.Text = "Apellido *";
+            this.lblApellidoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxModificarApellidoSocio
+            // lblTipoDocumentoSocio
             // 
-            this.textBoxModificarApellidoSocio.Location = new System.Drawing.Point(309, 90);
-            this.textBoxModificarApellidoSocio.Name = "textBoxModificarApellidoSocio";
-            this.textBoxModificarApellidoSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarApellidoSocio.TabIndex = 2;
+            this.lblTipoDocumentoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDocumentoSocio.Location = new System.Drawing.Point(96, 192);
+            this.lblTipoDocumentoSocio.Name = "lblTipoDocumentoSocio";
+            this.lblTipoDocumentoSocio.Size = new System.Drawing.Size(192, 29);
+            this.lblTipoDocumentoSocio.TabIndex = 3;
+            this.lblTipoDocumentoSocio.Text = "Tipo Documento";
+            this.lblTipoDocumentoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelNombreModificarSocio
+            // lblDireccionSocio
             // 
-            this.labelNombreModificarSocio.AutoSize = true;
-            this.labelNombreModificarSocio.Location = new System.Drawing.Point(121, 38);
-            this.labelNombreModificarSocio.Name = "labelNombreModificarSocio";
-            this.labelNombreModificarSocio.Size = new System.Drawing.Size(58, 17);
-            this.labelNombreModificarSocio.TabIndex = 3;
-            this.labelNombreModificarSocio.Text = "Nombre";
+            this.lblDireccionSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccionSocio.Location = new System.Drawing.Point(151, 280);
+            this.lblDireccionSocio.Name = "lblDireccionSocio";
+            this.lblDireccionSocio.Size = new System.Drawing.Size(137, 29);
+            this.lblDireccionSocio.TabIndex = 5;
+            this.lblDireccionSocio.Text = "Direccion *";
+            this.lblDireccionSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelApellidoSocioModificar
+            // lblNumeroDocumentoSocio
             // 
-            this.labelApellidoSocioModificar.AutoSize = true;
-            this.labelApellidoSocioModificar.Location = new System.Drawing.Point(121, 93);
-            this.labelApellidoSocioModificar.Name = "labelApellidoSocioModificar";
-            this.labelApellidoSocioModificar.Size = new System.Drawing.Size(58, 17);
-            this.labelApellidoSocioModificar.TabIndex = 4;
-            this.labelApellidoSocioModificar.Text = "Apellido";
+            this.lblNumeroDocumentoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroDocumentoSocio.Location = new System.Drawing.Point(55, 240);
+            this.lblNumeroDocumentoSocio.Name = "lblNumeroDocumentoSocio";
+            this.lblNumeroDocumentoSocio.Size = new System.Drawing.Size(233, 29);
+            this.lblNumeroDocumentoSocio.TabIndex = 4;
+            this.lblNumeroDocumentoSocio.Text = "Numero Documento";
+            this.lblNumeroDocumentoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dateTimePicker1
+            // lblFechaNacimientoSocio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(309, 137);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(257, 22);
-            this.dateTimePicker1.TabIndex = 5;
+            this.lblFechaNacimientoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaNacimientoSocio.Location = new System.Drawing.Point(63, 152);
+            this.lblFechaNacimientoSocio.Name = "lblFechaNacimientoSocio";
+            this.lblFechaNacimientoSocio.Size = new System.Drawing.Size(225, 29);
+            this.lblFechaNacimientoSocio.TabIndex = 0;
+            this.lblFechaNacimientoSocio.Text = "Fecha Nacimiento *";
+            this.lblFechaNacimientoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lblLocalidadSocio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Fecha de Nacimiento";
+            this.lblLocalidadSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalidadSocio.Location = new System.Drawing.Point(151, 320);
+            this.lblLocalidadSocio.Name = "lblLocalidadSocio";
+            this.lblLocalidadSocio.Size = new System.Drawing.Size(137, 29);
+            this.lblLocalidadSocio.TabIndex = 6;
+            this.lblLocalidadSocio.Text = "Localidad *";
+            this.lblLocalidadSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblTelefonoSocio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Tipo de Documento";
+            this.lblTelefonoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoSocio.Location = new System.Drawing.Point(160, 360);
+            this.lblTelefonoSocio.Name = "lblTelefonoSocio";
+            this.lblTelefonoSocio.Size = new System.Drawing.Size(128, 29);
+            this.lblTelefonoSocio.TabIndex = 7;
+            this.lblTelefonoSocio.Text = "Telefono *";
+            this.lblTelefonoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // txtNombreSocio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(121, 233);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Numero de Documento";
+            this.txtNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreSocio.Location = new System.Drawing.Point(296, 75);
+            this.txtNombreSocio.Name = "txtNombreSocio";
+            this.txtNombreSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtNombreSocio.TabIndex = 11;
             // 
-            // label4
+            // txtApellidoSocio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Localidad";
+            this.txtApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoSocio.Location = new System.Drawing.Point(296, 115);
+            this.txtApellidoSocio.Name = "txtApellidoSocio";
+            this.txtApellidoSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtApellidoSocio.TabIndex = 12;
             // 
-            // label5
+            // dtFechaNacimientoSocio
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(121, 285);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Direccion";
+            this.dtFechaNacimientoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaNacimientoSocio.Location = new System.Drawing.Point(296, 155);
+            this.dtFechaNacimientoSocio.Name = "dtFechaNacimientoSocio";
+            this.dtFechaNacimientoSocio.Size = new System.Drawing.Size(371, 34);
+            this.dtFechaNacimientoSocio.TabIndex = 13;
             // 
-            // label6
+            // txtDocumentoSocio
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(121, 367);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Telefono";
+            this.txtDocumentoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumentoSocio.Location = new System.Drawing.Point(296, 243);
+            this.txtDocumentoSocio.Name = "txtDocumentoSocio";
+            this.txtDocumentoSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtDocumentoSocio.TabIndex = 15;
             // 
-            // textBoxModificarNroDocSocio
+            // txtDireccionSocio
             // 
-            this.textBoxModificarNroDocSocio.Location = new System.Drawing.Point(309, 230);
-            this.textBoxModificarNroDocSocio.Name = "textBoxModificarNroDocSocio";
-            this.textBoxModificarNroDocSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarNroDocSocio.TabIndex = 13;
+            this.txtDireccionSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionSocio.Location = new System.Drawing.Point(296, 283);
+            this.txtDireccionSocio.Name = "txtDireccionSocio";
+            this.txtDireccionSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtDireccionSocio.TabIndex = 16;
             // 
-            // textBoxModificarTelefonoSocio
+            // txtLocalidadSocio
             // 
-            this.textBoxModificarTelefonoSocio.Location = new System.Drawing.Point(309, 367);
-            this.textBoxModificarTelefonoSocio.Name = "textBoxModificarTelefonoSocio";
-            this.textBoxModificarTelefonoSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarTelefonoSocio.TabIndex = 14;
+            this.txtLocalidadSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocalidadSocio.Location = new System.Drawing.Point(296, 323);
+            this.txtLocalidadSocio.Name = "txtLocalidadSocio";
+            this.txtLocalidadSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtLocalidadSocio.TabIndex = 17;
             // 
-            // textBoxModificarLocalidadSocio
+            // txtTelefonoSocio
             // 
-            this.textBoxModificarLocalidadSocio.Location = new System.Drawing.Point(309, 320);
-            this.textBoxModificarLocalidadSocio.Name = "textBoxModificarLocalidadSocio";
-            this.textBoxModificarLocalidadSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarLocalidadSocio.TabIndex = 15;
+            this.txtTelefonoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoSocio.Location = new System.Drawing.Point(296, 363);
+            this.txtTelefonoSocio.Name = "txtTelefonoSocio";
+            this.txtTelefonoSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtTelefonoSocio.TabIndex = 18;
             // 
-            // buttonModificarSocio
+            // btnGuardarSocio
             // 
-            this.buttonModificarSocio.Location = new System.Drawing.Point(146, 436);
-            this.buttonModificarSocio.Name = "buttonModificarSocio";
-            this.buttonModificarSocio.Size = new System.Drawing.Size(142, 36);
-            this.buttonModificarSocio.TabIndex = 16;
-            this.buttonModificarSocio.Text = "Guardar";
-            this.buttonModificarSocio.UseVisualStyleBackColor = true;
-            this.buttonModificarSocio.Click += new System.EventHandler(this.buttonModificarSocio_Click);
+            this.btnGuardarSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarSocio.Location = new System.Drawing.Point(160, 424);
+            this.btnGuardarSocio.Name = "btnGuardarSocio";
+            this.btnGuardarSocio.Size = new System.Drawing.Size(104, 44);
+            this.btnGuardarSocio.TabIndex = 19;
+            this.btnGuardarSocio.Text = "Guardar";
+            this.btnGuardarSocio.UseVisualStyleBackColor = true;
+            this.btnGuardarSocio.Click += new System.EventHandler(this.buttonGuardarSocio_Click);
             // 
-            // buttonVolverModificarSocio
+            // btnVolverSocio
             // 
-            this.buttonVolverModificarSocio.Location = new System.Drawing.Point(397, 436);
-            this.buttonVolverModificarSocio.Name = "buttonVolverModificarSocio";
-            this.buttonVolverModificarSocio.Size = new System.Drawing.Size(142, 36);
-            this.buttonVolverModificarSocio.TabIndex = 17;
-            this.buttonVolverModificarSocio.Text = "Volver";
-            this.buttonVolverModificarSocio.UseVisualStyleBackColor = true;
-            this.buttonVolverModificarSocio.Click += new System.EventHandler(this.buttonVolverModificarSocio_Click);
+            this.btnVolverSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverSocio.Location = new System.Drawing.Point(448, 424);
+            this.btnVolverSocio.Name = "btnVolverSocio";
+            this.btnVolverSocio.Size = new System.Drawing.Size(104, 44);
+            this.btnVolverSocio.TabIndex = 20;
+            this.btnVolverSocio.Text = "Cancelar";
+            this.btnVolverSocio.UseVisualStyleBackColor = true;
+            this.btnVolverSocio.Click += new System.EventHandler(this.buttonVolverSocio_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // textBoxModificarTipoDocSocio
+            // lblTituloSocio
             // 
-            this.textBoxModificarTipoDocSocio.Location = new System.Drawing.Point(309, 184);
-            this.textBoxModificarTipoDocSocio.Name = "textBoxModificarTipoDocSocio";
-            this.textBoxModificarTipoDocSocio.Size = new System.Drawing.Size(257, 22);
-            this.textBoxModificarTipoDocSocio.TabIndex = 13;
+            this.lblTituloSocio.AutoSize = true;
+            this.lblTituloSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSocio.Location = new System.Drawing.Point(72, 0);
+            this.lblTituloSocio.Name = "lblTituloSocio";
+            this.lblTituloSocio.Size = new System.Drawing.Size(254, 32);
+            this.lblTituloSocio.TabIndex = 21;
+            this.lblTituloSocio.Text = "Modificación Socio";
+            // 
+            // txtTipoDocSocio
+            // 
+            this.txtTipoDocSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoDocSocio.Location = new System.Drawing.Point(296, 200);
+            this.txtTipoDocSocio.Name = "txtTipoDocSocio";
+            this.txtTipoDocSocio.Size = new System.Drawing.Size(371, 34);
+            this.txtTipoDocSocio.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 472);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 15);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "* Los campos son obligatorios";
             // 
             // InterfazModificarSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 519);
-            this.Controls.Add(this.buttonVolverModificarSocio);
-            this.Controls.Add(this.buttonModificarSocio);
-            this.Controls.Add(this.textBoxModificarLocalidadSocio);
-            this.Controls.Add(this.textBoxModificarTelefonoSocio);
-            this.Controls.Add(this.textBoxModificarTipoDocSocio);
-            this.Controls.Add(this.textBoxModificarNroDocSocio);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(728, 493);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.labelApellidoSocioModificar);
-            this.Controls.Add(this.labelNombreModificarSocio);
-            this.Controls.Add(this.textBoxModificarApellidoSocio);
-            this.Controls.Add(this.textBoxModificarDireccionSocio);
-            this.Controls.Add(this.textBoxModificarNombreSocio);
+            this.Controls.Add(this.lblTituloSocio);
+            this.Controls.Add(this.btnVolverSocio);
+            this.Controls.Add(this.btnGuardarSocio);
+            this.Controls.Add(this.txtTelefonoSocio);
+            this.Controls.Add(this.txtLocalidadSocio);
+            this.Controls.Add(this.txtDireccionSocio);
+            this.Controls.Add(this.txtTipoDocSocio);
+            this.Controls.Add(this.txtDocumentoSocio);
+            this.Controls.Add(this.dtFechaNacimientoSocio);
+            this.Controls.Add(this.txtApellidoSocio);
+            this.Controls.Add(this.txtNombreSocio);
+            this.Controls.Add(this.lblTelefonoSocio);
+            this.Controls.Add(this.lblLocalidadSocio);
+            this.Controls.Add(this.lblFechaNacimientoSocio);
+            this.Controls.Add(this.lblNumeroDocumentoSocio);
+            this.Controls.Add(this.lblDireccionSocio);
+            this.Controls.Add(this.lblTipoDocumentoSocio);
+            this.Controls.Add(this.lblApellidoSocio);
+            this.Controls.Add(this.lblNombreSocio);
             this.Name = "InterfazModificarSocio";
-            this.Text = "InterfazModificarSocio";
+            this.Text = "InterfazAltaSocio";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,24 +279,26 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxModificarNombreSocio;
-        private System.Windows.Forms.TextBox textBoxModificarDireccionSocio;
-        private System.Windows.Forms.TextBox textBoxModificarApellidoSocio;
-        private System.Windows.Forms.Label labelNombreModificarSocio;
-        private System.Windows.Forms.Label labelApellidoSocioModificar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxModificarNroDocSocio;
-        private System.Windows.Forms.TextBox textBoxModificarTelefonoSocio;
-        private System.Windows.Forms.TextBox textBoxModificarLocalidadSocio;
-        private System.Windows.Forms.Button buttonModificarSocio;
-        private System.Windows.Forms.Button buttonVolverModificarSocio;
+        private System.Windows.Forms.Label lblNombreSocio;
+        private System.Windows.Forms.Label lblApellidoSocio;
+        private System.Windows.Forms.Label lblTipoDocumentoSocio;
+        private System.Windows.Forms.Label lblDireccionSocio;
+        private System.Windows.Forms.Label lblNumeroDocumentoSocio;
+        private System.Windows.Forms.Label lblFechaNacimientoSocio;
+        private System.Windows.Forms.Label lblLocalidadSocio;
+        private System.Windows.Forms.Label lblTelefonoSocio;
+        private System.Windows.Forms.TextBox txtNombreSocio;
+        private System.Windows.Forms.TextBox txtApellidoSocio;
+        private System.Windows.Forms.DateTimePicker dtFechaNacimientoSocio;
+        private System.Windows.Forms.TextBox txtDocumentoSocio;
+        private System.Windows.Forms.TextBox txtDireccionSocio;
+        private System.Windows.Forms.TextBox txtLocalidadSocio;
+        private System.Windows.Forms.TextBox txtTelefonoSocio;
+        private System.Windows.Forms.Button btnGuardarSocio;
+        private System.Windows.Forms.Button btnVolverSocio;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox textBoxModificarTipoDocSocio;
+        private System.Windows.Forms.Label lblTituloSocio;
+        private System.Windows.Forms.TextBox txtTipoDocSocio;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -27,17 +27,40 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Padre = padre;
 
 
-            ComboboxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
+            cbxTipoEmpleado.DataSource = Enum.GetValues(typeof(EnumTipoEmpleado));
 
-            textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxApellidoEmpleado);
-            textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDocumento);
-            textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxDescripcion);
-            ComboboxTipoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, botonGuardarEmpleado);
+            
+            CargarCamposFocus();
+            CargarInterfazBuena();
+        }
 
-            textBoxNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, textBoxNombreEmpleado, 50);
-            textBoxApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, textBoxApellidoEmpleado, 50);
-            textBoxDocumento.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxDocumento, 8);
-            textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, textBoxDescripcion, 500);
+
+        private void CargarCamposFocus()
+        {
+            txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoEmpleado);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDNIEmpleado);
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionEmpleado);
+            cbxTipoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarEmpleado);
+
+            txtNombreEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtNombreEmpleado, 50);
+            txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoEmpleado, 50);
+            txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIEmpleado, 8);
+            txtDescripcionEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtDescripcionEmpleado, 500);
+        }
+
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloEmpleado);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreEmpleado, lblApellidoEmpleado, lblTipoEmpleado, lblDNIEmpleado, lblFechaInicioEmpleado,lblFechaNacimientoEmpleado,lblDescripcionEmpleado);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreEmpleado, txtApellidoEmpleado, txtDNIEmpleado);
+            interfaz.TransformarComboBoxPersonalizado(cbxTipoEmpleado);
+            interfaz.TransformarDateTimePickerPersonalizado(dtpFechaNacimiento);
+            interfaz.TransformarDateTimePickerPersonalizado(dtpInicioEmpleado);
+            interfaz.TransformarBotonPersonalizadoTodos(btnGuardarEmpleado, btnCancelar);
+            
+            
 
         }
 
@@ -45,33 +68,33 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
 
             var hayError = false;
-            if (textBoxNombreEmpleado.Text.Length < 3)
+            if (txtNombreEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxNombreEmpleado, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreEmpleado, "El nombre debe ser con carácter entre 3 y 50");
             }
-            else errorProvider1.SetError(textBoxNombreEmpleado, "");
-            if (textBoxApellidoEmpleado.Text.Length < 3)
+            else errorProvider1.SetError(txtNombreEmpleado, "");
+            if (txtApellidoEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
             }
-            else errorProvider1.SetError(textBoxApellidoEmpleado, "");
-            if (textBoxDocumento.Text.Length < 6)
+            else errorProvider1.SetError(txtApellidoEmpleado, "");
+            if (txtDNIEmpleado.Text.Length < 6)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxDocumento, "El DNI debe ser con número entre 6 y 8");
+                errorProvider1.SetError(txtDNIEmpleado, "El DNI debe ser con número entre 6 y 8");
             }
-            else errorProvider1.SetError(textBoxDocumento, "");
+            else errorProvider1.SetError(txtDNIEmpleado, "");
 
 
             if (hayError)
                 return;
 
-            Enum.TryParse<EnumTipoEmpleado>(ComboboxTipoEmpleado.SelectedValue.ToString(), out EnumTipoEmpleado tipoEmpleado);
+            Enum.TryParse<EnumTipoEmpleado>(cbxTipoEmpleado.SelectedValue.ToString(), out EnumTipoEmpleado tipoEmpleado);
 
             ControladorEmpleado Cempleado = new ControladorEmpleado();
-            int resultado = Cempleado.CrearEmpleado(textBoxNombreEmpleado.Text, textBoxApellidoEmpleado.Text, dateTimeNacimiento.Value,Convert.ToInt32(textBoxDocumento.Text), textBoxDescripcion.Text, dateTimeInicioEmpleado.Value, tipoEmpleado);
+            int resultado = Cempleado.CrearEmpleado(txtNombreEmpleado.Text, txtApellidoEmpleado.Text, dtpFechaNacimiento.Value,Convert.ToInt32(txtDNIEmpleado.Text), txtDescripcionEmpleado.Text, dtpInicioEmpleado.Value, tipoEmpleado);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado el EMPLEADO");
@@ -90,17 +113,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void TextBoxDocumento_Leave(object sender, EventArgs e)
         {
-            if (!textBoxDocumento.Text.Equals("") && new Regex("[0-9]*").IsMatch(textBoxDocumento.Text))
+            if (!txtDNIEmpleado.Text.Equals("") && new Regex("[0-9]*").IsMatch(txtDNIEmpleado.Text))
             {
                 ControladorPersona Cpersona = new ControladorPersona();
-                Persona persona = Cpersona.BuscarPersonaPorClavesUnicas(Int32.Parse(textBoxDocumento.Text));
+                Persona persona = Cpersona.BuscarPersonaPorClavesUnicas(Int32.Parse(txtDNIEmpleado.Text));
                 if(persona !=null && !CargoPersona)
                 {
                     if(MessageBox.Show("La persona ya existe (tiene el mismo DNI), ¿desea cargarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        textBoxNombreEmpleado.Text = persona.Nombre;
-                        textBoxApellidoEmpleado.Text = persona.Apellido;
-                        dateTimeNacimiento.Value = persona.FechaNacimiento;
+                        txtNombreEmpleado.Text = persona.Nombre;
+                        txtApellidoEmpleado.Text = persona.Apellido;
+                        dtpFechaNacimiento.Value = persona.FechaNacimiento;
                         CargoPersona = true;
                     }
                 }
@@ -111,7 +134,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             if (CargoPersona)
             {
-                textBoxDocumento.Text = "";
+                txtDNIEmpleado.Text = "";
                 CargoPersona = false;
             }
         }
@@ -119,11 +142,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
-
-        private void ComboboxTipoEmpleado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

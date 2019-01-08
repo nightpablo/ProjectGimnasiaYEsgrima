@@ -5,28 +5,50 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using ProjectGimnasiaYEsgrima.Modelo;
+using System.Linq;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazListaDeportes : Form
     {
-        
 
-        public InterfazListaDeportes()
+        public Ventana MiVentana;
+        public InterfazListaDeportes(Ventana ventana)
         {
+            MiVentana = ventana;
             InitializeComponent();
 
-            this.txtNombreDeporte.Focus();
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
-            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonBuscar);
-            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+            
             
             dataGridViewDeporte.AllowUserToAddRows = false;
             dataGridViewDeporte.Visible = false;
-
+            
             this.ModificarMensaje("");
+            CargarCamposFocus();
+            CargarInterfazBuena();
+        }
 
+
+        private void CargarCamposFocus()
+        {
+            this.txtNombreDeporte.Focus();
+            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
+            this.txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
+            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnBuscar);
+            this.txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+        }
+
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloDeporte);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreDeporte, lblDescripcionDeporte, lblInfoDeporte);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreDeporte, txtDescripcionDeporte);
+            interfaz.TransformarBotonPersonalizadoTodos(btnBuscar, btnCrearDeporte,btnVolver);
+            interfaz.TransformarTablaPersonalizado(dataGridViewDeporte);
+            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar);
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -48,7 +70,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 ModificarMensaje("No hay ningún deporte con estos filtros");
                 return;
             }
-            else if (LabelInfoDeporte.Text.Equals("No hay ningún deporte con estos filtros"))
+            else if (lblInfoDeporte.Text.Equals("No hay ningún deporte con estos filtros"))
             {
                 ModificarMensaje("");
             }
@@ -57,52 +79,72 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
 
             dataGridViewDeporte.Visible = true;
-            //dataGridViewDeporte.Columns[0].Visible = false;
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewDeporte.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
-                InterfazModificarDeporte interfazModificar = new InterfazModificarDeporte(this, ((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte);
-                interfazModificar.ShowDialog();
-                
+                AbrirOtraVentana<InterfazModificarDeporte>(new InterfazModificarDeporte(this, ((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte));
+                Button1_Click(sender, e);
             }
 
             else if (dataGridViewDeporte.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if(MessageBox.Show("¿Seguro que desea Eliminar este deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if(MyMessageBox.Show("¿Seguro que desea Eliminar este deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     var resultado = new ControladorDeporte().EliminarDeporte(((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte);
                     if (resultado > 0)
                     {
                         ModificarMensaje("Se ha eliminado el DEPORTE");
-                    }
-                    else if (resultado == -2)
-                    {
-                        ModificarMensaje("No se puede eliminar el DEPORTE porque hay un CURSO relaccionado");
+                        dataGridViewDeporte.DataSource = new ControladorDeporte().ListarTodosDeportesPorFiltros(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
                     }
                 }
             }
-            Button1_Click(sender, e);
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InterfazAltaDeporte interfazDeporte = new InterfazAltaDeporte(this);
-            interfazDeporte.ShowDialog();
-            if(dataGridViewDeporte.Visible)
+            AbrirOtraVentana<InterfazAltaDeporte>(new InterfazAltaDeporte(this));
+            if (dataGridViewDeporte.Visible)
                 Button1_Click(sender, e);
         }
         
         public void ModificarMensaje(String entrada)
         {
-            LabelInfoDeporte.Text = entrada;
+            lblInfoDeporte.Text = entrada;
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             Dispose();
         }
+
+        private void AbrirOtraVentana<T>(Object Formhijo)
+        {
+
+            Form fh = MiVentana.VentanaContenedor.Controls.OfType<T>().FirstOrDefault() as Form;
+            if (fh != null)
+            {
+                //Si la instancia esta minimizada la dejamos en su estado normal
+                if (fh.WindowState == FormWindowState.Minimized)
+                {
+                    fh.WindowState = FormWindowState.Normal;
+                }
+                //Si la instancia existe la pongo en primer plano
+                fh.BringToFront();
+                return;
+            }
+
+            fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            MiVentana.VentanaContenedor.Controls.Add(fh);
+            MiVentana.VentanaContenedor.Tag = fh;
+            fh.Show();
+            AbrirOtraVentana<T>(fh);
+        }
+
     }
 }

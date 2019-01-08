@@ -23,59 +23,81 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Padre = padre;
             this.Socio = socio;
             InitializeComponent();
-            textBoxModificarNombreSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarNombreSocio);
-            textBoxModificarApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarApellidoSocio);
-            textBoxModificarNroDocSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarNroDocSocio);
-            textBoxModificarDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarDireccionSocio);
-            textBoxModificarLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarLocalidadSocio);
-            textBoxModificarTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, textBoxModificarTelefonoSocio);
-            //textBoxDescripcion.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonModificarEmpleado);
-
-            textBoxModificarNombreSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxModificarNombreSocio, 50);
-            textBoxModificarApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxModificarApellidoSocio, 50);
-            textBoxModificarNroDocSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, textBoxModificarNroDocSocio, 8);
-            textBoxModificarDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxModificarDireccionSocio, 50);
-            textBoxModificarLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxModificarLocalidadSocio, 50);
-            textBoxModificarTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, textBoxModificarTelefonoSocio, 50);
             
             
-            textBoxModificarNombreSocio.Text = Socio.Nombre;
-            textBoxModificarApellidoSocio.Text = Socio.Apellido;
+            
+            txtNombreSocio.Text = Socio.Nombre;
+            txtApellidoSocio.Text = Socio.Apellido;
 
-            dateTimePicker1.Value = Socio.MiPersona.FechaNacimiento;
-            textBoxModificarNroDocSocio.Text = Convert.ToString(Socio.DNI);
+            dtFechaNacimientoSocio.Value = Socio.MiPersona.FechaNacimiento;
+            txtDocumentoSocio.Text = Convert.ToString(Socio.DNI);
 
-            textBoxModificarDireccionSocio.Text = Socio.MiSocio.Direccion;
-            textBoxModificarLocalidadSocio.Text = Socio.MiSocio.Localidad;
-            textBoxModificarTelefonoSocio.Text = Socio.MiSocio.Telefono;
-            textBoxModificarTipoDocSocio.Text = Socio.MiSocio.TipoDocumento.ToString();
+            txtDireccionSocio.Text = Socio.MiSocio.Direccion;
+            txtLocalidadSocio.Text = Socio.MiSocio.Localidad;
+            txtTelefonoSocio.Text = Socio.MiSocio.Telefono;
+            txtTipoDocSocio.Text = Socio.MiSocio.TipoDocumento.ToString();
 
-            textBoxModificarNroDocSocio.ReadOnly = true;
-            textBoxModificarTipoDocSocio.ReadOnly = true;
+            txtDocumentoSocio.ReadOnly = true;
+            txtTipoDocSocio.ReadOnly = true;
+
+            CargarCamposFocus();
+            CargarInterfazBuena();
+        }
+        private void CargarCamposFocus()
+        {
+            txtNombreSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoSocio);
+            txtApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDireccionSocio);
+            txtDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtLocalidadSocio);
+            txtLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtTelefonoSocio);
+            txtTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarSocio);
+
+            txtNombreSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreSocio, 50);
+            txtApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtApellidoSocio, 50);
+            txtDocumentoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDocumentoSocio, 8);
+            txtDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtDireccionSocio, 50);
+            txtLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtLocalidadSocio, 50);
+            txtTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtTelefonoSocio, 50);
+        }
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloSocio);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblFechaNacimientoSocio, lblTipoDocumentoSocio, lblNumeroDocumentoSocio, lblDireccionSocio, lblLocalidadSocio, lblTelefonoSocio);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreSocio, txtApellidoSocio, txtDireccionSocio, txtLocalidadSocio, txtTelefonoSocio);
+            interfaz.TransformarBotonPersonalizadoTodos(btnGuardarSocio, btnVolverSocio);
+            interfaz.TransformarDateTimePickerPersonalizado(dtFechaNacimientoSocio);
+            interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtTipoDocSocio);
+            interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtDocumentoSocio);
+
 
         }
 
-        private void buttonModificarSocio_Click(object sender, EventArgs e)
+
+
+
+
+        private void buttonGuardarSocio_Click(object sender, EventArgs e)
         {
             var hayError = false;
-            if (textBoxModificarNombreSocio.Text.Length < 3)
+            if (txtNombreSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxModificarNombreSocio, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreSocio, "El nombre debe ser con carácter entre 3 y 50");
             }
-            else errorProvider1.SetError(textBoxModificarNombreSocio, "");
-            if (textBoxModificarApellidoSocio.Text.Length < 3)
+            else errorProvider1.SetError(txtNombreSocio, "");
+            if (txtApellidoSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxModificarApellidoSocio, "El apellido debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtApellidoSocio, "El apellido debe ser con carácter entre 3 y 50");
             }
-            else errorProvider1.SetError(textBoxModificarApellidoSocio, "");
-            if (textBoxModificarNroDocSocio.Text.Length < 6)
+            else errorProvider1.SetError(txtApellidoSocio, "");
+            if (txtDocumentoSocio.Text.Length < 6)
             {
                 hayError = true;
-                errorProvider1.SetError(textBoxModificarNroDocSocio, "El DNI debe ser con número entre 6 y 8");
+                errorProvider1.SetError(txtDocumentoSocio, "El DNI debe ser con número entre 6 y 8");
             }
-            else errorProvider1.SetError(textBoxModificarNroDocSocio, "");
+            else errorProvider1.SetError(txtDocumentoSocio, "");
 
 
             if (hayError)
@@ -87,9 +109,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
 
             var resultado = Csocio.ModificarSocio(Socio.MiPersona.IdPersona, Socio.MiSocio.IdSocio, 
-                textBoxModificarNombreSocio.Text, textBoxModificarApellidoSocio.Text, 
-                dateTimePicker1.Value, Convert.ToInt32(textBoxModificarNroDocSocio.Text),
-                textBoxModificarDireccionSocio.Text, textBoxModificarLocalidadSocio.Text,textBoxModificarTelefonoSocio.Text);
+                txtNombreSocio.Text, txtApellidoSocio.Text, 
+                dtFechaNacimientoSocio.Value, Convert.ToInt32(txtDocumentoSocio.Text),
+                txtDireccionSocio.Text, txtLocalidadSocio.Text,txtTelefonoSocio.Text);
 
             if (resultado > 0)
             {
@@ -100,7 +122,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 MessageBox.Show(this, "Ya existe el SOCIO", "Socio");
         }
 
-        private void buttonVolverModificarSocio_Click(object sender, EventArgs e)
+        private void buttonVolverSocio_Click(object sender, EventArgs e)
         {
             Dispose();
         }

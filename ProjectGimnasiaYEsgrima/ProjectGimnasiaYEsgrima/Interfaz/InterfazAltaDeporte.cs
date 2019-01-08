@@ -20,14 +20,29 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Padre = interfazListaDeportes;
             InitializeComponent();
 
+            CargarCamposFocus();
+            CargarInterfazBuena();
+
+        }
+
+        private void CargarCamposFocus()
+        {
             txtNombreDeporte.Focus();
             txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
-            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarDeporte);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarDeporte);
 
             txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
             txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+        }
 
-
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloDeporte);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreDeporte, lblDescripcionDeporte);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreDeporte, txtDescripcionDeporte);
+            interfaz.TransformarBotonPersonalizadoTodos(btnGuardarDeporte, btnCancelarDeporte);
         }
 
         private void BotonGuardarDeporte_Click(object sender, EventArgs e)
@@ -55,7 +70,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 Dispose();
             }
             else if(resultado == -2)
-                MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
+                MyMessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
 
 
         }

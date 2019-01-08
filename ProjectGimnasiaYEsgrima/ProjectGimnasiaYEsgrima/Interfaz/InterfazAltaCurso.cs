@@ -15,9 +15,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazAltaCurso : Form
     {
-        private InterfazListarCurso Padre;
+        private InterfazListaCurso Padre;
 
-        public InterfazAltaCurso(InterfazListarCurso interfazListaCurso)
+        public InterfazAltaCurso(InterfazListaCurso interfazListaCurso)
         {
             this.Padre = interfazListaCurso;
             InitializeComponent();
@@ -26,17 +26,38 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelDeporte> lista = new List<ModelDeporte>();
             lista = Cdeporte.ListarTodosDeportes();
 
-            ComboBoxDeporte.DataSource = lista;
-            ComboBoxDeporte.ValueMember = "IdDeporte";
-            ComboBoxDeporte.DisplayMember = "Nombre";
+            cbxDeporte.DataSource = lista;
+            cbxDeporte.ValueMember = "IdDeporte";
+            cbxDeporte.DisplayMember = "Nombre";
 
+            CargarCamposFocus();
+            CargarInterfazBuena();
+
+            
+        }
+
+        private void CargarCamposFocus()
+        {
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtImporteMensualCurso);
-            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
-            DateTimeInicio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
-            DateTimeFin.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, BotonGuardarCurso);
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
+            dtpInicioCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
+            dtpFinCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
 
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
-            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender,e);
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender, e);
+        }
+
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloCurso);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblDeporteCurso, lblNombreCurso, lblFechaInicioCurso, lblFechaFinCurso, lblImporteMensualCurso);
+            interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreCurso, txtImporteMensualCurso);
+            interfaz.TransformarComboBoxPersonalizado(cbxDeporte);
+            interfaz.TransformarDateTimePickerPersonalizado(dtpInicioCurso);
+            interfaz.TransformarDateTimePickerPersonalizado(dtpFinCurso);
+            interfaz.TransformarBotonPersonalizadoTodos(btnGuardarCurso, btnCancelarCurso);
         }
 
         private void BotonGuardarCurso_Click(object sender, EventArgs e)
@@ -65,7 +86,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
             
             ControladorCurso un_controlador_curso = new ControladorCurso();
-            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), DateTimeInicio.Value, DateTimeFin.Value, ((ModelDeporte)ComboBoxDeporte.SelectedItem).MiDeporte);
+            var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), dtpInicioCurso.Value, dtpFinCurso.Value, ((ModelDeporte)cbxDeporte.SelectedItem).MiDeporte);
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado un nuevo CURSO");

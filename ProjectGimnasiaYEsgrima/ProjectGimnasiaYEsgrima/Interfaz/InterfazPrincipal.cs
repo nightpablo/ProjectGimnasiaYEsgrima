@@ -16,16 +16,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             InitializeComponent();
         }
-
+        /*
         private void buttonDeportes_Click(object sender, EventArgs e)
         {
-            Form interfaz = new InterfazListaDeportes();
-            interfaz.Show();
+            //Form interfaz = new InterfazListaDeportes(this);
+            //interfaz.Show();
         }
 
         private void buttonCursos_Click(object sender, EventArgs e)
         {
-            Form interfaz = new InterfazListarCurso();
+            Form interfaz = new InterfazListaCurso();
             interfaz.Show();    
         }
 
@@ -43,8 +43,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form interfaz = new InterfazListaSocio();
-            interfaz.Show();
-        }
+            //Form interfaz = new InterfazListaSocio();
+            //interfaz.Show();
+        }*/
     }
 }
