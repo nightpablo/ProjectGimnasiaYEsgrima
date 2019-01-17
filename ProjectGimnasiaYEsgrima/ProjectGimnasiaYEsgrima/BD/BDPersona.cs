@@ -11,7 +11,11 @@ namespace ProjectGimnasiaYEsgrima.BD
     {
         public int Actualizar(Persona entrada)
         {
-            throw new NotImplementedException();
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Entry(entrada).State = System.Data.Entity.EntityState.Modified;
+                return context.SaveChanges();
+            }
         }
 
         public Persona BuscarPorClavesUnicas(params object[] parametros)

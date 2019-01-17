@@ -77,10 +77,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el DEPORTE");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
+                MyMessageBox.Show(this, "Ya existe el nombre del DEPORTE", "Deporte");
         }
 
         private void BotonCancelar_Click(object sender, EventArgs e)

@@ -40,14 +40,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCrearDeporte = new System.Windows.Forms.Button();
             this.dataGridViewDeporte = new System.Windows.Forms.DataGridView();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblInfoDeporte = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDeporteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelDeporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblInfoDeporte = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.deporteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelDeporteBindingSource)).BeginInit();
@@ -128,6 +128,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // dataGridViewDeporte
             // 
+            this.dataGridViewDeporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewDeporte.AutoGenerateColumns = false;
             this.dataGridViewDeporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -144,48 +146,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewDeporte.Size = new System.Drawing.Size(784, 204);
             this.dataGridViewDeporte.TabIndex = 4;
             this.dataGridViewDeporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 24;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 24;
-            // 
-            // lblInfoDeporte
-            // 
-            this.lblInfoDeporte.AutoSize = true;
-            this.lblInfoDeporte.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoDeporte.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoDeporte.Location = new System.Drawing.Point(24, 392);
-            this.lblInfoDeporte.Name = "lblInfoDeporte";
-            this.lblInfoDeporte.Size = new System.Drawing.Size(199, 24);
-            this.lblInfoDeporte.TabIndex = 5;
-            this.lblInfoDeporte.Text = "Acá se imprime algo";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(672, 136);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 40);
-            this.btnVolver.TabIndex = 6;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -208,9 +168,51 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.estadoDeporteDataGridViewTextBoxColumn.HeaderText = "EstadoDeporte";
             this.estadoDeporteDataGridViewTextBoxColumn.Name = "estadoDeporteDataGridViewTextBoxColumn";
             // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 24;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 24;
+            // 
             // modelDeporteBindingSource
             // 
             this.modelDeporteBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelDeporte);
+            // 
+            // lblInfoDeporte
+            // 
+            this.lblInfoDeporte.AutoSize = true;
+            this.lblInfoDeporte.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoDeporte.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblInfoDeporte.Location = new System.Drawing.Point(24, 392);
+            this.lblInfoDeporte.Name = "lblInfoDeporte";
+            this.lblInfoDeporte.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoDeporte.TabIndex = 5;
+            this.lblInfoDeporte.Text = "Acá se imprime algo";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(672, 136);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(97, 40);
+            this.btnVolver.TabIndex = 6;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // deporteBindingSource
             // 

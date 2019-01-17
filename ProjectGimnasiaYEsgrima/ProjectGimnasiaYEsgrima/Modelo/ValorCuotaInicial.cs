@@ -16,7 +16,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     {
         public int IdCuotaInicial { get; set; }
         public System.DateTime FechaInicio { get; set; }
-        public System.DateTime FechaFin { get; set; }
+        public Nullable<System.DateTime> FechaFin { get; set; }
         public double Importe { get; set; }
     }
 }

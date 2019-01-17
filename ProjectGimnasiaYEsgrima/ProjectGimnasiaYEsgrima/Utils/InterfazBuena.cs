@@ -159,5 +159,11 @@ namespace ProjectGimnasiaYEsgrima.Utils
             cbx.Font = FuenteTextBox;
             cbx.ForeColor = ColorTextBox;
         }
+
+        public void TransformarCheckBoxPersonalizado(CheckBox cbx)
+        {
+            cbx.Font = FuenteTextBox;
+            cbx.ForeColor = ColorTextBox;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProjectGimnasiaYEsgrima.Controlador;
+﻿using Microsoft.Reporting.WinForms;
+using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
 using ProjectGimnasiaYEsgrima.Utils;
 using System;
@@ -15,8 +16,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazListaSocio : Form
     {
-        public Ventana MiVentana;
-        public InterfazListaSocio(Ventana ventana)
+        public InterfazPrincipal MiVentana;
+        public InterfazListaSocio(InterfazPrincipal ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
@@ -48,15 +49,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarTituloVentanaPersonalizado(labelTituloVentana);
             interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblDNISocio, lblInfoSocio);
             interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreSocio, txtApellidoSocio, txtDNISocio);
-            interfaz.TransformarBotonPersonalizadoTodos(btnBuscarSocio, btnCrearSocio, btnVolver);
+            interfaz.TransformarBotonPersonalizadoTodos(btnBuscarSocio, btnCrearSocio, btnVolver,btnEjecutarProcesoGeneral);
             interfaz.TransformarTablaPersonalizado(dataGridViewSocioPersona);
-            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar);
+            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar,InscribirCurso,CuponPago,EmitirCarnet);
 
         }
 
 
 
         private void BotonBuscarSocio_Click(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+
+        public void Actualizar()
         {
             ControladorSocio CSocio = new ControladorSocio();
             dataGridViewSocioPersona.Visible = true;
@@ -74,10 +80,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (lista.Count == 0)
             {
-                ModificarMensaje("No hay ningún empleado con estos filtros");
+                ModificarMensaje("No hay ningún socio con estos filtros");
                 return;
             }
-            else if (lblInfoSocio.Text.Equals("No hay ningún empleado con estos filtros"))
+            else if (lblInfoSocio.Text.Equals("No hay ningún socio con estos filtros"))
             {
                 ModificarMensaje("");
             }
@@ -106,8 +112,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
-            
-                
+            else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("CuponPago"))
+            {
+                AbrirOtraVentana<InterfazEmisionCuponPago>(new InterfazEmisionCuponPago(this, ((ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem).MiSocio));
+            }
+            else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
+            {
+                AbrirOtraVentana<InterfazGenerarReporte>(new InterfazGenerarReporte(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
+            }
+            else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("InscribirCurso"))
+            {
+                AbrirOtraVentana<InterfazInscribirSocioCurso>(new InterfazInscribirSocioCurso(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
+            }
+
+
         }
         public void ModificarMensaje(string v)
         {
@@ -150,7 +168,57 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             fh.Show();
             AbrirOtraVentana<T>(fh);
         }
-        
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void BtnGenerarProceso_Click(object sender, EventArgs e)
+        {
+            string[] lista = { "Enero", "Febrero", "Marzo", "Abril", "Mayo" ,"Junio" , "Julio", "Agosto"
+            , "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+            Object[] resultado = MyMessageBox.ShowComboBox("Seleccione el mes que desea generar el proceso", "Mensaje", lista, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if ((DialogResult)resultado[0] == DialogResult.OK)
+            {
+                
+                new ControladorSocio().EjecutarProcesoCuponesGeneral((int)resultado[1]);
+
+                GenerarReporteCupones((int)resultado[1]);
+            }
+            
+        }
+        private void GenerarReporteCupones(int mes)
+        {
+            ControladorSocio controladorSocio = new ControladorSocio();
+            List<ModelSocioPersona> socios = controladorSocio.ExtraerSociosAVista();
+            List<ModelImpresionCuponSocio> listacuponesOrdenados;
+            List<ModelImpresionCuponSocio> todoscupones1 = new List<ModelImpresionCuponSocio>();
+            List<ModelImpresionCuponSocio> todoscupones2 = new List<ModelImpresionCuponSocio>();
+            List<ModelCuponSocio> listacuponsocio;
+
+            int k = 0;
+            foreach (var i in socios)
+            {
+                listacuponsocio = controladorSocio.ListarCuotaSocios(i.MiSocio,mes+1);
+                listacuponesOrdenados = new List<ModelImpresionCuponSocio>();
+                foreach (var j in listacuponsocio)
+                {
+                    if (j.MiCurso == null)
+                        listacuponesOrdenados.Insert(0, new ModelImpresionCuponSocio(i, j));
+                    else
+                        listacuponesOrdenados.Add(new ModelImpresionCuponSocio(i,j));
+                }
+                if(k%2==0)
+                    todoscupones1.AddRange(listacuponesOrdenados);
+                else
+                    todoscupones2.AddRange(listacuponesOrdenados);
+                k++;
+            }
+
+            AbrirOtraVentana<InterfazGeneradorDeCupones>(new InterfazGeneradorDeCupones(this,todoscupones1,todoscupones2));
+
+        }
     }
 
 }

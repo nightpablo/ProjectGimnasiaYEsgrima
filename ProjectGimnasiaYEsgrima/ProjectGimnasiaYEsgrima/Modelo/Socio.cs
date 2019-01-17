@@ -14,6 +14,12 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
     public partial class Socio
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Socio()
+        {
+            this.Cursos = new HashSet<Curso>();
+        }
+    
         public int IdSocio { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public EnumCategoriaSocio CategoriaSocio { get; set; }
@@ -24,5 +30,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public EnumTipoDocumento TipoDocumento { get; set; }
     
         public virtual Persona Persona { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Curso> Cursos { get; set; }
     }
 }

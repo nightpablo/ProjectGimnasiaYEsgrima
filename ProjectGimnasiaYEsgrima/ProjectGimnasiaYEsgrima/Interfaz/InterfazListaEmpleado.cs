@@ -16,8 +16,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazListaEmpleado : Form
     {
         ControladorEmpleado CEmpleado = new ControladorEmpleado();
-        Ventana MiVentana;
-        public InterfazListaEmpleado(Ventana ventana)
+        InterfazPrincipal MiVentana;
+        public InterfazListaEmpleado(InterfazPrincipal ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
@@ -56,25 +56,30 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarComboBoxPersonalizado(cbxTipoEmpleado);
             interfaz.TransformarBotonPersonalizadoTodos(btnBuscarEmpleado, btnCrearEmpleado, btnVolver);
             interfaz.TransformarTablaPersonalizado(dgvEmpleadoPersona);
-            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar);
+            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar,EmitirCarnet);
 
         }
 
         private void BotonBuscarEmpleado_Click(object sender, EventArgs e)
         {
+            Actualizar();
+        }
+
+        public void Actualizar()
+        {
             dgvEmpleadoPersona.Visible = true;
             List<ModelEmpleadoPersona> lista = null;
-            if(txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals("") && cbxTipoEmpleado.SelectedIndex==0)
-            { 
+            if (txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals("") && cbxTipoEmpleado.SelectedIndex == 0)
+            {
                 lista = CEmpleado.ExtraerEmpleadosAVista();
-                
+
             }
             else
             {
                 lista = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
-                    txtDNIEmpleado.Text,cbxTipoEmpleado.SelectedItem);
+                    txtDNIEmpleado.Text, cbxTipoEmpleado.SelectedItem);
             }
-            
+
             if (lista.Count == 0)
             {
                 ModificarMensaje("No hay ningún empleado con estos filtros");
@@ -116,7 +121,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
 
             }
-                
+            else if (dgvEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
+            {
+                AbrirOtraVentana<InterfazGenerarReporte>(new InterfazGenerarReporte(this, (ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem));
+            }
+
+
         }
 
         public void ModificarMensaje(string v)

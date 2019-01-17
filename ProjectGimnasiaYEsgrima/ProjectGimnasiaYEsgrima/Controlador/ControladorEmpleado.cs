@@ -4,6 +4,9 @@ using ProjectGimnasiaYEsgrima.Modelo;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +35,25 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 return -1;
             }
             else if (buscado != null) return -2;
+
+            Persona pers = controladorPersona.BuscarPersonaPorClavesUnicas(documento);
+            if (pers == null)
+            {
+                pers = new Persona
+                {
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    FechaNacimiento = fechaNacimiento,
+                    DNI = documento
+                };
+                using (var ms = new MemoryStream())
+                {
+                    new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
+                    pers.Foto = ms.ToArray();
+                }
+                new BDPersona().Crear(pers);
+            }
+
             Empleado unEmpleado = null;
             switch (tipoEmpleado)
             {
@@ -49,17 +71,17 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             unEmpleado.DescripcionTarea = descripcion;
             unEmpleado.TipoEmpleado = tipoEmpleado;
             unEmpleado.EstadoEmpleado = EnumEstadoEmpleado.Activo;
-            Persona unaPersona = new Persona
-            {
-                Nombre = nombre,
-                Apellido = apellido,
-                FechaNacimiento = fechaNacimiento,
-                DNI = documento
-            };
-            new BDPersona().Crear(unaPersona);
             
-            unEmpleado.Persona = unaPersona;
+
+            
+            
+            unEmpleado.Persona = pers;
             return bdEmpleado.Crear(unEmpleado);
+        }
+
+        public ModelEmpleadoPersona BuscarEmpleadoPorClavesUnicasPorVista(int documento)
+        {
+            return bdEmpleado.BuscarPorClavesUnicasPorVista(documento);
         }
 
         public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista()
@@ -100,9 +122,41 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
         public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
         {
+            return null;            
+        }
 
-            return null;
-            
+        public int RegistrarEntradaSalidaEmpleado(ModelEmpleadoPersona empleado)
+        {
+            RegistroIngresoEgreso registro = bdEmpleado.TomarUltimoRegistroEntradaSalida(empleado.MiEmpleado);
+            if (registro == null)
+            {
+                registro = new RegistroIngresoEgreso()
+                {
+                    Empleado = empleado.MiEmpleado,
+                    Fecha = DateTime.Now,
+                    HoraIngreso = DateTime.Now
+                };
+                bdEmpleado.RegistrarEntradaSalida(0,registro);
+                return 0;
+            }
+            else if (registro.HoraEgreso == null)
+            {
+                registro.HoraEgreso = DateTime.Now;
+                bdEmpleado.RegistrarEntradaSalida(1,registro);
+                return 1;
+            }
+            else
+            {
+                registro = new RegistroIngresoEgreso()
+                {
+                    Empleado = empleado.MiEmpleado,
+                    Fecha = DateTime.Now,
+                    HoraIngreso = DateTime.Now
+                };
+                bdEmpleado.RegistrarEntradaSalida(0,registro);
+                return 0;
+            }
+
         }
     }
 }

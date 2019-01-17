@@ -32,6 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\..\..\PruebasDeInterfaces\packages\AForge.NET-Framework-2.2.5\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls">
+      <HintPath>..\..\..\PruebasDeInterfaces\packages\AForge.NET-Framework-2.2.5\Release\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\..\..\PruebasDeInterfaces\packages\AForge.NET-Framework-2.2.5\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\..\PruebasDeInterfaces\packages\AForge.NET-Framework-2.2.5\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\..\PruebasDeInterfaces\packages\AForge.NET-Framework-2.2.5\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -40,6 +55,24 @@
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.11\lib\net452\MySql.Data.dll</HintPath>
@@ -64,6 +97,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.4.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\BDDeporte.cs" />
@@ -90,6 +129,36 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Controlador\ControladorPersona.cs" />
+    <Compile Include="Interfaz\GeneradorDeCupones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\GeneradorDeCupones.designer.cs">
+      <DependentUpon>GeneradorDeCupones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazConfiguracion.Designer.cs">
+      <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazEmisionCuponPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazEmisionCuponPago.Designer.cs">
+      <DependentUpon>InterfazEmisionCuponPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazEntradaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazEntradaSalida.designer.cs">
+      <DependentUpon>InterfazEntradaSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazGenerarReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazGenerarReporte.designer.cs">
+      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazAgregarCursoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +176,12 @@
     </Compile>
     <Compile Include="Interfaz\InterfazAltaSocio.Designer.cs">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazInscribirSocioCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazInscribirSocioCurso.Designer.cs">
+      <DependentUpon>InterfazInscribirSocioCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazListaEmpleado.cs">
       <SubType>Form</SubType>
@@ -168,29 +243,17 @@
     <Compile Include="Interfaz\InterfazModificarSocio.Designer.cs">
       <DependentUpon>InterfazModificarSocio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\InterfazPrincipal.Designer.cs">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaz\InterfazRegistrarEntradaSalida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\InterfazRegistrarEntradaSalida.Designer.cs">
-      <DependentUpon>InterfazRegistrarEntradaSalida.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaz\MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\MyMessageBox.designer.cs">
       <DependentUpon>MyMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Ventana.cs">
+    <Compile Include="Interfaz\InterfazPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Ventana.Designer.cs">
-      <DependentUpon>Ventana.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazPrincipal.Designer.cs">
+      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\CuotaSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
@@ -243,9 +306,11 @@
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\ModelCuponSocio.cs" />
     <Compile Include="Modelo\ModelCurso.cs" />
     <Compile Include="Modelo\ModelDeporte.cs" />
     <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
+    <Compile Include="Modelo\ModelImpresionCuponSocio.cs" />
     <Compile Include="Modelo\ModelPersona.cs" />
     <Compile Include="Modelo\ModelSocioPersona.cs" />
     <Compile Include="Modelo\Persona.cs">
@@ -268,8 +333,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils\CampoConRestriccion.cs" />
     <Compile Include="Utils\InterfazBuena.cs" />
+    <EmbeddedResource Include="Interfaz\GeneradorDeCupones.resx">
+      <DependentUpon>GeneradorDeCupones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazConfiguracion.resx">
+      <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazEmisionCuponPago.resx">
+      <DependentUpon>InterfazEmisionCuponPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazEntradaSalida.resx">
+      <DependentUpon>InterfazEntradaSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazGenerarReporte.resx">
+      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAgregarCursoEmpleado.resx">
       <DependentUpon>InterfazAgregarCursoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaSocio.resx">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazInscribirSocioCurso.resx">
+      <DependentUpon>InterfazInscribirSocioCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
@@ -309,17 +394,11 @@
     <EmbeddedResource Include="Interfaz\InterfazModificarSocio.resx">
       <DependentUpon>InterfazModificarSocio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazPrincipal.resx">
-      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazRegistrarEntradaSalida.resx">
-      <DependentUpon>InterfazRegistrarEntradaSalida.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\MyMessageBox.resx">
       <DependentUpon>MyMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Ventana.resx">
-      <DependentUpon>Ventana.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazPrincipal.resx">
+      <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -329,7 +408,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Utils\Cupon.rdlc" />
+    <EmbeddedResource Include="Utils\Empleado.rdlc" />
+    <EmbeddedResource Include="Utils\Socio.rdlc" />
     <EntityDeploy Include="Modelo\DiagramasDeTablas.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Designer.cs</LastGenOutput>
@@ -362,9 +445,11 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Deporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.EmpleadoPersona.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCuponSocio.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCurso.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelDeporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelImpresionCuponSocio.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -404,6 +489,19 @@
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </Content>
     <Content Include="Modelo\InsertData.sql" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Utils\Imagenes\Cursos.png" />
     <Content Include="Utils\Imagenes\Empleados.png" />
     <Content Include="Utils\Imagenes\EscudoGimnasiaYEsgrima.jpg" />
@@ -411,6 +509,7 @@
     <Content Include="Utils\Imagenes\menu %281%29.png" />
     <Content Include="Utils\Imagenes\menu-button.png" />
     <Content Include="Utils\Imagenes\Pelota.png" />
+    <None Include="Utils\Imagenes\Perfil.png" />
     <Content Include="Utils\Imagenes\Pregunta.png" />
     <Content Include="Utils\Imagenes\Pregunta1.png" />
   </ItemGroup>

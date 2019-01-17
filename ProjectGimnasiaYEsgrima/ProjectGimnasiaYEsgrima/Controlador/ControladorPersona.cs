@@ -14,5 +14,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (parametros.Length == 0) return null;
             return una_bdpersona.BuscarPorClavesUnicas(parametros);
         }
+
+        public int ActualizarFotoPersona(int documento, byte[] foto)
+        {
+            Persona buscado = BuscarPersonaPorClavesUnicas(documento);
+            buscado.Foto = foto;
+            return una_bdpersona.Actualizar(buscado);
+        }
     }
 }

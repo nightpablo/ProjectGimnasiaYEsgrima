@@ -40,6 +40,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtDocumentoSocio.ReadOnly = true;
             txtTipoDocSocio.ReadOnly = true;
 
+
+            cbxCategoria.DataSource = Enum.GetValues(typeof(EnumCategoriaSocio));
             CargarCamposFocus();
             CargarInterfazBuena();
         }
@@ -63,13 +65,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InterfazBuena interfaz = new InterfazBuena();
             interfaz.TransformarVentanaPersonalizado(this);
             interfaz.TransformarTituloVentanaPersonalizado(lblTituloSocio);
-            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblFechaNacimientoSocio, lblTipoDocumentoSocio, lblNumeroDocumentoSocio, lblDireccionSocio, lblLocalidadSocio, lblTelefonoSocio);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblFechaNacimientoSocio, lblTipoDocumentoSocio, lblNumeroDocumentoSocio, lblDireccionSocio, lblLocalidadSocio, lblTelefonoSocio, lblCategoria);
             interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreSocio, txtApellidoSocio, txtDireccionSocio, txtLocalidadSocio, txtTelefonoSocio);
             interfaz.TransformarBotonPersonalizadoTodos(btnGuardarSocio, btnVolverSocio);
             interfaz.TransformarDateTimePickerPersonalizado(dtFechaNacimientoSocio);
             interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtTipoDocSocio);
             interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtDocumentoSocio);
-
+            interfaz.TransformarComboBoxPersonalizado(cbxCategoria);
 
         }
 
@@ -106,20 +108,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             //Enum.TryParse<EnumTipoEmpleado>(txtTipoEmpleado.Text, out EnumTipoEmpleado tipoEmpleado);
 
             ControladorSocio Csocio = new ControladorSocio();
-
+            Enum.TryParse<EnumCategoriaSocio>(cbxCategoria.SelectedValue.ToString(), out EnumCategoriaSocio categoria);
 
             var resultado = Csocio.ModificarSocio(Socio.MiPersona.IdPersona, Socio.MiSocio.IdSocio, 
                 txtNombreSocio.Text, txtApellidoSocio.Text, 
                 dtFechaNacimientoSocio.Value, Convert.ToInt32(txtDocumentoSocio.Text),
-                txtDireccionSocio.Text, txtLocalidadSocio.Text,txtTelefonoSocio.Text);
+                txtDireccionSocio.Text, txtLocalidadSocio.Text,txtTelefonoSocio.Text, categoria);
 
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el SOCIO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el SOCIO", "Socio");
+                MyMessageBox.Show(this, "Ya existe el SOCIO", "Socio");
         }
 
         private void buttonVolverSocio_Click(object sender, EventArgs e)

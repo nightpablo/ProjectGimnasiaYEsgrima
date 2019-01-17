@@ -43,13 +43,14 @@
             this.dgvEmpleadoPersona = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblTituloEmpleado = new System.Windows.Forms.Label();
-            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEmpleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EmitirCarnet = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +173,8 @@
             // 
             // dgvEmpleadoPersona
             // 
+            this.dgvEmpleadoPersona.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpleadoPersona.AutoGenerateColumns = false;
             this.dgvEmpleadoPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleadoPersona.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -180,7 +183,8 @@
             this.dNIDataGridViewTextBoxColumn,
             this.tipoEmpleadoDataGridViewTextBoxColumn,
             this.Modificar,
-            this.Eliminar});
+            this.Eliminar,
+            this.EmitirCarnet});
             this.dgvEmpleadoPersona.DataSource = this.empleadoPersonaBindingSource;
             this.dgvEmpleadoPersona.Location = new System.Drawing.Point(8, 208);
             this.dgvEmpleadoPersona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,25 +216,9 @@
             this.lblTituloEmpleado.TabIndex = 10;
             this.lblTituloEmpleado.Text = "Gestión Empleados";
             // 
-            // Modificar
+            // empleadoPersonaBindingSource
             // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 24;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 24;
+            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -260,9 +248,35 @@
             this.tipoEmpleadoDataGridViewTextBoxColumn.HeaderText = "TipoEmpleado";
             this.tipoEmpleadoDataGridViewTextBoxColumn.Name = "tipoEmpleadoDataGridViewTextBoxColumn";
             // 
-            // empleadoPersonaBindingSource
+            // Modificar
             // 
-            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 24;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 24;
+            // 
+            // EmitirCarnet
+            // 
+            this.EmitirCarnet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EmitirCarnet.HeaderText = "";
+            this.EmitirCarnet.Name = "EmitirCarnet";
+            this.EmitirCarnet.ReadOnly = true;
+            this.EmitirCarnet.Text = "EmitirCarnet";
+            this.EmitirCarnet.UseColumnTextForButtonValue = true;
+            this.EmitirCarnet.Width = 24;
             // 
             // InterfazListaEmpleado
             // 
@@ -316,5 +330,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoEmpleadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DataGridViewButtonColumn EmitirCarnet;
     }
 }

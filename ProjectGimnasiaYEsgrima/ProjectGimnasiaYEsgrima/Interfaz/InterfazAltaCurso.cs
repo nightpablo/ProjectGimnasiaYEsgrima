@@ -89,16 +89,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado =un_controlador_curso.CrearCurso(txtNombreCurso.Text, Int32.Parse(txtImporteMensualCurso.Text), dtpInicioCurso.Value, dtpFinCurso.Value, ((ModelDeporte)cbxDeporte.SelectedItem).MiDeporte);
             if (resultado > 0)
             {
+                
                 Padre.ModificarMensaje("Se ha creado un nuevo CURSO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -1)
             {
                 Padre.ModificarMensaje("Se ha recuperado el CURSO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el nombre del CURSO", "Curso");
+                MyMessageBox.Show(this, "Ya existe el nombre del CURSO", "Curso");
 
         }
 

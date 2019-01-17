@@ -14,6 +14,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     public enum EnumEstadoCuotaSocio : int
     {
         NoPagado = 0,
-        Pagado = 1
+        Pagado = 1,
+        Anulado = 2
     }
 }

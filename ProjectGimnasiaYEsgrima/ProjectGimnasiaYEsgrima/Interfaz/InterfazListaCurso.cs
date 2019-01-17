@@ -15,8 +15,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazListaCurso : Form
     {
-        Ventana MiVentana;
-        public InterfazListaCurso(Ventana ventana)
+        InterfazPrincipal MiVentana;
+        public InterfazListaCurso(InterfazPrincipal ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
@@ -63,6 +63,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BotonBuscarCurso_Click(object sender, EventArgs e)
         {
+            Actualizar();
+        }
+
+        public void Actualizar()
+        {
             ControladorCurso controladorCurso = new ControladorCurso();
             List<ModelCurso> listaCurso = null;
             cursoBindingSource.Clear();
@@ -81,14 +86,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 ModificarMensaje("No hay ningún curso con estos filtros");
                 return;
             }
-            else if(lblInfoCurso.Text.Equals("No hay ningún curso con estos filtros"))
+            else if (lblInfoCurso.Text.Equals("No hay ningún curso con estos filtros"))
             {
                 ModificarMensaje("");
             }
-            dtvListarCursos.DataSource = listaCurso;           
+            dtvListarCursos.DataSource = listaCurso;
 
             dtvListarCursos.Visible = true;
-
         }
 
         private void BotonCrearCurso_Click(object sender, EventArgs e)

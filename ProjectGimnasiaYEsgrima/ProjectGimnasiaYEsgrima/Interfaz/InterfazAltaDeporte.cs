@@ -62,11 +62,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if ( resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado un nuevo DEPORTE");
+                Padre.Actualizar();
                 Dispose();
             }
             else if(resultado == -1)
             {
                 Padre.ModificarMensaje("Se ha recuperado el DEPORTE");
+                Padre.Actualizar();
                 Dispose();
             }
             else if(resultado == -2)

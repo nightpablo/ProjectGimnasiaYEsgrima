@@ -19,12 +19,24 @@
         <EntityTypeShape EntityType="DiagramasDeTablas.RegistroIngresoEgreso" Width="1.75" PointX="12.375" PointY="5.125" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Socio" Width="2.25" PointX="4.375" PointY="0.875" />
         <AssociationConnector Association="DiagramasDeTablas.SocioPersona" />
-        <AssociationConnector Association="DiagramasDeTablas.SocioCurso" />
         <EntityTypeShape EntityType="DiagramasDeTablas.CuotaSocio" Width="1.5" PointX="10.5" PointY="1" />
         <EntityTypeShape EntityType="DiagramasDeTablas.ValorCuotaInicial" Width="1.5" PointX="14.375" PointY="1.25" />
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioValorCuotaInicial" />
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioSocio" />
         <AssociationConnector Association="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" />
+        <AssociationConnector Association="DiagramasDeTablas.SocioCurso" ></AssociationConnector>
+        <AssociationConnector Association="DiagramasDeTablas.CuotaSocioCurso" ManuallyRouted="true" >
+          <ConnectorPoint PointX="10.5" PointY="3.5571907552083331" />
+          <ConnectorPoint PointX="10.5" PointY="13.560274216906359" />
+          <ConnectorPoint PointX="10.017165178033622" PointY="13.560274216906359" />
+          <ConnectorPoint PointX="9.92876241404849" PointY="15.61215699328732" />
+          <ConnectorPoint PointX="9.9215884474443321" PointY="15.778669190981484" />
+          <ConnectorPoint PointX="9.1421651780336219" PointY="33.869564881565985" />
+          <ConnectorPoint PointX="9.92517543074641" PointY="33.869564881565985" />
+          <ConnectorPoint PointX="9.92517543074641" PointY="0.625" />
+          <ConnectorPoint PointX="1.375" PointY="0.625" />
+          <ConnectorPoint PointX="1.375" PointY="0.87499999999993872" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

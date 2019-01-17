@@ -59,6 +59,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                     FechaInicio = e.FechaInicio,
                     FechaFin = e.FechaFin,
                     EstadoCurso = e.EstadoCurso,
+                    Monto = e.Costo,
                     Deporte = e.Deporte,
                     Curso = e
                 })
@@ -87,6 +88,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                     FechaFin = e.FechaFin,
                     Profesores = new List<Profesor>(e.Profesores),
                     EstadoCurso = e.EstadoCurso,
+                    Monto = e.Costo,
                     Deporte = e.Deporte,
                     Curso = e
                 }).ToList();
@@ -129,6 +131,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                     FechaInicio = e.FechaInicio,
                     FechaFin = e.FechaFin,
                     EstadoCurso = e.EstadoCurso,
+                    Monto = e.Costo,
                     Deporte = e.Deporte,
                     Curso = e
                 }).ToList();
@@ -155,15 +158,39 @@ namespace ProjectGimnasiaYEsgrima.BD
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                /*context.Cursos.Attach(curso);
-                Profesor profesor = context.Empleados.OfType<Profesor>().AsEnumerable().FirstOrDefault(b => b.IdEmpleado == emp.IdEmpleado);
-                curso.Profesores.Remove(profesor);*/
-
-
-
-                
                 context.Empleados.Attach(emp);
                 ((Profesor)emp).Cursos.Remove(
+                    context.Cursos.AsEnumerable().FirstOrDefault(c => c.IdCurso == curso.IdCurso)
+                    );
+                context.SaveChanges();
+                return 1;
+
+
+            }
+        }
+
+        public int InscribirSocio(Socio soc, Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Socios.Attach(soc);
+                soc.Cursos.Add(
+                    context.Cursos.AsEnumerable().FirstOrDefault(c => c.IdCurso == curso.IdCurso)
+                    );
+                context.SaveChanges();
+                return 1;
+
+
+            }
+        }
+
+
+        public int UnsuscribirSocio(Socio soc, Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                context.Socios.Attach(soc);
+                soc.Cursos.Remove(
                     context.Cursos.AsEnumerable().FirstOrDefault(c => c.IdCurso == curso.IdCurso)
                     );
                 context.SaveChanges();
@@ -183,6 +210,18 @@ namespace ProjectGimnasiaYEsgrima.BD
 
                 }
         }
+
+        public List<int> ListarIdSocios(Curso curso)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+
+                Curso buscado = context.Cursos.AsEnumerable().FirstOrDefault(b => b.IdCurso == curso.IdCurso);
+                return buscado.Socios.AsEnumerable().Select(b => b.IdSocio).ToList();
+
+            }
+        }
+
         public int DarBajaPorDeporte(Deporte deporte)
         {
             using (var context = new DiagramasDeTablasContainer1())

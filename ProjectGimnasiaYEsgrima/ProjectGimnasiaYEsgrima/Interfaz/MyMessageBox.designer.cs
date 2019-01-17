@@ -33,10 +33,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxSelectOption = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +81,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.cbxSelectOption);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblMessage);
             this.panel1.Location = new System.Drawing.Point(16, 49);
@@ -87,6 +89,36 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(501, 90);
             this.panel1.TabIndex = 6;
+            // 
+            // cbxSelectOption
+            // 
+            this.cbxSelectOption.FormattingEnabled = true;
+            this.cbxSelectOption.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cbxSelectOption.Location = new System.Drawing.Point(128, 56);
+            this.cbxSelectOption.Name = "cbxSelectOption";
+            this.cbxSelectOption.Size = new System.Drawing.Size(224, 24);
+            this.cbxSelectOption.TabIndex = 2;
+            this.cbxSelectOption.SelectedIndexChanged += new System.EventHandler(this.cbxSelectOption_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 90);
+            this.label1.TabIndex = 1;
             // 
             // lblMessage
             // 
@@ -120,14 +152,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(0, 17);
             this.lblTitle.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 90);
-            this.label1.TabIndex = 1;
             // 
             // MyMessageBox
             // 
@@ -166,5 +190,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxSelectOption;
     }
 }

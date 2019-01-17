@@ -16,6 +16,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         static MyMessageBox newMessageBox;
         public Timer msgTimer;
         static string Button_id;
+        static int Selected_Text;
         int disposeFormTimer; 
 
         public MyMessageBox()
@@ -24,6 +25,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             new InterfazBuena().TransformarVentanaPersonalizado(this);
             new InterfazBuena().TransformarLabelTextoPersonalizadoTodos(lblTitle,lblMessage);
             new InterfazBuena().TransformarBotonPersonalizadoTodos(btnOK,btnCancel);
+            new InterfazBuena().TransformarComboBoxPersonalizado(cbxSelectOption);
         }
 
         public static void Show(Form myForm, string txtMessage, string txtTitle)
@@ -39,6 +41,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             newMessageBox.lblTitle.Text = txtTitle;
             newMessageBox.lblMessage.Text = txtMessage;
             newMessageBox.label1.Image = tomarIcono(Question);
+            newMessageBox.cbxSelectOption.Visible = false;
             newMessageBox.ShowDialog();
         }
 
@@ -48,8 +51,33 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             newMessageBox.lblTitle.Text = txtTitle;
             newMessageBox.lblMessage.Text = txtMessage;
             newMessageBox.label1.Image = tomarIcono(Question);
+            newMessageBox.cbxSelectOption.Visible = false;
             newMessageBox.ShowDialog();
             return (Int32.Parse(Button_id)==1? DialogResult.OK:DialogResult.Cancel);
+        }
+
+        public static Object[] ShowComboBox(string txtMessage, string txtTitle, string[] options, MessageBoxButtons YesNo, MessageBoxIcon Question)
+        {
+            newMessageBox = new MyMessageBox();
+            newMessageBox.lblTitle.Text = txtTitle;
+            newMessageBox.lblMessage.Text = txtMessage;
+            newMessageBox.cbxSelectOption.Visible = true;
+            newMessageBox.Size = new Size(newMessageBox.Size.Width, newMessageBox.Size.Height + 70);
+            newMessageBox.btnOK.Location = new Point(newMessageBox.btnOK.Location.X, newMessageBox.btnOK.Location.Y + 70);
+            newMessageBox.btnCancel.Location = new Point(newMessageBox.btnCancel.Location.X, newMessageBox.btnCancel.Location.Y + 70);
+            newMessageBox.lblMessage.Size = new Size(newMessageBox.lblMessage.Size.Width, newMessageBox.lblMessage.Size.Height );
+            newMessageBox.cbxSelectOption.Location = new Point(newMessageBox.lblMessage.Location.X, newMessageBox.Location.Y + 80);
+            newMessageBox.cbxSelectOption.Size = new Size(newMessageBox.lblMessage.Size.Width, newMessageBox.cbxSelectOption.Size.Height);
+            newMessageBox.cbxSelectOption.DropDownStyle = ComboBoxStyle.DropDownList;
+            newMessageBox.panel1.Size = new Size(newMessageBox.panel1.Size.Width, newMessageBox.panel1.Size.Height + 70);
+            newMessageBox.label1.Image = tomarIcono(Question);
+            newMessageBox.ShowDialog();
+            Object[] obj = new Object[]
+            {
+                Int32.Parse(Button_id) == 1 ? DialogResult.OK :DialogResult.Cancel,
+                Selected_Text
+            };
+            return obj;
         }
 
         private static Image tomarIcono(MessageBoxIcon Icon)
@@ -99,6 +127,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             newMessageBox.msgTimer.Stop();
             newMessageBox.msgTimer.Dispose();
             Button_id = "1";
+            Selected_Text = newMessageBox.cbxSelectOption.SelectedIndex;
             newMessageBox.Dispose(); 
         }
 
@@ -125,6 +154,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 newMessageBox.msgTimer.Dispose();
                 newMessageBox.Dispose();
             }
-        } 
+        }
+
+        private void cbxSelectOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Selected_Text = cbxSelectOption.SelectedIndex;
+        }
     }
 }

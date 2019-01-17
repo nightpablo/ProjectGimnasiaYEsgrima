@@ -13,6 +13,9 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
     public enum EnumCategoriaSocio : int
     {
-        Inactiva = 0
+        Activo = 1,
+        Menor = 2,
+        Vitalicio = 3,
+        Adherente = 4
     }
 }

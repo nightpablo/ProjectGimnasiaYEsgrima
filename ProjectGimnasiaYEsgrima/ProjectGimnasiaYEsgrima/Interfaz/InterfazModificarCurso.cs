@@ -88,6 +88,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el Curso");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)

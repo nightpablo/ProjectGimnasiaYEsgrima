@@ -105,10 +105,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha modificado el EMPLEADO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
+                MyMessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

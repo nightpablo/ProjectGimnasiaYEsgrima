@@ -98,15 +98,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 Padre.ModificarMensaje("Se ha creado el EMPLEADO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if(resultado == -1)
             {
                 Padre.ModificarMensaje("Se ha recuperado el EMPLEADO");
+                Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
+                MyMessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
         
       
         }
@@ -119,7 +121,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 Persona persona = Cpersona.BuscarPersonaPorClavesUnicas(Int32.Parse(txtDNIEmpleado.Text));
                 if(persona !=null && !CargoPersona)
                 {
-                    if(MessageBox.Show("La persona ya existe (tiene el mismo DNI), ¿desea cargarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if(MyMessageBox.Show("La persona ya existe (tiene el mismo DNI), ¿desea cargarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         txtNombreEmpleado.Text = persona.Nombre;
                         txtApellidoEmpleado.Text = persona.Apellido;

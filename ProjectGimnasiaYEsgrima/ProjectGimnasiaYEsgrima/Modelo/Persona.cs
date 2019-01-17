@@ -19,5 +19,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public string Apellido { get; set; }
         public System.DateTime FechaNacimiento { get; set; }
         public int DNI { get; set; }
+        public byte[] Foto { get; set; }
     }
 }

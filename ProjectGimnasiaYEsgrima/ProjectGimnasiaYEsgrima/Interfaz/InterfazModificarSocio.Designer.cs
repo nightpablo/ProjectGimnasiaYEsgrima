@@ -50,6 +50,8 @@
             this.lblTituloSocio = new System.Windows.Forms.Label();
             this.txtTipoDocSocio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,7 +194,7 @@
             // btnGuardarSocio
             // 
             this.btnGuardarSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarSocio.Location = new System.Drawing.Point(160, 424);
+            this.btnGuardarSocio.Location = new System.Drawing.Point(160, 464);
             this.btnGuardarSocio.Name = "btnGuardarSocio";
             this.btnGuardarSocio.Size = new System.Drawing.Size(104, 44);
             this.btnGuardarSocio.TabIndex = 19;
@@ -203,13 +205,32 @@
             // btnVolverSocio
             // 
             this.btnVolverSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverSocio.Location = new System.Drawing.Point(448, 424);
+            this.btnVolverSocio.Location = new System.Drawing.Point(448, 464);
             this.btnVolverSocio.Name = "btnVolverSocio";
             this.btnVolverSocio.Size = new System.Drawing.Size(104, 44);
             this.btnVolverSocio.TabIndex = 20;
             this.btnVolverSocio.Text = "Cancelar";
             this.btnVolverSocio.UseVisualStyleBackColor = true;
             this.btnVolverSocio.Click += new System.EventHandler(this.buttonVolverSocio_Click);
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(144, 405);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(137, 29);
+            this.lblCategoria.TabIndex = 7;
+            this.lblCategoria.Text = "Categoria *";
+            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(296, 408);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(112, 37);
+            this.cbxCategoria.TabIndex = 14;
             // 
             // errorProvider1
             // 
@@ -248,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 493);
+            this.ClientSize = new System.Drawing.Size(728, 531);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTituloSocio);
             this.Controls.Add(this.btnVolverSocio);
@@ -258,9 +279,11 @@
             this.Controls.Add(this.txtDireccionSocio);
             this.Controls.Add(this.txtTipoDocSocio);
             this.Controls.Add(this.txtDocumentoSocio);
+            this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.dtFechaNacimientoSocio);
             this.Controls.Add(this.txtApellidoSocio);
             this.Controls.Add(this.txtNombreSocio);
+            this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblTelefonoSocio);
             this.Controls.Add(this.lblLocalidadSocio);
             this.Controls.Add(this.lblFechaNacimientoSocio);
@@ -300,5 +323,7 @@
         private System.Windows.Forms.Label lblTituloSocio;
         private System.Windows.Forms.TextBox txtTipoDocSocio;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.Label lblCategoria;
     }
 }

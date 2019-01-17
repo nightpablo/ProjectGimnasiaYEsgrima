@@ -17,7 +17,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int IdRegistro { get; set; }
         public System.DateTime Fecha { get; set; }
         public System.DateTime HoraIngreso { get; set; }
-        public System.DateTime HoraEgreso { get; set; }
+        public Nullable<System.DateTime> HoraEgreso { get; set; }
     
         public virtual Empleado Empleado { get; set; }
     }

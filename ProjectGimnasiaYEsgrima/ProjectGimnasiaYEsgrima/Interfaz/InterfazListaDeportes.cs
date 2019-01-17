@@ -12,8 +12,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazListaDeportes : Form
     {
 
-        public Ventana MiVentana;
-        public InterfazListaDeportes(Ventana ventana)
+        public InterfazPrincipal MiVentana;
+        public InterfazListaDeportes(InterfazPrincipal ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
@@ -53,20 +53,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Actualizar();
+        }
+
+        public void Actualizar() {
             ControladorDeporte controladorDeporte = new ControladorDeporte();
             List<ModelDeporte> lista;
             deporteBindingSource.Clear();
-            
+
             if (txtNombreDeporte.Text.ToString().Equals("") && txtDescripcionDeporte.Text.ToString().Equals(""))
             {
-                lista = controladorDeporte.ListarTodosDeportes();   
+                lista = controladorDeporte.ListarTodosDeportes();
             }
             else
             {
                 lista = controladorDeporte.ListarTodosDeportesPorFiltros(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
             }
 
-            if (lista.Count == 0) { 
+            if (lista.Count == 0)
+            {
                 ModificarMensaje("No hay ningún deporte con estos filtros");
                 return;
             }

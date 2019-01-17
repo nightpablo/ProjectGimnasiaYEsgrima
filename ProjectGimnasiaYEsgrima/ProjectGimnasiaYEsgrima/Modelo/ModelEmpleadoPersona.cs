@@ -14,6 +14,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public EnumTipoEmpleado TipoEmpleado { get; set; }
         public Empleado MiEmpleado { get; set; }
         public Persona MiPersona { get; set; }
+        public byte[] Foto { get; set; }
         public ModelEmpleadoPersona() { }
         public ModelEmpleadoPersona(Empleado entry)
         {

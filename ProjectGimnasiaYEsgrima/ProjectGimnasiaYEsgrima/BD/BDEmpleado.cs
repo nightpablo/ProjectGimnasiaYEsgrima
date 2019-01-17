@@ -50,6 +50,27 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public ModelEmpleadoPersona BuscarPorClavesUnicasPorVista(int documento)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                
+                return context.Empleados
+                    .Select(e => new ModelEmpleadoPersona()
+                    {
+                        Nombre = e.Persona.Nombre,
+                        Apellido = e.Persona.Apellido,
+                        DNI = e.Persona.DNI,
+                        Foto = e.Persona.Foto,
+                        TipoEmpleado = e.TipoEmpleado,
+                        MiEmpleado = e,
+                        MiPersona = e.Persona
+                    })
+                    .AsEnumerable()
+                    .FirstOrDefault(b => b.MiPersona.DNI == documento);
+            }
+        }
+
         public List<ModelEmpleadoPersona> ListarTodos()
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -102,6 +123,42 @@ namespace ProjectGimnasiaYEsgrima.BD
                 var i = context.Empleados.AsEnumerable().FirstOrDefault(b => b.Persona.DNI.Equals(pers.DNI) && b.TipoEmpleado.Equals(emp.TipoEmpleado));
 
                 return i!=null;
+            }
+        }
+
+        public int RegistrarEntradaSalida(int i, RegistroIngresoEgreso registro)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                
+                if (i == 0) {
+                    context.Entry(registro.Empleado).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(registro).State = System.Data.Entity.EntityState.Added;
+                }
+                else  
+                    context.Entry(registro).State = System.Data.Entity.EntityState.Modified;
+                
+                return context.SaveChanges();
+            }
+        }
+
+        public RegistroIngresoEgreso TomarUltimoRegistroEntradaSalida(Empleado emp)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.RegistroIngresoEgresoes
+                    .OrderByDescending(b => b.HoraIngreso).FirstOrDefault(b => b.Empleado.IdEmpleado == emp.IdEmpleado);
+            }
+        }
+
+        public List<RegistroIngresoEgreso> TodosRegistrosEntradaSalida(Empleado emp)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.RegistroIngresoEgresoes
+                    .AsEnumerable()
+                    .Where(b => b.Empleado.IdEmpleado == emp.IdEmpleado)
+                    .ToList();
             }
         }
     }

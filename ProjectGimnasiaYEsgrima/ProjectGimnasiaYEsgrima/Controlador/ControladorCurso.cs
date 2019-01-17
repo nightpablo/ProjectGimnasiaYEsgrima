@@ -118,5 +118,40 @@ namespace ProjectGimnasiaYEsgrima.Controlador
 
             return BdCurso.EliminarEmpleado(emp, curso);
         }
+
+        public int InscribirSocioAlCurso(Socio soc, Curso curso)
+        {
+            var k = BdCurso.ListarIdSocios(curso);
+            if (k.Contains(soc.IdSocio)) return -2;
+
+
+            BdCurso.InscribirSocio(soc, curso);
+
+            BDSocio bdSocio = new BDSocio();
+            var valorcuotainicial = bdSocio.ValorInicialClub();
+            var cuota = new CuotaSocio
+            {
+                FechaEmision = DateTime.Now,
+                Estado = EnumEstadoCuotaSocio.NoPagado,
+                Importe = curso.Costo,
+                ValorCuotaInicial = valorcuotainicial,
+                Socio = soc,
+                Curso = curso
+            };
+            bdSocio.CrearCupon(cuota);
+
+            return 1;
+        }
+
+        public int UnsuscribirSocioAlCurso(Socio soc, Curso curso)
+        {
+            var k = BdCurso.ListarIdSocios(curso);
+            if (!k.Contains(soc.IdSocio)) return -2;
+            BdCurso.UnsuscribirSocio(soc, curso);
+
+            return 1;
+        }
+
+
     }
 }

@@ -15,6 +15,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Padre = padre;
             InitializeComponent();
             cbxTipoDocumentoSocio.DataSource = Enum.GetValues(typeof(EnumTipoDocumento));
+            cbxCategoria.DataSource = Enum.GetValues(typeof(EnumCategoriaSocio));
             CargarCamposFocus();
             CargarInterfazBuena();
         }
@@ -39,11 +40,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InterfazBuena interfaz = new InterfazBuena();
             interfaz.TransformarVentanaPersonalizado(this);
             interfaz.TransformarTituloVentanaPersonalizado(lblTituloSocio);
-            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblFechaNacimientoSocio, lblTipoDocumentoSocio, lblNumeroDocumentoSocio, lblDireccionSocio, lblLocalidadSocio, lblTelefonoSocio);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblNombreSocio, lblApellidoSocio, lblFechaNacimientoSocio, lblTipoDocumentoSocio, lblNumeroDocumentoSocio, lblDireccionSocio, lblLocalidadSocio, lblTelefonoSocio,lblCategoria);
             interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreSocio, txtApellidoSocio, txtDocumentoSocio, txtDireccionSocio, txtLocalidadSocio, txtTelefonoSocio);
             interfaz.TransformarBotonPersonalizadoTodos(btnGuardarSocio, btnVolverSocio);
             interfaz.TransformarDateTimePickerPersonalizado(dtFechaNacimientoSocio);
             interfaz.TransformarComboBoxPersonalizado(cbxTipoDocumentoSocio);
+            interfaz.TransformarComboBoxPersonalizado(cbxCategoria);
+
 
         }
 
@@ -95,14 +98,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
 
             Enum.TryParse<EnumTipoDocumento>(cbxTipoDocumentoSocio.SelectedValue.ToString(), out EnumTipoDocumento tipoDocumento);
+            Enum.TryParse<EnumCategoriaSocio>(cbxCategoria.SelectedValue.ToString(), out EnumCategoriaSocio categoria);
 
             ControladorSocio Csocio = new ControladorSocio();
             int resultado = Csocio.CrearSocio(txtNombreSocio.Text, txtApellidoSocio.Text, dtFechaNacimientoSocio.Value, 
                 Convert.ToInt32(txtDocumentoSocio.Text), txtDireccionSocio.Text, txtLocalidadSocio.Text,
-                txtTelefonoSocio.Text, tipoDocumento);
+                txtTelefonoSocio.Text, tipoDocumento, categoria);
             if (resultado > 0)
             {
+
                 Padre.ModificarMensaje("Se ha creado el SOCIO");
+                Padre.Actualizar();
                 Dispose();
                 
                 
@@ -110,12 +116,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else if (resultado == -1)
             {
                 Padre.ModificarMensaje("Se ha recuperado el SOCIO");
+                Padre.Actualizar();
                 Dispose();
 
 
             }
             else if (resultado == -2)
                 MyMessageBox.Show(this, "Ya existe el SOCIO", "Socio");
+            else if (resultado == -3)
+                MyMessageBox.Show(this, "No se ha definido un monto inicial del club", "Socio");
         }
 
         private void buttonVolverSocio_Click(object sender, EventArgs e)
