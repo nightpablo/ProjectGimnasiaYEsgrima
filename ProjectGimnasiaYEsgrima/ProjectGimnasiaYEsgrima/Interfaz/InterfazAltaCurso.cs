@@ -90,13 +90,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 
-                Padre.ModificarMensaje("Se ha creado un nuevo CURSO");
+                Padre.ModificarMensaje("El CURSO ha sido creado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -1)
             {
-                Padre.ModificarMensaje("Se ha recuperado el CURSO");
+                Padre.ModificarMensaje("El CURSO ha sido recuperado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

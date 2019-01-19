@@ -236,6 +236,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InterfazListaDeportes";
             this.Text = "InterfazListaDeportes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BtnVolver_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelDeporteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deporteBindingSource)).EndInit();

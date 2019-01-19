@@ -118,7 +118,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
             {
-                AbrirOtraVentana<InterfazGenerarReporte>(new InterfazGenerarReporte(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
+                AbrirOtraVentana<InterfazGenerarIdentificacion>(new InterfazGenerarIdentificacion(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
             }
             else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("InscribirCurso"))
             {
@@ -171,6 +171,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
+            MiVentana.CargarLogin();
             Dispose();
         }
 
@@ -218,6 +219,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             AbrirOtraVentana<InterfazGeneradorDeCupones>(new InterfazGeneradorDeCupones(this,todoscupones1,todoscupones2));
 
+        }
+
+        private void InterfazListaSocio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MiVentana.CargarLogin();
+            Dispose();
         }
     }
 

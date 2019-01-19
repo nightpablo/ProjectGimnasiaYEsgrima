@@ -109,12 +109,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if(dgvEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Eliminar este Empleado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Está seguro que desea eliminar este Empleado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorEmpleado CEmpleado = new ControladorEmpleado();
                     if(CEmpleado.EliminarEmpleado(((ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado) > 0)
                     {
-                        ModificarMensaje("Se ha eliminado el Empleado");
+                        ModificarMensaje("El EMPLEADO ha sido eliminado con ÉXITO");
                         dgvEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
                     txtDNIEmpleado.Text, cbxTipoEmpleado.SelectedItem);
                     }
@@ -123,7 +123,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (dgvEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
             {
-                AbrirOtraVentana<InterfazGenerarReporte>(new InterfazGenerarReporte(this, (ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem));
+                AbrirOtraVentana<InterfazGenerarIdentificacion>(new InterfazGenerarIdentificacion(this, (ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem));
             }
 
 
@@ -136,6 +136,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
+            MiVentana.CargarLogin();
             Dispose();
         }
 
@@ -162,6 +163,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             MiVentana.VentanaContenedor.Tag = fh;
             fh.Show();
             AbrirOtraVentana<T>(fh);
+        }
+
+        private void InterfazListaEmpleado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MiVentana.CargarLogin();
+            Dispose();
         }
     }
 }

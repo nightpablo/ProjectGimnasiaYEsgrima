@@ -96,12 +96,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             else if (dataGridViewDeporte.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if(MyMessageBox.Show("¿Seguro que desea Eliminar este deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if(MyMessageBox.Show("¿Está seguro que desea eliminar este Deporte?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     var resultado = new ControladorDeporte().EliminarDeporte(((ModelDeporte)dataGridViewDeporte.CurrentRow.DataBoundItem).MiDeporte);
                     if (resultado > 0)
                     {
-                        ModificarMensaje("Se ha eliminado el DEPORTE");
+                        ModificarMensaje("El DEPORTE ha sido eliminado con ÉXITO");
                         dataGridViewDeporte.DataSource = new ControladorDeporte().ListarTodosDeportesPorFiltros(txtNombreDeporte.Text.ToString(), txtDescripcionDeporte.Text.ToString());
                     }
                 }
@@ -123,6 +123,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
+            MiVentana.CargarLogin();
             Dispose();
         }
 
@@ -151,5 +152,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             AbrirOtraVentana<T>(fh);
         }
 
+        private void BtnVolver_Click(object sender, FormClosingEventArgs e)
+        {
+            MiVentana.CargarLogin();
+            Dispose();
+        }
     }
 }

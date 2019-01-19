@@ -11,7 +11,7 @@ using ZXing;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    public partial class InterfazGenerarReporte : Form
+    public partial class InterfazGenerarIdentificacion : Form
     {
 
         private ModelSocioPersona MiSocio;
@@ -21,7 +21,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private Bitmap bbb;
 
-        public InterfazGenerarReporte(InterfazListaEmpleado ventana, ModelEmpleadoPersona emp)
+        public InterfazGenerarIdentificacion(InterfazListaEmpleado ventana, ModelEmpleadoPersona emp)
         {
             MiEmpleado = emp;
             MiVentana2 = ventana;
@@ -33,7 +33,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             CargarInterfazBuena();
         }
 
-        public InterfazGenerarReporte(InterfazListaSocio ventana, ModelSocioPersona socio)
+        public InterfazGenerarIdentificacion(InterfazListaSocio ventana, ModelSocioPersona socio)
         {
             MiSocio = socio;
             MiVentana = ventana;

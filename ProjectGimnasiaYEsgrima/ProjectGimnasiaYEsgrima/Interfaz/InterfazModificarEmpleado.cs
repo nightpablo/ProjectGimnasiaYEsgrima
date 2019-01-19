@@ -85,12 +85,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
             }
             else errorProvider1.SetError(txtApellidoEmpleado, "");
-            if (txtDNIEmpleado.Text.Length < 6)
-            {
-                hayError = true;
-                errorProvider1.SetError(txtDNIEmpleado, "El DNI debe ser con número entre 6 y 8");
-            }
-            else errorProvider1.SetError(txtDNIEmpleado, "");
 
 
             if (hayError)
@@ -104,7 +98,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = Cempleado.ModificarEmpleado(empleado.MiPersona.IdPersona,empleado.MiEmpleado.IdEmpleado,txtNombreEmpleado.Text, txtApellidoEmpleado.Text, dtpFechaNacimiento.Value, Convert.ToInt32(txtDNIEmpleado.Text), txtDescripcionEmpleado.Text, dtpInicioEmpleado.Value, tipoEmpleado,empleado.MiEmpleado.EstadoEmpleado);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha modificado el EMPLEADO");
+                Padre.ModificarMensaje("El EMPLEADO ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

@@ -76,7 +76,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_deporte.ModificarDeporte(deporte.IdDeporte, nombre, descripcion);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha modificado el DEPORTE");
+                Padre.ModificarMensaje("El DEPORTE ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

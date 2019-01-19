@@ -41,9 +41,6 @@
             this.lblTipoEmpleado = new System.Windows.Forms.Label();
             this.cbxTipoEmpleado = new System.Windows.Forms.ComboBox();
             this.dgvEmpleadoPersona = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblTituloEmpleado = new System.Windows.Forms.Label();
-            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EmitirCarnet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.empleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblTituloEmpleado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -194,32 +194,6 @@
             this.dgvEmpleadoPersona.TabIndex = 18;
             this.dgvEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmpleadoPersona_CellContentClick);
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(680, 144);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(112, 46);
-            this.btnVolver.TabIndex = 19;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // lblTituloEmpleado
-            // 
-            this.lblTituloEmpleado.AutoSize = true;
-            this.lblTituloEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloEmpleado.Location = new System.Drawing.Point(32, 8);
-            this.lblTituloEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTituloEmpleado.Name = "lblTituloEmpleado";
-            this.lblTituloEmpleado.Size = new System.Drawing.Size(264, 32);
-            this.lblTituloEmpleado.TabIndex = 10;
-            this.lblTituloEmpleado.Text = "Gestión Empleados";
-            // 
-            // empleadoPersonaBindingSource
-            // 
-            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -278,6 +252,32 @@
             this.EmitirCarnet.UseColumnTextForButtonValue = true;
             this.EmitirCarnet.Width = 24;
             // 
+            // empleadoPersonaBindingSource
+            // 
+            this.empleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(680, 144);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(112, 46);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // lblTituloEmpleado
+            // 
+            this.lblTituloEmpleado.AutoSize = true;
+            this.lblTituloEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEmpleado.Location = new System.Drawing.Point(32, 8);
+            this.lblTituloEmpleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTituloEmpleado.Name = "lblTituloEmpleado";
+            this.lblTituloEmpleado.Size = new System.Drawing.Size(264, 32);
+            this.lblTituloEmpleado.TabIndex = 10;
+            this.lblTituloEmpleado.Text = "Gestión Empleados";
+            // 
             // InterfazListaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,6 +300,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InterfazListaEmpleado";
             this.Text = "InterfazListaEmpleado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazListaEmpleado_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoPersona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoPersonaBindingSource)).EndInit();
             this.ResumeLayout(false);

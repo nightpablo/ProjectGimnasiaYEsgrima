@@ -60,6 +60,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            MiVentana.CargarLogin();
+            Dispose();
+        }
+
+        private void InterfazConfiguracion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MiVentana.CargarLogin();
             Dispose();
         }
     }

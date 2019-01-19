@@ -87,7 +87,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_curso.ModificarCurso(Curso.IdCurso,txtNombreCurso.Text,Int32.Parse(txtImporteMensualCurso.Text), dtpInicioCurso.Value, dtpFinCurso.Value, Curso.Deporte, Curso.EstadoCurso);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha modificado el Curso");
+                Padre.ModificarMensaje("El CURSO ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

@@ -177,6 +177,12 @@
     <Compile Include="Interfaz\InterfazAltaSocio.Designer.cs">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazInicioSesion.Designer.cs">
+      <DependentUpon>InterfazInicioSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazInscribirSocioCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaSocio.resx">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazInicioSesion.resx">
+      <DependentUpon>InterfazInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazInscribirSocioCurso.resx">
       <DependentUpon>InterfazInscribirSocioCurso.cs</DependentUpon>

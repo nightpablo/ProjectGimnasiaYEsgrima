@@ -1,17 +1,11 @@
 ﻿using AForge.Video.DirectShow;
 using ProjectGimnasiaYEsgrima.Controlador;
-using ProjectGimnasiaYEsgrima.Interfaz;
 using ProjectGimnasiaYEsgrima.Modelo;
 using ProjectGimnasiaYEsgrima.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ZXing;
 
@@ -78,15 +72,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnParar_Click(object sender, EventArgs e)
         {
-            videocapture.Stop();
-            tmpCapture.Stop();
+            if (videocapture != null && tmpCapture != null)
+            {
+                videocapture.Stop();
+                tmpCapture.Stop();
+            }
             parado = true;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            videocapture.Stop();
-            tmpCapture.Stop();
+            if(videocapture!=null && tmpCapture != null) { 
+                videocapture.Stop();
+                tmpCapture.Stop();
+            }
+            MiVentana.CargarLogin();
             Dispose();
         }
 
@@ -124,29 +124,41 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     string texto = resultado.ToString().Trim();
                     vspEntradaSalida.Stop();
                     tmpCapture.Stop();
-                    
-                    disposeFormTimer = 5;
-                    msgTimer = new Timer();
-                    msgTimer.Interval = 1000;
-                    msgTimer.Enabled = true;
-                    msgTimer.Start();
-                    msgTimer.Tick += new System.EventHandler(this.timer_tick);
                     string[] transpaso = texto.Split('-');
-                    CargarInformacionPlanilla((transpaso[0].Equals("Socio") ? 1 : 0), Int32.Parse(transpaso[1]));
-                    
+                    if (transpaso.Length == 2 && new Regex("[a-zA-Z]*").IsMatch(transpaso[0]) && new Regex("[0-9]*").IsMatch(transpaso[1])) { 
+                        if (CargarInformacionPlanilla((transpaso[0].Equals("Socio") ? 1 : 0), Int32.Parse(transpaso[1]))) { 
+                            disposeFormTimer = 5;
+                            msgTimer = new Timer();
+                            msgTimer.Interval = 1000;
+                            msgTimer.Enabled = true;
+                            msgTimer.Start();
+                            msgTimer.Tick += new System.EventHandler(this.timer_tick);
+                        }
+                        else
+                        {
+                            vspEntradaSalida.Start();
+                            tmpCapture.Start();
+                        }
+                    }
+                    else
+                    {
+                        vspEntradaSalida.Start();
+                        tmpCapture.Start();
+                    }
+
                 }
 
             }
         }
 
-        private void CargarInformacionPlanilla(int TipoPersona, int DNI)
+        private bool CargarInformacionPlanilla(int TipoPersona, int DNI)
         {
             lblFechaIngreso.Text = "Fecha Ingreso";
             if (TipoPersona == 1) // ES SOCIO
             {
                 // Cargar el socio desde controlador y adjuntar a la planilla
                 ModelSocioPersona socioPersona = new ControladorSocio().BuscarPorClavesUnicasSocio(DNI);
-
+                if (socioPersona == null) return false;
                 txtNombreApellido.Text = socioPersona.MiPersona.Nombre + "," + socioPersona.MiPersona.Apellido;
                 txtTipoDoc.Text = socioPersona.MiPersona.DNI + "";
                 txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/);
@@ -158,7 +170,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 // Cargar el empleado desde controlador y adjuntar a la planilla
                 ModelEmpleadoPersona empleadoPersona = new ControladorEmpleado().BuscarEmpleadoPorClavesUnicasPorVista(DNI);
-
+                if (empleadoPersona == null) return false;
                 txtNombreApellido.Text = empleadoPersona.MiPersona.Nombre + "," + empleadoPersona.MiPersona.Apellido;
                 txtTipoDoc.Text = empleadoPersona.MiPersona.DNI + "";
                 txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/); ;
@@ -174,6 +186,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
             }
             pnlDatosPersona.Show();
+            return true;
         }
 
         private Image byteArrayToImage(byte[] byteArrayIn)
@@ -188,8 +201,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void InterfazEntradaSalida_FormClosing(object sender, FormClosingEventArgs e)
         {
-            videocapture.Stop();
-            tmpCapture.Stop();
+            if (videocapture != null && tmpCapture != null)
+            {
+                videocapture.Stop();
+                tmpCapture.Stop();
+            }
+            MiVentana.CargarLogin();
             Dispose();
         }
     }

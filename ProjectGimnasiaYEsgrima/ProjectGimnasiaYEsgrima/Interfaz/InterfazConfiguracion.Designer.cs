@@ -97,6 +97,7 @@
             this.Controls.Add(this.lblTituloConfiguracion);
             this.Name = "InterfazConfiguracion";
             this.Text = "InterfazConfiguracion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazConfiguracion_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

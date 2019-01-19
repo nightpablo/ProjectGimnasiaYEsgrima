@@ -39,23 +39,23 @@
             this.btnCrearSocio = new System.Windows.Forms.Button();
             this.btnBuscarSocio = new System.Windows.Forms.Button();
             this.dataGridViewSocioPersona = new System.Windows.Forms.DataGridView();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.InscribirCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CuponPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EmitirCarnet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblInfoSocio = new System.Windows.Forms.Label();
             this.labelTituloVentana = new System.Windows.Forms.Label();
             this.ContenedorHijo = new System.Windows.Forms.Panel();
             this.btnEjecutarProcesoGeneral = new System.Windows.Forms.Button();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modelSocioPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).BeginInit();
-            this.ContenedorHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).BeginInit();
+            this.ContenedorHijo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +177,27 @@
             this.dataGridViewSocioPersona.TabIndex = 25;
             this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // dNIDataGridViewTextBoxColumn
+            // 
+            this.dNIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
+            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
+            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
+            // 
             // Modificar
             // 
             this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -227,6 +248,10 @@
             this.EmitirCarnet.UseColumnTextForButtonValue = true;
             this.EmitirCarnet.Width = 24;
             // 
+            // modelSocioPersonaBindingSource1
+            // 
+            this.modelSocioPersonaBindingSource1.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
+            // 
             // lblInfoSocio
             // 
             this.lblInfoSocio.AutoSize = true;
@@ -268,34 +293,9 @@
             this.btnEjecutarProcesoGeneral.Name = "btnEjecutarProcesoGeneral";
             this.btnEjecutarProcesoGeneral.Size = new System.Drawing.Size(416, 40);
             this.btnEjecutarProcesoGeneral.TabIndex = 24;
-            this.btnEjecutarProcesoGeneral.Text = "Proceso - Gemerar Cupon Socios";
+            this.btnEjecutarProcesoGeneral.Text = "Proceso - Generar Cupon Socios";
             this.btnEjecutarProcesoGeneral.UseVisualStyleBackColor = true;
             this.btnEjecutarProcesoGeneral.Click += new System.EventHandler(this.BtnGenerarProceso_Click);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // dNIDataGridViewTextBoxColumn
-            // 
-            this.dNIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dNIDataGridViewTextBoxColumn.DataPropertyName = "DNI";
-            this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
-            this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
-            // 
-            // modelSocioPersonaBindingSource1
-            // 
-            this.modelSocioPersonaBindingSource1.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona);
             // 
             // modelSocioPersonaBindingSource
             // 
@@ -320,10 +320,11 @@
             this.Controls.Add(this.ContenedorHijo);
             this.Name = "InterfazListaSocio";
             this.Text = "InterfazListaSocio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazListaSocio_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSocioPersona)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).EndInit();
             this.ContenedorHijo.ResumeLayout(false);
             this.ContenedorHijo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelSocioPersonaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,12 +9,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazPrincipal : Form
     {
+        InterfazInicioSesion inicio;
         public InterfazPrincipal()
         {
             
             InitializeComponent();
-            
+            inicio = new InterfazInicioSesion(this);
             this.Opacity = .96;
+            CargarLogin();
+        }
+
+        public void CargarLogin()
+        {
+            AbrirOtraVentana(inicio);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,22 +52,34 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnDeportes_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana(new InterfazListaDeportes(this));
+            if(InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazListaDeportes(this));
+            else
+                CargarLogin();
         }
 
         private void btnCursos_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana(new InterfazListaCurso(this));
+            if (InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazListaCurso(this));
+            else
+                CargarLogin();
         }
 
         private void btnSocios_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana(new InterfazListaSocio(this));
+            if (InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazListaSocio(this));
+            else
+                CargarLogin();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana(new InterfazListaEmpleado(this));
+            if (InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazListaEmpleado(this));
+            else
+                CargarLogin();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -70,7 +89,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana(new InterfazConfiguracion(this));
+            if (InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazConfiguracion(this));
+            else
+                CargarLogin();
         }
     }
 }

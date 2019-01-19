@@ -61,13 +61,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_deporte.CrearDeporte(txtNombreDeporte.Text, txtDescripcionDeporte.Text);
             if ( resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha creado un nuevo DEPORTE");
+                Padre.ModificarMensaje("El DEPORTE ha sido creado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if(resultado == -1)
             {
-                Padre.ModificarMensaje("Se ha recuperado el DEPORTE");
+                Padre.ModificarMensaje("El DEPORTE ha sido recuperado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

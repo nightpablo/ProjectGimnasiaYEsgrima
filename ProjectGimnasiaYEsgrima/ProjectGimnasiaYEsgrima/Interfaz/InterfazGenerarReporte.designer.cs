@@ -1,6 +1,6 @@
 ﻿namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    partial class InterfazGenerarReporte
+    partial class InterfazGenerarIdentificacion
     {
         /// <summary>
         /// Required designer variable.

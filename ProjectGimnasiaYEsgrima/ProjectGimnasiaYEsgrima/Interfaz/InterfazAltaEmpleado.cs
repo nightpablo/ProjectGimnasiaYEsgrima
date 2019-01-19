@@ -97,13 +97,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             int resultado = Cempleado.CrearEmpleado(txtNombreEmpleado.Text, txtApellidoEmpleado.Text, dtpFechaNacimiento.Value,Convert.ToInt32(txtDNIEmpleado.Text), txtDescripcionEmpleado.Text, dtpInicioEmpleado.Value, tipoEmpleado);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha creado el EMPLEADO");
+                Padre.ModificarMensaje("El EMPLEADO ha sido creado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if(resultado == -1)
             {
-                Padre.ModificarMensaje("Se ha recuperado el EMPLEADO");
+                Padre.ModificarMensaje("El EMPLEADO ha sido recuperado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

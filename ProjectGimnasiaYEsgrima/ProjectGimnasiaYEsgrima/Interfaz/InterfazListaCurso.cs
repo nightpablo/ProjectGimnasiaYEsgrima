@@ -117,12 +117,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             else if (dtvListarCursos.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Eliminar este Curso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Está seguro que desea eliminar este Curso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorCurso controladorCurso = new ControladorCurso();
                     if (controladorCurso.EliminarCurso(((ModelCurso)dtvListarCursos.CurrentRow.DataBoundItem).Curso) > 0)
                     {
-                        this.ModificarMensaje("Se ha eliminado el CURSO");
+                        this.ModificarMensaje("El CURSO ha sido eliminado con ÉXITO");
                         dtvListarCursos.DataSource = controladorCurso.ListarTodosCursosFiltro(txtNombreCurso.Text.ToString(), ((ModelDeporte)cbxDeporteCurso.SelectedItem).MiDeporte);
                     }
                 }
@@ -143,7 +143,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-              Dispose();
+            MiVentana.CargarLogin();
+            Dispose();
         }
 
         private void AbrirOtraVentana<T>(Object Formhijo)
@@ -169,6 +170,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             MiVentana.VentanaContenedor.Tag = fh;
             fh.Show();
             AbrirOtraVentana<T>(fh);
+        }
+
+        private void InterfazListaCurso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MiVentana.CargarLogin();
+            Dispose();
         }
     }
 }
