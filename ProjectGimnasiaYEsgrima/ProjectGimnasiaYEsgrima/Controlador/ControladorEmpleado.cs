@@ -158,5 +158,9 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             }
 
         }
+        public List<ModelEmpleadoPersona> TraerEmpleadoReporte()
+        {
+            return bdEmpleado.ListarTodosEmpleados();
+        }
     }
 }

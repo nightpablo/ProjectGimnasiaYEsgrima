@@ -94,5 +94,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else
                 CargarLogin();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            if (InterfazInicioSesion.logueado)
+                AbrirOtraVentana(new InterfazFiltroReporte(this));
+            else
+                CargarLogin();
+        }
     }
 }

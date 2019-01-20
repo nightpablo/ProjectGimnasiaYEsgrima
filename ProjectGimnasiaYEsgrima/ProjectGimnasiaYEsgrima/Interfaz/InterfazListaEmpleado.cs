@@ -123,7 +123,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (dgvEmpleadoPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
             {
-                AbrirOtraVentana<InterfazGenerarIdentificacion>(new InterfazGenerarIdentificacion(this, (ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem));
+                AbrirOtraVentana<InterfazEmitirCarnet>(new InterfazEmitirCarnet(this, (ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem));
             }
 
 

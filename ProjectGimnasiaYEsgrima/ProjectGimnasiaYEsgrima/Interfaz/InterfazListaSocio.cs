@@ -118,7 +118,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("EmitirCarnet"))
             {
-                AbrirOtraVentana<InterfazGenerarIdentificacion>(new InterfazGenerarIdentificacion(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
+                AbrirOtraVentana<InterfazEmitirCarnet>(new InterfazEmitirCarnet(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
             }
             else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("InscribirCurso"))
             {

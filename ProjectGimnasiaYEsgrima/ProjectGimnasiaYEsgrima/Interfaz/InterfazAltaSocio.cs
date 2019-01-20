@@ -132,5 +132,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Dispose();
         }
 
+        private void cbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

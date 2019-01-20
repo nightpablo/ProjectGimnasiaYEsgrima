@@ -244,5 +244,10 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdSocio.AnularCuota(cuota);
         }
 
+        public List<ModelSocioPersona> TraerSocioReporte()
+        {
+            return bdSocio.ListarTodosSocios();
+        }
+
     }
 }

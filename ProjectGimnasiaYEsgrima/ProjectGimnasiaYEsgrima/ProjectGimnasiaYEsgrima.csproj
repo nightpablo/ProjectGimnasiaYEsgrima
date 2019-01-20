@@ -147,17 +147,23 @@
     <Compile Include="Interfaz\InterfazEmisionCuponPago.Designer.cs">
       <DependentUpon>InterfazEmisionCuponPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazEmpleadosReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazEmpleadosReporte.Designer.cs">
+      <DependentUpon>InterfazEmpleadosReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazEntradaSalida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\InterfazEntradaSalida.designer.cs">
       <DependentUpon>InterfazEntradaSalida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazGenerarReporte.cs">
+    <Compile Include="Interfaz\InterfazEmitirCarnet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazGenerarReporte.designer.cs">
-      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazEmitirCarnet.designer.cs">
+      <DependentUpon>InterfazEmitirCarnet.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazAgregarCursoEmpleado.cs">
       <SubType>Form</SubType>
@@ -176,6 +182,24 @@
     </Compile>
     <Compile Include="Interfaz\InterfazAltaSocio.Designer.cs">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazFiltroReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazFiltroReporte.Designer.cs">
+      <DependentUpon>InterfazFiltroReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazSociosReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazSociosReporte.Designer.cs">
+      <DependentUpon>InterfazSociosReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazGenerarReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazGenerarReporte.Designer.cs">
+      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazInicioSesion.cs">
       <SubType>Form</SubType>
@@ -351,11 +375,20 @@
     <EmbeddedResource Include="Interfaz\InterfazEmisionCuponPago.resx">
       <DependentUpon>InterfazEmisionCuponPago.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazEmpleadosReporte.resx">
+      <DependentUpon>InterfazEmpleadosReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazEntradaSalida.resx">
       <DependentUpon>InterfazEntradaSalida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazGenerarReporte.resx">
-      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazFiltroReporte.resx">
+      <DependentUpon>InterfazFiltroReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazSociosReporte.resx">
+      <DependentUpon>InterfazSociosReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazEmitirCarnet.resx">
+      <DependentUpon>InterfazEmitirCarnet.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAgregarCursoEmpleado.resx">
@@ -372,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaSocio.resx">
       <DependentUpon>InterfazAltaSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazGenerarReporte.resx">
+      <DependentUpon>InterfazGenerarReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazInicioSesion.resx">
       <DependentUpon>InterfazInicioSesion.cs</DependentUpon>
@@ -419,8 +455,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Utils\AlfabeticoEmpleado.rdlc" />
+    <EmbeddedResource Include="Utils\AlfabeticoSocio.rdlc" />
     <EmbeddedResource Include="Utils\Cupon.rdlc" />
     <EmbeddedResource Include="Utils\Empleado.rdlc" />
+    <EmbeddedResource Include="Utils\ReporteEmpleado.rdlc" />
+    <EmbeddedResource Include="Utils\ReporteSocio.rdlc" />
     <EmbeddedResource Include="Utils\Socio.rdlc" />
     <EntityDeploy Include="Modelo\DiagramasDeTablas.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -460,6 +500,7 @@
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelImpresionCuponSocio.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.Socio.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -12,6 +12,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public string Apellido { get; set; }
         public int DNI { get; set; }
         public EnumTipoDocumento TipoDocumento { get; set; }
+        public EnumCategoriaSocio CategoriaSocio { get ; set; }
+        public string TextCategoriaSocio { get {return CategoriaSocio.ToString();}}
         public Socio MiSocio { get; set; }
         public Persona MiPersona { get; set; }
         public ModelSocioPersona() { }

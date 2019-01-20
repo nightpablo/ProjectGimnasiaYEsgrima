@@ -265,6 +265,7 @@
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(112, 37);
             this.cbxCategoria.TabIndex = 14;
+            this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.cbxCategoria_SelectedIndexChanged);
             // 
             // InterfazAltaSocio
             // 

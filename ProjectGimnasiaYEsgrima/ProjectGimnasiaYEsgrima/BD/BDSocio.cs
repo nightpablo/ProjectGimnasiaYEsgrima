@@ -242,5 +242,25 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public List<ModelSocioPersona> ListarTodosSocios()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                var j = context.Socios
+                    .Select(e => new ModelSocioPersona()
+                    {
+                        Nombre = e.Persona.Nombre,
+                        Apellido = e.Persona.Apellido,
+                        DNI = e.Persona.DNI,
+                        MiSocio = e,
+                        MiPersona = e.Persona,
+                        CategoriaSocio =e.CategoriaSocio
+                    }).AsEnumerable()
+                    .ToList();
+
+                return j;
+            }
+        }
+
     }
 }

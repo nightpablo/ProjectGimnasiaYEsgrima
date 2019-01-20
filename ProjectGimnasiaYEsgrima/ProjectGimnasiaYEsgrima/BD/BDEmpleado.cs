@@ -161,6 +161,26 @@ namespace ProjectGimnasiaYEsgrima.BD
                     .ToList();
             }
         }
+
+
+        public List<ModelEmpleadoPersona> ListarTodosEmpleados()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Empleados
+                    .AsEnumerable()
+                    
+                    .Select(e => new ModelEmpleadoPersona()
+                    {
+                        Nombre = e.Persona.Nombre,
+                        Apellido = e.Persona.Apellido,
+                        DNI = e.Persona.DNI,
+                        TipoEmpleado = e.TipoEmpleado,
+                        MiEmpleado = e,
+                        MiPersona = e.Persona
+                    }).ToList();
+            }
+        }
     }
 
 }
