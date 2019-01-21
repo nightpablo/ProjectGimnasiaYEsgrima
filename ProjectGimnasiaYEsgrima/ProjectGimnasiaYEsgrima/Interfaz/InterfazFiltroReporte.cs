@@ -35,5 +35,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             new InterfazEmpleadosReporte(this).ShowDialog();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new InterfazDeporteReporte(this).ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new InterfazCursoReporte(this).ShowDialog();
+        }
     }
 }

@@ -116,5 +116,26 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
 
         }
+
+        public List<ModelDeporte> ListarTodosDeportes()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Deportes
+                    .AsEnumerable()
+                    //.Where(b => b.EstadoDeporte != EnumEstadoDeporte.Baja)
+                    .Select(b => new ModelDeporte()
+                    {
+                        IdDeporte = b.IdDeporte,
+                        Nombre = b.Nombre,
+                        Descripcion = b.Descripcion,
+                        EstadoDeporte = b.EstadoDeporte,
+                        MiDeporte = b
+
+                    })
+
+                    .ToList();
+            }
+        }
     }
 }

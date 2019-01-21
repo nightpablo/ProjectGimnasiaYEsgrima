@@ -152,6 +152,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return 1;
         }
 
+        public List<ModelCurso> BuscarCursosTodos()
+        {
+            return BdCurso.ListarTodosCursos();
+        }
+
 
     }
 }

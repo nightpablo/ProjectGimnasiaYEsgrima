@@ -175,9 +175,9 @@ namespace ProjectGimnasiaYEsgrima.BD
                         Nombre = e.Persona.Nombre,
                         Apellido = e.Persona.Apellido,
                         DNI = e.Persona.DNI,
-                        TipoEmpleado = e.TipoEmpleado,
                         MiEmpleado = e,
-                        MiPersona = e.Persona
+                        MiPersona = e.Persona,
+                        TipoEmpleado= e.TipoEmpleado
                     }).ToList();
             }
         }

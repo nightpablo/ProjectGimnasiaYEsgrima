@@ -246,6 +246,27 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return 1;
             }
         }
+
+        public List<ModelCurso> ListarTodosCursos()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Cursos
+                    .AsEnumerable()
+                     .Select(e => new ModelCurso()
+                    {
+                        IdCurso = e.IdCurso,
+                        Nombre = e.Nombre,
+                        FechaInicio = e.FechaInicio,
+                        FechaFin = e.FechaFin,
+                        EstadoCurso = e.EstadoCurso,
+                        Monto = e.Costo,
+                        Deporte = e.Deporte,
+                        Curso = e
+                    })
+                .ToList();
+            }
+        }
     }
 
 }

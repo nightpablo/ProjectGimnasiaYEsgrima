@@ -20,6 +20,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             MiVentana = ventana;
             InitializeComponent();
+            cbxDirectivo.Checked = true;
+            cbxProfesor.Checked = true;
+            cbxSecretaria.Checked = true;
+            cbxMantenimiento.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 .ToList();
 
             ReportDataSource dt = new ReportDataSource("DataSet1", lista);
-            string dir = "ProjectGimnasiaYEsgrima.Utils.AlfabeticoEmpleado.rdlc";
+            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosDeporte.rdlc";
 
             new InterfazGenerarReporte(dt, dir).ShowDialog();
         }
@@ -43,19 +47,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelEmpleadoPersona> lista = null;
             if (cbxDirectivo.Checked && cbxSecretaria.Checked && cbxProfesor.Checked && cbxMantenimiento.Checked)
             {
+            
                 lista = CEmpleado.TraerEmpleadoReporte();
             }
             else
             {
-                /*lista = CEmpleado.TraerSocioReporte()
+                lista = CEmpleado.TraerEmpleadoReporte()
                     .AsEnumerable()
-                    .Where(b=>(cbxActivo.Checked? true: b.CategoriaSocio!=EnumCategoriaSocio.Activo))
-                    .Where(b => (cbxAdherente.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Adherente))
-                    .Where(b => (cbxMenor.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Menor))
-                    .Where(b => (cbxVitalicio.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Vitalicio))
+                    .Where(b=>(cbxDirectivo.Checked? true: b.TipoEmpleado!=EnumTipoEmpleado.Directivo))
+                    .Where(b => (cbxMantenimiento.Checked ? true : b.TipoEmpleado != EnumTipoEmpleado.Mantenimiento))
+                    .Where(b => (cbxProfesor.Checked ? true : b.TipoEmpleado != EnumTipoEmpleado.Profesor))
+                    .Where(b => (cbxSecretaria.Checked ? true : b.TipoEmpleado != EnumTipoEmpleado.Secretaria))
                     
                     .ToList()
-                     ;*/
+                     ;
             }
             
             ReportDataSource dt = new ReportDataSource("DataSet1", lista);

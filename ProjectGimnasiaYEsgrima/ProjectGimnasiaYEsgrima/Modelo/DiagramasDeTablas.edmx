@@ -454,6 +454,8 @@
         <EnumType Name="EnumTipoEmpleado">
           <Member Name="Profesor" Value="1" />
           <Member Name="Secretaria" Value="2" />
+          <Member Name="Directivo" Value="3" />
+          <Member Name="Mantenimiento" Value="4" />
         </EnumType>
         <Association Name="PersonaEmpleado">
           <End Type="DiagramasDeTablas.Persona" Role="Persona" Multiplicity="1" />

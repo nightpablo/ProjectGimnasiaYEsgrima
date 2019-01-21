@@ -14,44 +14,11 @@
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox1">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Apellido</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox3">
@@ -91,7 +58,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DNI</Value>
+                              <Value>Descripcion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -121,7 +88,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Text Tipo Empleado</Value>
+                              <Value>Text Estado Deporte</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -147,36 +114,6 @@
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Apellido">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Apellido.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Apellido</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Nombre">
@@ -209,21 +146,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="DNI">
+                    <Textbox Name="Descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DNI.Value</Value>
+                              <Value>=Fields!Descripcion.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>DNI</rd:DefaultName>
+                      <rd:DefaultName>Descripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -239,21 +176,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TextTipoEmpleado">
+                    <Textbox Name="TextEstadoDeporte">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TextTipoEmpleado.Value</Value>
+                              <Value>=Fields!TextEstadoDeporte.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TextTipoEmpleado</rd:DefaultName>
+                      <rd:DefaultName>TextEstadoDeporte</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -277,7 +214,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -291,10 +227,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.38853cm</Top>
-        <Left>4.47887cm</Left>
+        <Top>2.1717cm</Top>
+        <Left>3.71687cm</Left>
         <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Width>7.5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -305,7 +241,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.08276in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -323,70 +259,55 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>348ac192-ea64-407b-97b8-50104bfe5854</rd:DataSourceID>
+      <rd:DataSourceID>8b61335b-e160-46ae-bcd3-91a8ef982866</rd:DataSourceID>
     </DataSource>
     <DataSource Name="ProjectGimnasiaYEsgrimaModelo1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f297b359-f2f0-481f-828a-ffed2245b24a</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="ProjectGimnasiaYEsgrimaModelo2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>02181c73-0a2b-43a1-8570-66ef316ef9a2</rd:DataSourceID>
+      <rd:DataSourceID>0bd6eb3d-6b29-468f-8e70-0d2b01d364e0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>ProjectGimnasiaYEsgrimaModelo2</DataSourceName>
+        <DataSourceName>ProjectGimnasiaYEsgrimaModelo1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Apellido">
-          <DataField>Apellido</DataField>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DNI">
-          <DataField>DNI</DataField>
+        <Field Name="EstadoDeporte">
+          <DataField>EstadoDeporte</DataField>
+          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.EnumEstadoDeporte</rd:TypeName>
+        </Field>
+        <Field Name="IdDeporte">
+          <DataField>IdDeporte</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Foto">
-          <DataField>Foto</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="MiEmpleado">
-          <DataField>MiEmpleado</DataField>
-          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Empleado</rd:TypeName>
-        </Field>
-        <Field Name="MiPersona">
-          <DataField>MiPersona</DataField>
-          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Persona</rd:TypeName>
+        <Field Name="MiDeporte">
+          <DataField>MiDeporte</DataField>
+          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Deporte</rd:TypeName>
         </Field>
         <Field Name="Nombre">
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TextTipoEmpleado">
-          <DataField>TextTipoEmpleado</DataField>
+        <Field Name="TextEstadoDeporte">
+          <DataField>TextEstadoDeporte</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TipoEmpleado">
-          <DataField>TipoEmpleado</DataField>
-          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.EnumTipoEmpleado</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ProjectGimnasiaYEsgrima.Modelo</rd:DataSetName>
-        <rd:TableName>ModelEmpleadoPersona</rd:TableName>
-        <rd:ObjectDataSourceType>ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona, ProjectGimnasiaYEsgrima, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ModelDeporte</rd:TableName>
+        <rd:ObjectDataSourceType>ProjectGimnasiaYEsgrima.Modelo.ModelDeporte, ProjectGimnasiaYEsgrima, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>91694eef-1fa4-4b50-864e-0fa692e97125</rd:ReportID>
+  <rd:ReportID>acc8dcf5-18df-44c3-b1b1-71edd006e371</rd:ReportID>
 </Report>

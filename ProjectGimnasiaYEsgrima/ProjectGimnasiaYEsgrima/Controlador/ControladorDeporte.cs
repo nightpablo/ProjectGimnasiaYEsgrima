@@ -70,6 +70,10 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return una_bddeporte.BuscarPorClavesUnicas(parametros);
         }
 
-      
+        public List<ModelDeporte> ListarTodos()
+        {
+            return una_bddeporte.ListarTodosDeportes();
+        }
+
     }
 }

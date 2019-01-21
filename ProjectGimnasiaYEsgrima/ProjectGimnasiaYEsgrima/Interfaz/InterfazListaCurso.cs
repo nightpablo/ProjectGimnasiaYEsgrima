@@ -177,5 +177,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             MiVentana.CargarLogin();
             Dispose();
         }
+
+        private void InterfazListaCurso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

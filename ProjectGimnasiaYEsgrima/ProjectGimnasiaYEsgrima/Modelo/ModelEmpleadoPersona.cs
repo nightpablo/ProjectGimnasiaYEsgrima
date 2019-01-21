@@ -12,6 +12,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public string Apellido { get; set; }
         public int DNI { get; set; }
         public EnumTipoEmpleado TipoEmpleado { get; set; }
+        public string TextTipoEmpleado { get { return TipoEmpleado.ToString(); } }
         public Empleado MiEmpleado { get; set; }
         public Persona MiPersona { get; set; }
         public byte[] Foto { get; set; }

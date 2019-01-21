@@ -272,6 +272,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Name = "InterfazListaCurso";
             this.Text = "InterfazListaCurso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazListaCurso_FormClosing);
+            this.Load += new System.EventHandler(this.InterfazListaCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();

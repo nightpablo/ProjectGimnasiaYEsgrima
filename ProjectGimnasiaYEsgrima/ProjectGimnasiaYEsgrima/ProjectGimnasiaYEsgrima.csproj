@@ -141,6 +141,18 @@
     <Compile Include="Interfaz\InterfazConfiguracion.Designer.cs">
       <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\InterfazCursoReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazCursoReporte.Designer.cs">
+      <DependentUpon>InterfazCursoReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\InterfazDeporteReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\InterfazDeporteReporte.Designer.cs">
+      <DependentUpon>InterfazDeporteReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\InterfazEmisionCuponPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +384,12 @@
     <EmbeddedResource Include="Interfaz\InterfazConfiguracion.resx">
       <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazCursoReporte.resx">
+      <DependentUpon>InterfazCursoReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\InterfazDeporteReporte.resx">
+      <DependentUpon>InterfazDeporteReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazEmisionCuponPago.resx">
       <DependentUpon>InterfazEmisionCuponPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +477,8 @@
     <EmbeddedResource Include="Utils\AlfabeticoSocio.rdlc" />
     <EmbeddedResource Include="Utils\Cupon.rdlc" />
     <EmbeddedResource Include="Utils\Empleado.rdlc" />
+    <EmbeddedResource Include="Utils\ReporteTodosCurso.rdlc" />
+    <EmbeddedResource Include="Utils\ReporteTodosDeporte.rdlc" />
     <EmbeddedResource Include="Utils\ReporteEmpleado.rdlc" />
     <EmbeddedResource Include="Utils\ReporteSocio.rdlc" />
     <EmbeddedResource Include="Utils\Socio.rdlc" />

@@ -14,6 +14,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     public enum EnumTipoEmpleado : int
     {
         Profesor = 1,
-        Secretaria = 2
+        Secretaria = 2,
+        Directivo = 3,
+        Mantenimiento = 4
     }
 }

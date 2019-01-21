@@ -28,39 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cbxActivo = new System.Windows.Forms.CheckBox();
             this.cbxAdherente = new System.Windows.Forms.CheckBox();
             this.cbxMenor = new System.Windows.Forms.CheckBox();
             this.cbxVitalicio = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Socios";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(264, 32);
+            this.button1.Location = new System.Drawing.Point(56, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 48);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Generar Reporte";
+            this.button1.Text = "Generar Reporte con filtro";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbxActivo
             // 
             this.cbxActivo.AutoSize = true;
-            this.cbxActivo.Location = new System.Drawing.Point(32, 32);
+            this.cbxActivo.Location = new System.Drawing.Point(32, 80);
             this.cbxActivo.Name = "cbxActivo";
             this.cbxActivo.Size = new System.Drawing.Size(68, 21);
             this.cbxActivo.TabIndex = 4;
@@ -70,7 +62,7 @@
             // cbxAdherente
             // 
             this.cbxAdherente.AutoSize = true;
-            this.cbxAdherente.Location = new System.Drawing.Point(32, 72);
+            this.cbxAdherente.Location = new System.Drawing.Point(160, 80);
             this.cbxAdherente.Name = "cbxAdherente";
             this.cbxAdherente.Size = new System.Drawing.Size(96, 21);
             this.cbxAdherente.TabIndex = 5;
@@ -80,7 +72,7 @@
             // cbxMenor
             // 
             this.cbxMenor.AutoSize = true;
-            this.cbxMenor.Location = new System.Drawing.Point(32, 152);
+            this.cbxMenor.Location = new System.Drawing.Point(160, 136);
             this.cbxMenor.Name = "cbxMenor";
             this.cbxMenor.Size = new System.Drawing.Size(70, 21);
             this.cbxMenor.TabIndex = 5;
@@ -90,7 +82,7 @@
             // cbxVitalicio
             // 
             this.cbxVitalicio.AutoSize = true;
-            this.cbxVitalicio.Location = new System.Drawing.Point(32, 112);
+            this.cbxVitalicio.Location = new System.Drawing.Point(32, 136);
             this.cbxVitalicio.Name = "cbxVitalicio";
             this.cbxVitalicio.Size = new System.Drawing.Size(78, 21);
             this.cbxVitalicio.TabIndex = 5;
@@ -99,7 +91,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(264, 96);
+            this.button2.Location = new System.Drawing.Point(512, 40);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(224, 48);
             this.button2.TabIndex = 6;
@@ -107,33 +99,52 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // InterfazfiltroReporte
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cbxActivo);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.cbxAdherente);
+            this.panel1.Controls.Add(this.cbxMenor);
+            this.panel1.Controls.Add(this.cbxVitalicio);
+            this.panel1.Location = new System.Drawing.Point(16, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(408, 316);
+            this.panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Tipo de Socios";
+            // 
+            // InterfazSociosReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.cbxVitalicio);
-            this.Controls.Add(this.cbxMenor);
-            this.Controls.Add(this.cbxAdherente);
-            this.Controls.Add(this.cbxActivo);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Name = "InterfazfiltroReporte";
+            this.Name = "InterfazSociosReporte";
             this.Text = "ReporteSocios";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox cbxActivo;
         private System.Windows.Forms.CheckBox cbxAdherente;
         private System.Windows.Forms.CheckBox cbxMenor;
         private System.Windows.Forms.CheckBox cbxVitalicio;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
