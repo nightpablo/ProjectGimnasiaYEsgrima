@@ -152,6 +152,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // cbxDeporte
             // 
+            this.cbxDeporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDeporte.FormattingEnabled = true;
             this.cbxDeporte.Location = new System.Drawing.Point(320, 48);

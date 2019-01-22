@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtvListarCursos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inscribir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Unsuscribir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDeporteCurso = new System.Windows.Forms.Label();
             this.lblNombreCurso = new System.Windows.Forms.Label();
             this.cbxDeporteCurso = new System.Windows.Forms.ComboBox();
@@ -40,19 +48,11 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblTituloCurso = new System.Windows.Forms.Label();
-            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inscribir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Unsuscribir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCursos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesoresBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,65 @@
             this.dtvListarCursos.TabIndex = 0;
             this.dtvListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvListarCursos_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FechaInicio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Monto
+            // 
+            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Monto.DataPropertyName = "Monto";
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn4.HeaderText = "FechaFin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // estadoCursoDataGridViewTextBoxColumn
+            // 
+            this.estadoCursoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estadoCursoDataGridViewTextBoxColumn.DataPropertyName = "EstadoCurso";
+            this.estadoCursoDataGridViewTextBoxColumn.HeaderText = "EstadoCurso";
+            this.estadoCursoDataGridViewTextBoxColumn.Name = "estadoCursoDataGridViewTextBoxColumn";
+            // 
+            // Inscribir
+            // 
+            this.Inscribir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Inscribir.HeaderText = "";
+            this.Inscribir.Name = "Inscribir";
+            this.Inscribir.ReadOnly = true;
+            this.Inscribir.Text = "Inscribir";
+            this.Inscribir.UseColumnTextForButtonValue = true;
+            this.Inscribir.Width = 24;
+            // 
+            // Unsuscribir
+            // 
+            this.Unsuscribir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Unsuscribir.HeaderText = "";
+            this.Unsuscribir.Name = "Unsuscribir";
+            this.Unsuscribir.ReadOnly = true;
+            this.Unsuscribir.Text = "Unsuscribir";
+            this.Unsuscribir.UseColumnTextForButtonValue = true;
+            this.Unsuscribir.Width = 24;
+            // 
+            // modelCursoBindingSource
+            // 
+            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
+            // 
             // lblDeporteCurso
             // 
             this.lblDeporteCurso.AutoSize = true;
@@ -103,6 +162,7 @@
             // 
             // cbxDeporteCurso
             // 
+            this.cbxDeporteCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDeporteCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDeporteCurso.FormattingEnabled = true;
             this.cbxDeporteCurso.Location = new System.Drawing.Point(152, 46);
@@ -176,69 +236,10 @@
             this.lblTituloCurso.TabIndex = 2;
             this.lblTituloCurso.Text = "Inscripción Curso";
             // 
-            // modelCursoBindingSource
-            // 
-            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
-            // 
             // profesoresBindingSource
             // 
             this.profesoresBindingSource.DataMember = "Profesores";
             this.profesoresBindingSource.DataSource = this.modelCursoBindingSource;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaInicio";
-            this.dataGridViewTextBoxColumn3.HeaderText = "FechaInicio";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // Monto
-            // 
-            this.Monto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Monto.DataPropertyName = "Monto";
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaFin";
-            this.dataGridViewTextBoxColumn4.HeaderText = "FechaFin";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // estadoCursoDataGridViewTextBoxColumn
-            // 
-            this.estadoCursoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estadoCursoDataGridViewTextBoxColumn.DataPropertyName = "EstadoCurso";
-            this.estadoCursoDataGridViewTextBoxColumn.HeaderText = "EstadoCurso";
-            this.estadoCursoDataGridViewTextBoxColumn.Name = "estadoCursoDataGridViewTextBoxColumn";
-            // 
-            // Inscribir
-            // 
-            this.Inscribir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Inscribir.HeaderText = "";
-            this.Inscribir.Name = "Inscribir";
-            this.Inscribir.ReadOnly = true;
-            this.Inscribir.Text = "Inscribir";
-            this.Inscribir.UseColumnTextForButtonValue = true;
-            this.Inscribir.Width = 24;
-            // 
-            // Unsuscribir
-            // 
-            this.Unsuscribir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Unsuscribir.HeaderText = "";
-            this.Unsuscribir.Name = "Unsuscribir";
-            this.Unsuscribir.ReadOnly = true;
-            this.Unsuscribir.Text = "Unsuscribir";
-            this.Unsuscribir.UseColumnTextForButtonValue = true;
-            this.Unsuscribir.Width = 24;
             // 
             // InterfazInscribirSocioCurso
             // 
@@ -258,8 +259,8 @@
             this.Name = "InterfazInscribirSocioCurso";
             this.Text = "InterfazListaCurso";
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCursos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesoresBindingSource)).EndInit();
             this.ResumeLayout(false);

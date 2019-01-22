@@ -213,25 +213,6 @@
             this.btnVolverSocio.UseVisualStyleBackColor = true;
             this.btnVolverSocio.Click += new System.EventHandler(this.buttonVolverSocio_Click);
             // 
-            // lblCategoria
-            // 
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(144, 405);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(137, 29);
-            this.lblCategoria.TabIndex = 7;
-            this.lblCategoria.Text = "Categoria *";
-            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(296, 408);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(112, 37);
-            this.cbxCategoria.TabIndex = 14;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -264,6 +245,26 @@
             this.label2.Size = new System.Drawing.Size(172, 15);
             this.label2.TabIndex = 22;
             this.label2.Text = "* Los campos son obligatorios";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(144, 405);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(137, 29);
+            this.lblCategoria.TabIndex = 7;
+            this.lblCategoria.Text = "Categoria *";
+            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(296, 408);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(112, 37);
+            this.cbxCategoria.TabIndex = 14;
             // 
             // InterfazModificarSocio
             // 

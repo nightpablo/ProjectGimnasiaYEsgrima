@@ -100,12 +100,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Eliminar este Socio?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Está seguro que desea eliminar este Socio?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorSocio CSocio = new ControladorSocio();
                     if (CSocio.EliminarSocio(((ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem).MiSocio) > 0)
                     {
-                        ModificarMensaje("Se ha eliminado el Socio");
+                        ModificarMensaje("El SOCIO ha sido eliminado con ÉXITO");
                         dataGridViewSocioPersona.DataSource = CSocio.ExtraerSociosAVista(txtNombreSocio.Text, txtApellidoSocio.Text,
                     txtDNISocio.Text);
                     }

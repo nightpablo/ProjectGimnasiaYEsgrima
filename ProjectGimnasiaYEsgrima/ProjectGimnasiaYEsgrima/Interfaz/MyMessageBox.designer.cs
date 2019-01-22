@@ -92,6 +92,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // cbxSelectOption
             // 
+            this.cbxSelectOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSelectOption.FormattingEnabled = true;
             this.cbxSelectOption.Items.AddRange(new object[] {
             "Enero",

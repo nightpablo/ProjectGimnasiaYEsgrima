@@ -37,7 +37,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void CargarCamposFocus()
         {
-            txtDNIProfesor.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIProfesor, 8);
+            txtDNIProfesor.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIProfesor, 10);
             txtApellidoProfesor.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoProfesor, 50);
 
             txtDNIProfesor.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoProfesor);
@@ -72,7 +72,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
             }
 
-            dgvEmpleadoProfesor.DataSource = lista;
+            dgvEmpleadoProfesor.DataSource = lista;/*
+            ControladorCurso CCurso = new ControladorCurso();
+            foreach(DataGridViewRow i in dgvEmpleadoProfesor.Rows)
+            {
+                if (CCurso.ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)i.DataBoundItem).MiEmpleado, MiCurso)) {
+                    DataGridViewButtonCell celda = i.ro
+
+                }
+                else
+                {
+                    
+                }
+            }*/
+            dgvEmpleadoProfesor.Refresh();
             if(dgvEmpleadoProfesor.Visible == false)
                 dgvEmpleadoProfesor.Visible = true;
         }
@@ -80,7 +93,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("AsignarCurso"))
+            if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Asignar Curso"))
             {
                 if (MyMessageBox.Show("¿Seguro que desea Asignar el curso "+MiCurso.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
@@ -98,7 +111,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
                 
             }
-            else if (dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("EliminarCurso"))
+            else if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Eliminar Curso"))
             {
                 if (MyMessageBox.Show("¿Seguro que desea Eliminar del curso " + MiCurso.Nombre + " al Empleado " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
@@ -122,6 +135,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             ActualizarTabla();
         }
 
-
+        private void dgvEmpleadoProfesor_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("AsignarCurso"))
+            {
+                
+                if (new ControladorCurso().ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCurso))
+                {
+                    e.Value = "";
+    
+                }
+            }
+            else if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("EliminarCurso"))
+            {
+                if (!new ControladorCurso().ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCurso))
+                {
+                    e.Value = "";
+                }
+            }
+            
+        }
     }
 }

@@ -103,6 +103,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return BdCurso.BuscarPorID(id);
         }
 
+        public bool ExisteEmpleadoEnCurso(Empleado emp, Curso curso)
+        {
+            return BdCurso.ListarIdProfesores(curso).Contains(emp.IdEmpleado);
+        }
+
         public int AsignarEmpleadoAlCurso(Empleado emp, Curso curso)
         {
             var i = BdCurso.ListarIdProfesores(curso);

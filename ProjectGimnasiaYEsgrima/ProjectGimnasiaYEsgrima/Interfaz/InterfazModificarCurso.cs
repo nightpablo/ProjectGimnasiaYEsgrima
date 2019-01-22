@@ -48,7 +48,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             dtpInicioCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
             dtpFinCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
 
-            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 50);
             txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender, e);
         }
 
@@ -69,17 +69,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BotonGuardarCurso_Click(object sender, EventArgs e)
         {
             var hayError = false;
-            if (txtNombreCurso.Text.Length < 3)
-            {
-                hayError = true;
-                errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
-            }
+            
             if (txtImporteMensualCurso.Text.Equals("") || Int32.Parse(txtImporteMensualCurso.Text)==0)
             {
                 hayError = true;
                 errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
             }
             else errorProvider1.SetError(txtNombreCurso, "");
+            if (dtpFinCurso.Value.CompareTo(dtpInicioCurso) < 1)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtpInicioCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");
+                errorProvider1.SetError(dtpFinCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");
+            }
+            else { errorProvider1.SetError(dtpInicioCurso, ""); errorProvider1.SetError(dtpFinCurso, ""); }
             if (hayError)
                 return;
 

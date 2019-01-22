@@ -43,7 +43,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             dtpInicioCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
             dtpFinCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
 
-            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 80);
+            txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 50);
             txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender, e);
         }
 
@@ -66,7 +66,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtNombreCurso.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 80");
+                errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 50");
             }
             if (txtImporteMensualCurso.Text.Equals(""))
             {
@@ -74,14 +74,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
             }
             else errorProvider1.SetError(txtNombreCurso, "");
-            /*if (DateTimeFin.Value.CompareTo(DateTimeInicio) < 1)
+            if (dtpFinCurso.Value.CompareTo(dtpInicioCurso) < 1)
             {
                 hayError = true;
-                errorProvider1.SetError(DateTimeInicio, "El dia de comienzo debe ser antes que el dia de fin del curso");
-                errorProvider1.SetError(DateTimeFin, "El dia de comienzo debe ser antes que el dia de fin del curso");
+                errorProvider1.SetError(dtpInicioCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");
+                errorProvider1.SetError(dtpFinCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");
             }
-            else { errorProvider1.SetError(DateTimeInicio, ""); errorProvider1.SetError(DateTimeFin, ""); }
-            */
+            else { errorProvider1.SetError(dtpInicioCurso, ""); errorProvider1.SetError(dtpFinCurso, ""); }
+            
             if (hayError)
                 return;
             

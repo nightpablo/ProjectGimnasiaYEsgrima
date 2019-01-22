@@ -32,22 +32,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbdBaja = new System.Windows.Forms.CheckBox();
-            this.cxbActivo = new System.Windows.Forms.CheckBox();
-            this.cxbPendiente = new System.Windows.Forms.CheckBox();
-            this.cxbInciado = new System.Windows.Forms.CheckBox();
-            this.cxbCancelado = new System.Windows.Forms.CheckBox();
-            this.cxbTerminado = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cxbTerminado = new System.Windows.Forms.CheckBox();
+            this.cxbCancelado = new System.Windows.Forms.CheckBox();
+            this.cxbInciado = new System.Windows.Forms.CheckBox();
+            this.cxbPendiente = new System.Windows.Forms.CheckBox();
+            this.cxbActivo = new System.Windows.Forms.CheckBox();
+            this.cbdBaja = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(136, 40);
             this.comboBox1.Name = "comboBox1";
@@ -83,95 +84,6 @@
             this.panel1.Size = new System.Drawing.Size(384, 360);
             this.panel1.TabIndex = 4;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(504, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 48);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Generar Reporte Alfabetico";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Estado";
-            // 
-            // cbdBaja
-            // 
-            this.cbdBaja.AutoSize = true;
-            this.cbdBaja.Location = new System.Drawing.Point(24, 40);
-            this.cbdBaja.Name = "cbdBaja";
-            this.cbdBaja.Size = new System.Drawing.Size(58, 21);
-            this.cbdBaja.TabIndex = 6;
-            this.cbdBaja.Text = "Baja";
-            this.cbdBaja.UseVisualStyleBackColor = true;
-            // 
-            // cxbActivo
-            // 
-            this.cxbActivo.AutoSize = true;
-            this.cxbActivo.Location = new System.Drawing.Point(136, 40);
-            this.cxbActivo.Name = "cxbActivo";
-            this.cxbActivo.Size = new System.Drawing.Size(68, 21);
-            this.cxbActivo.TabIndex = 7;
-            this.cxbActivo.Text = "Activo";
-            this.cxbActivo.UseVisualStyleBackColor = true;
-            // 
-            // cxbPendiente
-            // 
-            this.cxbPendiente.AutoSize = true;
-            this.cxbPendiente.Location = new System.Drawing.Point(240, 40);
-            this.cxbPendiente.Name = "cxbPendiente";
-            this.cxbPendiente.Size = new System.Drawing.Size(94, 21);
-            this.cxbPendiente.TabIndex = 8;
-            this.cxbPendiente.Text = "Pendiente";
-            this.cxbPendiente.UseVisualStyleBackColor = true;
-            // 
-            // cxbInciado
-            // 
-            this.cxbInciado.AutoSize = true;
-            this.cxbInciado.Location = new System.Drawing.Point(24, 80);
-            this.cxbInciado.Name = "cxbInciado";
-            this.cxbInciado.Size = new System.Drawing.Size(78, 21);
-            this.cxbInciado.TabIndex = 9;
-            this.cxbInciado.Text = "Iniciado";
-            this.cxbInciado.UseVisualStyleBackColor = true;
-            // 
-            // cxbCancelado
-            // 
-            this.cxbCancelado.AutoSize = true;
-            this.cxbCancelado.Location = new System.Drawing.Point(136, 80);
-            this.cxbCancelado.Name = "cxbCancelado";
-            this.cxbCancelado.Size = new System.Drawing.Size(97, 21);
-            this.cxbCancelado.TabIndex = 10;
-            this.cxbCancelado.Text = "Cancelado";
-            this.cxbCancelado.UseVisualStyleBackColor = true;
-            // 
-            // cxbTerminado
-            // 
-            this.cxbTerminado.AutoSize = true;
-            this.cxbTerminado.Location = new System.Drawing.Point(240, 80);
-            this.cxbTerminado.Name = "cxbTerminado";
-            this.cxbTerminado.Size = new System.Drawing.Size(98, 21);
-            this.cxbTerminado.TabIndex = 11;
-            this.cxbTerminado.Text = "Terminado";
-            this.cxbTerminado.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(72, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 48);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Generar Reporte con filtro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button1);
@@ -186,6 +98,95 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 224);
             this.panel2.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(72, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 48);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Generar Reporte con filtro";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cxbTerminado
+            // 
+            this.cxbTerminado.AutoSize = true;
+            this.cxbTerminado.Location = new System.Drawing.Point(240, 80);
+            this.cxbTerminado.Name = "cxbTerminado";
+            this.cxbTerminado.Size = new System.Drawing.Size(98, 21);
+            this.cxbTerminado.TabIndex = 11;
+            this.cxbTerminado.Text = "Terminado";
+            this.cxbTerminado.UseVisualStyleBackColor = true;
+            // 
+            // cxbCancelado
+            // 
+            this.cxbCancelado.AutoSize = true;
+            this.cxbCancelado.Location = new System.Drawing.Point(136, 80);
+            this.cxbCancelado.Name = "cxbCancelado";
+            this.cxbCancelado.Size = new System.Drawing.Size(97, 21);
+            this.cxbCancelado.TabIndex = 10;
+            this.cxbCancelado.Text = "Cancelado";
+            this.cxbCancelado.UseVisualStyleBackColor = true;
+            // 
+            // cxbInciado
+            // 
+            this.cxbInciado.AutoSize = true;
+            this.cxbInciado.Location = new System.Drawing.Point(24, 80);
+            this.cxbInciado.Name = "cxbInciado";
+            this.cxbInciado.Size = new System.Drawing.Size(78, 21);
+            this.cxbInciado.TabIndex = 9;
+            this.cxbInciado.Text = "Iniciado";
+            this.cxbInciado.UseVisualStyleBackColor = true;
+            // 
+            // cxbPendiente
+            // 
+            this.cxbPendiente.AutoSize = true;
+            this.cxbPendiente.Location = new System.Drawing.Point(240, 40);
+            this.cxbPendiente.Name = "cxbPendiente";
+            this.cxbPendiente.Size = new System.Drawing.Size(94, 21);
+            this.cxbPendiente.TabIndex = 8;
+            this.cxbPendiente.Text = "Pendiente";
+            this.cxbPendiente.UseVisualStyleBackColor = true;
+            // 
+            // cxbActivo
+            // 
+            this.cxbActivo.AutoSize = true;
+            this.cxbActivo.Location = new System.Drawing.Point(136, 40);
+            this.cxbActivo.Name = "cxbActivo";
+            this.cxbActivo.Size = new System.Drawing.Size(68, 21);
+            this.cxbActivo.TabIndex = 7;
+            this.cxbActivo.Text = "Activo";
+            this.cxbActivo.UseVisualStyleBackColor = true;
+            // 
+            // cbdBaja
+            // 
+            this.cbdBaja.AutoSize = true;
+            this.cbdBaja.Location = new System.Drawing.Point(24, 40);
+            this.cbdBaja.Name = "cbdBaja";
+            this.cbdBaja.Size = new System.Drawing.Size(58, 21);
+            this.cbdBaja.TabIndex = 6;
+            this.cbdBaja.Text = "Baja";
+            this.cbdBaja.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Estado";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(504, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(216, 48);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Generar Reporte Alfabetico";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // InterfazCursoReporte
             // 

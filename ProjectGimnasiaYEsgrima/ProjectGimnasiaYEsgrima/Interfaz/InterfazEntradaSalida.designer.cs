@@ -36,6 +36,7 @@
             this.cbxSeleccionDipositivos = new System.Windows.Forms.ComboBox();
             this.tmpCapture = new System.Windows.Forms.Timer(this.components);
             this.pnlDatosPersona = new System.Windows.Forms.Panel();
+            this.pnlFoto = new System.Windows.Forms.PictureBox();
             this.lblContador = new System.Windows.Forms.Label();
             this.txtFechaIngreso = new System.Windows.Forms.TextBox();
             this.lblFechaIngreso = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.txtNombreApellido = new System.Windows.Forms.TextBox();
             this.lblNombreApellido = new System.Windows.Forms.Label();
             this.lblTituloEntradaSalida = new System.Windows.Forms.Label();
-            this.pnlFoto = new System.Windows.Forms.PictureBox();
             this.pnlDatosPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlFoto)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             // 
             // cbxSeleccionDipositivos
             // 
+            this.cbxSeleccionDipositivos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSeleccionDipositivos.Font = new System.Drawing.Font("Century Gothic", 14.2F);
             this.cbxSeleccionDipositivos.FormattingEnabled = true;
             this.cbxSeleccionDipositivos.Location = new System.Drawing.Point(160, 424);
@@ -119,6 +120,15 @@
             this.pnlDatosPersona.Name = "pnlDatosPersona";
             this.pnlDatosPersona.Size = new System.Drawing.Size(432, 496);
             this.pnlDatosPersona.TabIndex = 4;
+            // 
+            // pnlFoto
+            // 
+            this.pnlFoto.Image = global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil;
+            this.pnlFoto.Location = new System.Drawing.Point(200, 280);
+            this.pnlFoto.Name = "pnlFoto";
+            this.pnlFoto.Size = new System.Drawing.Size(224, 208);
+            this.pnlFoto.TabIndex = 4;
+            this.pnlFoto.TabStop = false;
             // 
             // lblContador
             // 
@@ -193,15 +203,6 @@
             this.lblTituloEntradaSalida.Size = new System.Drawing.Size(186, 30);
             this.lblTituloEntradaSalida.TabIndex = 0;
             this.lblTituloEntradaSalida.Text = "Entrada/Salida";
-            // 
-            // pnlFoto
-            // 
-            this.pnlFoto.Image = global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil;
-            this.pnlFoto.Location = new System.Drawing.Point(200, 280);
-            this.pnlFoto.Name = "pnlFoto";
-            this.pnlFoto.Size = new System.Drawing.Size(224, 208);
-            this.pnlFoto.TabIndex = 4;
-            this.pnlFoto.TabStop = false;
             // 
             // InterfazEntradaSalida
             // 

@@ -38,13 +38,13 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblInfoProfesor = new System.Windows.Forms.Label();
-            this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
@@ -117,6 +117,7 @@
             this.dgvEmpleadoProfesor.Size = new System.Drawing.Size(816, 150);
             this.dgvEmpleadoProfesor.TabIndex = 18;
             this.dgvEmpleadoProfesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvEmpleadoProfesor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmpleadoProfesor_CellFormatting);
             // 
             // btnBuscar
             // 
@@ -151,23 +152,13 @@
             this.lblInfoProfesor.TabIndex = 20;
             this.lblInfoProfesor.Text = "Acá se imprime algo";
             // 
-            // AsignarCurso
+            // modelEmpleadoPersonaBindingSource
             // 
-            this.AsignarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AsignarCurso.HeaderText = "";
-            this.AsignarCurso.Name = "AsignarCurso";
-            this.AsignarCurso.Text = "Asignar Curso";
-            this.AsignarCurso.UseColumnTextForButtonValue = true;
-            this.AsignarCurso.Width = 24;
+            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
             // 
-            // EliminarCurso
+            // modelCursoBindingSource
             // 
-            this.EliminarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.EliminarCurso.HeaderText = "";
-            this.EliminarCurso.Name = "EliminarCurso";
-            this.EliminarCurso.Text = "Eliminar Curso";
-            this.EliminarCurso.UseColumnTextForButtonValue = true;
-            this.EliminarCurso.Width = 24;
+            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -190,13 +181,23 @@
             this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
             this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
-            // modelEmpleadoPersonaBindingSource
+            // AsignarCurso
             // 
-            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            this.AsignarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AsignarCurso.HeaderText = "";
+            this.AsignarCurso.Name = "AsignarCurso";
+            this.AsignarCurso.Text = "Asignar Curso";
+            this.AsignarCurso.UseColumnTextForButtonValue = true;
+            this.AsignarCurso.Width = 24;
             // 
-            // modelCursoBindingSource
+            // EliminarCurso
             // 
-            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
+            this.EliminarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EliminarCurso.HeaderText = "";
+            this.EliminarCurso.Name = "EliminarCurso";
+            this.EliminarCurso.Text = "Eliminar Curso";
+            this.EliminarCurso.UseColumnTextForButtonValue = true;
+            this.EliminarCurso.Width = 24;
             // 
             // InterfazAgregarCursoEmpleado
             // 

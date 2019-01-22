@@ -91,7 +91,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtTelefonoSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtTelefonoSocio, " debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtTelefonoSocio, "El teléfono debe ser con numérico y más de 3 digitos");
             }
             else errorProvider1.SetError(txtTelefonoSocio, "");
             if (hayError)
@@ -107,7 +107,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
 
-                Padre.ModificarMensaje("Se ha creado el SOCIO");
+                Padre.ModificarMensaje("El SOCIO ha sido creado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
                 

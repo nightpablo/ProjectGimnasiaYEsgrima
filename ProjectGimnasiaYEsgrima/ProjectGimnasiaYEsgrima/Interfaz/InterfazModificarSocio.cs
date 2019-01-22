@@ -100,12 +100,31 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtDocumentoSocio, "El DNI debe ser con número entre 6 y 8");
             }
             else errorProvider1.SetError(txtDocumentoSocio, "");
+            if (txtDireccionSocio.Text.Length < 3)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtDireccionSocio, "La direccion debe ser con carácter entre 3 y 50");
+            }
+            else errorProvider1.SetError(txtDireccionSocio, "");
+
+            if (txtLocalidadSocio.Text.Length < 3)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtLocalidadSocio, "La localidad debe ser con carácter entre 3 y 50");
+            }
+            else errorProvider1.SetError(txtLocalidadSocio, "");
+            if (txtTelefonoSocio.Text.Length < 3)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtTelefonoSocio, "El teléfono debe ser con numérico y más de 3 digitos");
+            }
+            else errorProvider1.SetError(txtTelefonoSocio, "");
+            
 
 
             if (hayError)
                 return;
 
-            //Enum.TryParse<EnumTipoEmpleado>(txtTipoEmpleado.Text, out EnumTipoEmpleado tipoEmpleado);
 
             ControladorSocio Csocio = new ControladorSocio();
             Enum.TryParse<EnumCategoriaSocio>(cbxCategoria.SelectedValue.ToString(), out EnumCategoriaSocio categoria);
@@ -117,7 +136,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("Se ha modificado el SOCIO");
+                Padre.ModificarMensaje("El SOCIO ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

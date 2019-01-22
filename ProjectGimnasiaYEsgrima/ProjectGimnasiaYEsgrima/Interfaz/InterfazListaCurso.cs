@@ -107,10 +107,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (dtvListarCursos.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
                 ModelCurso seleccionado = (ModelCurso)dtvListarCursos.CurrentRow.DataBoundItem;
-                if (seleccionado.EstadoCurso == EnumEstadoCurso.Iniciado) { 
-                    this.ModificarMensaje("No se puede modificar un CURSO Iniciado");
-                    return;
-                }
                 AbrirOtraVentana<InterfazModificarCurso>(new InterfazModificarCurso(this, (ModelCurso)dtvListarCursos.CurrentRow.DataBoundItem));
                 BotonBuscarCurso_Click(sender, e);
             }

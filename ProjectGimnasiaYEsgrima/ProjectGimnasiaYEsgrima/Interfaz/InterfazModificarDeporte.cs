@@ -40,8 +40,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtDescripcionDeporte);
             txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarDeporte);
 
-            txtNombreDeporte.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreDeporte, 50);
-            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 500);
+            txtDescripcionDeporte.KeyPress += (sender, e) => new CampoConRestriccion().Limitador(sender, e, txtDescripcionDeporte, 255);
         }
 
         private void CargarInterfazBuena()
@@ -58,17 +57,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BotonGuardarDeporte_Click(object sender, EventArgs e)
         {
-            var hayError = false;
-            if (txtNombreDeporte.Text.Length < 3)
-            {
-                hayError = true;
-                errorProvider1.SetError(txtNombreDeporte, "El nombre debe ser con carácter entre 3 y 50");
-            }
-            else errorProvider1.SetError(txtNombreDeporte, "");
-
-            if (hayError)
-                return;
-
+            
             string nombre = txtNombreDeporte.Text;
             string descripcion = txtDescripcionDeporte.Text;
 
