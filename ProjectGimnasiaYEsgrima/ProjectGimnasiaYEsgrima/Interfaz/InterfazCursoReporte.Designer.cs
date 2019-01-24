@@ -28,172 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbxDeporte = new System.Windows.Forms.ComboBox();
+            this.lblDeporte = new System.Windows.Forms.Label();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cxbTerminado = new System.Windows.Forms.CheckBox();
-            this.cxbCancelado = new System.Windows.Forms.CheckBox();
-            this.cxbInciado = new System.Windows.Forms.CheckBox();
-            this.cxbPendiente = new System.Windows.Forms.CheckBox();
-            this.cxbActivo = new System.Windows.Forms.CheckBox();
-            this.cbdBaja = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFiltro = new System.Windows.Forms.Button();
+            this.cbxTerminado = new System.Windows.Forms.CheckBox();
+            this.cbxCancelado = new System.Windows.Forms.CheckBox();
+            this.cbxIniciado = new System.Windows.Forms.CheckBox();
+            this.cbxPendiente = new System.Windows.Forms.CheckBox();
+            this.cbxActivo = new System.Windows.Forms.CheckBox();
+            this.cbxBaja = new System.Windows.Forms.CheckBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.btnAlfabetico = new System.Windows.Forms.Button();
+            this.lblTituloCursosReportes = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbxDeporte
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 0;
+            this.cbxDeporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDeporte.FormattingEnabled = true;
+            this.cbxDeporte.Location = new System.Drawing.Point(136, 48);
+            this.cbxDeporte.Name = "cbxDeporte";
+            this.cbxDeporte.Size = new System.Drawing.Size(121, 24);
+            this.cbxDeporte.TabIndex = 0;
             // 
-            // label1
+            // lblDeporte
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Deporte";
+            this.lblDeporte.AutoSize = true;
+            this.lblDeporte.Location = new System.Drawing.Point(32, 48);
+            this.lblDeporte.Name = "lblDeporte";
+            this.lblDeporte.Size = new System.Drawing.Size(59, 17);
+            this.lblDeporte.TabIndex = 2;
+            this.lblDeporte.Text = "Deporte";
             // 
-            // label2
+            // lblFiltro
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Fiiltros de Cursos";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(24, 8);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(117, 17);
+            this.lblFiltro.TabIndex = 3;
+            this.lblFiltro.Text = "Fiiltros de Cursos";
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(16, 16);
+            this.panel1.Controls.Add(this.lblFiltro);
+            this.panel1.Controls.Add(this.lblDeporte);
+            this.panel1.Controls.Add(this.cbxDeporte);
+            this.panel1.Location = new System.Drawing.Point(16, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 360);
+            this.panel1.Size = new System.Drawing.Size(464, 360);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.cxbTerminado);
-            this.panel2.Controls.Add(this.cxbCancelado);
-            this.panel2.Controls.Add(this.cxbInciado);
-            this.panel2.Controls.Add(this.cxbPendiente);
-            this.panel2.Controls.Add(this.cxbActivo);
-            this.panel2.Controls.Add(this.cbdBaja);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.btnFiltro);
+            this.panel2.Controls.Add(this.cbxTerminado);
+            this.panel2.Controls.Add(this.cbxCancelado);
+            this.panel2.Controls.Add(this.cbxIniciado);
+            this.panel2.Controls.Add(this.cbxPendiente);
+            this.panel2.Controls.Add(this.cbxActivo);
+            this.panel2.Controls.Add(this.cbxBaja);
+            this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Location = new System.Drawing.Point(16, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 224);
+            this.panel2.Size = new System.Drawing.Size(440, 224);
             this.panel2.TabIndex = 6;
             // 
-            // button1
+            // btnFiltro
             // 
-            this.button1.Location = new System.Drawing.Point(72, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 48);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Generar Reporte con filtro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFiltro.Location = new System.Drawing.Point(16, 144);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(328, 48);
+            this.btnFiltro.TabIndex = 12;
+            this.btnFiltro.Text = "Generar Reporte con filtro";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cxbTerminado
+            // cbxTerminado
             // 
-            this.cxbTerminado.AutoSize = true;
-            this.cxbTerminado.Location = new System.Drawing.Point(240, 80);
-            this.cxbTerminado.Name = "cxbTerminado";
-            this.cxbTerminado.Size = new System.Drawing.Size(98, 21);
-            this.cxbTerminado.TabIndex = 11;
-            this.cxbTerminado.Text = "Terminado";
-            this.cxbTerminado.UseVisualStyleBackColor = true;
+            this.cbxTerminado.AutoSize = true;
+            this.cbxTerminado.Location = new System.Drawing.Point(336, 80);
+            this.cbxTerminado.Name = "cbxTerminado";
+            this.cbxTerminado.Size = new System.Drawing.Size(98, 21);
+            this.cbxTerminado.TabIndex = 11;
+            this.cbxTerminado.Text = "Terminado";
+            this.cbxTerminado.UseVisualStyleBackColor = true;
             // 
-            // cxbCancelado
+            // cbxCancelado
             // 
-            this.cxbCancelado.AutoSize = true;
-            this.cxbCancelado.Location = new System.Drawing.Point(136, 80);
-            this.cxbCancelado.Name = "cxbCancelado";
-            this.cxbCancelado.Size = new System.Drawing.Size(97, 21);
-            this.cxbCancelado.TabIndex = 10;
-            this.cxbCancelado.Text = "Cancelado";
-            this.cxbCancelado.UseVisualStyleBackColor = true;
+            this.cbxCancelado.AutoSize = true;
+            this.cbxCancelado.Location = new System.Drawing.Point(168, 80);
+            this.cbxCancelado.Name = "cbxCancelado";
+            this.cbxCancelado.Size = new System.Drawing.Size(97, 21);
+            this.cbxCancelado.TabIndex = 10;
+            this.cbxCancelado.Text = "Cancelado";
+            this.cbxCancelado.UseVisualStyleBackColor = true;
             // 
-            // cxbInciado
+            // cbxIniciado
             // 
-            this.cxbInciado.AutoSize = true;
-            this.cxbInciado.Location = new System.Drawing.Point(24, 80);
-            this.cxbInciado.Name = "cxbInciado";
-            this.cxbInciado.Size = new System.Drawing.Size(78, 21);
-            this.cxbInciado.TabIndex = 9;
-            this.cxbInciado.Text = "Iniciado";
-            this.cxbInciado.UseVisualStyleBackColor = true;
+            this.cbxIniciado.AutoSize = true;
+            this.cbxIniciado.Location = new System.Drawing.Point(8, 80);
+            this.cbxIniciado.Name = "cbxIniciado";
+            this.cbxIniciado.Size = new System.Drawing.Size(78, 21);
+            this.cbxIniciado.TabIndex = 9;
+            this.cbxIniciado.Text = "Iniciado";
+            this.cbxIniciado.UseVisualStyleBackColor = true;
             // 
-            // cxbPendiente
+            // cbxPendiente
             // 
-            this.cxbPendiente.AutoSize = true;
-            this.cxbPendiente.Location = new System.Drawing.Point(240, 40);
-            this.cxbPendiente.Name = "cxbPendiente";
-            this.cxbPendiente.Size = new System.Drawing.Size(94, 21);
-            this.cxbPendiente.TabIndex = 8;
-            this.cxbPendiente.Text = "Pendiente";
-            this.cxbPendiente.UseVisualStyleBackColor = true;
+            this.cbxPendiente.AutoSize = true;
+            this.cbxPendiente.Location = new System.Drawing.Point(336, 40);
+            this.cbxPendiente.Name = "cbxPendiente";
+            this.cbxPendiente.Size = new System.Drawing.Size(94, 21);
+            this.cbxPendiente.TabIndex = 8;
+            this.cbxPendiente.Text = "Pendiente";
+            this.cbxPendiente.UseVisualStyleBackColor = true;
             // 
-            // cxbActivo
+            // cbxActivo
             // 
-            this.cxbActivo.AutoSize = true;
-            this.cxbActivo.Location = new System.Drawing.Point(136, 40);
-            this.cxbActivo.Name = "cxbActivo";
-            this.cxbActivo.Size = new System.Drawing.Size(68, 21);
-            this.cxbActivo.TabIndex = 7;
-            this.cxbActivo.Text = "Activo";
-            this.cxbActivo.UseVisualStyleBackColor = true;
+            this.cbxActivo.AutoSize = true;
+            this.cbxActivo.Location = new System.Drawing.Point(168, 40);
+            this.cbxActivo.Name = "cbxActivo";
+            this.cbxActivo.Size = new System.Drawing.Size(68, 21);
+            this.cbxActivo.TabIndex = 7;
+            this.cbxActivo.Text = "Activo";
+            this.cbxActivo.UseVisualStyleBackColor = true;
             // 
-            // cbdBaja
+            // cbxBaja
             // 
-            this.cbdBaja.AutoSize = true;
-            this.cbdBaja.Location = new System.Drawing.Point(24, 40);
-            this.cbdBaja.Name = "cbdBaja";
-            this.cbdBaja.Size = new System.Drawing.Size(58, 21);
-            this.cbdBaja.TabIndex = 6;
-            this.cbdBaja.Text = "Baja";
-            this.cbdBaja.UseVisualStyleBackColor = true;
+            this.cbxBaja.AutoSize = true;
+            this.cbxBaja.Location = new System.Drawing.Point(8, 40);
+            this.cbxBaja.Name = "cbxBaja";
+            this.cbxBaja.Size = new System.Drawing.Size(58, 21);
+            this.cbxBaja.TabIndex = 6;
+            this.cbxBaja.Text = "Baja";
+            this.cbxBaja.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lblEstado
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Estado";
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(16, 8);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(52, 17);
+            this.lblEstado.TabIndex = 5;
+            this.lblEstado.Text = "Estado";
             // 
-            // button2
+            // btnAlfabetico
             // 
-            this.button2.Location = new System.Drawing.Point(504, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(216, 48);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Generar Reporte Alfabetico";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAlfabetico.Location = new System.Drawing.Point(48, 408);
+            this.btnAlfabetico.Name = "btnAlfabetico";
+            this.btnAlfabetico.Size = new System.Drawing.Size(328, 48);
+            this.btnAlfabetico.TabIndex = 5;
+            this.btnAlfabetico.Text = "Generar Reporte Alfabetico";
+            this.btnAlfabetico.UseVisualStyleBackColor = true;
+            this.btnAlfabetico.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // lblTituloCursosReportes
+            // 
+            this.lblTituloCursosReportes.AutoSize = true;
+            this.lblTituloCursosReportes.Location = new System.Drawing.Point(16, 8);
+            this.lblTituloCursosReportes.Name = "lblTituloCursosReportes";
+            this.lblTituloCursosReportes.Size = new System.Drawing.Size(127, 17);
+            this.lblTituloCursosReportes.TabIndex = 6;
+            this.lblTituloCursosReportes.Text = "Reporte de Cursos";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(489, 289);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(159, 48);
+            this.btnVolver.TabIndex = 12;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // InterfazCursoReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(800, 506);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.lblTituloCursosReportes);
+            this.Controls.Add(this.btnAlfabetico);
             this.Controls.Add(this.panel1);
             this.Name = "InterfazCursoReporte";
             this.Text = "InterfazCursoReporte";
@@ -202,24 +226,27 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxDeporte;
+        private System.Windows.Forms.Label lblDeporte;
+        private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAlfabetico;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox cxbTerminado;
-        private System.Windows.Forms.CheckBox cxbCancelado;
-        private System.Windows.Forms.CheckBox cxbInciado;
-        private System.Windows.Forms.CheckBox cxbPendiente;
-        private System.Windows.Forms.CheckBox cxbActivo;
-        private System.Windows.Forms.CheckBox cbdBaja;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.CheckBox cbxTerminado;
+        private System.Windows.Forms.CheckBox cbxCancelado;
+        private System.Windows.Forms.CheckBox cbxIniciado;
+        private System.Windows.Forms.CheckBox cbxPendiente;
+        private System.Windows.Forms.CheckBox cbxActivo;
+        private System.Windows.Forms.CheckBox cbxBaja;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblTituloCursosReportes;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

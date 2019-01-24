@@ -165,6 +165,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             
         }
 
+        public List<ModelCuponSocio> ListarTodasCuotasSocios()
+        {
+            return bdSocio.ListarTodasCuotas();
+        }
+
         public void EjecutarProcesoCuponesGeneral(int MesSeleccionado)
         {
             List<ModelSocioPersona> socios = ExtraerSociosAVista();
@@ -205,6 +210,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         {
             foreach(var i in lista){
                 i.MiCuota.Estado = EnumEstadoCuotaSocio.Pagado;
+                i.MiCuota.FechaCobro = DateTime.Now;
                 bdSocio.PagarCupon(i.MiCuota);
             }
 

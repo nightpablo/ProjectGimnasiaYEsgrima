@@ -28,83 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSociosReportes = new System.Windows.Forms.Button();
+            this.btnEmpleadosReportes = new System.Windows.Forms.Button();
+            this.btnDeportesReportes = new System.Windows.Forms.Button();
+            this.btnIngresosReportes = new System.Windows.Forms.Button();
+            this.lblTituloReportes = new System.Windows.Forms.Label();
+            this.btnCursosReportes = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSociosReportes
             // 
-            this.button1.Location = new System.Drawing.Point(24, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Socios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSociosReportes.Location = new System.Drawing.Point(24, 64);
+            this.btnSociosReportes.Name = "btnSociosReportes";
+            this.btnSociosReportes.Size = new System.Drawing.Size(184, 48);
+            this.btnSociosReportes.TabIndex = 0;
+            this.btnSociosReportes.Text = "Socios";
+            this.btnSociosReportes.UseVisualStyleBackColor = true;
+            this.btnSociosReportes.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnEmpleadosReportes
             // 
-            this.button2.Location = new System.Drawing.Point(264, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Empleados";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEmpleadosReportes.Location = new System.Drawing.Point(264, 64);
+            this.btnEmpleadosReportes.Name = "btnEmpleadosReportes";
+            this.btnEmpleadosReportes.Size = new System.Drawing.Size(184, 48);
+            this.btnEmpleadosReportes.TabIndex = 1;
+            this.btnEmpleadosReportes.Text = "Empleados";
+            this.btnEmpleadosReportes.UseVisualStyleBackColor = true;
+            this.btnEmpleadosReportes.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnDeportesReportes
             // 
-            this.button3.Location = new System.Drawing.Point(24, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 48);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Deportes";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDeportesReportes.Location = new System.Drawing.Point(24, 160);
+            this.btnDeportesReportes.Name = "btnDeportesReportes";
+            this.btnDeportesReportes.Size = new System.Drawing.Size(184, 48);
+            this.btnDeportesReportes.TabIndex = 2;
+            this.btnDeportesReportes.Text = "Deportes";
+            this.btnDeportesReportes.UseVisualStyleBackColor = true;
+            this.btnDeportesReportes.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnIngresosReportes
             // 
-            this.button4.Location = new System.Drawing.Point(24, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 48);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Ingresos";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnIngresosReportes.Location = new System.Drawing.Point(24, 256);
+            this.btnIngresosReportes.Name = "btnIngresosReportes";
+            this.btnIngresosReportes.Size = new System.Drawing.Size(184, 48);
+            this.btnIngresosReportes.TabIndex = 3;
+            this.btnIngresosReportes.Text = "Ingresos";
+            this.btnIngresosReportes.UseVisualStyleBackColor = true;
+            this.btnIngresosReportes.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label2
+            // lblTituloReportes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Reportes";
+            this.lblTituloReportes.AutoSize = true;
+            this.lblTituloReportes.Location = new System.Drawing.Point(40, 24);
+            this.lblTituloReportes.Name = "lblTituloReportes";
+            this.lblTituloReportes.Size = new System.Drawing.Size(66, 17);
+            this.lblTituloReportes.TabIndex = 5;
+            this.lblTituloReportes.Text = "Reportes";
             // 
-            // button5
+            // btnCursosReportes
             // 
-            this.button5.Location = new System.Drawing.Point(264, 160);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(184, 48);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Cursos";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnCursosReportes.Location = new System.Drawing.Point(264, 160);
+            this.btnCursosReportes.Name = "btnCursosReportes";
+            this.btnCursosReportes.Size = new System.Drawing.Size(192, 48);
+            this.btnCursosReportes.TabIndex = 6;
+            this.btnCursosReportes.Text = "Cursos";
+            this.btnCursosReportes.UseVisualStyleBackColor = true;
+            this.btnCursosReportes.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(264, 256);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(192, 48);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // InterfazFiltroReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCursosReportes);
+            this.Controls.Add(this.lblTituloReportes);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnIngresosReportes);
+            this.Controls.Add(this.btnDeportesReportes);
+            this.Controls.Add(this.btnEmpleadosReportes);
+            this.Controls.Add(this.btnSociosReportes);
             this.Name = "InterfazFiltroReporte";
             this.Text = "InterfazFiltroReporte";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazFiltroReporte_FormClosing);
@@ -115,11 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSociosReportes;
+        private System.Windows.Forms.Button btnEmpleadosReportes;
+        private System.Windows.Forms.Button btnDeportesReportes;
+        private System.Windows.Forms.Button btnIngresosReportes;
+        private System.Windows.Forms.Label lblTituloReportes;
+        private System.Windows.Forms.Button btnCursosReportes;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

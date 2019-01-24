@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,17 +25,23 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             cbxAdherente.Checked = true;
             cbxMenor.Checked = true;
             cbxVitalicio.Checked = true;
+            CargarInterfazBuena();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void CargarInterfazBuena()
         {
-
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloReporteSocios);
+            interfaz.TransformarLabelTextoPersonalizado(lblTipoSocio);
+            interfaz.TransformarBotonPersonalizadoTodos(btnReporteAlfabetico, btnReporteFiltro, btnVolver);
+            interfaz.TransformarCheckBoxPersonalizado(cbxActivo);
+            interfaz.TransformarCheckBoxPersonalizado(cbxAdherente);
+            interfaz.TransformarCheckBoxPersonalizado(cbxMenor);
+            interfaz.TransformarCheckBoxPersonalizado(cbxVitalicio);
         }
 
-        private void clbSocio_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -79,5 +86,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             new InterfazGenerarReporte(dt, dir).ShowDialog();
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+        
     }
 }

@@ -139,6 +139,23 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public ModelSocioPersona BuscarSocio(int ID)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Socios
+                    .Select(e => new ModelSocioPersona()
+                    {
+                        Nombre = e.Persona.Nombre,
+                        Apellido = e.Persona.Apellido,
+                        DNI = e.Persona.DNI,
+                        MiSocio = e,
+                        MiPersona = e.Persona
+                    }).AsEnumerable()
+                    .FirstOrDefault(b=>b.MiSocio.IdSocio==ID);
+            }
+        }
+
         public List<ModelCuponSocio> ListarCuota(Socio socio)
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -152,15 +169,52 @@ namespace ProjectGimnasiaYEsgrima.BD
                         FechaEmision = e.FechaEmision,
                         Importe = e.Importe,
                         ValorCuotaInicial = e.ValorCuotaInicial,
-                        MiSocio = e.Socio,
                         MiCuota = e,
                         MiCurso = e.Curso,
-                        NombreCurso = e.Curso.Nombre
+                        NombreCurso = e.Curso.Nombre,
+                        MiSocio = new ModelSocioPersona()
+                        {
+                            Nombre = e.Socio.Persona.Nombre,
+                            Apellido = e.Socio.Persona.Apellido,
+                            DNI = e.Socio.Persona.DNI,
+                            MiSocio = e.Socio,
+                            MiPersona = e.Socio.Persona
+                        }
                     }).AsEnumerable()
-                    .Where(b=> b.MiSocio.IdSocio == socio.IdSocio)
+                    .Where(b=> b.MiSocio.MiSocio.IdSocio == socio.IdSocio)
                     .ToList();
 
                 return j;
+            }
+        }
+
+        public List<ModelCuponSocio> ListarTodasCuotas()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.CuotaSocios
+                    .Select(e => new ModelCuponSocio()
+                    {
+                        IdCuota = e.IdCuota,
+                        Estado = e.Estado,
+                        FechaCobro = e.FechaCobro,
+                        FechaEmision = e.FechaEmision,
+                        Importe = e.Importe,
+                        ValorCuotaInicial = e.ValorCuotaInicial,
+                        MiCuota = e,
+                        MiCurso = e.Curso,
+                        NombreCurso = e.Curso.Nombre,
+                        MiSocio = new ModelSocioPersona()
+                        {
+                            Nombre = e.Socio.Persona.Nombre,
+                            Apellido = e.Socio.Persona.Apellido,
+                            DNI = e.Socio.Persona.DNI,
+                            MiSocio = e.Socio,
+                            MiPersona = e.Socio.Persona
+                        }
+                    })
+                    
+                    .ToList();
             }
         }
 
@@ -177,12 +231,19 @@ namespace ProjectGimnasiaYEsgrima.BD
                         FechaEmision = e.FechaEmision,
                         Importe = e.Importe,
                         ValorCuotaInicial = e.ValorCuotaInicial,
-                        MiSocio = e.Socio,
                         MiCuota = e,
                         MiCurso = e.Curso,
-                        NombreCurso = e.Curso.Nombre
+                        NombreCurso = e.Curso.Nombre,
+                        MiSocio = new ModelSocioPersona()
+                        {
+                            Nombre = e.Socio.Persona.Nombre,
+                            Apellido = e.Socio.Persona.Apellido,
+                            DNI = e.Socio.Persona.DNI,
+                            MiSocio = e.Socio,
+                            MiPersona = e.Socio.Persona
+                        }
                     }).AsEnumerable()
-                    .Where(b => b.MiSocio.IdSocio == socio.IdSocio)
+                    .Where(b => b.MiSocio.MiSocio.IdSocio == socio.IdSocio)
                     .Where(b=> b.MiCuota.FechaEmision.Month==mes)
                     .ToList();
 

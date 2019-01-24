@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using ProjectGimnasiaYEsgrima.Controlador;
 using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             cbxProfesor.Checked = true;
             cbxSecretaria.Checked = true;
             cbxMantenimiento.Checked = true;
+            CargarInterfazBuena();
+        }
+
+        private void CargarInterfazBuena()
+        {
+            InterfazBuena interfaz = new InterfazBuena();
+            interfaz.TransformarVentanaPersonalizado(this);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloReporteEmpleado);
+            interfaz.TransformarLabelTextoPersonalizado(lblTipoEmpleado);
+            interfaz.TransformarBotonPersonalizadoTodos(btnReporteAlfabetico, btnReporteFiltro, btnVolver);
+            interfaz.TransformarCheckBoxPersonalizado(cbxDirectivo);
+            interfaz.TransformarCheckBoxPersonalizado(cbxMantenimiento);
+            interfaz.TransformarCheckBoxPersonalizado(cbxProfesor);
+            interfaz.TransformarCheckBoxPersonalizado(cbxSecretaria);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +82,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteEmpleado.rdlc";
 
             new InterfazGenerarReporte(dt, dir).ShowDialog();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

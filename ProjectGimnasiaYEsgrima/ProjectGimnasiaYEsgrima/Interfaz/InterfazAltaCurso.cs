@@ -74,7 +74,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
             }
             else errorProvider1.SetError(txtNombreCurso, "");
-            if (dtpFinCurso.Value.CompareTo(dtpInicioCurso) < 1)
+            if (dtpFinCurso.Value.CompareTo(dtpInicioCurso.Value) < 1)
             {
                 hayError = true;
                 errorProvider1.SetError(dtpInicioCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");

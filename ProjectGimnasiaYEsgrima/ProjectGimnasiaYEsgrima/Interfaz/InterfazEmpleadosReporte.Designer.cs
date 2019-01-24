@@ -28,41 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReporteAlfabetico = new System.Windows.Forms.Button();
+            this.btnReporteFiltro = new System.Windows.Forms.Button();
             this.cbxDirectivo = new System.Windows.Forms.CheckBox();
             this.cbxSecretaria = new System.Windows.Forms.CheckBox();
             this.cbxProfesor = new System.Windows.Forms.CheckBox();
             this.cbxMantenimiento = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTipoEmpleado = new System.Windows.Forms.Label();
+            this.lblTituloReporteEmpleado = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnReporteAlfabetico
             // 
-            this.button1.Location = new System.Drawing.Point(488, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Generar Reporte Alfabetico";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnReporteAlfabetico.Location = new System.Drawing.Point(40, 320);
+            this.btnReporteAlfabetico.Name = "btnReporteAlfabetico";
+            this.btnReporteAlfabetico.Size = new System.Drawing.Size(200, 56);
+            this.btnReporteAlfabetico.TabIndex = 0;
+            this.btnReporteAlfabetico.Text = "Generar Reporte Alfabetico";
+            this.btnReporteAlfabetico.UseVisualStyleBackColor = true;
+            this.btnReporteAlfabetico.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnReporteFiltro
             // 
-            this.button2.Location = new System.Drawing.Point(56, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Generar Reporte con flitro";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnReporteFiltro.Location = new System.Drawing.Point(16, 200);
+            this.btnReporteFiltro.Name = "btnReporteFiltro";
+            this.btnReporteFiltro.Size = new System.Drawing.Size(200, 56);
+            this.btnReporteFiltro.TabIndex = 1;
+            this.btnReporteFiltro.Text = "Generar Reporte con flitro";
+            this.btnReporteFiltro.UseVisualStyleBackColor = true;
+            this.btnReporteFiltro.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbxDirectivo
             // 
             this.cbxDirectivo.AutoSize = true;
-            this.cbxDirectivo.Location = new System.Drawing.Point(176, 120);
+            this.cbxDirectivo.Location = new System.Drawing.Point(232, 120);
             this.cbxDirectivo.Name = "cbxDirectivo";
             this.cbxDirectivo.Size = new System.Drawing.Size(85, 21);
             this.cbxDirectivo.TabIndex = 2;
@@ -82,7 +84,7 @@
             // cbxProfesor
             // 
             this.cbxProfesor.AutoSize = true;
-            this.cbxProfesor.Location = new System.Drawing.Point(176, 72);
+            this.cbxProfesor.Location = new System.Drawing.Point(232, 72);
             this.cbxProfesor.Name = "cbxProfesor";
             this.cbxProfesor.Size = new System.Drawing.Size(84, 21);
             this.cbxProfesor.TabIndex = 4;
@@ -92,7 +94,7 @@
             // cbxMantenimiento
             // 
             this.cbxMantenimiento.AutoSize = true;
-            this.cbxMantenimiento.Location = new System.Drawing.Point(8, 120);
+            this.cbxMantenimiento.Location = new System.Drawing.Point(16, 120);
             this.cbxMantenimiento.Name = "cbxMantenimiento";
             this.cbxMantenimiento.Size = new System.Drawing.Size(122, 21);
             this.cbxMantenimiento.TabIndex = 5;
@@ -102,50 +104,74 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.lblTipoEmpleado);
+            this.panel1.Controls.Add(this.btnReporteFiltro);
             this.panel1.Controls.Add(this.cbxDirectivo);
             this.panel1.Controls.Add(this.cbxMantenimiento);
             this.panel1.Controls.Add(this.cbxSecretaria);
             this.panel1.Controls.Add(this.cbxProfesor);
-            this.panel1.Location = new System.Drawing.Point(24, 16);
+            this.panel1.Location = new System.Drawing.Point(24, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(368, 268);
+            this.panel1.Size = new System.Drawing.Size(456, 268);
             this.panel1.TabIndex = 6;
             // 
-            // label1
+            // lblTipoEmpleado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Tipos de Empleados";
+            this.lblTipoEmpleado.AutoSize = true;
+            this.lblTipoEmpleado.Location = new System.Drawing.Point(32, 24);
+            this.lblTipoEmpleado.Name = "lblTipoEmpleado";
+            this.lblTipoEmpleado.Size = new System.Drawing.Size(137, 17);
+            this.lblTipoEmpleado.TabIndex = 6;
+            this.lblTipoEmpleado.Text = "Tipos de Empleados";
+            // 
+            // lblTituloReporteEmpleado
+            // 
+            this.lblTituloReporteEmpleado.AutoSize = true;
+            this.lblTituloReporteEmpleado.Location = new System.Drawing.Point(33, 9);
+            this.lblTituloReporteEmpleado.Name = "lblTituloReporteEmpleado";
+            this.lblTituloReporteEmpleado.Size = new System.Drawing.Size(153, 17);
+            this.lblTituloReporteEmpleado.TabIndex = 6;
+            this.lblTituloReporteEmpleado.Text = "Reporte de Empleados";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(488, 240);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(152, 56);
+            this.btnVolver.TabIndex = 0;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // InterfazEmpleadosReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTituloReporteEmpleado);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnReporteAlfabetico);
             this.Name = "InterfazEmpleadosReporte";
             this.Text = "InterfazEmpleados";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReporteAlfabetico;
+        private System.Windows.Forms.Button btnReporteFiltro;
         private System.Windows.Forms.CheckBox cbxDirectivo;
         private System.Windows.Forms.CheckBox cbxSecretaria;
         private System.Windows.Forms.CheckBox cbxProfesor;
         private System.Windows.Forms.CheckBox cbxMantenimiento;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTipoEmpleado;
+        private System.Windows.Forms.Label lblTituloReporteEmpleado;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
