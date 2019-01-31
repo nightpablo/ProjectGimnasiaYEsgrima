@@ -354,6 +354,9 @@
     <Compile Include="Modelo\EnumTipoEmpleado.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Login.cs">
+      <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\ModelCuponSocio.cs" />
     <Compile Include="Modelo\ModelCurso.cs" />
     <Compile Include="Modelo\ModelDeporte.cs" />

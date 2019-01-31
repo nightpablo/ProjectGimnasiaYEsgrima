@@ -73,7 +73,7 @@
             this.btnCrearEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearEmpleado.Name = "btnCrearEmpleado";
             this.btnCrearEmpleado.Size = new System.Drawing.Size(216, 47);
-            this.btnCrearEmpleado.TabIndex = 15;
+            this.btnCrearEmpleado.TabIndex = 6;
             this.btnCrearEmpleado.Text = "Crear Empleado";
             this.btnCrearEmpleado.UseVisualStyleBackColor = true;
             this.btnCrearEmpleado.Click += new System.EventHandler(this.BotonCrearEmpleado_Click);
@@ -85,7 +85,7 @@
             this.btnBuscarEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(144, 47);
-            this.btnBuscarEmpleado.TabIndex = 14;
+            this.btnBuscarEmpleado.TabIndex = 5;
             this.btnBuscarEmpleado.Text = "Buscar";
             this.btnBuscarEmpleado.UseVisualStyleBackColor = true;
             this.btnBuscarEmpleado.Click += new System.EventHandler(this.BotonBuscarEmpleado_Click);
@@ -97,7 +97,7 @@
             this.txtDNIEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNIEmpleado.Name = "txtDNIEmpleado";
             this.txtDNIEmpleado.Size = new System.Drawing.Size(176, 34);
-            this.txtDNIEmpleado.TabIndex = 13;
+            this.txtDNIEmpleado.TabIndex = 4;
             // 
             // lblDNIEmpleado
             // 
@@ -128,7 +128,7 @@
             this.txtNombreEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreEmpleado.Name = "txtNombreEmpleado";
             this.txtNombreEmpleado.Size = new System.Drawing.Size(176, 34);
-            this.txtNombreEmpleado.TabIndex = 13;
+            this.txtNombreEmpleado.TabIndex = 1;
             // 
             // lblApellidoEmpleado
             // 
@@ -148,7 +148,7 @@
             this.txtApellidoEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
             this.txtApellidoEmpleado.Size = new System.Drawing.Size(176, 34);
-            this.txtApellidoEmpleado.TabIndex = 13;
+            this.txtApellidoEmpleado.TabIndex = 2;
             // 
             // lblTipoEmpleado
             // 
@@ -170,7 +170,7 @@
             this.cbxTipoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxTipoEmpleado.Name = "cbxTipoEmpleado";
             this.cbxTipoEmpleado.Size = new System.Drawing.Size(176, 37);
-            this.cbxTipoEmpleado.TabIndex = 17;
+            this.cbxTipoEmpleado.TabIndex = 3;
             // 
             // dgvEmpleadoPersona
             // 
@@ -192,7 +192,7 @@
             this.dgvEmpleadoPersona.Name = "dgvEmpleadoPersona";
             this.dgvEmpleadoPersona.RowTemplate.Height = 24;
             this.dgvEmpleadoPersona.Size = new System.Drawing.Size(816, 194);
-            this.dgvEmpleadoPersona.TabIndex = 18;
+            this.dgvEmpleadoPersona.TabIndex = 8;
             this.dgvEmpleadoPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmpleadoPersona_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
@@ -263,7 +263,7 @@
             this.btnVolver.Location = new System.Drawing.Point(680, 144);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(112, 46);
-            this.btnVolver.TabIndex = 19;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);

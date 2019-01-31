@@ -46,7 +46,7 @@
             this.btnReporteAlfabetico.Location = new System.Drawing.Point(40, 320);
             this.btnReporteAlfabetico.Name = "btnReporteAlfabetico";
             this.btnReporteAlfabetico.Size = new System.Drawing.Size(200, 56);
-            this.btnReporteAlfabetico.TabIndex = 0;
+            this.btnReporteAlfabetico.TabIndex = 6;
             this.btnReporteAlfabetico.Text = "Generar Reporte Alfabetico";
             this.btnReporteAlfabetico.UseVisualStyleBackColor = true;
             this.btnReporteAlfabetico.Click += new System.EventHandler(this.button1_Click);
@@ -56,7 +56,7 @@
             this.btnReporteFiltro.Location = new System.Drawing.Point(16, 200);
             this.btnReporteFiltro.Name = "btnReporteFiltro";
             this.btnReporteFiltro.Size = new System.Drawing.Size(200, 56);
-            this.btnReporteFiltro.TabIndex = 1;
+            this.btnReporteFiltro.TabIndex = 5;
             this.btnReporteFiltro.Text = "Generar Reporte con flitro";
             this.btnReporteFiltro.UseVisualStyleBackColor = true;
             this.btnReporteFiltro.Click += new System.EventHandler(this.button2_Click);
@@ -67,7 +67,7 @@
             this.cbxDirectivo.Location = new System.Drawing.Point(232, 120);
             this.cbxDirectivo.Name = "cbxDirectivo";
             this.cbxDirectivo.Size = new System.Drawing.Size(85, 21);
-            this.cbxDirectivo.TabIndex = 2;
+            this.cbxDirectivo.TabIndex = 4;
             this.cbxDirectivo.Text = "Directivo";
             this.cbxDirectivo.UseVisualStyleBackColor = true;
             // 
@@ -77,7 +77,7 @@
             this.cbxSecretaria.Location = new System.Drawing.Point(16, 72);
             this.cbxSecretaria.Name = "cbxSecretaria";
             this.cbxSecretaria.Size = new System.Drawing.Size(95, 21);
-            this.cbxSecretaria.TabIndex = 3;
+            this.cbxSecretaria.TabIndex = 1;
             this.cbxSecretaria.Text = "Secretaria";
             this.cbxSecretaria.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +87,7 @@
             this.cbxProfesor.Location = new System.Drawing.Point(232, 72);
             this.cbxProfesor.Name = "cbxProfesor";
             this.cbxProfesor.Size = new System.Drawing.Size(84, 21);
-            this.cbxProfesor.TabIndex = 4;
+            this.cbxProfesor.TabIndex = 2;
             this.cbxProfesor.Text = "Profesor";
             this.cbxProfesor.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +97,7 @@
             this.cbxMantenimiento.Location = new System.Drawing.Point(16, 120);
             this.cbxMantenimiento.Name = "cbxMantenimiento";
             this.cbxMantenimiento.Size = new System.Drawing.Size(122, 21);
-            this.cbxMantenimiento.TabIndex = 5;
+            this.cbxMantenimiento.TabIndex = 3;
             this.cbxMantenimiento.Text = "Mantenimiento";
             this.cbxMantenimiento.UseVisualStyleBackColor = true;
             // 
@@ -113,7 +113,7 @@
             this.panel1.Location = new System.Drawing.Point(24, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(456, 268);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 11;
             // 
             // lblTipoEmpleado
             // 
@@ -138,7 +138,7 @@
             this.btnVolver.Location = new System.Drawing.Point(488, 240);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(152, 56);
-            this.btnVolver.TabIndex = 0;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

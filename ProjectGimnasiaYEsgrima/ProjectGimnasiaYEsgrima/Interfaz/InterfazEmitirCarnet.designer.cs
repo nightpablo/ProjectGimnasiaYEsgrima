@@ -61,12 +61,12 @@
             this.btnVolver.Location = new System.Drawing.Point(608, 456);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(168, 48);
-            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // InterfazGenerarReporte
+            // InterfazEmitirCarnet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +74,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCambiarFoto);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "InterfazGenerarReporte";
+            this.Name = "InterfazEmitirCarnet";
             this.Text = "GenerarReporte";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazGenerarReporte_FormClosing);
             this.Load += new System.EventHandler(this.reportViewer1_Load);

@@ -109,8 +109,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (resultado == -2)
                 MyMessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
-        
-      
+            else if (resultado == -3)
+                MyMessageBox.Show(this, "El tipo de EMPLEADO que seleccionó está en todavia en mantenimiento", "Empleado");
+
+
         }
 
         private void TextBoxDocumento_Leave(object sender, EventArgs e)

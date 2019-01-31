@@ -27,16 +27,12 @@
         <AssociationConnector Association="DiagramasDeTablas.SocioCurso" ></AssociationConnector>
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioCurso" ManuallyRouted="true" >
           <ConnectorPoint PointX="10.5" PointY="3.5571907552083331" />
-          <ConnectorPoint PointX="10.5" PointY="13.560274216906359" />
-          <ConnectorPoint PointX="10.017165178033622" PointY="13.560274216906359" />
-          <ConnectorPoint PointX="9.92876241404849" PointY="15.61215699328732" />
-          <ConnectorPoint PointX="9.9215884474443321" PointY="15.778669190981484" />
-          <ConnectorPoint PointX="9.1421651780336219" PointY="33.869564881565985" />
-          <ConnectorPoint PointX="9.92517543074641" PointY="33.869564881565985" />
-          <ConnectorPoint PointX="9.92517543074641" PointY="0.625" />
+          <ConnectorPoint PointX="9.625" PointY="0.625" />
           <ConnectorPoint PointX="1.375" PointY="0.625" />
-          <ConnectorPoint PointX="1.375" PointY="0.87499999999993872" />
+          <ConnectorPoint PointX="1.375" PointY="0.87499999999999734" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="DiagramasDeTablas.Login" Width="1.5" PointX="5.25" PointY="7.625" />
+        <AssociationConnector Association="DiagramasDeTablas.LoginEmpleado" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

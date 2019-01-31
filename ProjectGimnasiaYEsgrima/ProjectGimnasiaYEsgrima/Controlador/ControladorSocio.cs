@@ -12,7 +12,7 @@ using ProjectGimnasiaYEsgrima.Modelo;
 
 namespace ProjectGimnasiaYEsgrima.Controlador
 {
-    class ControladorSocio
+    public class ControladorSocio
     {
         BDSocio bdSocio = new BDSocio();
         ControladorPersona controladorPersona = new ControladorPersona();

@@ -21,68 +21,32 @@ namespace ProjectGimnasiaYEsgrima
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new InterfazPrincipal());
-            Application.Run(new InterfazPrincipal());
-           // Application.Run(new InterfazListaDeportes());// INcremento 1
-            //Application.Run(new InterfazListaCurso());
-            //Application.Run(new InterfazAltaCurso());
-            //Application.Run(new InterfazAltaEmpleado());
-            //Application.Run(new InterfazListaEmpleado());
+            
             //ejecute();
+            Application.Run(new InterfazPrincipal());
         }
 
         static void ejecute()
         {
-            Deporte deporte = new Deporte()
-            {
-                Nombre = "Futbol1",
-                Descripcion = "Cancha con una pelota"
-            };
-            Empleado prof = new Profesor()
-            {
-                FechaInicio = DateTime.Today,
-                DescripcionTarea = "Profesorado de 2da categoría"
-            };
-            Empleado secr = new Secretaria()
-            {
-                FechaInicio = DateTime.Today,
-                DescripcionTarea = "Licenciada en informática"
-            };
-            Persona per = new Persona()
-            {
-                Nombre="Daiana",Apellido ="Girgi",DNI=3030303,FechaNacimiento=DateTime.Today
-            };
+            Controlador.ControladorDeporte CDeporte = new Controlador.ControladorDeporte();
+            Controlador.ControladorCurso CCurso = new Controlador.ControladorCurso();
+            Controlador.ControladorEmpleado CEmpleado = new Controlador.ControladorEmpleado();
+            Controlador.ControladorSocio CSocio = new Controlador.ControladorSocio();
 
-            using (var context = new DiagramasDeTablasContainer1())
-            {
-                context.Entry(deporte).State = System.Data.Entity.EntityState.Added;
-                context.SaveChanges();
-                Deporte buscado = context.Deportes.FirstOrDefault(b => b.Nombre.Equals("Futbol"));
-                //((Profesor)prof).Deporte = buscado;
-                prof.Persona = per;
-                secr.Persona = per;
-                //context.Entry(per).State = System.Data.Entity.EntityState.Added;
-                //context.Entry(prof).State = System.Data.Entity.EntityState.Added;
-                //context.Entry(secr).State = System.Data.Entity.EntityState.Added;
-                context.Empleados.Add(prof);
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (DbEntityValidationException dbEx)
-                {
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            Trace.TraceInformation("Property: {0} Error: {1}",
-                                validationError.PropertyName,
-                                validationError.ErrorMessage);
-                        }
-                    }
-                }
-                
-            }
+            CDeporte.CrearDeporte("Futbol", "Cancha de futbol que se utiliza una pelota y se juega 11 jugadores contra 11 jugadores");
+            CDeporte.CrearDeporte("Basquet", "Cancha de basquet que se utiliza una pelota y se juega 5 jugadores contra 5 jugadores");
+            CDeporte.CrearDeporte("Natacion", "Se compone de una pileta de 30 metros y hasta 8 competidores pueden participar");
+
+            CCurso.CrearCurso("Futbol 2019 Cuastimestre 1", 1500, DateTime.Now, DateTime.Now, CDeporte.BuscarDeportePorClavesUnicas("Futbol"));
+            CCurso.CrearCurso("Futbol 2019 Cuastimestre 2", 1700, DateTime.Now, DateTime.Now, CDeporte.BuscarDeportePorClavesUnicas("Futbol"));
+            CCurso.CrearCurso("Basquet 2019 Cuastimestre 1", 1200, DateTime.Now, DateTime.Now, CDeporte.BuscarDeportePorClavesUnicas("Basquet"));
+
+            CEmpleado.CrearEmpleado("Pablo", "Barragan", DateTime.Now, 36000000, "Profesor de Futbol", DateTime.Now, EnumTipoEmpleado.Profesor);
+            CEmpleado.CrearEmpleado("Daiana", "Giorgi", DateTime.Now, 36001111, "Secretaria de departamento", DateTime.Now, EnumTipoEmpleado.Secretaria);
+            CEmpleado.CrearEmpleado("Leandro", "Long", DateTime.Now, 36002222, "Directivo seleccionado por varios votos del club", DateTime.Now, EnumTipoEmpleado.Directivo);
+
+            CCurso.AsignarEmpleadoAlCurso(CEmpleado.BuscarEmpleadoPorClavesUnicasPorVista(36000000).MiEmpleado, CCurso.BuscarCursoPorClavesUnicas("Futbol 2019 Cuastimestre 1"));
+
         }
     }
 }

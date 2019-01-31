@@ -91,7 +91,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreDeporte.Name = "txtNombreDeporte";
             this.txtNombreDeporte.Size = new System.Drawing.Size(280, 34);
-            this.txtNombreDeporte.TabIndex = 2;
+            this.txtNombreDeporte.TabIndex = 1;
             // 
             // txtDescripcionDeporte
             // 
@@ -121,7 +121,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrearDeporte.Name = "btnCrearDeporte";
             this.btnCrearDeporte.Size = new System.Drawing.Size(199, 41);
-            this.btnCrearDeporte.TabIndex = 3;
+            this.btnCrearDeporte.TabIndex = 4;
             this.btnCrearDeporte.Text = "Crear Deporte";
             this.btnCrearDeporte.UseVisualStyleBackColor = true;
             this.btnCrearDeporte.Click += new System.EventHandler(this.Button2_Click);
@@ -144,7 +144,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewDeporte.Name = "dataGridViewDeporte";
             this.dataGridViewDeporte.RowTemplate.Height = 24;
             this.dataGridViewDeporte.Size = new System.Drawing.Size(784, 204);
-            this.dataGridViewDeporte.TabIndex = 4;
+            this.dataGridViewDeporte.TabIndex = 6;
             this.dataGridViewDeporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
@@ -209,7 +209,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnVolver.Location = new System.Drawing.Point(672, 136);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(97, 40);
-            this.btnVolver.TabIndex = 6;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);

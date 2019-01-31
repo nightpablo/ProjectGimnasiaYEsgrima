@@ -42,7 +42,7 @@
             this.btnSociosReportes.Location = new System.Drawing.Point(24, 64);
             this.btnSociosReportes.Name = "btnSociosReportes";
             this.btnSociosReportes.Size = new System.Drawing.Size(184, 48);
-            this.btnSociosReportes.TabIndex = 0;
+            this.btnSociosReportes.TabIndex = 1;
             this.btnSociosReportes.Text = "Socios";
             this.btnSociosReportes.UseVisualStyleBackColor = true;
             this.btnSociosReportes.Click += new System.EventHandler(this.button1_Click);
@@ -52,7 +52,7 @@
             this.btnEmpleadosReportes.Location = new System.Drawing.Point(264, 64);
             this.btnEmpleadosReportes.Name = "btnEmpleadosReportes";
             this.btnEmpleadosReportes.Size = new System.Drawing.Size(184, 48);
-            this.btnEmpleadosReportes.TabIndex = 1;
+            this.btnEmpleadosReportes.TabIndex = 2;
             this.btnEmpleadosReportes.Text = "Empleados";
             this.btnEmpleadosReportes.UseVisualStyleBackColor = true;
             this.btnEmpleadosReportes.Click += new System.EventHandler(this.button2_Click);
@@ -62,7 +62,7 @@
             this.btnDeportesReportes.Location = new System.Drawing.Point(24, 160);
             this.btnDeportesReportes.Name = "btnDeportesReportes";
             this.btnDeportesReportes.Size = new System.Drawing.Size(184, 48);
-            this.btnDeportesReportes.TabIndex = 2;
+            this.btnDeportesReportes.TabIndex = 3;
             this.btnDeportesReportes.Text = "Deportes";
             this.btnDeportesReportes.UseVisualStyleBackColor = true;
             this.btnDeportesReportes.Click += new System.EventHandler(this.button3_Click);
@@ -72,7 +72,7 @@
             this.btnIngresosReportes.Location = new System.Drawing.Point(24, 256);
             this.btnIngresosReportes.Name = "btnIngresosReportes";
             this.btnIngresosReportes.Size = new System.Drawing.Size(184, 48);
-            this.btnIngresosReportes.TabIndex = 3;
+            this.btnIngresosReportes.TabIndex = 5;
             this.btnIngresosReportes.Text = "Ingresos";
             this.btnIngresosReportes.UseVisualStyleBackColor = true;
             this.btnIngresosReportes.Click += new System.EventHandler(this.button4_Click);
@@ -91,7 +91,7 @@
             this.btnCursosReportes.Location = new System.Drawing.Point(264, 160);
             this.btnCursosReportes.Name = "btnCursosReportes";
             this.btnCursosReportes.Size = new System.Drawing.Size(192, 48);
-            this.btnCursosReportes.TabIndex = 6;
+            this.btnCursosReportes.TabIndex = 4;
             this.btnCursosReportes.Text = "Cursos";
             this.btnCursosReportes.UseVisualStyleBackColor = true;
             this.btnCursosReportes.Click += new System.EventHandler(this.button5_Click);
@@ -101,7 +101,7 @@
             this.btnVolver.Location = new System.Drawing.Point(264, 256);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(192, 48);
-            this.btnVolver.TabIndex = 3;
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

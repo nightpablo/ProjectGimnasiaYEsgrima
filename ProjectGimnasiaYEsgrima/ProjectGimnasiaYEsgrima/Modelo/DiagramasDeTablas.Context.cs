@@ -33,5 +33,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public virtual DbSet<Socio> Socios { get; set; }
         public virtual DbSet<CuotaSocio> CuotaSocios { get; set; }
         public virtual DbSet<ValorCuotaInicial> ValorCuotaInicials { get; set; }
+        public virtual DbSet<Login> Logins { get; set; }
     }
 }

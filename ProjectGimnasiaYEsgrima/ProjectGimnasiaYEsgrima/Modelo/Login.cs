@@ -12,14 +12,12 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Empleado
+    public partial class Login
     {
-        public int IdEmpleado { get; set; }
-        public System.DateTime FechaInicio { get; set; }
-        public string DescripcionTarea { get; set; }
-        public EnumTipoEmpleado TipoEmpleado { get; set; }
-        public EnumEstadoEmpleado EstadoEmpleado { get; set; }
+        public int IdLogin { get; set; }
+        public string usuario { get; set; }
+        public string contraseña { get; set; }
     
-        public virtual Persona Persona { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

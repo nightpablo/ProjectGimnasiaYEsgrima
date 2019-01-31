@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ProjectGimnasiaYEsgrima.Controlador
 {
-    class ControladorEmpleado
+    public class ControladorEmpleado
     {
         BDEmpleado bdEmpleado = new BDEmpleado();
         ControladorPersona controladorPersona = new ControladorPersona();
@@ -64,7 +64,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                     unEmpleado = new Profesor();
                     break;
                 default:
-                    return -1;
+                    unEmpleado = new Empleado();
+                    break;
             }
 
             unEmpleado.FechaInicio = fechaInicio;
@@ -161,6 +162,11 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         public List<ModelEmpleadoPersona> TraerEmpleadoReporte()
         {
             return bdEmpleado.ListarTodosEmpleados();
+        }
+
+        public Empleado VerificarLoginEmpleado(string usuario, string contraseña)
+        {
+            return bdEmpleado.VerificarLogin(usuario, contraseña);
         }
     }
 }

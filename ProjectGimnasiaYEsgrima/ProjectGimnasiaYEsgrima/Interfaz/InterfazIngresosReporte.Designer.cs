@@ -90,7 +90,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.cbxMesInicio.Location = new System.Drawing.Point(248, 32);
             this.cbxMesInicio.Name = "cbxMesInicio";
             this.cbxMesInicio.Size = new System.Drawing.Size(121, 24);
-            this.cbxMesInicio.TabIndex = 2;
+            this.cbxMesInicio.TabIndex = 1;
             this.cbxMesInicio.SelectedIndexChanged += new System.EventHandler(this.cbxMesInicio_SelectedIndexChanged);
             // 
             // lblMesInicio
@@ -125,7 +125,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dtpAño1.Name = "dtpAño1";
             this.dtpAño1.ShowUpDown = true;
             this.dtpAño1.Size = new System.Drawing.Size(200, 22);
-            this.dtpAño1.TabIndex = 8;
+            this.dtpAño1.TabIndex = 3;
             // 
             // lblAño1
             // 
@@ -141,7 +141,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnReporteAnual.Location = new System.Drawing.Point(480, 104);
             this.btnReporteAnual.Name = "btnReporteAnual";
             this.btnReporteAnual.Size = new System.Drawing.Size(144, 40);
-            this.btnReporteAnual.TabIndex = 6;
+            this.btnReporteAnual.TabIndex = 4;
             this.btnReporteAnual.Text = "Generar Reporte Periodo";
             this.btnReporteAnual.UseVisualStyleBackColor = true;
             this.btnReporteAnual.Click += new System.EventHandler(this.BtnReporteAnual_Click);
@@ -166,7 +166,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.cbxMesFin.Location = new System.Drawing.Point(248, 80);
             this.cbxMesFin.Name = "cbxMesFin";
             this.cbxMesFin.Size = new System.Drawing.Size(121, 24);
-            this.cbxMesFin.TabIndex = 5;
+            this.cbxMesFin.TabIndex = 2;
             this.cbxMesFin.SelectedIndexChanged += new System.EventHandler(this.cbxMesFin_SelectedIndexChanged);
             // 
             // lblMesFin
@@ -199,14 +199,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dtpAño2.Name = "dtpAño2";
             this.dtpAño2.ShowUpDown = true;
             this.dtpAño2.Size = new System.Drawing.Size(200, 22);
-            this.dtpAño2.TabIndex = 8;
+            this.dtpAño2.TabIndex = 6;
             // 
             // btnReporteMensual
             // 
             this.btnReporteMensual.Location = new System.Drawing.Point(480, 72);
             this.btnReporteMensual.Name = "btnReporteMensual";
             this.btnReporteMensual.Size = new System.Drawing.Size(128, 40);
-            this.btnReporteMensual.TabIndex = 10;
+            this.btnReporteMensual.TabIndex = 7;
             this.btnReporteMensual.Text = "Generar Reporte Mensual";
             this.btnReporteMensual.UseVisualStyleBackColor = true;
             this.btnReporteMensual.Click += new System.EventHandler(this.BtnReporteMensual_Click);
@@ -265,7 +265,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnVolver.Location = new System.Drawing.Point(24, 392);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(128, 48);
-            this.btnVolver.TabIndex = 4;
+            this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

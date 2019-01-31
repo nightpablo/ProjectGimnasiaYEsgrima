@@ -141,7 +141,7 @@
             this.txtNombreSocio.Location = new System.Drawing.Point(296, 75);
             this.txtNombreSocio.Name = "txtNombreSocio";
             this.txtNombreSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtNombreSocio.TabIndex = 11;
+            this.txtNombreSocio.TabIndex = 1;
             // 
             // txtApellidoSocio
             // 
@@ -149,7 +149,7 @@
             this.txtApellidoSocio.Location = new System.Drawing.Point(296, 115);
             this.txtApellidoSocio.Name = "txtApellidoSocio";
             this.txtApellidoSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtApellidoSocio.TabIndex = 12;
+            this.txtApellidoSocio.TabIndex = 2;
             // 
             // dtFechaNacimientoSocio
             // 
@@ -157,7 +157,7 @@
             this.dtFechaNacimientoSocio.Location = new System.Drawing.Point(296, 155);
             this.dtFechaNacimientoSocio.Name = "dtFechaNacimientoSocio";
             this.dtFechaNacimientoSocio.Size = new System.Drawing.Size(371, 34);
-            this.dtFechaNacimientoSocio.TabIndex = 13;
+            this.dtFechaNacimientoSocio.TabIndex = 3;
             // 
             // cbxTipoDocumentoSocio
             // 
@@ -167,7 +167,7 @@
             this.cbxTipoDocumentoSocio.Location = new System.Drawing.Point(296, 200);
             this.cbxTipoDocumentoSocio.Name = "cbxTipoDocumentoSocio";
             this.cbxTipoDocumentoSocio.Size = new System.Drawing.Size(112, 37);
-            this.cbxTipoDocumentoSocio.TabIndex = 14;
+            this.cbxTipoDocumentoSocio.TabIndex = 4;
             // 
             // txtDocumentoSocio
             // 
@@ -175,7 +175,7 @@
             this.txtDocumentoSocio.Location = new System.Drawing.Point(296, 243);
             this.txtDocumentoSocio.Name = "txtDocumentoSocio";
             this.txtDocumentoSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtDocumentoSocio.TabIndex = 15;
+            this.txtDocumentoSocio.TabIndex = 5;
             // 
             // txtDireccionSocio
             // 
@@ -183,7 +183,7 @@
             this.txtDireccionSocio.Location = new System.Drawing.Point(296, 283);
             this.txtDireccionSocio.Name = "txtDireccionSocio";
             this.txtDireccionSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtDireccionSocio.TabIndex = 16;
+            this.txtDireccionSocio.TabIndex = 6;
             // 
             // txtLocalidadSocio
             // 
@@ -191,7 +191,7 @@
             this.txtLocalidadSocio.Location = new System.Drawing.Point(296, 323);
             this.txtLocalidadSocio.Name = "txtLocalidadSocio";
             this.txtLocalidadSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtLocalidadSocio.TabIndex = 17;
+            this.txtLocalidadSocio.TabIndex = 7;
             // 
             // txtTelefonoSocio
             // 
@@ -199,7 +199,7 @@
             this.txtTelefonoSocio.Location = new System.Drawing.Point(296, 363);
             this.txtTelefonoSocio.Name = "txtTelefonoSocio";
             this.txtTelefonoSocio.Size = new System.Drawing.Size(371, 34);
-            this.txtTelefonoSocio.TabIndex = 18;
+            this.txtTelefonoSocio.TabIndex = 8;
             // 
             // btnGuardarSocio
             // 
@@ -207,7 +207,7 @@
             this.btnGuardarSocio.Location = new System.Drawing.Point(160, 464);
             this.btnGuardarSocio.Name = "btnGuardarSocio";
             this.btnGuardarSocio.Size = new System.Drawing.Size(104, 44);
-            this.btnGuardarSocio.TabIndex = 19;
+            this.btnGuardarSocio.TabIndex = 10;
             this.btnGuardarSocio.Text = "Guardar";
             this.btnGuardarSocio.UseVisualStyleBackColor = true;
             this.btnGuardarSocio.Click += new System.EventHandler(this.buttonGuardarSocio_Click);
@@ -218,7 +218,7 @@
             this.btnVolverSocio.Location = new System.Drawing.Point(448, 464);
             this.btnVolverSocio.Name = "btnVolverSocio";
             this.btnVolverSocio.Size = new System.Drawing.Size(104, 44);
-            this.btnVolverSocio.TabIndex = 20;
+            this.btnVolverSocio.TabIndex = 11;
             this.btnVolverSocio.Text = "Cancelar";
             this.btnVolverSocio.UseVisualStyleBackColor = true;
             this.btnVolverSocio.Click += new System.EventHandler(this.buttonVolverSocio_Click);
@@ -266,7 +266,7 @@
             this.cbxCategoria.Location = new System.Drawing.Point(296, 408);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(112, 37);
-            this.cbxCategoria.TabIndex = 14;
+            this.cbxCategoria.TabIndex = 9;
             this.cbxCategoria.SelectedIndexChanged += new System.EventHandler(this.cbxCategoria_SelectedIndexChanged);
             // 
             // InterfazAltaSocio

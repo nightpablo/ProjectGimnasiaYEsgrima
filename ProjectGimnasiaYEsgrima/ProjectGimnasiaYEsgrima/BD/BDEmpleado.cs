@@ -181,6 +181,15 @@ namespace ProjectGimnasiaYEsgrima.BD
                     }).ToList();
             }
         }
+
+        public Empleado VerificarLogin(string usuario, string contraseña)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                Login lg = context.Logins.AsEnumerable().FirstOrDefault(b => b.usuario.Equals(usuario) && b.contraseña.Equals(contraseña));
+                return lg==null? null:lg.Empleado;
+            }
+        }
     }
 
 }

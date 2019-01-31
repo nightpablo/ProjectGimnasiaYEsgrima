@@ -35,16 +35,16 @@
             this.lblApellidoProfesor = new System.Windows.Forms.Label();
             this.lblDNIProfesor = new System.Windows.Forms.Label();
             this.dgvEmpleadoProfesor = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblInfoProfesor = new System.Windows.Forms.Label();
-            this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblInfoProfesor = new System.Windows.Forms.Label();
+            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
@@ -67,7 +67,7 @@
             this.txtApellidoProfesor.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoProfesor.Name = "txtApellidoProfesor";
             this.txtApellidoProfesor.Size = new System.Drawing.Size(160, 34);
-            this.txtApellidoProfesor.TabIndex = 16;
+            this.txtApellidoProfesor.TabIndex = 2;
             // 
             // txtDNIProfesor
             // 
@@ -76,7 +76,7 @@
             this.txtDNIProfesor.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNIProfesor.Name = "txtDNIProfesor";
             this.txtDNIProfesor.Size = new System.Drawing.Size(160, 34);
-            this.txtDNIProfesor.TabIndex = 17;
+            this.txtDNIProfesor.TabIndex = 1;
             // 
             // lblApellidoProfesor
             // 
@@ -119,47 +119,6 @@
             this.dgvEmpleadoProfesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvEmpleadoProfesor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmpleadoProfesor_CellFormatting);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(400, 144);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(173, 48);
-            this.btnBuscar.TabIndex = 19;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(616, 144);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(173, 48);
-            this.btnVolver.TabIndex = 19;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.BotonVolver_Click);
-            // 
-            // lblInfoProfesor
-            // 
-            this.lblInfoProfesor.AutoSize = true;
-            this.lblInfoProfesor.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoProfesor.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoProfesor.Location = new System.Drawing.Point(8, 376);
-            this.lblInfoProfesor.Name = "lblInfoProfesor";
-            this.lblInfoProfesor.Size = new System.Drawing.Size(199, 24);
-            this.lblInfoProfesor.TabIndex = 20;
-            this.lblInfoProfesor.Text = "Acá se imprime algo";
-            // 
-            // modelEmpleadoPersonaBindingSource
-            // 
-            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
-            // 
-            // modelCursoBindingSource
-            // 
-            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -198,6 +157,47 @@
             this.EliminarCurso.Text = "Eliminar Curso";
             this.EliminarCurso.UseColumnTextForButtonValue = true;
             this.EliminarCurso.Width = 24;
+            // 
+            // modelEmpleadoPersonaBindingSource
+            // 
+            this.modelEmpleadoPersonaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(400, 144);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(173, 48);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(616, 144);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(173, 48);
+            this.btnVolver.TabIndex = 4;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BotonVolver_Click);
+            // 
+            // lblInfoProfesor
+            // 
+            this.lblInfoProfesor.AutoSize = true;
+            this.lblInfoProfesor.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoProfesor.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblInfoProfesor.Location = new System.Drawing.Point(8, 376);
+            this.lblInfoProfesor.Name = "lblInfoProfesor";
+            this.lblInfoProfesor.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoProfesor.TabIndex = 20;
+            this.lblInfoProfesor.Text = "Acá se imprime algo";
+            // 
+            // modelCursoBindingSource
+            // 
+            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
             // 
             // InterfazAgregarCursoEmpleado
             // 

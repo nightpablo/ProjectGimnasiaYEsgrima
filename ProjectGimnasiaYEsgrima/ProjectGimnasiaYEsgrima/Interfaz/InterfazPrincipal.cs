@@ -97,7 +97,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            if (InterfazInicioSesion.logueado)
+            if (InterfazInicioSesion.logueado && InterfazInicioSesion.MiEmpleado.TipoEmpleado == Modelo.EnumTipoEmpleado.Directivo)
                 AbrirOtraVentana(new InterfazFiltroReporte(this));
             else
                 CargarLogin();

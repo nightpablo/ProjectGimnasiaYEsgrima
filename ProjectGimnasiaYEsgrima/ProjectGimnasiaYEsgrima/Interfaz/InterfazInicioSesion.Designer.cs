@@ -36,6 +36,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblPermiso = new System.Windows.Forms.Label();
+            this.lblTipoEmpleado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTituloInicioSesion
@@ -78,7 +80,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(256, 72);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(288, 34);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
             // 
@@ -106,7 +108,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(376, 208);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(136, 48);
-            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -117,16 +119,42 @@
             this.btnDesconectar.Location = new System.Drawing.Point(336, 128);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(168, 48);
-            this.btnDesconectar.TabIndex = 3;
+            this.btnDesconectar.TabIndex = 2;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = true;
             this.btnDesconectar.Click += new System.EventHandler(this.BtnDesconectar_Click);
+            // 
+            // lblPermiso
+            // 
+            this.lblPermiso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPermiso.Location = new System.Drawing.Point(544, 32);
+            this.lblPermiso.Name = "lblPermiso";
+            this.lblPermiso.Size = new System.Drawing.Size(136, 32);
+            this.lblPermiso.TabIndex = 4;
+            this.lblPermiso.Text = "Permisos";
+            this.lblPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTipoEmpleado
+            // 
+            this.lblTipoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoEmpleado.Location = new System.Drawing.Point(584, 72);
+            this.lblTipoEmpleado.Name = "lblTipoEmpleado";
+            this.lblTipoEmpleado.Size = new System.Drawing.Size(136, 32);
+            this.lblTipoEmpleado.TabIndex = 4;
+            this.lblTipoEmpleado.Text = "AcaMostrar";
+            this.lblTipoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // InterfazInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTipoEmpleado);
+            this.Controls.Add(this.lblPermiso);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.btnLogin);
@@ -152,5 +180,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Label lblPermiso;
+        private System.Windows.Forms.Label lblTipoEmpleado;
     }
 }

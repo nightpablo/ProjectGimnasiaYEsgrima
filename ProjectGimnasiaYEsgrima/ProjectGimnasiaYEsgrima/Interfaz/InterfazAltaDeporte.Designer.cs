@@ -84,7 +84,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcionDeporte.Name = "txtDescripcionDeporte";
             this.txtDescripcionDeporte.Size = new System.Drawing.Size(196, 34);
-            this.txtDescripcionDeporte.TabIndex = 3;
+            this.txtDescripcionDeporte.TabIndex = 2;
             // 
             // btnGuardarDeporte
             // 
@@ -93,7 +93,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnGuardarDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarDeporte.Name = "btnGuardarDeporte";
             this.btnGuardarDeporte.Size = new System.Drawing.Size(141, 38);
-            this.btnGuardarDeporte.TabIndex = 4;
+            this.btnGuardarDeporte.TabIndex = 3;
             this.btnGuardarDeporte.Text = "Guardar";
             this.btnGuardarDeporte.UseVisualStyleBackColor = true;
             this.btnGuardarDeporte.Click += new System.EventHandler(this.BotonGuardarDeporte_Click);
@@ -117,7 +117,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnCancelarDeporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelarDeporte.Name = "btnCancelarDeporte";
             this.btnCancelarDeporte.Size = new System.Drawing.Size(149, 42);
-            this.btnCancelarDeporte.TabIndex = 6;
+            this.btnCancelarDeporte.TabIndex = 4;
             this.btnCancelarDeporte.Text = "Cancelar";
             this.btnCancelarDeporte.UseVisualStyleBackColor = true;
             this.btnCancelarDeporte.Click += new System.EventHandler(this.BotonCancelarDeporte_Click);

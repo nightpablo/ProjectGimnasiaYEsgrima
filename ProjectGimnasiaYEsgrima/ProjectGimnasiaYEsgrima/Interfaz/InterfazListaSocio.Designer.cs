@@ -77,7 +77,7 @@
             this.txtNombreSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreSocio.Name = "txtNombreSocio";
             this.txtNombreSocio.Size = new System.Drawing.Size(160, 34);
-            this.txtNombreSocio.TabIndex = 18;
+            this.txtNombreSocio.TabIndex = 1;
             // 
             // lblDNISocio
             // 
@@ -108,7 +108,7 @@
             this.txtDNISocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtDNISocio.Name = "txtDNISocio";
             this.txtDNISocio.Size = new System.Drawing.Size(160, 34);
-            this.txtDNISocio.TabIndex = 20;
+            this.txtDNISocio.TabIndex = 3;
             // 
             // txtApellidoSocio
             // 
@@ -117,7 +117,7 @@
             this.txtApellidoSocio.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidoSocio.Name = "txtApellidoSocio";
             this.txtApellidoSocio.Size = new System.Drawing.Size(160, 34);
-            this.txtApellidoSocio.TabIndex = 19;
+            this.txtApellidoSocio.TabIndex = 2;
             // 
             // btnVolver
             // 
@@ -125,7 +125,7 @@
             this.btnVolver.Location = new System.Drawing.Point(672, 368);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(97, 40);
-            this.btnVolver.TabIndex = 24;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
@@ -137,7 +137,7 @@
             this.btnCrearSocio.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearSocio.Name = "btnCrearSocio";
             this.btnCrearSocio.Size = new System.Drawing.Size(160, 36);
-            this.btnCrearSocio.TabIndex = 22;
+            this.btnCrearSocio.TabIndex = 5;
             this.btnCrearSocio.Text = "Crear Socio";
             this.btnCrearSocio.UseVisualStyleBackColor = true;
             this.btnCrearSocio.Click += new System.EventHandler(this.botonCrearSocio_Click);
@@ -149,7 +149,7 @@
             this.btnBuscarSocio.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarSocio.Name = "btnBuscarSocio";
             this.btnBuscarSocio.Size = new System.Drawing.Size(133, 36);
-            this.btnBuscarSocio.TabIndex = 21;
+            this.btnBuscarSocio.TabIndex = 4;
             this.btnBuscarSocio.Text = "Buscar";
             this.btnBuscarSocio.UseVisualStyleBackColor = true;
             this.btnBuscarSocio.Click += new System.EventHandler(this.BotonBuscarSocio_Click);
@@ -174,7 +174,7 @@
             this.dataGridViewSocioPersona.Name = "dataGridViewSocioPersona";
             this.dataGridViewSocioPersona.RowTemplate.Height = 24;
             this.dataGridViewSocioPersona.Size = new System.Drawing.Size(784, 185);
-            this.dataGridViewSocioPersona.TabIndex = 25;
+            this.dataGridViewSocioPersona.TabIndex = 6;
             this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
@@ -292,7 +292,7 @@
             this.btnEjecutarProcesoGeneral.Location = new System.Drawing.Point(240, 424);
             this.btnEjecutarProcesoGeneral.Name = "btnEjecutarProcesoGeneral";
             this.btnEjecutarProcesoGeneral.Size = new System.Drawing.Size(416, 40);
-            this.btnEjecutarProcesoGeneral.TabIndex = 24;
+            this.btnEjecutarProcesoGeneral.TabIndex = 8;
             this.btnEjecutarProcesoGeneral.Text = "Proceso - Generar Cupon Socios";
             this.btnEjecutarProcesoGeneral.UseVisualStyleBackColor = true;
             this.btnEjecutarProcesoGeneral.Click += new System.EventHandler(this.BtnGenerarProceso_Click);

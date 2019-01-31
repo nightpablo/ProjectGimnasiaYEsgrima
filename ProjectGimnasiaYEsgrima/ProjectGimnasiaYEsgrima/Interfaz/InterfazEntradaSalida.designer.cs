@@ -65,7 +65,7 @@
             this.btnIniciar.Location = new System.Drawing.Point(16, 416);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(128, 56);
-            this.btnIniciar.TabIndex = 2;
+            this.btnIniciar.TabIndex = 1;
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.BtnIniciar_Click);
@@ -87,7 +87,7 @@
             this.btnVolver.Location = new System.Drawing.Point(160, 480);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(160, 56);
-            this.btnVolver.TabIndex = 2;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -100,7 +100,7 @@
             this.cbxSeleccionDipositivos.Location = new System.Drawing.Point(160, 424);
             this.cbxSeleccionDipositivos.Name = "cbxSeleccionDipositivos";
             this.cbxSeleccionDipositivos.Size = new System.Drawing.Size(160, 38);
-            this.cbxSeleccionDipositivos.TabIndex = 3;
+            this.cbxSeleccionDipositivos.TabIndex = 4;
             // 
             // tmpCapture
             // 

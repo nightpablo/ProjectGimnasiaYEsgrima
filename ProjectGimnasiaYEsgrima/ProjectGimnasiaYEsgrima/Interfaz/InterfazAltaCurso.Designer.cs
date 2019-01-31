@@ -95,7 +95,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(288, 34);
-            this.txtNombreCurso.TabIndex = 6;
+            this.txtNombreCurso.TabIndex = 2;
             // 
             // btnGuardarCurso
             // 
@@ -104,7 +104,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnGuardarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarCurso.Name = "btnGuardarCurso";
             this.btnGuardarCurso.Size = new System.Drawing.Size(147, 48);
-            this.btnGuardarCurso.TabIndex = 7;
+            this.btnGuardarCurso.TabIndex = 6;
             this.btnGuardarCurso.Text = "Guardar";
             this.btnGuardarCurso.UseVisualStyleBackColor = true;
             this.btnGuardarCurso.Click += new System.EventHandler(this.BotonGuardarCurso_Click);
@@ -116,7 +116,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnCancelarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelarCurso.Name = "btnCancelarCurso";
             this.btnCancelarCurso.Size = new System.Drawing.Size(144, 48);
-            this.btnCancelarCurso.TabIndex = 8;
+            this.btnCancelarCurso.TabIndex = 7;
             this.btnCancelarCurso.Text = "Cancelar";
             this.btnCancelarCurso.UseVisualStyleBackColor = true;
             this.btnCancelarCurso.Click += new System.EventHandler(this.BotonCancelarCurso_Click);
@@ -128,7 +128,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dtpInicioCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpInicioCurso.Name = "dtpInicioCurso";
             this.dtpInicioCurso.Size = new System.Drawing.Size(264, 34);
-            this.dtpInicioCurso.TabIndex = 9;
+            this.dtpInicioCurso.TabIndex = 4;
             // 
             // dtpFinCurso
             // 
@@ -137,7 +137,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dtpFinCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFinCurso.Name = "dtpFinCurso";
             this.dtpFinCurso.Size = new System.Drawing.Size(264, 34);
-            this.dtpFinCurso.TabIndex = 9;
+            this.dtpFinCurso.TabIndex = 5;
             // 
             // lblDeporteCurso
             // 
@@ -159,7 +159,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.cbxDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxDeporte.Name = "cbxDeporte";
             this.cbxDeporte.Size = new System.Drawing.Size(288, 37);
-            this.cbxDeporte.TabIndex = 10;
+            this.cbxDeporte.TabIndex = 1;
             this.cbxDeporte.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDeporte_SelectedIndexChanged);
             // 
             // errorProvider1
@@ -173,7 +173,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
             this.txtImporteMensualCurso.Size = new System.Drawing.Size(288, 34);
-            this.txtImporteMensualCurso.TabIndex = 12;
+            this.txtImporteMensualCurso.TabIndex = 3;
             this.txtImporteMensualCurso.Text = "0";
             // 
             // lblImporteMensualCurso

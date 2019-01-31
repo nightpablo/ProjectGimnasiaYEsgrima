@@ -45,7 +45,7 @@
             this.btnReporteAlfabetico.Location = new System.Drawing.Point(56, 296);
             this.btnReporteAlfabetico.Name = "btnReporteAlfabetico";
             this.btnReporteAlfabetico.Size = new System.Drawing.Size(272, 56);
-            this.btnReporteAlfabetico.TabIndex = 0;
+            this.btnReporteAlfabetico.TabIndex = 4;
             this.btnReporteAlfabetico.Text = "Generar Reporte Alfabetico";
             this.btnReporteAlfabetico.UseVisualStyleBackColor = true;
             this.btnReporteAlfabetico.Click += new System.EventHandler(this.button1_Click);
@@ -55,7 +55,7 @@
             this.btnReporteFiltro.Location = new System.Drawing.Point(24, 160);
             this.btnReporteFiltro.Name = "btnReporteFiltro";
             this.btnReporteFiltro.Size = new System.Drawing.Size(288, 56);
-            this.btnReporteFiltro.TabIndex = 1;
+            this.btnReporteFiltro.TabIndex = 3;
             this.btnReporteFiltro.Text = "Generar Reporte con Filltro";
             this.btnReporteFiltro.UseVisualStyleBackColor = true;
             this.btnReporteFiltro.Click += new System.EventHandler(this.button2_Click);
@@ -66,7 +66,7 @@
             this.cbxAlta.Location = new System.Drawing.Point(104, 80);
             this.cbxAlta.Name = "cbxAlta";
             this.cbxAlta.Size = new System.Drawing.Size(68, 21);
-            this.cbxAlta.TabIndex = 2;
+            this.cbxAlta.TabIndex = 1;
             this.cbxAlta.Text = "Activo";
             this.cbxAlta.UseVisualStyleBackColor = true;
             // 
@@ -76,7 +76,7 @@
             this.cbxBaja.Location = new System.Drawing.Point(272, 80);
             this.cbxBaja.Name = "cbxBaja";
             this.cbxBaja.Size = new System.Drawing.Size(58, 21);
-            this.cbxBaja.TabIndex = 3;
+            this.cbxBaja.TabIndex = 2;
             this.cbxBaja.Text = "Baja";
             this.cbxBaja.UseVisualStyleBackColor = true;
             // 
@@ -115,7 +115,7 @@
             this.btnVolver.Location = new System.Drawing.Point(495, 216);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(129, 47);
-            this.btnVolver.TabIndex = 0;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

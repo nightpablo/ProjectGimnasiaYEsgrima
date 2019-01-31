@@ -101,7 +101,7 @@
             this.btnGuardarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarCurso.Name = "btnGuardarCurso";
             this.btnGuardarCurso.Size = new System.Drawing.Size(147, 48);
-            this.btnGuardarCurso.TabIndex = 7;
+            this.btnGuardarCurso.TabIndex = 4;
             this.btnGuardarCurso.Text = "Guardar";
             this.btnGuardarCurso.UseVisualStyleBackColor = true;
             this.btnGuardarCurso.Click += new System.EventHandler(this.BotonGuardarCurso_Click);
@@ -113,7 +113,7 @@
             this.btnCancelarCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelarCurso.Name = "btnCancelarCurso";
             this.btnCancelarCurso.Size = new System.Drawing.Size(144, 48);
-            this.btnCancelarCurso.TabIndex = 8;
+            this.btnCancelarCurso.TabIndex = 5;
             this.btnCancelarCurso.Text = "Cancelar";
             this.btnCancelarCurso.UseVisualStyleBackColor = true;
             this.btnCancelarCurso.Click += new System.EventHandler(this.BotonCancelarCurso_Click);
@@ -125,7 +125,7 @@
             this.dtpInicioCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpInicioCurso.Name = "dtpInicioCurso";
             this.dtpInicioCurso.Size = new System.Drawing.Size(264, 34);
-            this.dtpInicioCurso.TabIndex = 9;
+            this.dtpInicioCurso.TabIndex = 2;
             // 
             // dtpFinCurso
             // 
@@ -134,7 +134,7 @@
             this.dtpFinCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFinCurso.Name = "dtpFinCurso";
             this.dtpFinCurso.Size = new System.Drawing.Size(264, 34);
-            this.dtpFinCurso.TabIndex = 9;
+            this.dtpFinCurso.TabIndex = 3;
             // 
             // lblDeporteCurso
             // 
@@ -157,7 +157,7 @@
             this.txtImporteMensualCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImporteMensualCurso.Name = "txtImporteMensualCurso";
             this.txtImporteMensualCurso.Size = new System.Drawing.Size(288, 34);
-            this.txtImporteMensualCurso.TabIndex = 12;
+            this.txtImporteMensualCurso.TabIndex = 1;
             this.txtImporteMensualCurso.Text = "0";
             // 
             // lblImporteMensualCurso

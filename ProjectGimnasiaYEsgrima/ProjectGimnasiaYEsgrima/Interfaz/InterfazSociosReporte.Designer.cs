@@ -46,7 +46,7 @@
             this.btnReporteFiltro.Location = new System.Drawing.Point(48, 152);
             this.btnReporteFiltro.Name = "btnReporteFiltro";
             this.btnReporteFiltro.Size = new System.Drawing.Size(224, 48);
-            this.btnReporteFiltro.TabIndex = 3;
+            this.btnReporteFiltro.TabIndex = 5;
             this.btnReporteFiltro.Text = "Generar Reporte con filtro";
             this.btnReporteFiltro.UseVisualStyleBackColor = true;
             this.btnReporteFiltro.Click += new System.EventHandler(this.button1_Click);
@@ -57,7 +57,7 @@
             this.cbxActivo.Location = new System.Drawing.Point(56, 56);
             this.cbxActivo.Name = "cbxActivo";
             this.cbxActivo.Size = new System.Drawing.Size(68, 21);
-            this.cbxActivo.TabIndex = 4;
+            this.cbxActivo.TabIndex = 1;
             this.cbxActivo.Text = "Activo";
             this.cbxActivo.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,7 @@
             this.cbxAdherente.Location = new System.Drawing.Point(248, 56);
             this.cbxAdherente.Name = "cbxAdherente";
             this.cbxAdherente.Size = new System.Drawing.Size(96, 21);
-            this.cbxAdherente.TabIndex = 5;
+            this.cbxAdherente.TabIndex = 2;
             this.cbxAdherente.Text = "Adherente";
             this.cbxAdherente.UseVisualStyleBackColor = true;
             // 
@@ -77,7 +77,7 @@
             this.cbxMenor.Location = new System.Drawing.Point(248, 112);
             this.cbxMenor.Name = "cbxMenor";
             this.cbxMenor.Size = new System.Drawing.Size(70, 21);
-            this.cbxMenor.TabIndex = 5;
+            this.cbxMenor.TabIndex = 4;
             this.cbxMenor.Text = "Menor";
             this.cbxMenor.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +87,7 @@
             this.cbxVitalicio.Location = new System.Drawing.Point(56, 112);
             this.cbxVitalicio.Name = "cbxVitalicio";
             this.cbxVitalicio.Size = new System.Drawing.Size(78, 21);
-            this.cbxVitalicio.TabIndex = 5;
+            this.cbxVitalicio.TabIndex = 3;
             this.cbxVitalicio.Text = "Vitalicio";
             this.cbxVitalicio.UseVisualStyleBackColor = true;
             // 
@@ -129,7 +129,7 @@
             this.btnVolver.Location = new System.Drawing.Point(520, 192);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(128, 48);
-            this.btnVolver.TabIndex = 8;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

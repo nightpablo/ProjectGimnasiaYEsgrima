@@ -69,7 +69,7 @@
             this.cbxTipoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxTipoEmpleado.Name = "cbxTipoEmpleado";
             this.cbxTipoEmpleado.Size = new System.Drawing.Size(251, 37);
-            this.cbxTipoEmpleado.TabIndex = 0;
+            this.cbxTipoEmpleado.TabIndex = 7;
             // 
             // txtNombreEmpleado
             // 
@@ -98,7 +98,7 @@
             this.txtApellidoEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellidoEmpleado.Name = "txtApellidoEmpleado";
             this.txtApellidoEmpleado.Size = new System.Drawing.Size(251, 34);
-            this.txtApellidoEmpleado.TabIndex = 1;
+            this.txtApellidoEmpleado.TabIndex = 2;
             this.txtApellidoEmpleado.TextChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             // 
             // lblApellidoEmpleado
@@ -118,7 +118,7 @@
             this.txtDNIEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDNIEmpleado.Name = "txtDNIEmpleado";
             this.txtDNIEmpleado.Size = new System.Drawing.Size(251, 34);
-            this.txtDNIEmpleado.TabIndex = 1;
+            this.txtDNIEmpleado.TabIndex = 3;
             this.txtDNIEmpleado.TextChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             this.txtDNIEmpleado.Leave += new System.EventHandler(this.TextBoxDocumento_Leave);
             // 
@@ -149,7 +149,7 @@
             this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(251, 34);
-            this.dtpFechaNacimiento.TabIndex = 3;
+            this.dtpFechaNacimiento.TabIndex = 4;
             this.dtpFechaNacimiento.ValueChanged += new System.EventHandler(this.TextBoxNombreEmpleado_TextChanged);
             // 
             // lblTipoEmpleado
@@ -179,7 +179,7 @@
             this.dtpInicioEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpInicioEmpleado.Name = "dtpInicioEmpleado";
             this.dtpInicioEmpleado.Size = new System.Drawing.Size(251, 34);
-            this.dtpInicioEmpleado.TabIndex = 3;
+            this.dtpInicioEmpleado.TabIndex = 5;
             // 
             // txtDescripcionEmpleado
             // 
@@ -188,7 +188,7 @@
             this.txtDescripcionEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcionEmpleado.Name = "txtDescripcionEmpleado";
             this.txtDescripcionEmpleado.Size = new System.Drawing.Size(251, 34);
-            this.txtDescripcionEmpleado.TabIndex = 1;
+            this.txtDescripcionEmpleado.TabIndex = 6;
             // 
             // lblDescripcionEmpleado
             // 
@@ -217,7 +217,7 @@
             this.btnGuardarEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarEmpleado.Name = "btnGuardarEmpleado";
             this.btnGuardarEmpleado.Size = new System.Drawing.Size(139, 49);
-            this.btnGuardarEmpleado.TabIndex = 5;
+            this.btnGuardarEmpleado.TabIndex = 8;
             this.btnGuardarEmpleado.Text = "Guardar";
             this.btnGuardarEmpleado.UseVisualStyleBackColor = true;
             this.btnGuardarEmpleado.Click += new System.EventHandler(this.BotonGuardarEmpleado_Click);
@@ -267,7 +267,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(331, 328);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(133, 49);
-            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);

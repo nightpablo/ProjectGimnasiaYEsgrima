@@ -49,7 +49,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(99, 31);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -72,7 +72,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(99, 31);
-            this.btnOK.TabIndex = 5;
+            this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -110,7 +110,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.cbxSelectOption.Location = new System.Drawing.Point(128, 56);
             this.cbxSelectOption.Name = "cbxSelectOption";
             this.cbxSelectOption.Size = new System.Drawing.Size(224, 24);
-            this.cbxSelectOption.TabIndex = 2;
+            this.cbxSelectOption.TabIndex = 1;
             this.cbxSelectOption.SelectedIndexChanged += new System.EventHandler(this.cbxSelectOption_SelectedIndexChanged);
             // 
             // label1

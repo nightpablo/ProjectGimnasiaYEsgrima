@@ -74,7 +74,9 @@ namespace ProjectGimnasiaYEsgrima.BD
                 var j = context.Cursos.AsEnumerable()
                 .Where(b => b.Nombre.Contains((string)parametros[0]))
                                .ToList();
-                var iddep = ((Deporte)parametros[1]).IdDeporte;
+                var iddep = 0;
+                if (parametros[1]!=null)
+                    iddep = ((Deporte)parametros[1]).IdDeporte;
                 var k = j
                     .AsEnumerable()
                     .Where(b => b.EstadoCurso != EnumEstadoCurso.Baja)

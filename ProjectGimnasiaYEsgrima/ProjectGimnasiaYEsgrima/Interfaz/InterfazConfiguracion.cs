@@ -34,7 +34,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void CargarCamposFocus()
         {
             txtValorInicialAsociado.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnModificarValorInicialAsociado);
-            txtValorInicialAsociado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtValorInicialAsociado, 50);
+            txtValorInicialAsociado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtValorInicialAsociado, 8);
         }
 
         private void CargarInterfazBuena()
@@ -51,7 +51,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void BtnModificarValorInicialAsociado_Click(object sender, EventArgs e)
         {
-            if(MyMessageBox.Show("¿Está seguro que desea cambiar el valor inicial del club?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+            var HayError = false;
+
+            
+            if (long.Parse(txtValorInicialAsociado.Text) > Int32.MaxValue || long.Parse(txtValorInicialAsociado.Text) < Int32.MinValue)
+            {
+                HayError = true;
+                errorProvider1.SetError(txtValorInicialAsociado, "El importe inicial es un número demasiado grande o demasiado chico");
+            }
+            else if (Int32.Parse(txtValorInicialAsociado.Text) <=0)
+            {
+                HayError = true;
+                errorProvider1.SetError(txtValorInicialAsociado, "El importe inicial debe ser un número mayor a cero");
+            }
+            else errorProvider1.SetError(txtValorInicialAsociado, "");
+            if (HayError)
+                return;
+
+
+            if (MyMessageBox.Show("¿Está seguro que desea cambiar el valor inicial del club?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 ControladorSocio controlador = new ControladorSocio();
                 controlador.CrearValorInicialClub(double.Parse(txtValorInicialAsociado.Text));

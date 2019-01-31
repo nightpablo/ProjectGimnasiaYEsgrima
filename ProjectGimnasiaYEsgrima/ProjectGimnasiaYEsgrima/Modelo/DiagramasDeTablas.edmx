@@ -14,6 +14,7 @@
     <EntitySet Name="Socios" EntityType="DiagramasDeTablas.Store.Socios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CuotaSocios" EntityType="DiagramasDeTablas.Store.CuotaSocios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ValorCuotaInicials" EntityType="DiagramasDeTablas.Store.ValorCuotaInicials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Logins" EntityType="DiagramasDeTablas.Store.Logins" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Profesor" EntityType="DiagramasDeTablas.Store.Empleados_Profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Empleados_Secretaria" EntityType="DiagramasDeTablas.Store.Empleados_Secretaria" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProfesorCurso" EntityType="DiagramasDeTablas.Store.ProfesorCurso" store:Type="Tables" Schema="dbo" />
@@ -62,6 +63,10 @@
       <End Role="CuotaSocio" EntitySet="CuotaSocios" />
       <End Role="Curso" EntitySet="Cursos" />
     </AssociationSet>
+    <AssociationSet Name="LoginEmpleado" Association="DiagramasDeTablas.Store.LoginEmpleado">
+      <End Role="Login" EntitySet="Logins" />
+      <End Role="Empleado" EntitySet="Empleados" />
+    </AssociationSet>
     <AssociationSet Name="FK_Profesor_inherits_Empleado" Association="DiagramasDeTablas.Store.FK_Profesor_inherits_Empleado">
       <End Role="Empleado" EntitySet="Empleados" />
       <End Role="Profesor" EntitySet="Empleados_Profesor" />
@@ -76,7 +81,7 @@
       <PropertyRef Name="IdCurso" />
     </Key>
     <Property Name="IdCurso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaFin" Type="datetime" Nullable="false" />
     <Property Name="EstadoCurso" Type="int" Nullable="false" />
@@ -88,8 +93,8 @@
       <PropertyRef Name="IdDeporte" />
     </Key>
     <Property Name="IdDeporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="true" MaxLength="255" />
     <Property Name="EstadoDeporte" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personas">
@@ -97,8 +102,8 @@
       <PropertyRef Name="IdPersona" />
     </Key>
     <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
     <Property Name="DNI" Type="int" Nullable="false" />
     <Property Name="Foto" Type="varbinary(max)" Nullable="true" />
@@ -109,7 +114,7 @@
     </Key>
     <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
-    <Property Name="DescripcionTarea" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescripcionTarea" Type="nvarchar" Nullable="true" MaxLength="255" />
     <Property Name="TipoEmpleado" Type="int" Nullable="false" />
     <Property Name="EstadoEmpleado" Type="int" Nullable="false" />
     <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
@@ -132,9 +137,9 @@
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="CategoriaSocio" Type="int" Nullable="false" />
     <Property Name="EstadoSocio" Type="int" Nullable="false" />
-    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Localidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Localidad" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="TipoDocumento" Type="int" Nullable="false" />
     <Property Name="Persona_IdPersona" Type="int" Nullable="false" />
   </EntityType>
@@ -159,6 +164,15 @@
     <Property Name="FechaInicio" Type="datetime" Nullable="false" />
     <Property Name="FechaFin" Type="datetime" Nullable="true" />
     <Property Name="Importe" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="IdLogin" />
+    </Key>
+    <Property Name="IdLogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contraseña" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Empleado_IdEmpleado" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Empleados_Profesor">
     <Key>
@@ -269,6 +283,18 @@
       </Principal>
       <Dependent Role="CuotaSocio">
         <PropertyRef Name="Curso_IdCurso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoginEmpleado">
+    <End Role="Login" Type="DiagramasDeTablas.Store.Logins" Multiplicity="*" />
+    <End Role="Empleado" Type="DiagramasDeTablas.Store.Empleados" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="Empleado_IdEmpleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -397,13 +423,18 @@
             <End Role="CuotaSocio" EntitySet="CuotaSocios" />
             <End Role="Curso" EntitySet="Cursos" />
           </AssociationSet>
+          <EntitySet Name="Logins" EntityType="DiagramasDeTablas.Login" />
+          <AssociationSet Name="LoginEmpleado" Association="DiagramasDeTablas.LoginEmpleado">
+            <End Role="Login" EntitySet="Logins" />
+            <End Role="Empleado" EntitySet="Empleados" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Curso">
           <Key>
             <PropertyRef Name="IdCurso" />
           </Key>
           <Property Name="IdCurso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="None" Precision="3" />
           <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Profesores" Relationship="DiagramasDeTablas.ProfesorCurso" FromRole="Curso" ToRole="Profesor" />
@@ -417,8 +448,8 @@
             <PropertyRef Name="IdDeporte" />
           </Key>
           <Property Name="IdDeporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Descripcion" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="String" Nullable="true" Unicode="true" FixedLength="false" MaxLength="255" />
           <Property Name="EstadoDeporte" Type="DiagramasDeTablas.EnumEstadoDeporte" Nullable="false" />
         </EntityType>
         <EntityType Name="Persona">
@@ -426,19 +457,19 @@
             <PropertyRef Name="IdPersona" />
           </Key>
           <Property Name="IdPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" Nullable="false" />
-          <Property Name="Apellido" Type="String" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" />
           <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" />
           <Property Name="DNI" Type="Int32" Nullable="false" />
           <Property Name="Foto" Type="Binary" Nullable="true" />
         </EntityType>
-        <EntityType Name="Empleado" Abstract="true">
+        <EntityType Name="Empleado" Abstract="false">
           <Key>
             <PropertyRef Name="IdEmpleado" />
           </Key>
           <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
-          <Property Name="DescripcionTarea" Type="String" Nullable="true" />
+          <Property Name="DescripcionTarea" Type="String" Nullable="true" MaxLength="255" />
           <NavigationProperty Name="Persona" Relationship="DiagramasDeTablas.PersonaEmpleado" FromRole="Empleado" ToRole="Persona" />
           <Property Name="TipoEmpleado" Type="DiagramasDeTablas.EnumTipoEmpleado" Nullable="false" />
           <Property Name="EstadoEmpleado" Type="DiagramasDeTablas.EnumEstadoEmpleado" Nullable="false" />
@@ -516,9 +547,9 @@
           <Property Name="CategoriaSocio" Type="DiagramasDeTablas.EnumCategoriaSocio" Nullable="false" />
           <Property Name="EstadoSocio" Type="DiagramasDeTablas.EnumEstadoSocio" Nullable="false" />
           <NavigationProperty Name="Persona" Relationship="DiagramasDeTablas.SocioPersona" FromRole="Socio" ToRole="Persona" />
-          <Property Name="Direccion" Type="String" Nullable="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="50" />
           <Property Name="Telefono" Type="String" Nullable="false" />
-          <Property Name="Localidad" Type="String" Nullable="false" />
+          <Property Name="Localidad" Type="String" Nullable="false" MaxLength="50" />
           <Property Name="TipoDocumento" Type="DiagramasDeTablas.EnumTipoDocumento" Nullable="false" />
           <NavigationProperty Name="Cursos" Relationship="DiagramasDeTablas.SocioCurso" FromRole="Socio" ToRole="Curso" />
         </EntityType>
@@ -574,6 +605,19 @@
         <Association Name="CuotaSocioCurso">
           <End Type="DiagramasDeTablas.CuotaSocio" Role="CuotaSocio" Multiplicity="*" />
           <End Type="DiagramasDeTablas.Curso" Role="Curso" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="IdLogin" />
+          </Key>
+          <Property Name="IdLogin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" Nullable="false" />
+          <Property Name="contraseña" Type="String" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="DiagramasDeTablas.LoginEmpleado" FromRole="Login" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="LoginEmpleado">
+          <End Type="DiagramasDeTablas.Login" Role="Login" Multiplicity="0..1" />
+          <End Type="DiagramasDeTablas.Empleado" Role="Empleado" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -681,6 +725,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="IsTypeOf(DiagramasDeTablas.Login)">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="ProfesorCurso" TypeName="DiagramasDeTablas.ProfesorCurso" StoreEntitySet="ProfesorCurso">
       <EndProperty Name="Profesor">
         <ScalarProperty Name="IdEmpleado" ColumnName="Profesores_IdEmpleado" />
@@ -755,6 +808,14 @@
         <ScalarProperty Name="IdCuota" ColumnName="IdCuota" />
       </EndProperty>
       <Condition ColumnName="Curso_IdCurso" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LoginEmpleado" TypeName="DiagramasDeTablas.LoginEmpleado" StoreEntitySet="Logins">
+      <EndProperty Name="Empleado">
+        <ScalarProperty Name="IdEmpleado" ColumnName="Empleado_IdEmpleado" />
+      </EndProperty>
+      <EndProperty Name="Login">
+        <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
+      </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>

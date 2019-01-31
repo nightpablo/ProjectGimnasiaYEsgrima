@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTituloConfiguracion = new System.Windows.Forms.Label();
             this.lblValorInicialAsociado = new System.Windows.Forms.Label();
             this.txtValorInicialAsociado = new System.Windows.Forms.TextBox();
             this.btnModificarValorInicialAsociado = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloConfiguracion
@@ -61,7 +64,7 @@
             this.txtValorInicialAsociado.Location = new System.Drawing.Point(288, 64);
             this.txtValorInicialAsociado.Name = "txtValorInicialAsociado";
             this.txtValorInicialAsociado.Size = new System.Drawing.Size(280, 34);
-            this.txtValorInicialAsociado.TabIndex = 2;
+            this.txtValorInicialAsociado.TabIndex = 1;
             // 
             // btnModificarValorInicialAsociado
             // 
@@ -69,7 +72,7 @@
             this.btnModificarValorInicialAsociado.Location = new System.Drawing.Point(592, 56);
             this.btnModificarValorInicialAsociado.Name = "btnModificarValorInicialAsociado";
             this.btnModificarValorInicialAsociado.Size = new System.Drawing.Size(152, 40);
-            this.btnModificarValorInicialAsociado.TabIndex = 3;
+            this.btnModificarValorInicialAsociado.TabIndex = 2;
             this.btnModificarValorInicialAsociado.Text = "Modificar";
             this.btnModificarValorInicialAsociado.UseVisualStyleBackColor = true;
             this.btnModificarValorInicialAsociado.Click += new System.EventHandler(this.BtnModificarValorInicialAsociado_Click);
@@ -85,6 +88,10 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // InterfazConfiguracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -98,6 +105,7 @@
             this.Name = "InterfazConfiguracion";
             this.Text = "InterfazConfiguracion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazConfiguracion_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +118,6 @@
         private System.Windows.Forms.TextBox txtValorInicialAsociado;
         private System.Windows.Forms.Button btnModificarValorInicialAsociado;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

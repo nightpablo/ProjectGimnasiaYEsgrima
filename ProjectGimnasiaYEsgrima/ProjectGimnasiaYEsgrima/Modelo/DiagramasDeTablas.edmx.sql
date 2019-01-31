@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/21/2019 16:19:24
+-- Date Created: 01/31/2019 09:57:47
 -- Generated from EDMX file: C:\Users\NightCrawler-NBOOK\source\repos\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\ProjectGimnasiaYEsgrima\Modelo\DiagramasDeTablas.edmx
 -- --------------------------------------------------
 
@@ -50,6 +50,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_CuotaSocioCurso]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CuotaSocios] DROP CONSTRAINT [FK_CuotaSocioCurso];
 GO
+IF OBJECT_ID(N'[dbo].[FK_LoginEmpleado]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Logins] DROP CONSTRAINT [FK_LoginEmpleado];
+GO
 IF OBJECT_ID(N'[dbo].[FK_Profesor_inherits_Empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Empleados_Profesor] DROP CONSTRAINT [FK_Profesor_inherits_Empleado];
 GO
@@ -85,6 +88,9 @@ GO
 IF OBJECT_ID(N'[dbo].[ValorCuotaInicials]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ValorCuotaInicials];
 GO
+IF OBJECT_ID(N'[dbo].[Logins]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Logins];
+GO
 IF OBJECT_ID(N'[dbo].[Empleados_Profesor]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Empleados_Profesor];
 GO
@@ -105,7 +111,7 @@ GO
 -- Creating table 'Cursos'
 CREATE TABLE [dbo].[Cursos] (
     [IdCurso] int IDENTITY(1,1) NOT NULL,
-    [Nombre] nvarchar(max)  NOT NULL,
+    [Nombre] nvarchar(50)  NOT NULL,
     [FechaInicio] datetime  NOT NULL,
     [FechaFin] datetime  NOT NULL,
     [EstadoCurso] int  NOT NULL,
@@ -117,8 +123,8 @@ GO
 -- Creating table 'Deportes'
 CREATE TABLE [dbo].[Deportes] (
     [IdDeporte] int IDENTITY(1,1) NOT NULL,
-    [Nombre] nvarchar(max)  NOT NULL,
-    [Descripcion] nvarchar(max)  NULL,
+    [Nombre] nvarchar(50)  NOT NULL,
+    [Descripcion] nvarchar(255)  NULL,
     [EstadoDeporte] int  NOT NULL
 );
 GO
@@ -126,8 +132,8 @@ GO
 -- Creating table 'Personas'
 CREATE TABLE [dbo].[Personas] (
     [IdPersona] int IDENTITY(1,1) NOT NULL,
-    [Nombre] nvarchar(max)  NOT NULL,
-    [Apellido] nvarchar(max)  NOT NULL,
+    [Nombre] nvarchar(50)  NOT NULL,
+    [Apellido] nvarchar(50)  NOT NULL,
     [FechaNacimiento] datetime  NOT NULL,
     [DNI] int  NOT NULL,
     [Foto] varbinary(max)  NULL
@@ -138,7 +144,7 @@ GO
 CREATE TABLE [dbo].[Empleados] (
     [IdEmpleado] int IDENTITY(1,1) NOT NULL,
     [FechaInicio] datetime  NOT NULL,
-    [DescripcionTarea] nvarchar(max)  NULL,
+    [DescripcionTarea] nvarchar(255)  NULL,
     [TipoEmpleado] int  NOT NULL,
     [EstadoEmpleado] int  NOT NULL,
     [Persona_IdPersona] int  NOT NULL
@@ -161,9 +167,9 @@ CREATE TABLE [dbo].[Socios] (
     [FechaInicio] datetime  NOT NULL,
     [CategoriaSocio] int  NOT NULL,
     [EstadoSocio] int  NOT NULL,
-    [Direccion] nvarchar(max)  NOT NULL,
+    [Direccion] nvarchar(50)  NOT NULL,
     [Telefono] nvarchar(max)  NOT NULL,
-    [Localidad] nvarchar(max)  NOT NULL,
+    [Localidad] nvarchar(50)  NOT NULL,
     [TipoDocumento] int  NOT NULL,
     [Persona_IdPersona] int  NOT NULL
 );
@@ -188,6 +194,15 @@ CREATE TABLE [dbo].[ValorCuotaInicials] (
     [FechaInicio] datetime  NOT NULL,
     [FechaFin] datetime  NULL,
     [Importe] float  NOT NULL
+);
+GO
+
+-- Creating table 'Logins'
+CREATE TABLE [dbo].[Logins] (
+    [IdLogin] int IDENTITY(1,1) NOT NULL,
+    [usuario] nvarchar(max)  NOT NULL,
+    [contraseña] nvarchar(max)  NOT NULL,
+    [Empleado_IdEmpleado] int  NOT NULL
 );
 GO
 
@@ -267,6 +282,12 @@ GO
 ALTER TABLE [dbo].[ValorCuotaInicials]
 ADD CONSTRAINT [PK_ValorCuotaInicials]
     PRIMARY KEY CLUSTERED ([IdCuotaInicial] ASC);
+GO
+
+-- Creating primary key on [IdLogin] in table 'Logins'
+ALTER TABLE [dbo].[Logins]
+ADD CONSTRAINT [PK_Logins]
+    PRIMARY KEY CLUSTERED ([IdLogin] ASC);
 GO
 
 -- Creating primary key on [IdEmpleado] in table 'Empleados_Profesor'
@@ -448,6 +469,21 @@ GO
 CREATE INDEX [IX_FK_CuotaSocioCurso]
 ON [dbo].[CuotaSocios]
     ([Curso_IdCurso]);
+GO
+
+-- Creating foreign key on [Empleado_IdEmpleado] in table 'Logins'
+ALTER TABLE [dbo].[Logins]
+ADD CONSTRAINT [FK_LoginEmpleado]
+    FOREIGN KEY ([Empleado_IdEmpleado])
+    REFERENCES [dbo].[Empleados]
+        ([IdEmpleado])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LoginEmpleado'
+CREATE INDEX [IX_FK_LoginEmpleado]
+ON [dbo].[Logins]
+    ([Empleado_IdEmpleado]);
 GO
 
 -- Creating foreign key on [IdEmpleado] in table 'Empleados_Profesor'

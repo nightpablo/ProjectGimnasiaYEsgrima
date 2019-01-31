@@ -44,7 +44,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             dtpFinCurso.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnGuardarCurso);
 
             txtNombreCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCurso, 50);
-            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumeros(sender, e);
+            txtImporteMensualCurso.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtImporteMensualCurso,9);
         }
 
         private void CargarInterfazBuena()
@@ -68,11 +68,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtNombreCurso, "El nombre debe ser con carácter entre 3 y 50");
             }
-            if (txtImporteMensualCurso.Text.Equals(""))
-            {
-                hayError = true;
-                errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
-            }
             else errorProvider1.SetError(txtNombreCurso, "");
             if (dtpFinCurso.Value.CompareTo(dtpInicioCurso.Value) < 1)
             {
@@ -81,7 +76,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(dtpFinCurso, "El dia de comienzo debe ser antes que el dia de fin del curso");
             }
             else { errorProvider1.SetError(dtpInicioCurso, ""); errorProvider1.SetError(dtpFinCurso, ""); }
-            
+            if(long.Parse(txtImporteMensualCurso.Text)>Int32.MaxValue || long.Parse(txtImporteMensualCurso.Text) < Int32.MinValue)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual es un número demasiado grande o demasiado chico");
+            }
+            else if (txtImporteMensualCurso.Text.Equals("") || Int32.Parse(txtImporteMensualCurso.Text) == 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(txtImporteMensualCurso, "El importe mensual debe ser un número mayor a cero");
+            }
+            else errorProvider1.SetError(txtImporteMensualCurso, ""); 
             if (hayError)
                 return;
             

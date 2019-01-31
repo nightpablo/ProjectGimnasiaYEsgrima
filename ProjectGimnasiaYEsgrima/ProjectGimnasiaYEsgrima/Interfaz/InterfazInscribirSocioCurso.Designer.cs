@@ -76,7 +76,7 @@
             this.dtvListarCursos.Margin = new System.Windows.Forms.Padding(4);
             this.dtvListarCursos.Name = "dtvListarCursos";
             this.dtvListarCursos.Size = new System.Drawing.Size(840, 208);
-            this.dtvListarCursos.TabIndex = 0;
+            this.dtvListarCursos.TabIndex = 5;
             this.dtvListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvListarCursos_CellContentClick);
             // 
             // dataGridViewTextBoxColumn3
@@ -169,7 +169,7 @@
             this.cbxDeporteCurso.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDeporteCurso.Name = "cbxDeporteCurso";
             this.cbxDeporteCurso.Size = new System.Drawing.Size(248, 37);
-            this.cbxDeporteCurso.TabIndex = 4;
+            this.cbxDeporteCurso.TabIndex = 1;
             // 
             // txtNombreCurso
             // 
@@ -178,7 +178,7 @@
             this.txtNombreCurso.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(248, 34);
-            this.txtNombreCurso.TabIndex = 5;
+            this.txtNombreCurso.TabIndex = 2;
             // 
             // btnBuscarCurso
             // 
@@ -187,7 +187,7 @@
             this.btnBuscarCurso.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCurso.Name = "btnBuscarCurso";
             this.btnBuscarCurso.Size = new System.Drawing.Size(133, 40);
-            this.btnBuscarCurso.TabIndex = 6;
+            this.btnBuscarCurso.TabIndex = 3;
             this.btnBuscarCurso.Text = "Buscar";
             this.btnBuscarCurso.UseVisualStyleBackColor = true;
             this.btnBuscarCurso.Click += new System.EventHandler(this.BotonBuscarCurso_Click);
@@ -220,7 +220,7 @@
             this.btnVolver.Location = new System.Drawing.Point(704, 136);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(97, 43);
-            this.btnVolver.TabIndex = 9;
+            this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);

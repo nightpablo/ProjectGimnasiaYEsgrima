@@ -170,7 +170,7 @@
             this.cbxFechaEmisionInicial.Location = new System.Drawing.Point(176, 56);
             this.cbxFechaEmisionInicial.Name = "cbxFechaEmisionInicial";
             this.cbxFechaEmisionInicial.Size = new System.Drawing.Size(208, 37);
-            this.cbxFechaEmisionInicial.TabIndex = 3;
+            this.cbxFechaEmisionInicial.TabIndex = 1;
             this.cbxFechaEmisionInicial.SelectedIndexChanged += new System.EventHandler(this.cbxFechaEmisionInicial_SelectedIndexChanged);
             // 
             // cbxFechaEmisionFinal
@@ -194,7 +194,7 @@
             this.cbxFechaEmisionFinal.Location = new System.Drawing.Point(176, 96);
             this.cbxFechaEmisionFinal.Name = "cbxFechaEmisionFinal";
             this.cbxFechaEmisionFinal.Size = new System.Drawing.Size(208, 37);
-            this.cbxFechaEmisionFinal.TabIndex = 3;
+            this.cbxFechaEmisionFinal.TabIndex = 2;
             this.cbxFechaEmisionFinal.SelectedIndexChanged += new System.EventHandler(this.cbxFechaEmisionFinal_SelectedIndexChanged);
             // 
             // lblFechaEmisionFinal
@@ -214,7 +214,7 @@
             this.cbxPagados.Location = new System.Drawing.Point(8, 144);
             this.cbxPagados.Name = "cbxPagados";
             this.cbxPagados.Size = new System.Drawing.Size(294, 33);
-            this.cbxPagados.TabIndex = 6;
+            this.cbxPagados.TabIndex = 3;
             this.cbxPagados.Text = "¿Ver cupones pagados?";
             this.cbxPagados.UseVisualStyleBackColor = true;
             this.cbxPagados.CheckedChanged += new System.EventHandler(this.cbxPagados_CheckedChanged);
@@ -225,7 +225,7 @@
             this.btnPagar.Location = new System.Drawing.Point(432, 128);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(168, 48);
-            this.btnPagar.TabIndex = 7;
+            this.btnPagar.TabIndex = 4;
             this.btnPagar.Text = "Pagar y emitir";
             this.btnPagar.UseVisualStyleBackColor = true;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
@@ -236,7 +236,7 @@
             this.btnVolver.Location = new System.Drawing.Point(640, 128);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(120, 48);
-            this.btnVolver.TabIndex = 7;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.button2_Click);

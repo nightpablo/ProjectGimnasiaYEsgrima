@@ -1,4 +1,6 @@
-﻿using ProjectGimnasiaYEsgrima.Utils;
+﻿using ProjectGimnasiaYEsgrima.Controlador;
+using ProjectGimnasiaYEsgrima.Modelo;
+using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +17,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     {
 
         public static bool logueado { get; set; }
+        public static Empleado MiEmpleado { get; set; }
         InterfazPrincipal MiVentana;
         public InterfazInicioSesion(InterfazPrincipal ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
             logueado = false;
+            MiEmpleado = null;
             Recargar();
             CargarInterfazBuena();
         }
@@ -30,15 +34,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InterfazBuena interfaz = new InterfazBuena();
             interfaz.TransformarVentanaPersonalizado(this);
             interfaz.TransformarTituloVentanaPersonalizado(lblTituloInicioSesion);
-            interfaz.TransformarLabelTextoPersonalizadoTodos(lblUsuario, lblContraseña);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblUsuario, lblContraseña,lblTipoEmpleado,lblPermiso);
             interfaz.TransformarBotonPersonalizadoTodos(btnLogin, btnCancelar);
             interfaz.TransformarTextBoxTextoPersonalizado(txtContraseña);
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            logueado = true; // revisar la existencia del usuario
-            Recargar();
+            Empleado empleado = new ControladorEmpleado().VerificarLoginEmpleado(txtUsuario.Text, txtContraseña.Text);
+            if (empleado != null)
+            { // revisar la existencia del usuario
+                MiEmpleado = empleado;
+                lblTipoEmpleado.Text = MiEmpleado.TipoEmpleado.ToString();
+                logueado = true;
+                Recargar();
+            }
+            else
+            {
+                MyMessageBox.Show(this, "El usuario o contraseña es incorrecta", "Inicio Sesion");
+            }
         }
 
         private void Recargar()
@@ -53,6 +67,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 txtContraseña.Hide();
                 lblContraseña.Hide();
                 btnDesconectar.Show();
+                lblPermiso.Show();
+                lblTipoEmpleado.Show();
                 new InterfazBuena().TransformarTextBoxTextoNoEditablePersonalizado(txtUsuario);
                 
             }
@@ -66,6 +82,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 txtContraseña.Show();
                 lblContraseña.Show();
                 btnDesconectar.Hide();
+                lblPermiso.Hide();
+                lblTipoEmpleado.Hide();
+                txtUsuario.BackColor = Color.Empty;
                 new InterfazBuena().TransformarTextBoxTextoPersonalizado(txtUsuario);
             }
         }
@@ -79,6 +98,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void BtnDesconectar_Click(object sender, EventArgs e)
         {
             logueado = false;
+            txtUsuario.Text = "";
+            txtContraseña.Text = "";
+            MiEmpleado = null;
             Recargar();
         }
     }
