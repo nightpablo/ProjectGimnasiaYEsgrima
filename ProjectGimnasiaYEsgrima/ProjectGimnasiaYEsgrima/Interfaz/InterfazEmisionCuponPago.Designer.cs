@@ -32,13 +32,8 @@
             this.lblTituloCuponSocio = new System.Windows.Forms.Label();
             this.dgvListaCuponesSocio = new System.Windows.Forms.DataGridView();
             this.Confirmación = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NombreCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaEmisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCobroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anular = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.modelCuponSocioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblFechaEmisionInicial = new System.Windows.Forms.Label();
             this.cbxFechaEmisionInicial = new System.Windows.Forms.ComboBox();
             this.cbxFechaEmisionFinal = new System.Windows.Forms.ComboBox();
@@ -47,6 +42,11 @@
             this.btnPagar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblPrueba = new System.Windows.Forms.Label();
+            this.fechaEmisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCobroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelCuponSocioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCuponesSocio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelCuponSocioBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.dgvListaCuponesSocio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaCuponesSocio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Confirmación,
-            this.NombreCurso,
+            this.NombreCategoria,
             this.fechaEmisionDataGridViewTextBoxColumn,
             this.fechaCobroDataGridViewTextBoxColumn,
             this.importeDataGridViewTextBoxColumn,
@@ -89,41 +89,13 @@
             this.Confirmación.Name = "Confirmación";
             this.Confirmación.Width = 63;
             // 
-            // NombreCurso
+            // NombreCategoria
             // 
-            this.NombreCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NombreCurso.DataPropertyName = "NombreCurso";
-            this.NombreCurso.HeaderText = "NombreCurso";
-            this.NombreCurso.Name = "NombreCurso";
-            this.NombreCurso.Width = 124;
-            // 
-            // fechaEmisionDataGridViewTextBoxColumn
-            // 
-            this.fechaEmisionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaEmisionDataGridViewTextBoxColumn.DataPropertyName = "FechaEmision";
-            this.fechaEmisionDataGridViewTextBoxColumn.HeaderText = "FechaEmision";
-            this.fechaEmisionDataGridViewTextBoxColumn.Name = "fechaEmisionDataGridViewTextBoxColumn";
-            // 
-            // fechaCobroDataGridViewTextBoxColumn
-            // 
-            this.fechaCobroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaCobroDataGridViewTextBoxColumn.DataPropertyName = "FechaCobro";
-            this.fechaCobroDataGridViewTextBoxColumn.HeaderText = "FechaCobro";
-            this.fechaCobroDataGridViewTextBoxColumn.Name = "fechaCobroDataGridViewTextBoxColumn";
-            // 
-            // importeDataGridViewTextBoxColumn
-            // 
-            this.importeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
-            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.NombreCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NombreCategoria.DataPropertyName = "NombreCategoria";
+            this.NombreCategoria.HeaderText = "NombreCategoria";
+            this.NombreCategoria.Name = "NombreCategoria";
+            this.NombreCategoria.Width = 124;
             // 
             // Anular
             // 
@@ -135,18 +107,14 @@
             this.Anular.UseColumnTextForButtonValue = true;
             this.Anular.Width = 24;
             // 
-            // modelCuponSocioBindingSource
-            // 
-            this.modelCuponSocioBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCuponSocio);
-            // 
             // lblFechaEmisionInicial
             // 
             this.lblFechaEmisionInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEmisionInicial.Location = new System.Drawing.Point(32, 64);
             this.lblFechaEmisionInicial.Name = "lblFechaEmisionInicial";
-            this.lblFechaEmisionInicial.Size = new System.Drawing.Size(100, 23);
+            this.lblFechaEmisionInicial.Size = new System.Drawing.Size(160, 23);
             this.lblFechaEmisionInicial.TabIndex = 2;
-            this.lblFechaEmisionInicial.Text = "Fecha Emision";
+            this.lblFechaEmisionInicial.Text = "Fecha desde";
             this.lblFechaEmisionInicial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbxFechaEmisionInicial
@@ -167,7 +135,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cbxFechaEmisionInicial.Location = new System.Drawing.Point(176, 56);
+            this.cbxFechaEmisionInicial.Location = new System.Drawing.Point(216, 64);
             this.cbxFechaEmisionInicial.Name = "cbxFechaEmisionInicial";
             this.cbxFechaEmisionInicial.Size = new System.Drawing.Size(208, 37);
             this.cbxFechaEmisionInicial.TabIndex = 1;
@@ -191,7 +159,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cbxFechaEmisionFinal.Location = new System.Drawing.Point(176, 96);
+            this.cbxFechaEmisionFinal.Location = new System.Drawing.Point(216, 104);
             this.cbxFechaEmisionFinal.Name = "cbxFechaEmisionFinal";
             this.cbxFechaEmisionFinal.Size = new System.Drawing.Size(208, 37);
             this.cbxFechaEmisionFinal.TabIndex = 2;
@@ -200,11 +168,11 @@
             // lblFechaEmisionFinal
             // 
             this.lblFechaEmisionFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEmisionFinal.Location = new System.Drawing.Point(32, 104);
+            this.lblFechaEmisionFinal.Location = new System.Drawing.Point(40, 104);
             this.lblFechaEmisionFinal.Name = "lblFechaEmisionFinal";
-            this.lblFechaEmisionFinal.Size = new System.Drawing.Size(100, 23);
+            this.lblFechaEmisionFinal.Size = new System.Drawing.Size(152, 23);
             this.lblFechaEmisionFinal.TabIndex = 4;
-            this.lblFechaEmisionFinal.Text = "Hasta";
+            this.lblFechaEmisionFinal.Text = "Fecha hasta";
             this.lblFechaEmisionFinal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbxPagados
@@ -244,11 +212,43 @@
             // lblPrueba
             // 
             this.lblPrueba.AutoSize = true;
-            this.lblPrueba.Location = new System.Drawing.Point(408, 64);
+            this.lblPrueba.Location = new System.Drawing.Point(448, 64);
             this.lblPrueba.Name = "lblPrueba";
             this.lblPrueba.Size = new System.Drawing.Size(70, 17);
             this.lblPrueba.TabIndex = 8;
             this.lblPrueba.Text = "Texto aca";
+            // 
+            // fechaEmisionDataGridViewTextBoxColumn
+            // 
+            this.fechaEmisionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaEmisionDataGridViewTextBoxColumn.DataPropertyName = "FechaEmision";
+            this.fechaEmisionDataGridViewTextBoxColumn.HeaderText = "FechaEmision";
+            this.fechaEmisionDataGridViewTextBoxColumn.Name = "fechaEmisionDataGridViewTextBoxColumn";
+            // 
+            // fechaCobroDataGridViewTextBoxColumn
+            // 
+            this.fechaCobroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechaCobroDataGridViewTextBoxColumn.DataPropertyName = "FechaCobro";
+            this.fechaCobroDataGridViewTextBoxColumn.HeaderText = "FechaCobro";
+            this.fechaCobroDataGridViewTextBoxColumn.Name = "fechaCobroDataGridViewTextBoxColumn";
+            // 
+            // importeDataGridViewTextBoxColumn
+            // 
+            this.importeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
+            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // modelCuponSocioBindingSource
+            // 
+            this.modelCuponSocioBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCuponSocio);
             // 
             // InterfazEmisionCuponPago
             // 
@@ -289,7 +289,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblPrueba;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Confirmación;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaEmisionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCobroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;

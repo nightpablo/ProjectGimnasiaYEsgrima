@@ -47,6 +47,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             fh.Dock = DockStyle.Fill;
             this.VentanaContenedor.Controls.Add(fh);
             this.VentanaContenedor.Tag = fh;
+            AbrirDeNuevo(fh);
+        }
+        private void AbrirDeNuevo(Object Formhijo)
+        {
+            foreach (var i in VentanaContenedor.Controls.OfType<Form>())
+            {
+                VentanaContenedor.Controls.Remove(i);
+            }
+
+            Form fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.VentanaContenedor.Controls.Add(fh);
+            this.VentanaContenedor.Tag = fh;
             fh.Show();
         }
 
@@ -58,10 +72,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 CargarLogin();
         }
 
-        private void btnCursos_Click(object sender, EventArgs e)
+        private void BtnCategorias_Click(object sender, EventArgs e)
         {
             if (InterfazInicioSesion.logueado)
-                AbrirOtraVentana(new InterfazListaCurso(this));
+                AbrirOtraVentana(new InterfazListaCategoria(this));
             else
                 CargarLogin();
         }

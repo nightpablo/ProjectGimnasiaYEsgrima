@@ -45,6 +45,7 @@
             this.txtNombreApellido = new System.Windows.Forms.TextBox();
             this.lblNombreApellido = new System.Windows.Forms.Label();
             this.lblTituloEntradaSalida = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.pnlDatosPersona.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlFoto)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             // pnlDatosPersona
             // 
+            this.pnlDatosPersona.Controls.Add(this.lblTipo);
             this.pnlDatosPersona.Controls.Add(this.pnlFoto);
             this.pnlDatosPersona.Controls.Add(this.lblContador);
             this.pnlDatosPersona.Controls.Add(this.txtFechaIngreso);
@@ -204,6 +206,16 @@
             this.lblTituloEntradaSalida.TabIndex = 0;
             this.lblTituloEntradaSalida.Text = "Entrada/Salida";
             // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Century Gothic", 12.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(8, 280);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(277, 24);
+            this.lblTipo.TabIndex = 5;
+            this.lblTipo.Text = "TipoEmpleadoOCategoria";
+            // 
             // InterfazEntradaSalida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.Label lblNombreApellido;
         private System.Windows.Forms.Label lblTituloEntradaSalida;
         private System.Windows.Forms.PictureBox pnlFoto;
+        private System.Windows.Forms.Label lblTipo;
     }
 }

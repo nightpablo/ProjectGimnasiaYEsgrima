@@ -17,7 +17,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
     {
         BDEmpleado bdEmpleado = new BDEmpleado();
         ControladorPersona controladorPersona = new ControladorPersona();
-
+        MemoryStream memory;
         public int CrearEmpleado(string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado)
         {
             Empleado buscado = bdEmpleado.BuscarPorClavesUnicas(documento);
@@ -46,11 +46,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                     FechaNacimiento = fechaNacimiento,
                     DNI = documento
                 };
-                using (var ms = new MemoryStream())
-                {
-                    new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
-                    pers.Foto = ms.ToArray();
-                }
+                pers.Foto = CargarFotoPorDefecto();
                 new BDPersona().Crear(pers);
             }
 
@@ -80,17 +76,98 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             return bdEmpleado.Crear(unEmpleado);
         }
 
+        private byte[] CargarFotoPorDefecto()
+        {
+            if (memory == null)
+            {
+                memory = new MemoryStream();
+                new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(memory, ImageFormat.Png);
+            }
+            return memory.ToArray();
+
+        }
+
+        public List<Empleado> MigrarEmpleados(Object[,] migraciones)
+        {
+            List<Empleado> listaEmpleados = new List<Empleado>();
+            List<int> listadocumentos = new List<int>();
+            ////string nombre,string apellido, DateTime fechaNacimiento, int documento, string descripcion, DateTime fechaInicio, EnumTipoEmpleado tipoEmpleado
+            for (int i = 0; i < migraciones.GetLength(0); i++)
+            {
+                listadocumentos.Add((int)migraciones[i, 3]);
+            }
+            if (!EmpleadosConDocumentosUnicos(listadocumentos))
+            {
+                return null;
+            }
+            for (int i = 0; i < migraciones.GetLength(0); i++)
+            {
+                string nombre = (string)migraciones[i, 0];
+                string apellido = (string)migraciones[i, 1];
+                DateTime fechaNacimiento = (DateTime)migraciones[i, 2];
+                int nroDocumento = (int)migraciones[i, 3];
+                string descripcion = (string)migraciones[i, 4];
+                DateTime fechaInicio = (DateTime)migraciones[i, 5];
+                EnumTipoEmpleado tipoEmpleado = (EnumTipoEmpleado)migraciones[i, 6];
+                Persona pers = new Persona
+                    {
+                        Nombre = nombre,
+                        Apellido = apellido,
+                        FechaNacimiento = fechaNacimiento,
+                        DNI = nroDocumento
+                };
+                pers.Foto = CargarFotoPorDefecto();
+                new BDPersona().Crear(pers);
+                
+
+                Empleado unEmpleado = null;
+                switch (tipoEmpleado)
+                {
+                    case EnumTipoEmpleado.Secretaria:
+                        unEmpleado = new Secretaria();
+                        break;
+                    case EnumTipoEmpleado.Profesor:
+                        unEmpleado = new Profesor();
+                        break;
+                    default:
+                        unEmpleado = new Empleado();
+                        break;
+                }
+
+                unEmpleado.FechaInicio = fechaInicio;
+                unEmpleado.DescripcionTarea = descripcion;
+                unEmpleado.TipoEmpleado = tipoEmpleado;
+                unEmpleado.EstadoEmpleado = EnumEstadoEmpleado.Activo;
+
+
+
+
+                unEmpleado.Persona = pers;
+                listaEmpleados.Add(unEmpleado);
+                
+            }
+            bdEmpleado.Migrar(listaEmpleados);
+            return listaEmpleados;
+
+        }
+
+        public bool EmpleadosConDocumentosUnicos(List<int> listadocumentos)
+        {
+            if (bdEmpleado.DocumentosUnicos(listadocumentos) == null) return true;
+            return false;
+        }
+
         public ModelEmpleadoPersona BuscarEmpleadoPorClavesUnicasPorVista(int documento)
         {
             return bdEmpleado.BuscarPorClavesUnicasPorVista(documento);
         }
 
-        public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista()
+        public List<ModelEmpleadoPersona> ListarTodosEmpleados()
         {
             return bdEmpleado.ListarTodos();
         }
 
-        public List<ModelEmpleadoPersona> ExtraerEmpleadosAVista(params Object[] parametros)
+        public List<ModelEmpleadoPersona> ListarTodosEmpleadosPorFiltro(params Object[] parametros)
         {
             if (parametros.Length < 4)
                 return null;
@@ -120,12 +197,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             empleado.EstadoEmpleado = EnumEstadoEmpleado.Baja;
             return bdEmpleado.Actualizar(empleado);
         }
-
-        public List<Empleado> ListarTodosEmpleadosPorFiltros(params Object[] parametros)
-        {
-            return null;            
-        }
-
+        
         public int RegistrarEntradaSalidaEmpleado(ModelEmpleadoPersona empleado)
         {
             RegistroIngresoEgreso registro = bdEmpleado.TomarUltimoRegistroEntradaSalida(empleado.MiEmpleado);

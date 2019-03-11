@@ -45,7 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             ControladorEmpleado CEmpleado = new ControladorEmpleado();
             List<ModelEmpleadoPersona> lista = null;
-            lista = CEmpleado.ExtraerEmpleadosAVista()
+            lista = CEmpleado.ListarTodosEmpleados()
                 .AsEnumerable()
                 .OrderBy(b => b.Apellido)
                 .ToList();

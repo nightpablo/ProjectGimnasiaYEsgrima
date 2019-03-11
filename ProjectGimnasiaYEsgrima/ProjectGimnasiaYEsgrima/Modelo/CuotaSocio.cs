@@ -22,6 +22,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
         public virtual ValorCuotaInicial ValorCuotaInicial { get; set; }
         public virtual Socio Socio { get; set; }
-        public virtual Curso Curso { get; set; }
+        public virtual Categoria Categoria { get; set; }
     }
 }

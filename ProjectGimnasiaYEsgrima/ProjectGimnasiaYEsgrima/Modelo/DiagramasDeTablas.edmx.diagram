@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f2c48b537e634ba1a66739a384af4426" Name="Diagram1" ZoomLevel="71" DisplayType="true" >
-        <EntityTypeShape EntityType="DiagramasDeTablas.Curso" Width="1.5" PointX="0.625" PointY="0.875" />
+        <EntityTypeShape EntityType="DiagramasDeTablas.Categoria" Width="1.5" PointX="0.625" PointY="0.875" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Deporte" Width="1.5" PointX="0.875" PointY="4.125" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Persona" Width="1.5" PointX="7.875" PointY="2.25" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Empleado" Width="1.5" PointX="8" PointY="4.875" />
@@ -26,10 +26,10 @@
         <AssociationConnector Association="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" />
         <AssociationConnector Association="DiagramasDeTablas.SocioCurso" ></AssociationConnector>
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioCurso" ManuallyRouted="true" >
-          <ConnectorPoint PointX="10.5" PointY="3.5571907552083331" />
+          <ConnectorPoint PointX="10.5" PointY="2.2910505871361639" />
           <ConnectorPoint PointX="9.625" PointY="0.625" />
           <ConnectorPoint PointX="1.375" PointY="0.625" />
-          <ConnectorPoint PointX="1.375" PointY="0.87499999999999734" />
+          <ConnectorPoint PointX="1.375" PointY="0.87499999999993883" />
         </AssociationConnector>
         <EntityTypeShape EntityType="DiagramasDeTablas.Login" Width="1.5" PointX="5.25" PointY="7.625" />
         <AssociationConnector Association="DiagramasDeTablas.LoginEmpleado" />

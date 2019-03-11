@@ -63,14 +63,38 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             if (MiEmpleado != null) {           
                 MiEmpleado = new ControladorEmpleado().BuscarEmpleadoPorClavesUnicasPorVista(MiEmpleado.MiPersona.DNI);
-                using (var ms = new MemoryStream(MiEmpleado.Foto))
-                    bbb = new Bitmap(Image.FromStream(ms));
+                if (MiEmpleado.MiPersona.Foto != null) { 
+                    using (var ms = new MemoryStream(MiEmpleado.Foto))
+                        bbb = new Bitmap(Image.FromStream(ms));
+                }
+                else
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
+                        MiEmpleado.MiPersona.Foto = ms.ToArray();
+                        new ControladorPersona().ActualizarFotoPersona(MiEmpleado.MiPersona.DNI, ms.ToArray());
+                    }
+                }
             }
             else
             {
                 MiSocio = new ControladorSocio().BuscarPorClavesUnicasSocio(MiSocio.MiPersona.DNI);
-                using (var ms = new MemoryStream(MiSocio.MiPersona.Foto))
-                    bbb = new Bitmap(Image.FromStream(ms));
+                if (MiSocio.MiPersona.Foto != null)
+                {
+                    using (var ms = new MemoryStream(MiSocio.MiPersona.Foto))
+                        bbb = new Bitmap(Image.FromStream(ms));
+                }
+                else
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
+                        MiEmpleado.MiPersona.Foto = ms.ToArray();
+                        new ControladorPersona().ActualizarFotoPersona(MiSocio.MiPersona.DNI, ms.ToArray());
+                    }
+                }
+                
             }
 
         string tipoDoc = MiSocio == null ? "" : MiSocio.MiSocio.TipoDocumento+"";

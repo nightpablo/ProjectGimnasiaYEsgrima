@@ -11,6 +11,22 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\NightCrawler-NBOOK\Desktop\Desarrollo\Software del proyecto\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +46,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D62FC8811E044359F1297993F4A8DE0A5AEF8AC7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ProjectGimnasiaYEsgrima_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
@@ -106,16 +134,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\BDDeporte.cs" />
-    <Compile Include="BD\BDCurso.cs" />
+    <Compile Include="BD\BDCategoria.cs" />
     <Compile Include="BD\BDEmpleado.cs" />
     <Compile Include="BD\BDPersona.cs" />
     <Compile Include="BD\BDSocio.cs" />
-    <Compile Include="BD\INterfaceBD.cs" />
-    <Compile Include="BD\ConexionBD.cs" />
+    <Compile Include="BD\InterfaceBD.cs" />
     <Compile Include="Controlador\ControladorDeporte.cs" />
-    <Compile Include="Controlador\ControladorCurso.cs" />
+    <Compile Include="Controlador\ControladorCategoria.cs" />
     <Compile Include="Controlador\ControladorEmpleado.cs" />
-    <Compile Include="Controlador\ControladorEntradaSalida.cs" />
     <Compile Include="Controlador\ControladorSocio.cs" />
     <Compile Include="dbGimnasiaYEsgrimaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -141,11 +167,11 @@
     <Compile Include="Interfaz\InterfazConfiguracion.Designer.cs">
       <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazCursoReporte.cs">
+    <Compile Include="Interfaz\InterfazCategoriaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazCursoReporte.Designer.cs">
-      <DependentUpon>InterfazCursoReporte.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazCategoriaReporte.Designer.cs">
+      <DependentUpon>InterfazCategoriaReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazDeporteReporte.cs">
       <SubType>Form</SubType>
@@ -177,11 +203,11 @@
     <Compile Include="Interfaz\InterfazEmitirCarnet.designer.cs">
       <DependentUpon>InterfazEmitirCarnet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazAgregarCursoEmpleado.cs">
+    <Compile Include="Interfaz\InterfazAgregarCategoriaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazAgregarCursoEmpleado.Designer.cs">
-      <DependentUpon>InterfazAgregarCursoEmpleado.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazAgregarCategoriaEmpleado.Designer.cs">
+      <DependentUpon>InterfazAgregarCategoriaEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazAltaEmpleado.cs">
       <SubType>Form</SubType>
@@ -225,11 +251,11 @@
     <Compile Include="Interfaz\InterfazInicioSesion.Designer.cs">
       <DependentUpon>InterfazInicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazInscribirSocioCurso.cs">
+    <Compile Include="Interfaz\InterfazInscribirSocioCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazInscribirSocioCurso.Designer.cs">
-      <DependentUpon>InterfazInscribirSocioCurso.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazInscribirSocioCategoria.Designer.cs">
+      <DependentUpon>InterfazInscribirSocioCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazListaEmpleado.cs">
       <SubType>Form</SubType>
@@ -237,17 +263,17 @@
     <Compile Include="Interfaz\InterfazListaEmpleado.Designer.cs">
       <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazListaCurso.cs">
+    <Compile Include="Interfaz\InterfazListaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazListaCurso.Designer.cs">
-      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazListaCategoria.Designer.cs">
+      <DependentUpon>InterfazListaCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazAltaCurso.cs">
+    <Compile Include="Interfaz\InterfazAltaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazAltaCurso.Designer.cs">
-      <DependentUpon>InterfazAltaCurso.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazAltaCategoria.Designer.cs">
+      <DependentUpon>InterfazAltaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazListaDeportes.cs">
       <SubType>Form</SubType>
@@ -261,11 +287,11 @@
     <Compile Include="Interfaz\InterfazListaSocio.Designer.cs">
       <DependentUpon>InterfazListaSocio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InterfazModificarCurso.cs">
+    <Compile Include="Interfaz\InterfazModificarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InterfazModificarCurso.Designer.cs">
-      <DependentUpon>InterfazModificarCurso.cs</DependentUpon>
+    <Compile Include="Interfaz\InterfazModificarCategoria.Designer.cs">
+      <DependentUpon>InterfazModificarCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\InterfazModificarDeporte.cs">
       <SubType>Form</SubType>
@@ -303,10 +329,10 @@
     <Compile Include="Interfaz\InterfazPrincipal.Designer.cs">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\CuotaSocio.cs">
+    <Compile Include="Modelo\Categoria.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Curso.cs">
+    <Compile Include="Modelo\CuotaSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Deporte.cs">
@@ -333,10 +359,10 @@
     <Compile Include="Modelo\EnumCategoriaSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\EnumEstadoCuotaSocio.cs">
+    <Compile Include="Modelo\EnumEstadoCategoria.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\EnumEstadoCurso.cs">
+    <Compile Include="Modelo\EnumEstadoCuotaSocio.cs">
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\EnumEstadoDeporte.cs">
@@ -358,7 +384,7 @@
       <DependentUpon>DiagramasDeTablas.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\ModelCuponSocio.cs" />
-    <Compile Include="Modelo\ModelCurso.cs" />
+    <Compile Include="Modelo\ModelCategoria.cs" />
     <Compile Include="Modelo\ModelDeporte.cs" />
     <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
     <Compile Include="Modelo\ModelImpresionCuponSocio.cs" />
@@ -393,8 +419,8 @@
     <EmbeddedResource Include="Interfaz\InterfazConfiguracion.resx">
       <DependentUpon>InterfazConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazCursoReporte.resx">
-      <DependentUpon>InterfazCursoReporte.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazCategoriaReporte.resx">
+      <DependentUpon>InterfazCategoriaReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazDeporteReporte.resx">
       <DependentUpon>InterfazDeporteReporte.cs</DependentUpon>
@@ -421,11 +447,11 @@
       <DependentUpon>InterfazEmitirCarnet.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazAgregarCursoEmpleado.resx">
-      <DependentUpon>InterfazAgregarCursoEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazAgregarCategoriaEmpleado.resx">
+      <DependentUpon>InterfazAgregarCategoriaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazAltaCurso.resx">
-      <DependentUpon>InterfazAltaCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazAltaCategoria.resx">
+      <DependentUpon>InterfazAltaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazAltaDeporte.resx">
       <DependentUpon>InterfazAltaDeporte.cs</DependentUpon>
@@ -442,8 +468,8 @@
     <EmbeddedResource Include="Interfaz\InterfazInicioSesion.resx">
       <DependentUpon>InterfazInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazInscribirSocioCurso.resx">
-      <DependentUpon>InterfazInscribirSocioCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazInscribirSocioCategoria.resx">
+      <DependentUpon>InterfazInscribirSocioCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaDeportes.resx">
       <DependentUpon>InterfazListaDeportes.cs</DependentUpon>
@@ -451,14 +477,14 @@
     <EmbeddedResource Include="Interfaz\InterfazListaEmpleado.resx">
       <DependentUpon>InterfazListaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazListaCurso.resx">
-      <DependentUpon>InterfazListaCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazListaCategoria.resx">
+      <DependentUpon>InterfazListaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazListaSocio.resx">
       <DependentUpon>InterfazListaSocio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InterfazModificarCurso.resx">
-      <DependentUpon>InterfazModificarCurso.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\InterfazModificarCategoria.resx">
+      <DependentUpon>InterfazModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\InterfazModificarDeporte.resx">
       <DependentUpon>InterfazModificarDeporte.cs</DependentUpon>
@@ -490,7 +516,7 @@
     <EmbeddedResource Include="Utils\Cupon.rdlc" />
     <EmbeddedResource Include="Utils\Empleado.rdlc" />
     <EmbeddedResource Include="Utils\ReporteIngreso.rdlc" />
-    <EmbeddedResource Include="Utils\ReporteTodosCurso.rdlc" />
+    <EmbeddedResource Include="Utils\ReporteTodosCategoria.rdlc" />
     <EmbeddedResource Include="Utils\ReporteTodosDeporte.rdlc" />
     <EmbeddedResource Include="Utils\ReporteEmpleado.rdlc" />
     <EmbeddedResource Include="Utils\ReporteSocio.rdlc" />
@@ -525,10 +551,11 @@
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="ProjectGimnasiaYEsgrima_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Deporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.EmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCuponSocio.datasource" />
-    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCurso.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelCategoria.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelDeporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelImpresionCuponSocio.datasource" />
@@ -549,9 +576,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Excepcion\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
@@ -559,7 +584,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Modelo\DeleteTable.sql" />
     <Content Include="Modelo\DiagramasDeTablas.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DiagramasDeTablas.Context.cs</LastGenOutput>
@@ -571,7 +595,6 @@
       <LastGenOutput>DiagramasDeTablas.cs</LastGenOutput>
       <DependentUpon>DiagramasDeTablas.edmx</DependentUpon>
     </Content>
-    <Content Include="Modelo\InsertData.sql" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -595,6 +618,18 @@
     <None Include="Utils\Imagenes\Perfil.png" />
     <Content Include="Utils\Imagenes\Pregunta.png" />
     <Content Include="Utils\Imagenes\Pregunta1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

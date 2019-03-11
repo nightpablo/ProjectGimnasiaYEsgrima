@@ -28,6 +28,18 @@ namespace ProjectGimnasiaYEsgrima.Utils
                 e.Handled = true;
         }
 
+        public void PermiteLetrasYNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
         public void PermiteLetrasYNumerosYSeparador(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))
@@ -38,6 +50,14 @@ namespace ProjectGimnasiaYEsgrima.Utils
                 e.Handled = false;
             else if (char.IsSeparator(e.KeyChar))
                 e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        public void PermiteLetrasYNumerosYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
+        {
+            if (textBox.Text.Length <= length)
+                PermiteLetrasYNumeros(sender, e);
             else
                 e.Handled = true;
         }

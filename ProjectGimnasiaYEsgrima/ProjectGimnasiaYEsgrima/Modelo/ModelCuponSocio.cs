@@ -13,14 +13,14 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public System.DateTime? FechaCobro { get; set; }
         public double Importe { get; set; }
         public EnumEstadoCuotaSocio Estado { get; set; }
-        public string NombreCurso { get; set; }
+        public string NombreCategoria { get; set; }
         public string NombreSocio { get { return MiSocio.MiPersona.Nombre; } }
         public int DNISocio { get { return MiSocio.MiPersona.DNI; } }
 
         public ValorCuotaInicial ValorCuotaInicial { get; set; }
         public ModelSocioPersona MiSocio { get; set; }
         public CuotaSocio MiCuota { get; set; }
-        public Curso MiCurso { get; set; }
+        public Categoria MiCategoria { get; set; }
 
 
         public ModelCuponSocio(){}

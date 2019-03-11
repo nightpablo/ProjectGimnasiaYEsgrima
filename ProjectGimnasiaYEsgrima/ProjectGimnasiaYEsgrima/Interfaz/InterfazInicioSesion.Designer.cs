@@ -47,7 +47,7 @@
             this.lblTituloInicioSesion.Location = new System.Drawing.Point(24, 16);
             this.lblTituloInicioSesion.Name = "lblTituloInicioSesion";
             this.lblTituloInicioSesion.Size = new System.Drawing.Size(177, 32);
-            this.lblTituloInicioSesion.TabIndex = 0;
+            this.lblTituloInicioSesion.TabIndex = 30;
             this.lblTituloInicioSesion.Text = "Inicio Sesion";
             // 
             // lblUsuario
@@ -58,7 +58,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(104, 64);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(104, 32);
-            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.TabIndex = 30;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -70,7 +70,7 @@
             this.lblContraseña.Location = new System.Drawing.Point(72, 136);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(136, 40);
-            this.lblContraseña.TabIndex = 1;
+            this.lblContraseña.TabIndex = 30;
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -80,7 +80,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(256, 72);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(288, 34);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
@@ -89,7 +89,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(288, 34);
-            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.TabIndex = 1;
             // 
             // btnLogin
             // 
@@ -97,7 +97,7 @@
             this.btnLogin.Location = new System.Drawing.Point(224, 208);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(104, 48);
-            this.btnLogin.TabIndex = 3;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -108,7 +108,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(376, 208);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(136, 48);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -132,7 +132,7 @@
             this.lblPermiso.Location = new System.Drawing.Point(544, 32);
             this.lblPermiso.Name = "lblPermiso";
             this.lblPermiso.Size = new System.Drawing.Size(136, 32);
-            this.lblPermiso.TabIndex = 4;
+            this.lblPermiso.TabIndex = 30;
             this.lblPermiso.Text = "Permisos";
             this.lblPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -144,7 +144,7 @@
             this.lblTipoEmpleado.Location = new System.Drawing.Point(584, 72);
             this.lblTipoEmpleado.Name = "lblTipoEmpleado";
             this.lblTipoEmpleado.Size = new System.Drawing.Size(136, 32);
-            this.lblTipoEmpleado.TabIndex = 4;
+            this.lblTipoEmpleado.TabIndex = 30;
             this.lblTipoEmpleado.Text = "AcaMostrar";
             this.lblTipoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

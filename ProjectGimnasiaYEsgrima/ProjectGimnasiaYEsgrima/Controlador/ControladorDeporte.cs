@@ -45,7 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         public int EliminarDeporte(Deporte deporte)
         {
             Deporte buscado = una_bddeporte.BuscarPorClavesUnicas(deporte.Nombre);
-            new BDCurso().DarBajaPorDeporte(buscado);
+            new BDCategoria().DarBajaPorDeporte(buscado);
             buscado.EstadoDeporte = EnumEstadoDeporte.Baja;
             
             return una_bddeporte.Actualizar(buscado);

@@ -17,11 +17,11 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Profesor()
         {
-            this.Cursos = new HashSet<Curso>();
+            this.Categorias = new HashSet<Categoria>();
         }
     
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Curso> Cursos { get; set; }
+        public virtual ICollection<Categoria> Categorias { get; set; }
     }
 }

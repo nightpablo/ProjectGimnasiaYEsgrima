@@ -38,6 +38,32 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return 1;
             }
         }
+        public int Migrar(List<Empleado> listaempleados)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                foreach(var entrada in listaempleados)
+                {
+                    context.Entry(entrada.Persona).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
+                    
+                }
+                context.SaveChanges();
+                return 1;
+            }
+        }
+
+        public Empleado DocumentosUnicos(List<int> listadocumentos)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                foreach (var entrada in listadocumentos)
+                {
+                    return context.Empleados.AsEnumerable().FirstOrDefault(b => listadocumentos.Contains(b.Persona.DNI));
+                }
+                return null;
+            }
+        }
 
         public int Eliminar(Empleado entrada)
         {

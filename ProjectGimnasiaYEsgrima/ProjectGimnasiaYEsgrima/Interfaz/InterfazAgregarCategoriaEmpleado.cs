@@ -13,15 +13,15 @@ using System.Windows.Forms;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    public partial class InterfazAgregarCursoEmpleado : Form
+    public partial class InterfazAgregarCategoriaEmpleado : Form
     {
-        private InterfazListaCurso Padre;
-        private Curso MiCurso;
+        private InterfazListaCategoria Padre;
+        private Categoria MiCategoria;
 
-        public InterfazAgregarCursoEmpleado(InterfazListaCurso padre, Curso curso)
+        public InterfazAgregarCategoriaEmpleado(InterfazListaCategoria padre, Categoria categoria)
         {
             Padre = padre;
-            MiCurso = curso;
+            MiCategoria = categoria;
             InitializeComponent();
 
             
@@ -53,7 +53,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtApellidoProfesor,txtDNIProfesor);
             interfaz.TransformarBotonPersonalizadoTodos(btnBuscar, btnVolver);
             interfaz.TransformarTablaPersonalizado(dgvEmpleadoProfesor);
-            interfaz.TransformarTablaBotonesPersonalizadosTodos(AsignarCurso, EliminarCurso);
+            interfaz.TransformarTablaBotonesPersonalizadosTodos(AsignarCategoria, EliminarCategoria);
         }
 
 
@@ -64,7 +64,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void ActualizarTabla()
         {
-            List<ModelEmpleadoPersona> lista = new ControladorEmpleado().ExtraerEmpleadosAVista("", txtApellidoProfesor.Text, txtDNIProfesor.Text, "Profesor");
+            List<ModelEmpleadoPersona> lista = new ControladorEmpleado().ListarTodosEmpleadosPorFiltro("", txtApellidoProfesor.Text, txtDNIProfesor.Text, "Profesor");
             lblInfoProfesor.Text = "";
             if (lista.Count == 0)
             {
@@ -72,19 +72,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 return;
             }
 
-            dgvEmpleadoProfesor.DataSource = lista;/*
-            ControladorCurso CCurso = new ControladorCurso();
-            foreach(DataGridViewRow i in dgvEmpleadoProfesor.Rows)
-            {
-                if (CCurso.ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)i.DataBoundItem).MiEmpleado, MiCurso)) {
-                    DataGridViewButtonCell celda = i.ro
-
-                }
-                else
-                {
-                    
-                }
-            }*/
+            dgvEmpleadoProfesor.DataSource = lista;
             dgvEmpleadoProfesor.Refresh();
             if(dgvEmpleadoProfesor.Visible == false)
                 dgvEmpleadoProfesor.Visible = true;
@@ -93,38 +81,38 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Asignar Curso"))
+            if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Asignar Categoria"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Asignar el curso "+MiCurso.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Seguro que desea Asignar el Categoria "+MiCategoria.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    ControladorCurso CCurso = new ControladorCurso();
-                    var resultado = CCurso.AsignarEmpleadoAlCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCurso);
+                    ControladorCategoria CCategoria = new ControladorCategoria();
+                    var resultado = CCategoria.AsignarEmpleadoAlCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha asignado un Profesor Al CURSO");
+                        Padre.ModificarMensaje("Se ha asignado un Profesor a la Categoria");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "Ya esta asignado el Profesor al CURSO", "Curso");
+                        MyMessageBox.Show(this, "Ya esta asignado el Profesor a la Categoria", "Categoria");
                     }
                 }
                 
             }
-            else if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Eliminar Curso"))
+            else if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Eliminar Categoria"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Eliminar del curso " + MiCurso.Nombre + " al Empleado " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Seguro que desea Eliminar de la Categoria " + MiCategoria.Nombre + " al Empleado " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    ControladorCurso CCurso = new ControladorCurso();
-                    var resultado = CCurso.EliminarEmpleadoDelCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCurso);
+                    ControladorCategoria CCategoria = new ControladorCategoria();
+                    var resultado = CCategoria.EliminarEmpleadoDelCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha eliminado un Profesor Del CURSO");
+                        Padre.ModificarMensaje("Se ha eliminado un Profesor de la Categoria");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "El Profesor no está asignado al CURSO", "Curso");
+                        MyMessageBox.Show(this, "El Profesor no está asignado a la Categoria", "Categoria");
                     }
                 }
             }
@@ -137,18 +125,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void dgvEmpleadoProfesor_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("AsignarCurso"))
+            if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("AsignarCategoria"))
             {
                 
-                if (new ControladorCurso().ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCurso))
+                if (new ControladorCategoria().ExisteEmpleadoEnCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCategoria))
                 {
                     e.Value = "";
     
                 }
             }
-            else if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("EliminarCurso"))
+            else if(dgvEmpleadoProfesor.Columns[e.ColumnIndex].Name.Equals("EliminarCategoria"))
             {
-                if (!new ControladorCurso().ExisteEmpleadoEnCurso(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCurso))
+                if (!new ControladorCategoria().ExisteEmpleadoEnCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.Rows[e.RowIndex].DataBoundItem).MiEmpleado, MiCategoria))
                 {
                     e.Value = "";
                 }

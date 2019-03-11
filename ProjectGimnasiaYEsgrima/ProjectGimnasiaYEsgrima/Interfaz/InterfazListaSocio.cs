@@ -51,7 +51,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarTextBoxTextoPersonalizadoTodos(txtNombreSocio, txtApellidoSocio, txtDNISocio);
             interfaz.TransformarBotonPersonalizadoTodos(btnBuscarSocio, btnCrearSocio, btnVolver,btnEjecutarProcesoGeneral);
             interfaz.TransformarTablaPersonalizado(dataGridViewSocioPersona);
-            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar,InscribirCurso,CuponPago,EmitirCarnet);
+            interfaz.TransformarTablaBotonesPersonalizadosTodos(Modificar, Eliminar,InscribirCategoria,CuponPago,EmitirCarnet);
 
         }
 
@@ -69,12 +69,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelSocioPersona> lista = null;
             if (txtNombreSocio.Text.Equals("") && txtApellidoSocio.Text.Equals("") && txtDNISocio.Text.Equals(""))
             {
-                lista = CSocio.ExtraerSociosAVista();
+                lista = CSocio.ListarTodosSocios();
 
             }
             else
             {
-                lista = CSocio.ExtraerSociosAVista(txtNombreSocio.Text, txtApellidoSocio.Text,
+                lista = CSocio.ListarTodosSociosPorFiltro(txtNombreSocio.Text, txtApellidoSocio.Text,
                     txtDNISocio.Text);
             }
 
@@ -90,7 +90,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             dataGridViewSocioPersona.DataSource = lista;
         }
 
-        private void dataGridViewSocioPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewSocioPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("Modificar"))
             {
@@ -106,7 +106,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     if (CSocio.EliminarSocio(((ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem).MiSocio) > 0)
                     {
                         ModificarMensaje("El SOCIO ha sido eliminado con ÉXITO");
-                        dataGridViewSocioPersona.DataSource = CSocio.ExtraerSociosAVista(txtNombreSocio.Text, txtApellidoSocio.Text,
+                        dataGridViewSocioPersona.DataSource = CSocio.ListarTodosSociosPorFiltro(txtNombreSocio.Text, txtApellidoSocio.Text,
                     txtDNISocio.Text);
                     }
                 }
@@ -120,9 +120,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 AbrirOtraVentana<InterfazEmitirCarnet>(new InterfazEmitirCarnet(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
             }
-            else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("InscribirCurso"))
+            else if (dataGridViewSocioPersona.Columns[e.ColumnIndex].Name.Equals("InscribirCategoria"))
             {
-                AbrirOtraVentana<InterfazInscribirSocioCurso>(new InterfazInscribirSocioCurso(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
+                if(new ControladorCategoria().ListarTodosCategorias().Count == 0) {
+                    MyMessageBox.Show(this, "Debe existir alguna categoría activa", "No hay categorías");
+                    return;
+                }
+                AbrirOtraVentana<InterfazInscribirSocioCategoria>(new InterfazInscribirSocioCategoria(this, (ModelSocioPersona)dataGridViewSocioPersona.CurrentRow.DataBoundItem));
             }
 
 
@@ -137,8 +141,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             Dispose();
         }
 
-        private void botonCrearSocio_Click(object sender, EventArgs e)
+        private void BotonCrearSocio_Click(object sender, EventArgs e)
         {
+            if (new ControladorSocio().UltimoValorInicialClub()==null)
+            {
+                MyMessageBox.Show(this, "No se ha definido un monto inicial del club", "Socio");
+                return;
+            }
             AbrirOtraVentana<InterfazAltaSocio>(new InterfazAltaSocio(this));
             if (dataGridViewSocioPersona.Visible)
                 BotonBuscarSocio_Click(sender, e);
@@ -169,7 +178,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             AbrirOtraVentana<T>(fh);
         }
 
-        private void btnVolver_Click_1(object sender, EventArgs e)
+        private void BtnVolver_Click_1(object sender, EventArgs e)
         {
             MiVentana.CargarLogin();
             Dispose();
@@ -192,7 +201,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void GenerarReporteCupones(int mes)
         {
             ControladorSocio controladorSocio = new ControladorSocio();
-            List<ModelSocioPersona> socios = controladorSocio.ExtraerSociosAVista();
+            List<ModelSocioPersona> socios = controladorSocio.ListarTodosSocios();
             List<ModelImpresionCuponSocio> listacuponesOrdenados;
             List<ModelImpresionCuponSocio> todoscupones1 = new List<ModelImpresionCuponSocio>();
             List<ModelImpresionCuponSocio> todoscupones2 = new List<ModelImpresionCuponSocio>();
@@ -205,7 +214,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 listacuponesOrdenados = new List<ModelImpresionCuponSocio>();
                 foreach (var j in listacuponsocio)
                 {
-                    if (j.MiCurso == null)
+                    if (j.MiCategoria == null)
                         listacuponesOrdenados.Insert(0, new ModelImpresionCuponSocio(i, j));
                     else
                         listacuponesOrdenados.Add(new ModelImpresionCuponSocio(i,j));

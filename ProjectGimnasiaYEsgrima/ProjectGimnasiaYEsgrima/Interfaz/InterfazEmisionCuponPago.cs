@@ -30,6 +30,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 i.Cells["Confirmación"].Value = true;
 
             }
+            cbxFechaEmisionInicial.SelectedIndex = 0;
+            cbxFechaEmisionFinal.SelectedIndex = 11;
         }
 
         private void CargarInterfazBuena()
@@ -113,16 +115,31 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
+
+
             
+
             List<ModelCuponSocio> lista = new List<ModelCuponSocio>();
-            foreach(DataGridViewRow row in dgvListaCuponesSocio.Rows)
+            var socio = new ControladorSocio().ExtraerSocioAVista(MiSocio);
+            foreach (DataGridViewRow row in dgvListaCuponesSocio.Rows)
             {
                 if (row.Cells["Confirmación"].Value != null && (bool)row.Cells["Confirmación"].Value)
                 {
                     lista.Add((ModelCuponSocio)row.DataBoundItem);
+                    
                 }
             }
             if (lista.Count == 0) { MyMessageBox.Show(this, "No se ha seleccionado ninguna cuota", "Cuota Socio"); return; }
+
+            List<ModelImpresionCuponSocio> listacuponesOrdenados = new List<ModelImpresionCuponSocio>();
+            foreach (var j in lista)
+            {
+                if (j.MiCategoria == null)
+                    listacuponesOrdenados.Insert(0, new ModelImpresionCuponSocio(socio, j));
+                else
+                    listacuponesOrdenados.Add(new ModelImpresionCuponSocio(socio, j));
+            }
+
             double montototal = 0;
             foreach(var j in lista)
             {
@@ -131,8 +148,36 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if(MyMessageBox.Show("El monto total de toda la cuota es de $"+montototal+". ¿Realiza el pago?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK){
                 new ControladorSocio().PagarCuponSocio(lista);
+                if (MyMessageBox.Show("Se ha realizado el pago correspondiente, ¿Desea imprimir el cupón de pago?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    AbrirOtraVentana<InterfazGeneradorDeCupones>(new InterfazGeneradorDeCupones(MiVentana, listacuponesOrdenados, new List<ModelImpresionCuponSocio>()));
+                }
                 ActualizarTabla();
             }
+        }
+        private void AbrirOtraVentana<T>(Object Formhijo)
+        {
+
+            Form fh = MiVentana.MiVentana.Controls.OfType<T>().FirstOrDefault() as Form;
+            if (fh != null)
+            {
+                //Si la instancia esta minimizada la dejamos en su estado normal
+                if (fh.WindowState == FormWindowState.Minimized)
+                {
+                    fh.WindowState = FormWindowState.Normal;
+                }
+                //Si la instancia existe la pongo en primer plano
+                fh.BringToFront();
+                return;
+            }
+
+            fh = Formhijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            MiVentana.MiVentana.Controls.Add(fh);
+            MiVentana.MiVentana.Tag = fh;
+            fh.Show();
+            AbrirOtraVentana<T>(fh);
         }
     }
 }

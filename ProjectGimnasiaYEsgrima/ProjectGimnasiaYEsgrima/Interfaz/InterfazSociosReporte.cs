@@ -75,7 +75,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             ControladorSocio CSocio = new ControladorSocio();
             List<ModelSocioPersona> lista = null;
-            lista = CSocio.ExtraerSociosAVista()
+            lista = CSocio.ListarTodosSocios()
                 .AsEnumerable()
                 .OrderBy(b => b.Apellido)
                 .ToList();

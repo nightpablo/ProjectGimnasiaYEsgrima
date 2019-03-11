@@ -192,14 +192,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NombreCurso">
+                    <Textbox Name="NombreCategoria">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NombreCurso.Value</Value>
+                              <Value>=Fields!NombreCategoria.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -209,7 +209,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NombreCurso</rd:DefaultName>
+                      <rd:DefaultName>NombreCategoria</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -230,14 +230,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImporteCurso">
+                    <Textbox Name="ImporteCategoria">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ImporteCurso.Value</Value>
+                              <Value>=Fields!ImporteCategoria.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -247,7 +247,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImporteCurso</rd:DefaultName>
+                      <rd:DefaultName>ImporteCategoria</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -324,7 +324,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImporteCurso.Value)</Value>
+                              <Value>=Sum(Fields!ImporteCategoria.Value)</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -1123,7 +1123,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NombreCurso.Value</Value>
+                              <Value>=Fields!NombreCategoria.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -1161,7 +1161,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ImporteCurso.Value</Value>
+                              <Value>=Fields!ImporteCategoria.Value</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -1248,7 +1248,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImporteCurso.Value)</Value>
+                              <Value>=Sum(Fields!ImporteCategoria.Value)</Value>
                               <Style>
                                 <FontFamily>Century Gothic</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -1278,6 +1278,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1912,12 +1913,12 @@
           <DataField>IdSocio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ImporteCurso">
-          <DataField>ImporteCurso</DataField>
+        <Field Name="ImporteCategoria">
+          <DataField>ImporteCategoria</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="NombreCurso">
-          <DataField>NombreCurso</DataField>
+        <Field Name="NombreCategoria">
+          <DataField>NombreCategoria</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NombreSocio">
@@ -1953,12 +1954,12 @@
           <DataField>IdSocio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="ImporteCurso">
-          <DataField>ImporteCurso</DataField>
+        <Field Name="ImporteCategoria">
+          <DataField>ImporteCategoria</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="NombreCurso">
-          <DataField>NombreCurso</DataField>
+        <Field Name="NombreCategoria">
+          <DataField>NombreCategoria</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NombreSocio">

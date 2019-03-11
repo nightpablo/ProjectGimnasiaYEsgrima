@@ -58,15 +58,38 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public int Migrar(List<Socio> listasocios)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                foreach(var entrada in listasocios)
+                {
+                    context.Entry(entrada.Persona).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
+                    
+                }
+                context.SaveChanges();
+                return 1;
+            }
+        }
+
+        public Socio DocumentosUnicos(List<int> listadocumentos)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.Socios.AsEnumerable().FirstOrDefault(b => listadocumentos.Contains(b.Persona.DNI));
+            }
+       }
+
         public void CrearCupon(CuotaSocio cuota)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
                 context.Entry(cuota.Socio).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(cuota.ValorCuotaInicial).State = System.Data.Entity.EntityState.Modified;
-                if (cuota.Curso != null) { 
-                    cuota.Curso = context.Cursos.AsEnumerable().FirstOrDefault(b => b.IdCurso == cuota.Curso.IdCurso);
-                    context.Entry(cuota.Curso).State = System.Data.Entity.EntityState.Modified;
+                if (cuota.Categoria != null) { 
+                    cuota.Categoria = context.Categorias.AsEnumerable().FirstOrDefault(b => b.IdCategoria == cuota.Categoria.IdCategoria);
+                    context.Entry(cuota.Categoria).State = System.Data.Entity.EntityState.Modified;
                 }
                 context.Entry(cuota).State = System.Data.Entity.EntityState.Added;
 
@@ -80,10 +103,10 @@ namespace ProjectGimnasiaYEsgrima.BD
             {
                 context.Entry(cuota.Socio).State = System.Data.Entity.EntityState.Modified;
                 context.Entry(cuota.ValorCuotaInicial).State = System.Data.Entity.EntityState.Modified;
-                if (cuota.Curso != null)
+                if (cuota.Categoria != null)
                 {
-                    cuota.Curso = context.Cursos.AsEnumerable().FirstOrDefault(b => b.IdCurso == cuota.Curso.IdCurso);
-                    context.Entry(cuota.Curso).State = System.Data.Entity.EntityState.Modified;
+                    cuota.Categoria = context.Categorias.AsEnumerable().FirstOrDefault(b => b.IdCategoria == cuota.Categoria.IdCategoria);
+                    context.Entry(cuota.Categoria).State = System.Data.Entity.EntityState.Modified;
                 }
                 context.Entry(cuota).State = System.Data.Entity.EntityState.Modified;
 
@@ -170,8 +193,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                         Importe = e.Importe,
                         ValorCuotaInicial = e.ValorCuotaInicial,
                         MiCuota = e,
-                        MiCurso = e.Curso,
-                        NombreCurso = e.Curso.Nombre,
+                        MiCategoria = e.Categoria,
+                        NombreCategoria = e.Categoria.Nombre,
                         MiSocio = new ModelSocioPersona()
                         {
                             Nombre = e.Socio.Persona.Nombre,
@@ -202,8 +225,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                         Importe = e.Importe,
                         ValorCuotaInicial = e.ValorCuotaInicial,
                         MiCuota = e,
-                        MiCurso = e.Curso,
-                        NombreCurso = e.Curso.Nombre,
+                        MiCategoria = e.Categoria,
+                        NombreCategoria = e.Categoria.Nombre,
                         MiSocio = new ModelSocioPersona()
                         {
                             Nombre = e.Socio.Persona.Nombre,
@@ -232,8 +255,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                         Importe = e.Importe,
                         ValorCuotaInicial = e.ValorCuotaInicial,
                         MiCuota = e,
-                        MiCurso = e.Curso,
-                        NombreCurso = e.Curso.Nombre,
+                        MiCategoria = e.Categoria,
+                        NombreCategoria = e.Categoria.Nombre,
                         MiSocio = new ModelSocioPersona()
                         {
                             Nombre = e.Socio.Persona.Nombre,
@@ -281,12 +304,12 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
         
-        public List<Curso> ListarCursosInscripto(Socio socio)
+        public List<Categoria> ListarCategoriasInscripto(Socio socio)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
 
-                return context.Cursos
+                return context.Categorias
                     .AsEnumerable()
                     .Where(b=> b.Socios.Select(c=>c.IdSocio).Contains(socio.IdSocio))
                     .ToList();

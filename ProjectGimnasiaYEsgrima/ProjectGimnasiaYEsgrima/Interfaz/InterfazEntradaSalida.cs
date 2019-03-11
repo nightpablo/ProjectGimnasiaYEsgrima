@@ -4,6 +4,7 @@ using ProjectGimnasiaYEsgrima.Modelo;
 using ProjectGimnasiaYEsgrima.Utils;
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 {
     public partial class InterfazEntradaSalida : Form
     {
-        private FilterInfoCollection Dipositivos;
+        private FilterInfoCollection Dispositivos;
         private VideoCaptureDevice videocapture;
         private bool parado;
         private Timer msgTimer;
@@ -38,14 +39,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtFechaIngreso);
             interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtNombreApellido);
             interfaz.TransformarTextBoxTextoNoEditablePersonalizado(txtTipoDoc);
-            interfaz.TransformarLabelTextoPersonalizadoTodos(lblContador, lblFechaIngreso, lblNombreApellido, lblTipoDocumentoYNro);
+            interfaz.TransformarLabelTextoPersonalizadoTodos(lblContador, lblFechaIngreso, lblNombreApellido, lblTipoDocumentoYNro,lblTipo);
             lblContador.Font = new System.Drawing.Font("Century Gothic", 30F);
 
         }
 
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
-            videocapture = new VideoCaptureDevice(Dipositivos[cbxSeleccionDipositivos.SelectedIndex].MonikerString);
+            if (cbxSeleccionDipositivos.Items.Count == 0)
+            {
+                MyMessageBox.Show(this, "No hay ningún dispositivo de transmisión conectado para ejecutar", "No hay cámaras disponibles");
+                return;
+            }
+            videocapture = new VideoCaptureDevice(Dispositivos[cbxSeleccionDipositivos.SelectedIndex].MonikerString);
             vspEntradaSalida.VideoSource = videocapture;
             vspEntradaSalida.Start();
             tmpCapture.Start();
@@ -59,9 +65,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void InterfazEntradaSalida_Load(object sender, EventArgs e)
         {
-            Dipositivos = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            Dispositivos = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
-            foreach(FilterInfo i in Dipositivos)
+            foreach(FilterInfo i in Dispositivos)
             {
                 cbxSeleccionDipositivos.Items.Add(i.Name);
             }
@@ -162,7 +168,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 txtNombreApellido.Text = socioPersona.MiPersona.Nombre + "," + socioPersona.MiPersona.Apellido;
                 txtTipoDoc.Text = socioPersona.MiPersona.DNI + "";
                 txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/);
-                pnlFoto.Image = byteArrayToImage(socioPersona.MiPersona.Foto);
+                lblTipo.Text = socioPersona.CategoriaSocio.ToString();
+                if (socioPersona.MiPersona.Foto != null)
+                    pnlFoto.Image = byteArrayToImage(socioPersona.MiPersona.Foto);
+                else
+                    using (var ms = new MemoryStream()) {
+                        new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
+                        pnlFoto.Image = byteArrayToImage(ms.ToArray());
+                    }
                 pnlFoto.Show();
 
             }
@@ -173,8 +186,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 if (empleadoPersona == null) return false;
                 txtNombreApellido.Text = empleadoPersona.MiPersona.Nombre + "," + empleadoPersona.MiPersona.Apellido;
                 txtTipoDoc.Text = empleadoPersona.MiPersona.DNI + "";
-                txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/); ;
-                pnlFoto.Image = byteArrayToImage(empleadoPersona.MiPersona.Foto);
+                txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/);
+                lblTipo.Text = empleadoPersona.MiEmpleado.TipoEmpleado.ToString();
+                if (empleadoPersona.MiPersona.Foto != null)
+                    pnlFoto.Image = byteArrayToImage(empleadoPersona.MiPersona.Foto);
+                else
+                    using (var ms = new MemoryStream())
+                    {
+                        new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
+                        pnlFoto.Image = byteArrayToImage(ms.ToArray());
+                    }
                 pnlFoto.Show();
 
 

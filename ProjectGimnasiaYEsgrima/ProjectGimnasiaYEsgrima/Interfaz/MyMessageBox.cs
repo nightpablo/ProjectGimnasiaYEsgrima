@@ -115,6 +115,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             disposeFormTimer = 30;
             newMessageBox.lblTimer.Text = disposeFormTimer.ToString();
+            newMessageBox.ForeColor = Color.White;
             msgTimer = new Timer();
             msgTimer.Interval = 1000;
             msgTimer.Enabled = true;

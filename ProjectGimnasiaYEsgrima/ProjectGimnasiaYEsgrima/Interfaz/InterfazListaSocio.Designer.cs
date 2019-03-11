@@ -44,7 +44,7 @@
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.InscribirCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.InscribirCategoria = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CuponPago = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EmitirCarnet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelSocioPersonaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -128,7 +128,7 @@
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click_1);
             // 
             // btnCrearSocio
             // 
@@ -140,7 +140,7 @@
             this.btnCrearSocio.TabIndex = 5;
             this.btnCrearSocio.Text = "Crear Socio";
             this.btnCrearSocio.UseVisualStyleBackColor = true;
-            this.btnCrearSocio.Click += new System.EventHandler(this.botonCrearSocio_Click);
+            this.btnCrearSocio.Click += new System.EventHandler(this.BotonCrearSocio_Click);
             // 
             // btnBuscarSocio
             // 
@@ -166,7 +166,7 @@
             this.dNIDataGridViewTextBoxColumn,
             this.Modificar,
             this.Eliminar,
-            this.InscribirCurso,
+            this.InscribirCategoria,
             this.CuponPago,
             this.EmitirCarnet});
             this.dataGridViewSocioPersona.DataSource = this.modelSocioPersonaBindingSource1;
@@ -175,7 +175,7 @@
             this.dataGridViewSocioPersona.RowTemplate.Height = 24;
             this.dataGridViewSocioPersona.Size = new System.Drawing.Size(784, 185);
             this.dataGridViewSocioPersona.TabIndex = 6;
-            this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSocioPersona_CellContentClick);
+            this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSocioPersona_CellContentClick);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -218,15 +218,15 @@
             this.Eliminar.UseColumnTextForButtonValue = true;
             this.Eliminar.Width = 24;
             // 
-            // InscribirCurso
+            // InscribirCategoria
             // 
-            this.InscribirCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.InscribirCurso.HeaderText = "";
-            this.InscribirCurso.Name = "InscribirCurso";
-            this.InscribirCurso.ReadOnly = true;
-            this.InscribirCurso.Text = "InscribirCurso";
-            this.InscribirCurso.UseColumnTextForButtonValue = true;
-            this.InscribirCurso.Width = 24;
+            this.InscribirCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.InscribirCategoria.HeaderText = "";
+            this.InscribirCategoria.Name = "InscribirCategoria";
+            this.InscribirCategoria.ReadOnly = true;
+            this.InscribirCategoria.Text = "InscribirCategoria";
+            this.InscribirCategoria.UseColumnTextForButtonValue = true;
+            this.InscribirCategoria.Width = 24;
             // 
             // CuponPago
             // 
@@ -353,7 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.DataGridViewButtonColumn InscribirCurso;
+        private System.Windows.Forms.DataGridViewButtonColumn InscribirCategoria;
         private System.Windows.Forms.DataGridViewButtonColumn CuponPago;
         private System.Windows.Forms.DataGridViewButtonColumn EmitirCarnet;
         private System.Windows.Forms.Button btnEjecutarProcesoGeneral;

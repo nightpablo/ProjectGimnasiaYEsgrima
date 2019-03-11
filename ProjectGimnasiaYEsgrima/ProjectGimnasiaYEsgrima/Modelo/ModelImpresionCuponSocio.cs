@@ -13,8 +13,8 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public int DNISocio { get; set; }
         public DateTime FechaEmision { get; set; }
         public int IdCupon { get; set; }
-        public string NombreCurso { get; set; }
-        public double ImporteCurso { get; set; }
+        public string NombreCategoria { get; set; }
+        public double ImporteCategoria { get; set; }
 
         public ModelImpresionCuponSocio(ModelSocioPersona socio, ModelCuponSocio cuota)
         {
@@ -23,15 +23,17 @@ namespace ProjectGimnasiaYEsgrima.Modelo
             DNISocio = socio.MiPersona.DNI;
             FechaEmision = cuota.MiCuota.FechaEmision;
             IdCupon = cuota.MiCuota.IdCuota;
-            if (cuota.MiCurso != null) { 
-                NombreCurso = cuota.MiCurso.Nombre;
-                ImporteCurso = cuota.MiCurso.Costo;
+            if (cuota.MiCategoria != null) { 
+                NombreCategoria = cuota.MiCategoria.Nombre;
+                ImporteCategoria = cuota.MiCategoria.Costo;
             }
             else
             {
-                NombreCurso = "ADHERENTE";
-                ImporteCurso = cuota.ValorCuotaInicial.Importe;
+                NombreCategoria = "ADHERENTE";
+                ImporteCategoria = cuota.ValorCuotaInicial.Importe;
             }
         }
+
+        
     }
 }

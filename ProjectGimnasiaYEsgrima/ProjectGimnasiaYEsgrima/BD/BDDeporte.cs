@@ -107,11 +107,11 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
-        public bool PerteneceAlgunCurso(Deporte deporte)
+        public bool PerteneceAlgunCategoria(Deporte deporte)
         {
             using (var context = new DiagramasDeTablasContainer1())
             {
-                Curso c = context.Cursos.AsEnumerable().FirstOrDefault(b => b.Deporte.IdDeporte == deporte.IdDeporte);
+                Categoria c = context.Categorias.AsEnumerable().FirstOrDefault(b => b.Deporte.IdDeporte == deporte.IdDeporte);
                 return c != null;
             }
 

@@ -36,7 +36,7 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnSocios = new System.Windows.Forms.Button();
-            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDeportes = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.panel1.Controls.Add(this.btnReportes);
             this.panel1.Controls.Add(this.btnEmpleados);
             this.panel1.Controls.Add(this.btnSocios);
-            this.panel1.Controls.Add(this.btnCursos);
+            this.panel1.Controls.Add(this.btnCategorias);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnDeportes);
             this.panel1.Controls.Add(this.panel2);
@@ -181,28 +181,28 @@
             this.btnSocios.UseVisualStyleBackColor = false;
             this.btnSocios.Click += new System.EventHandler(this.btnSocios_Click);
             // 
-            // btnCursos
+            // btnCategorias
             // 
-            this.btnCursos.AutoSize = true;
-            this.btnCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnCursos.FlatAppearance.BorderColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCursos.FlatAppearance.BorderSize = 0;
-            this.btnCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
-            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCursos.Font = new System.Drawing.Font("Century Gothic", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCursos.ForeColor = System.Drawing.Color.White;
-            this.btnCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnCursos.Image")));
-            this.btnCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCursos.Location = new System.Drawing.Point(0, 275);
-            this.btnCursos.Name = "btnCursos";
-            this.btnCursos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.btnCursos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCursos.Size = new System.Drawing.Size(250, 45);
-            this.btnCursos.TabIndex = 2;
-            this.btnCursos.Text = "Cursos";
-            this.btnCursos.UseVisualStyleBackColor = false;
-            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            this.btnCategorias.AutoSize = true;
+            this.btnCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCategorias.FlatAppearance.BorderColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Century Gothic", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.White;
+            this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(0, 275);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnCategorias.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCategorias.Size = new System.Drawing.Size(250, 45);
+            this.btnCategorias.TabIndex = 2;
+            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.BtnCategorias_Click);
             // 
             // label1
             // 
@@ -318,7 +318,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnCategorias;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnSocios;

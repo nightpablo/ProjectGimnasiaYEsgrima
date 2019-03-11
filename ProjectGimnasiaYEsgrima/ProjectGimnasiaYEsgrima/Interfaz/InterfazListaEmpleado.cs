@@ -71,12 +71,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelEmpleadoPersona> lista = null;
             if (txtNombreEmpleado.Text.Equals("") && txtApellidoEmpleado.Text.Equals("") && txtDNIEmpleado.Text.Equals("") && cbxTipoEmpleado.SelectedIndex == 0)
             {
-                lista = CEmpleado.ExtraerEmpleadosAVista();
+                lista = CEmpleado.ListarTodosEmpleados();
 
             }
             else
             {
-                lista = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
+                lista = CEmpleado.ListarTodosEmpleadosPorFiltro(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
                     txtDNIEmpleado.Text, cbxTipoEmpleado.SelectedItem);
             }
 
@@ -115,7 +115,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     if(CEmpleado.EliminarEmpleado(((ModelEmpleadoPersona)dgvEmpleadoPersona.CurrentRow.DataBoundItem).MiEmpleado) > 0)
                     {
                         ModificarMensaje("El EMPLEADO ha sido eliminado con ÉXITO");
-                        dgvEmpleadoPersona.DataSource = CEmpleado.ExtraerEmpleadosAVista(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
+                        dgvEmpleadoPersona.DataSource = CEmpleado.ListarTodosEmpleadosPorFiltro(txtNombreEmpleado.Text, txtApellidoEmpleado.Text,
                     txtDNIEmpleado.Text, cbxTipoEmpleado.SelectedItem);
                     }
                 }

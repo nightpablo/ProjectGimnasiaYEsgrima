@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    public partial class InterfazCursoReporte : Form
+    public partial class InterfazCategoriaReporte : Form
     {
         InterfazFiltroReporte MiVentana;
-        public InterfazCursoReporte(InterfazFiltroReporte ventana)
+        public InterfazCategoriaReporte(InterfazFiltroReporte ventana)
         {
             MiVentana = ventana;
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             InterfazBuena interfaz = new InterfazBuena();
             interfaz.TransformarVentanaPersonalizado(this);
-            interfaz.TransformarTituloVentanaPersonalizado(lblTituloCursosReportes);
+            interfaz.TransformarTituloVentanaPersonalizado(lblTituloCategoriasReportes);
             interfaz.TransformarBotonPersonalizadoTodos(btnFiltro, btnAlfabetico,btnVolver);
             interfaz.TransformarLabelTextoPersonalizadoTodos(lblFiltro, lblEstado, lblDeporte);
             interfaz.TransformarComboBoxPersonalizado(cbxDeporte);
@@ -58,21 +58,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ControladorCurso CCurso = new ControladorCurso();
-            List<ModelCurso> lista = null;
-            lista = CCurso.BuscarCursosTodos()
+            ControladorCategoria CCategoria = new ControladorCategoria();
+            List<ModelCategoria> lista = null;
+            lista = CCategoria.BuscarCategoriasTodos()
 
                 .ToList();
 
             ReportDataSource dt = new ReportDataSource("DataSet1", lista);
-            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosCurso.rdlc";
+            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosCategoria.rdlc";
 
             new InterfazGenerarReporte(dt, dir).ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<ModelCurso> lista = null;
+            List<ModelCategoria> lista = null;
 
             if (((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte == 0
                 && cbxBaja.Checked == true
@@ -82,26 +82,26 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             && cbxPendiente.Checked == true
             && cbxTerminado.Checked == true)
             {
-                ControladorCurso CCurso = new ControladorCurso();
+                ControladorCategoria CCategoria = new ControladorCategoria();
              
-                lista = CCurso.BuscarCursosTodos().ToList();
+                lista = CCategoria.BuscarCategoriasTodos().ToList();
                
             }
 
             else
             {
                 
-                    ControladorCurso CCurso = new ControladorCurso();
+                    ControladorCategoria CCategoria = new ControladorCategoria();
 
-                    lista = CCurso.BuscarCursosTodos()
+                    lista = CCategoria.BuscarCategoriasTodos()
                     .AsEnumerable()
                     .Where(b => ((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte==0? true : b.Deporte.IdDeporte== ((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte)
-                    .Where(b => (cbxBaja.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Baja))
-                    .Where(b => (cbxCancelado.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Cancelado))
-                    .Where(b => (cbxActivo.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Activo))
-                    .Where(b => (cbxIniciado.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Iniciado))
-                    .Where(b => (cbxPendiente.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Pendiente))
-                    .Where(b => (cbxTerminado.Checked ? true : b.EstadoCurso != EnumEstadoCurso.Terminado))
+                    .Where(b => (cbxBaja.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Baja))
+                    .Where(b => (cbxCancelado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Cancelado))
+                    .Where(b => (cbxActivo.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Activo))
+                    .Where(b => (cbxIniciado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Iniciado))
+                    .Where(b => (cbxPendiente.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Pendiente))
+                    .Where(b => (cbxTerminado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Terminado))
                     .ToList()
                     ;
 
@@ -109,7 +109,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 
             }
             ReportDataSource dt = new ReportDataSource("DataSet1", lista);
-            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosCurso.rdlc";
+            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosCategoria.rdlc";
             new InterfazGenerarReporte(dt, dir).ShowDialog();
         }
 

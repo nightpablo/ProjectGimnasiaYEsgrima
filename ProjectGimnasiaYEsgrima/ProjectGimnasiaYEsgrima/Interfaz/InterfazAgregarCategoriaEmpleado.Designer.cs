@@ -1,6 +1,6 @@
 ﻿namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    partial class InterfazAgregarCursoEmpleado
+    partial class InterfazAgregarCategoriaEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -38,16 +38,16 @@
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EliminarCurso = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.AsignarCategoria = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EliminarCategoria = new System.Windows.Forms.DataGridViewButtonColumn();
             this.modelEmpleadoPersonaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblInfoProfesor = new System.Windows.Forms.Label();
-            this.modelCursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelCategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloProfesor
@@ -108,8 +108,8 @@
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.dNIDataGridViewTextBoxColumn,
-            this.AsignarCurso,
-            this.EliminarCurso});
+            this.AsignarCategoria,
+            this.EliminarCategoria});
             this.dgvEmpleadoProfesor.DataSource = this.modelEmpleadoPersonaBindingSource;
             this.dgvEmpleadoProfesor.Location = new System.Drawing.Point(8, 208);
             this.dgvEmpleadoProfesor.Name = "dgvEmpleadoProfesor";
@@ -140,23 +140,23 @@
             this.dNIDataGridViewTextBoxColumn.HeaderText = "DNI";
             this.dNIDataGridViewTextBoxColumn.Name = "dNIDataGridViewTextBoxColumn";
             // 
-            // AsignarCurso
+            // AsignarCategoria
             // 
-            this.AsignarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AsignarCurso.HeaderText = "";
-            this.AsignarCurso.Name = "AsignarCurso";
-            this.AsignarCurso.Text = "Asignar Curso";
-            this.AsignarCurso.UseColumnTextForButtonValue = true;
-            this.AsignarCurso.Width = 24;
+            this.AsignarCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AsignarCategoria.HeaderText = "";
+            this.AsignarCategoria.Name = "AsignarCategoria";
+            this.AsignarCategoria.Text = "Asignar Categoria";
+            this.AsignarCategoria.UseColumnTextForButtonValue = true;
+            this.AsignarCategoria.Width = 24;
             // 
-            // EliminarCurso
+            // EliminarCategoria
             // 
-            this.EliminarCurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.EliminarCurso.HeaderText = "";
-            this.EliminarCurso.Name = "EliminarCurso";
-            this.EliminarCurso.Text = "Eliminar Curso";
-            this.EliminarCurso.UseColumnTextForButtonValue = true;
-            this.EliminarCurso.Width = 24;
+            this.EliminarCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.EliminarCategoria.HeaderText = "";
+            this.EliminarCategoria.Name = "EliminarCategoria";
+            this.EliminarCategoria.Text = "Eliminar Categoria";
+            this.EliminarCategoria.UseColumnTextForButtonValue = true;
+            this.EliminarCategoria.Width = 24;
             // 
             // modelEmpleadoPersonaBindingSource
             // 
@@ -195,11 +195,11 @@
             this.lblInfoProfesor.TabIndex = 20;
             this.lblInfoProfesor.Text = "Acá se imprime algo";
             // 
-            // modelCursoBindingSource
+            // modelCategoriaBindingSource
             // 
-            this.modelCursoBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCurso);
+            this.modelCategoriaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCategoria);
             // 
-            // InterfazAgregarCursoEmpleado
+            // InterfazAgregarCategoriaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,18 +213,18 @@
             this.Controls.Add(this.lblApellidoProfesor);
             this.Controls.Add(this.lblDNIProfesor);
             this.Controls.Add(this.lblTituloProfesor);
-            this.Name = "InterfazAgregarCursoEmpleado";
-            this.Text = "InterfazAgregarCursoEmpleado";
+            this.Name = "InterfazAgregarCategoriaEmpleado";
+            this.Text = "InterfazAgregarCategoriaEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelEmpleadoPersonaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelCursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource modelCursoBindingSource;
+        private System.Windows.Forms.BindingSource modelCategoriaBindingSource;
         private System.Windows.Forms.Label lblTituloProfesor;
         private System.Windows.Forms.TextBox txtApellidoProfesor;
         private System.Windows.Forms.TextBox txtDNIProfesor;
@@ -238,7 +238,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn AsignarCurso;
-        private System.Windows.Forms.DataGridViewButtonColumn EliminarCurso;
+        private System.Windows.Forms.DataGridViewButtonColumn AsignarCategoria;
+        private System.Windows.Forms.DataGridViewButtonColumn EliminarCategoria;
     }
 }

@@ -33,7 +33,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtDocumentoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDocumentoSocio, 8);
             txtDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtDireccionSocio, 50);
             txtLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtLocalidadSocio, 50);
-            txtTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtTelefonoSocio, 50);
+            txtTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYLimitador(sender, e, txtTelefonoSocio, 50);
         }
         private void CargarInterfazBuena()
         {
@@ -91,7 +91,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtTelefonoSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtTelefonoSocio, "El teléfono debe ser con numérico y más de 3 digitos");
+                errorProvider1.SetError(txtTelefonoSocio, "El teléfono debe ser con carácter entre 3 y 50");
             }
             else errorProvider1.SetError(txtTelefonoSocio, "");
             if (hayError)

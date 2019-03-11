@@ -1,6 +1,6 @@
 ﻿namespace ProjectGimnasiaYEsgrima.Interfaz
 {
-    partial class InterfazCursoReporte
+    partial class InterfazCategoriaReporte
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.cbxBaja = new System.Windows.Forms.CheckBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnAlfabetico = new System.Windows.Forms.Button();
-            this.lblTituloCursosReportes = new System.Windows.Forms.Label();
+            this.lblTituloCategoriasReportes = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(117, 17);
             this.lblFiltro.TabIndex = 3;
-            this.lblFiltro.Text = "Fiiltros de Cursos";
+            this.lblFiltro.Text = "Fiiltros de Categorias";
             // 
             // panel1
             // 
@@ -191,14 +191,14 @@
             this.btnAlfabetico.UseVisualStyleBackColor = true;
             this.btnAlfabetico.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lblTituloCursosReportes
+            // lblTituloCategoriasReportes
             // 
-            this.lblTituloCursosReportes.AutoSize = true;
-            this.lblTituloCursosReportes.Location = new System.Drawing.Point(16, 8);
-            this.lblTituloCursosReportes.Name = "lblTituloCursosReportes";
-            this.lblTituloCursosReportes.Size = new System.Drawing.Size(127, 17);
-            this.lblTituloCursosReportes.TabIndex = 6;
-            this.lblTituloCursosReportes.Text = "Reporte de Cursos";
+            this.lblTituloCategoriasReportes.AutoSize = true;
+            this.lblTituloCategoriasReportes.Location = new System.Drawing.Point(16, 8);
+            this.lblTituloCategoriasReportes.Name = "lblTituloCategoriasReportes";
+            this.lblTituloCategoriasReportes.Size = new System.Drawing.Size(127, 17);
+            this.lblTituloCategoriasReportes.TabIndex = 6;
+            this.lblTituloCategoriasReportes.Text = "Reporte de Categorias";
             // 
             // btnVolver
             // 
@@ -210,17 +210,17 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // InterfazCursoReporte
+            // InterfazCategoriaReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblTituloCursosReportes);
+            this.Controls.Add(this.lblTituloCategoriasReportes);
             this.Controls.Add(this.btnAlfabetico);
             this.Controls.Add(this.panel1);
-            this.Name = "InterfazCursoReporte";
-            this.Text = "InterfazCursoReporte";
+            this.Name = "InterfazCategoriaReporte";
+            this.Text = "InterfazCategoriaReporte";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -246,7 +246,7 @@
         private System.Windows.Forms.CheckBox cbxActivo;
         private System.Windows.Forms.CheckBox cbxBaja;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.Label lblTituloCursosReportes;
+        private System.Windows.Forms.Label lblTituloCategoriasReportes;
         private System.Windows.Forms.Button btnVolver;
     }
 }

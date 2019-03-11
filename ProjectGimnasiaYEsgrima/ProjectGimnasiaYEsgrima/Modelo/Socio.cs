@@ -17,7 +17,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Socio()
         {
-            this.Cursos = new HashSet<Curso>();
+            this.Categorias = new HashSet<Categoria>();
         }
     
         public int IdSocio { get; set; }
@@ -31,6 +31,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
         public virtual Persona Persona { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Curso> Cursos { get; set; }
+        public virtual ICollection<Categoria> Categorias { get; set; }
     }
 }

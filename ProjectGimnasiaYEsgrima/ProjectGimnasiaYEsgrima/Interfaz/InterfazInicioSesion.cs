@@ -26,7 +26,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             logueado = false;
             MiEmpleado = null;
             Recargar();
+            CargarFocus();
             CargarInterfazBuena();
+
+        }
+
+        private void CargarFocus()
+        {
+            txtUsuario.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYLimitador(sender, e, txtUsuario, 50);
+            txtContraseña.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYLimitador(sender, e, txtContraseña, 50);
+
+            txtUsuario.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtContraseña);
+            txtContraseña.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnLogin);
         }
 
         public void CargarInterfazBuena()

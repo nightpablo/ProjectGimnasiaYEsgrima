@@ -33,7 +33,7 @@
             this.btnDeportesReportes = new System.Windows.Forms.Button();
             this.btnIngresosReportes = new System.Windows.Forms.Button();
             this.lblTituloReportes = new System.Windows.Forms.Label();
-            this.btnCursosReportes = new System.Windows.Forms.Button();
+            this.btnCategoriasReportes = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -86,15 +86,15 @@
             this.lblTituloReportes.TabIndex = 5;
             this.lblTituloReportes.Text = "Reportes";
             // 
-            // btnCursosReportes
+            // btnCategoriasReportes
             // 
-            this.btnCursosReportes.Location = new System.Drawing.Point(264, 160);
-            this.btnCursosReportes.Name = "btnCursosReportes";
-            this.btnCursosReportes.Size = new System.Drawing.Size(192, 48);
-            this.btnCursosReportes.TabIndex = 4;
-            this.btnCursosReportes.Text = "Cursos";
-            this.btnCursosReportes.UseVisualStyleBackColor = true;
-            this.btnCursosReportes.Click += new System.EventHandler(this.button5_Click);
+            this.btnCategoriasReportes.Location = new System.Drawing.Point(264, 160);
+            this.btnCategoriasReportes.Name = "btnCategoriasReportes";
+            this.btnCategoriasReportes.Size = new System.Drawing.Size(192, 48);
+            this.btnCategoriasReportes.TabIndex = 4;
+            this.btnCategoriasReportes.Text = "Categorias";
+            this.btnCategoriasReportes.UseVisualStyleBackColor = true;
+            this.btnCategoriasReportes.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnVolver
             // 
@@ -111,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCursosReportes);
+            this.Controls.Add(this.btnCategoriasReportes);
             this.Controls.Add(this.lblTituloReportes);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnIngresosReportes);
@@ -133,7 +133,7 @@
         private System.Windows.Forms.Button btnDeportesReportes;
         private System.Windows.Forms.Button btnIngresosReportes;
         private System.Windows.Forms.Label lblTituloReportes;
-        private System.Windows.Forms.Button btnCursosReportes;
+        private System.Windows.Forms.Button btnCategoriasReportes;
         private System.Windows.Forms.Button btnVolver;
     }
 }

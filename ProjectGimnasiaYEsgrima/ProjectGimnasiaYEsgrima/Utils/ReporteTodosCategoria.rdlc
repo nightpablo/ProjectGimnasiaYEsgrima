@@ -64,7 +64,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Curso</Value>
+                              <Value>Categoría</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -208,7 +208,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -303,21 +302,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TextEstadoCurso">
+                    <Textbox Name="TextEstadoCategoria">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TextEstadoCurso.Value</Value>
+                              <Value>=Fields!TextEstadoCategoria.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TextEstadoCurso</rd:DefaultName>
+                      <rd:DefaultName>TextEstadoCategoria</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -329,6 +328,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -397,17 +397,13 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Curso">
-          <DataField>Curso</DataField>
-          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Curso</rd:TypeName>
-        </Field>
         <Field Name="Deporte">
           <DataField>Deporte</DataField>
           <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Deporte</rd:TypeName>
         </Field>
-        <Field Name="EstadoCurso">
-          <DataField>EstadoCurso</DataField>
-          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.EnumEstadoCurso</rd:TypeName>
+        <Field Name="EstadoCategoria">
+          <DataField>EstadoCategoria</DataField>
+          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.EnumEstadoCategoria</rd:TypeName>
         </Field>
         <Field Name="FechaFin">
           <DataField>FechaFin</DataField>
@@ -417,9 +413,13 @@
           <DataField>FechaInicio</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="IdCurso">
-          <DataField>IdCurso</DataField>
+        <Field Name="IdCategoria">
+          <DataField>IdCategoria</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MiCategoria">
+          <DataField>MiCategoria</DataField>
+          <rd:TypeName>ProjectGimnasiaYEsgrima.Modelo.Categoria</rd:TypeName>
         </Field>
         <Field Name="Monto">
           <DataField>Monto</DataField>
@@ -433,15 +433,15 @@
           <DataField>NombreDeporte</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TextEstadoCurso">
-          <DataField>TextEstadoCurso</DataField>
+        <Field Name="TextEstadoCategoria">
+          <DataField>TextEstadoCategoria</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ProjectGimnasiaYEsgrima.Modelo</rd:DataSetName>
-        <rd:TableName>ModelCurso</rd:TableName>
-        <rd:ObjectDataSourceType>ProjectGimnasiaYEsgrima.Modelo.ModelCurso, ProjectGimnasiaYEsgrima, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ModelCategoria</rd:TableName>
+        <rd:ObjectDataSourceType>ProjectGimnasiaYEsgrima.Modelo.ModelCategoria, ProjectGimnasiaYEsgrima, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

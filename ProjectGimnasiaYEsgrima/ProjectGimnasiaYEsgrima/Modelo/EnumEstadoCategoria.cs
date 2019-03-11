@@ -11,7 +11,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
 {
     using System;
     
-    public enum EnumEstadoCurso : int
+    public enum EnumEstadoCategoria : int
     {
         Baja = 0,
         Activo = 1,

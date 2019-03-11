@@ -26,7 +26,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             InterfazBuena interfaz = new InterfazBuena();
             interfaz.TransformarVentanaPersonalizado(this);
             interfaz.TransformarTituloVentanaPersonalizado(lblTituloReportes);
-            interfaz.TransformarBotonPersonalizadoTodos(btnCursosReportes, btnDeportesReportes, btnEmpleadosReportes, btnIngresosReportes, btnSociosReportes,btnVolver);
+            interfaz.TransformarBotonPersonalizadoTodos(btnCategoriasReportes, btnDeportesReportes, btnEmpleadosReportes, btnIngresosReportes, btnSociosReportes,btnVolver);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirOtraVentana<InterfazCursoReporte>(new InterfazCursoReporte(this));
+            AbrirOtraVentana<InterfazCategoriaReporte>(new InterfazCategoriaReporte(this));
             //new InterfazCursoReporte(this).ShowDialog();
         }
 
