@@ -116,5 +116,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else
                 CargarLogin();
         }
+
+        private void InterfazPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (var i in VentanaContenedor.Controls.OfType<Form>())
+            {
+                i.Close();
+                VentanaContenedor.Controls.Remove(i);
+            }
+        }
     }
 }

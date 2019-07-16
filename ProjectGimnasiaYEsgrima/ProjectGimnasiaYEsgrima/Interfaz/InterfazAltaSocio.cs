@@ -3,6 +3,7 @@ using ProjectGimnasiaYEsgrima.Modelo;
 using System;
 using System.Windows.Forms;
 using ProjectGimnasiaYEsgrima.Utils;
+using System.Text.RegularExpressions;
 
 namespace ProjectGimnasiaYEsgrima.Interfaz
 {
@@ -10,6 +11,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     {
 
         InterfazListaSocio Padre;
+        private bool CargoPersona = false;
         public InterfazAltaSocio(InterfazListaSocio padre)
         {
             Padre = padre;
@@ -135,6 +137,34 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void cbxCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDocumentoSocio_Leave(object sender, EventArgs e)
+        {
+            if (!txtDocumentoSocio.Text.Equals("") && new Regex("[0-9]*").IsMatch(txtDocumentoSocio.Text))
+            {
+                ControladorPersona Cpersona = new ControladorPersona();
+                Persona persona = Cpersona.BuscarPersonaPorClavesUnicas(Int32.Parse(txtDocumentoSocio.Text));
+                if (persona != null && !CargoPersona)
+                {
+                    if (MyMessageBox.Show("La persona ya existe (tiene el mismo DNI), ¿desea cargarlo?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        txtNombreSocio.Text = persona.Nombre;
+                        txtApellidoSocio.Text = persona.Apellido;
+                        dtFechaNacimientoSocio.Value = persona.FechaNacimiento;
+                        CargoPersona = true;
+                    }
+                }
+            }
+        }
+
+        private void txtNombreSocio_TextChanged(object sender, EventArgs e)
+        {
+            if (CargoPersona)
+            {
+                txtDocumentoSocio.Text = "";
+                CargoPersona = false;
+            }
         }
     }
 }

@@ -15,7 +15,6 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     {
         Activo = 1,
         Menor = 2,
-        Vitalicio = 3,
-        Adherente = 4
+        Vitalicio = 3
     }
 }

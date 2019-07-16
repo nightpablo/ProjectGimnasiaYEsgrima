@@ -43,7 +43,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 buscado.Localidad = localidad;
                 buscado.Direccion = domicilio;
                 buscado.Telefono = telefono;
-                buscado.EstadoSocio = EnumEstadoSocio.Activo;
+                buscado.EstadoSocio = EnumEstadoSocio.Alta;
                 buscado.CategoriaSocio = categoria;
                 bdSocio.Actualizar(buscado);
                 return -1;
@@ -73,7 +73,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Localidad = localidad,
                 Telefono = telefono,
                 CategoriaSocio = categoria,
-                EstadoSocio = EnumEstadoSocio.Activo,
+                EstadoSocio = EnumEstadoSocio.Alta,
                 FechaInicio = System.DateTime.Now,
                 TipoDocumento = tipoDocumento
             };
@@ -143,7 +143,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                     Localidad = localidad,
                     Telefono = telefono,
                     CategoriaSocio = categoria,
-                    EstadoSocio = EnumEstadoSocio.Activo,
+                    EstadoSocio = EnumEstadoSocio.Alta,
                     FechaInicio = System.DateTime.Now,
                     TipoDocumento = tipoDocumento
                 };

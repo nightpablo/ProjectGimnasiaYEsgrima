@@ -304,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "InterfazPrincipal";
             this.Text = "Ventana";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazPrincipal_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

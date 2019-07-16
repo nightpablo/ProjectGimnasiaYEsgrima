@@ -90,7 +90,7 @@ namespace UnitTestProject1
             Assert.IsNotNull(Categoria_buscado);
             Assert.IsTrue(controladorCategoria.ListarTodosCategorias().Count > 0);
             Assert.IsTrue(controladorCategoria.ListarTodosCategoriasFiltro("cuastr", controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba")).Count > 0);
-            Assert.IsTrue(controladorCategoria.ModificarCategoria(Categoria_buscado.IdCategoria, "FutbolPrueba 2do cuastrimestre 2018", 1200, Inicio, Fin, controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba"), EnumEstadoCategoria.Activo) > 0);
+            Assert.IsTrue(controladorCategoria.ModificarCategoria(Categoria_buscado.IdCategoria, "FutbolPrueba 2do cuastrimestre 2018", 1200, Inicio, Fin, controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba"), EnumEstadoCategoria.Pendiente) > 0);
             //Error
             Assert.AreEqual(controladorCategoria.CrearCategoria("FutbolPrueba 2do cuastrimestre 2018", 600, Inicio, Fin, controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba")), -2);
             Assert.IsFalse(controladorCategoria.ListarTodosCategoriasFiltro("z", controladorDeporte.BuscarDeportePorClavesUnicas("FutbolPrueba")).Count > 0);

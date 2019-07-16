@@ -50,7 +50,6 @@ namespace ProjectGimnasiaYEsgrima.BD
             {
                 return context.Categorias
                     .AsEnumerable()
-                    .Where(b=>b.EstadoCategoria != EnumEstadoCategoria.Baja)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Cancelado)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Terminado)
                     .Select(e => new ModelCategoria()
@@ -80,7 +79,6 @@ namespace ProjectGimnasiaYEsgrima.BD
                     iddep = ((Deporte)parametros[1]).IdDeporte;
                 var k = j
                     .AsEnumerable()
-                    .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Baja)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Cancelado)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Terminado)
                     .Select(e => new ModelCategoria()
@@ -124,7 +122,6 @@ namespace ProjectGimnasiaYEsgrima.BD
                 context.Entry(emp).State = System.Data.Entity.EntityState.Modified;
                 return context.Categorias.AsEnumerable().Where(b=>b.Profesores.Contains((Profesor)emp))
                     .AsEnumerable()
-                    .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Baja)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Cancelado)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Terminado)
                     .Select(e => new ModelCategoria()
@@ -231,19 +228,15 @@ namespace ProjectGimnasiaYEsgrima.BD
             {
                 List<Categoria> Categorias = context.Categorias.AsEnumerable()
                     .Where(b => b.Deporte.IdDeporte == deporte.IdDeporte)
-                    .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Baja)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Cancelado)
                     .Where(b => b.EstadoCategoria != EnumEstadoCategoria.Terminado)
                     .ToList();
 
                 foreach (var i in Categorias)
                 {
-                    if (i.EstadoCategoria == EnumEstadoCategoria.Activo || i.EstadoCategoria == EnumEstadoCategoria.Pendiente)
-                        i.EstadoCategoria = EnumEstadoCategoria.Baja;
-                    else
+                    if (i.EstadoCategoria != EnumEstadoCategoria.Terminado)
                         i.EstadoCategoria = EnumEstadoCategoria.Cancelado;
                     context.Entry(i).State = System.Data.Entity.EntityState.Modified;
-
                 }
                 context.SaveChanges();
                 return 1;

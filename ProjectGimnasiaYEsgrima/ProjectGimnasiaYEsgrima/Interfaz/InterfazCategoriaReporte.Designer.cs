@@ -38,8 +38,6 @@
             this.cbxCancelado = new System.Windows.Forms.CheckBox();
             this.cbxIniciado = new System.Windows.Forms.CheckBox();
             this.cbxPendiente = new System.Windows.Forms.CheckBox();
-            this.cbxActivo = new System.Windows.Forms.CheckBox();
-            this.cbxBaja = new System.Windows.Forms.CheckBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnAlfabetico = new System.Windows.Forms.Button();
             this.lblTituloCategoriasReportes = new System.Windows.Forms.Label();
@@ -71,7 +69,7 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(24, 8);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(117, 17);
+            this.lblFiltro.Size = new System.Drawing.Size(141, 17);
             this.lblFiltro.TabIndex = 3;
             this.lblFiltro.Text = "Fiiltros de Categorias";
             // 
@@ -94,8 +92,6 @@
             this.panel2.Controls.Add(this.cbxCancelado);
             this.panel2.Controls.Add(this.cbxIniciado);
             this.panel2.Controls.Add(this.cbxPendiente);
-            this.panel2.Controls.Add(this.cbxActivo);
-            this.panel2.Controls.Add(this.cbxBaja);
             this.panel2.Controls.Add(this.lblEstado);
             this.panel2.Location = new System.Drawing.Point(16, 104);
             this.panel2.Name = "panel2";
@@ -115,7 +111,7 @@
             // cbxTerminado
             // 
             this.cbxTerminado.AutoSize = true;
-            this.cbxTerminado.Location = new System.Drawing.Point(336, 80);
+            this.cbxTerminado.Location = new System.Drawing.Point(232, 48);
             this.cbxTerminado.Name = "cbxTerminado";
             this.cbxTerminado.Size = new System.Drawing.Size(98, 21);
             this.cbxTerminado.TabIndex = 7;
@@ -125,7 +121,7 @@
             // cbxCancelado
             // 
             this.cbxCancelado.AutoSize = true;
-            this.cbxCancelado.Location = new System.Drawing.Point(168, 80);
+            this.cbxCancelado.Location = new System.Drawing.Point(232, 80);
             this.cbxCancelado.Name = "cbxCancelado";
             this.cbxCancelado.Size = new System.Drawing.Size(97, 21);
             this.cbxCancelado.TabIndex = 6;
@@ -135,7 +131,7 @@
             // cbxIniciado
             // 
             this.cbxIniciado.AutoSize = true;
-            this.cbxIniciado.Location = new System.Drawing.Point(8, 80);
+            this.cbxIniciado.Location = new System.Drawing.Point(56, 80);
             this.cbxIniciado.Name = "cbxIniciado";
             this.cbxIniciado.Size = new System.Drawing.Size(78, 21);
             this.cbxIniciado.TabIndex = 5;
@@ -145,32 +141,12 @@
             // cbxPendiente
             // 
             this.cbxPendiente.AutoSize = true;
-            this.cbxPendiente.Location = new System.Drawing.Point(336, 40);
+            this.cbxPendiente.Location = new System.Drawing.Point(56, 48);
             this.cbxPendiente.Name = "cbxPendiente";
             this.cbxPendiente.Size = new System.Drawing.Size(94, 21);
             this.cbxPendiente.TabIndex = 4;
             this.cbxPendiente.Text = "Pendiente";
             this.cbxPendiente.UseVisualStyleBackColor = true;
-            // 
-            // cbxActivo
-            // 
-            this.cbxActivo.AutoSize = true;
-            this.cbxActivo.Location = new System.Drawing.Point(168, 40);
-            this.cbxActivo.Name = "cbxActivo";
-            this.cbxActivo.Size = new System.Drawing.Size(68, 21);
-            this.cbxActivo.TabIndex = 3;
-            this.cbxActivo.Text = "Activo";
-            this.cbxActivo.UseVisualStyleBackColor = true;
-            // 
-            // cbxBaja
-            // 
-            this.cbxBaja.AutoSize = true;
-            this.cbxBaja.Location = new System.Drawing.Point(8, 40);
-            this.cbxBaja.Name = "cbxBaja";
-            this.cbxBaja.Size = new System.Drawing.Size(58, 21);
-            this.cbxBaja.TabIndex = 2;
-            this.cbxBaja.Text = "Baja";
-            this.cbxBaja.UseVisualStyleBackColor = true;
             // 
             // lblEstado
             // 
@@ -196,7 +172,7 @@
             this.lblTituloCategoriasReportes.AutoSize = true;
             this.lblTituloCategoriasReportes.Location = new System.Drawing.Point(16, 8);
             this.lblTituloCategoriasReportes.Name = "lblTituloCategoriasReportes";
-            this.lblTituloCategoriasReportes.Size = new System.Drawing.Size(127, 17);
+            this.lblTituloCategoriasReportes.Size = new System.Drawing.Size(151, 17);
             this.lblTituloCategoriasReportes.TabIndex = 6;
             this.lblTituloCategoriasReportes.Text = "Reporte de Categorias";
             // 
@@ -243,8 +219,6 @@
         private System.Windows.Forms.CheckBox cbxCancelado;
         private System.Windows.Forms.CheckBox cbxIniciado;
         private System.Windows.Forms.CheckBox cbxPendiente;
-        private System.Windows.Forms.CheckBox cbxActivo;
-        private System.Windows.Forms.CheckBox cbxBaja;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblTituloCategoriasReportes;
         private System.Windows.Forms.Button btnVolver;

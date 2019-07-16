@@ -154,7 +154,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Text Estado Curso</Value>
+                              <Value>Estado Curso</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -328,7 +328,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

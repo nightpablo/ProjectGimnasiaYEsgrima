@@ -142,6 +142,7 @@
             this.txtNombreSocio.Name = "txtNombreSocio";
             this.txtNombreSocio.Size = new System.Drawing.Size(371, 34);
             this.txtNombreSocio.TabIndex = 1;
+            this.txtNombreSocio.TextChanged += new System.EventHandler(this.txtNombreSocio_TextChanged);
             // 
             // txtApellidoSocio
             // 
@@ -150,6 +151,7 @@
             this.txtApellidoSocio.Name = "txtApellidoSocio";
             this.txtApellidoSocio.Size = new System.Drawing.Size(371, 34);
             this.txtApellidoSocio.TabIndex = 2;
+            this.txtApellidoSocio.TextChanged += new System.EventHandler(this.txtNombreSocio_TextChanged);
             // 
             // dtFechaNacimientoSocio
             // 
@@ -158,6 +160,7 @@
             this.dtFechaNacimientoSocio.Name = "dtFechaNacimientoSocio";
             this.dtFechaNacimientoSocio.Size = new System.Drawing.Size(371, 34);
             this.dtFechaNacimientoSocio.TabIndex = 3;
+            this.dtFechaNacimientoSocio.ValueChanged += new System.EventHandler(this.txtNombreSocio_TextChanged);
             // 
             // cbxTipoDocumentoSocio
             // 
@@ -176,6 +179,8 @@
             this.txtDocumentoSocio.Name = "txtDocumentoSocio";
             this.txtDocumentoSocio.Size = new System.Drawing.Size(371, 34);
             this.txtDocumentoSocio.TabIndex = 5;
+            this.txtDocumentoSocio.TextChanged += new System.EventHandler(this.txtNombreSocio_TextChanged);
+            this.txtDocumentoSocio.Leave += new System.EventHandler(this.txtDocumentoSocio_Leave);
             // 
             // txtDireccionSocio
             // 

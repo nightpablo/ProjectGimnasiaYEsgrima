@@ -22,7 +22,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             MiVentana = ventana;
             InitializeComponent();
             cbxActivo.Checked = true;
-            cbxAdherente.Checked = true;
             cbxMenor.Checked = true;
             cbxVitalicio.Checked = true;
             CargarInterfazBuena();
@@ -36,7 +35,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarLabelTextoPersonalizado(lblTipoSocio);
             interfaz.TransformarBotonPersonalizadoTodos(btnReporteAlfabetico, btnReporteFiltro, btnVolver);
             interfaz.TransformarCheckBoxPersonalizado(cbxActivo);
-            interfaz.TransformarCheckBoxPersonalizado(cbxAdherente);
             interfaz.TransformarCheckBoxPersonalizado(cbxMenor);
             interfaz.TransformarCheckBoxPersonalizado(cbxVitalicio);
         }
@@ -47,7 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             ControladorSocio CSocio = new ControladorSocio();
             List<ModelSocioPersona> lista = null;
-            if (cbxActivo.Checked && cbxAdherente.Checked && cbxMenor.Checked && cbxVitalicio.Checked)
+            if (cbxActivo.Checked && cbxMenor.Checked && cbxVitalicio.Checked)
             {
                 lista = CSocio.TraerSocioReporte();
             }
@@ -56,7 +54,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 lista = CSocio.TraerSocioReporte()
                     .AsEnumerable()
                     .Where(b=>(cbxActivo.Checked? true: b.CategoriaSocio!=EnumCategoriaSocio.Activo))
-                    .Where(b => (cbxAdherente.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Adherente))
                     .Where(b => (cbxMenor.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Menor))
                     .Where(b => (cbxVitalicio.Checked ? true : b.CategoriaSocio != EnumCategoriaSocio.Vitalicio))
                     

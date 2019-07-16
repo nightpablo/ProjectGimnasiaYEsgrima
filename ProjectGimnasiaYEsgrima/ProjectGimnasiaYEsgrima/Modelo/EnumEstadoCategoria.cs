@@ -13,11 +13,9 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     
     public enum EnumEstadoCategoria : int
     {
-        Baja = 0,
-        Activo = 1,
-        Pendiente = 2,
-        Iniciado = 3,
-        Cancelado = 4,
-        Terminado = 5
+        Cancelado = 0,
+        Pendiente = 1,
+        Iniciado = 2,
+        Terminado = 3
     }
 }

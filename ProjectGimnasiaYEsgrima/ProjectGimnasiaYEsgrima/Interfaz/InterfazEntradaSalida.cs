@@ -168,7 +168,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 txtNombreApellido.Text = socioPersona.MiPersona.Nombre + "," + socioPersona.MiPersona.Apellido;
                 txtTipoDoc.Text = socioPersona.MiPersona.DNI + "";
                 txtFechaIngreso.Text = DateTime.Now.ToString(/*"dd'/'MM'/'yyyy"*/);
-                lblTipo.Text = socioPersona.CategoriaSocio.ToString();
+                lblTipo.Text = socioPersona.MiSocio.EstadoSocio.ToString();
                 if (socioPersona.MiPersona.Foto != null)
                     pnlFoto.Image = byteArrayToImage(socioPersona.MiPersona.Foto);
                 else
@@ -222,13 +222,16 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void InterfazEntradaSalida_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (videocapture != null && tmpCapture != null)
-            {
-                videocapture.Stop();
-                tmpCapture.Stop();
-            }
+            if (videocapture != null) videocapture.Stop();
+            if (tmpCapture != null) tmpCapture.Stop();
             MiVentana.CargarLogin();
             Dispose();
+        }
+
+        private void InterfazEntradaSalida_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            videocapture.Stop();
+            tmpCapture.Stop();
         }
     }
 }

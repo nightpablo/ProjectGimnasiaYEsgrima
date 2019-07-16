@@ -18,8 +18,8 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         public int CrearCategoria(string unNombre,int importe, DateTime unaFechaInicio, DateTime unaFechaFin, Deporte deporte)
         {
             Categoria buscado = BdCategoria.BuscarPorClavesUnicas(unNombre);
-            if (buscado != null && buscado.EstadoCategoria == EnumEstadoCategoria.Baja) { 
-                buscado.EstadoCategoria = EnumEstadoCategoria.Activo;
+            if (buscado != null && buscado.EstadoCategoria == EnumEstadoCategoria.Cancelado) { 
+                buscado.EstadoCategoria = EnumEstadoCategoria.Pendiente;
                 buscado.FechaInicio = unaFechaInicio;
                 buscado.FechaFin = unaFechaFin;
                 buscado.Costo = importe;
@@ -35,7 +35,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 Costo = importe,
                 FechaInicio = unaFechaInicio,
                FechaFin = unaFechaFin,
-               EstadoCategoria = EnumEstadoCategoria.Activo,
+               EstadoCategoria = EnumEstadoCategoria.Pendiente,
                Deporte = deporte
             };
 
@@ -82,14 +82,10 @@ namespace ProjectGimnasiaYEsgrima.Controlador
         
         public int EliminarCategoria(Categoria unCategoria)
         {
-            if(unCategoria.EstadoCategoria == EnumEstadoCategoria.Activo || unCategoria.EstadoCategoria == EnumEstadoCategoria.Pendiente)
-                unCategoria.EstadoCategoria = EnumEstadoCategoria.Baja;
-            else if (unCategoria.EstadoCategoria == EnumEstadoCategoria.Iniciado)
+            if(unCategoria.EstadoCategoria == EnumEstadoCategoria.Iniciado || unCategoria.EstadoCategoria == EnumEstadoCategoria.Pendiente)
                 unCategoria.EstadoCategoria = EnumEstadoCategoria.Cancelado;
 
-
             return BdCategoria.Actualizar(unCategoria);
-            //return BdCategoria.Eliminar(unCategoria);
         }
 
         public Categoria BuscarCategoriaPorClavesUnicas(params object[] parametros)

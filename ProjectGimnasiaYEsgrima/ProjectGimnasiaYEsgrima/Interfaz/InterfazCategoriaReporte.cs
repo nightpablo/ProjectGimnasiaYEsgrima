@@ -21,8 +21,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             MiVentana = ventana;
             InitializeComponent();
-            cbxBaja.Checked = true;
-            cbxActivo.Checked = true;
             cbxCancelado.Checked = true;
             cbxIniciado.Checked = true;
             cbxPendiente.Checked = true;
@@ -47,8 +45,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarBotonPersonalizadoTodos(btnFiltro, btnAlfabetico,btnVolver);
             interfaz.TransformarLabelTextoPersonalizadoTodos(lblFiltro, lblEstado, lblDeporte);
             interfaz.TransformarComboBoxPersonalizado(cbxDeporte);
-            interfaz.TransformarCheckBoxPersonalizado(cbxBaja);
-            interfaz.TransformarCheckBoxPersonalizado(cbxActivo);
             interfaz.TransformarCheckBoxPersonalizado(cbxPendiente);
             interfaz.TransformarCheckBoxPersonalizado(cbxIniciado);
             interfaz.TransformarCheckBoxPersonalizado(cbxCancelado);
@@ -75,8 +71,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             List<ModelCategoria> lista = null;
 
             if (((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte == 0
-                && cbxBaja.Checked == true
-            && cbxActivo.Checked == true
             && cbxCancelado.Checked == true
             && cbxIniciado.Checked ==true
             && cbxPendiente.Checked == true
@@ -96,9 +90,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     lista = CCategoria.BuscarCategoriasTodos()
                     .AsEnumerable()
                     .Where(b => ((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte==0? true : b.Deporte.IdDeporte== ((ModelDeporte)cbxDeporte.SelectedItem).IdDeporte)
-                    .Where(b => (cbxBaja.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Baja))
                     .Where(b => (cbxCancelado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Cancelado))
-                    .Where(b => (cbxActivo.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Activo))
                     .Where(b => (cbxIniciado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Iniciado))
                     .Where(b => (cbxPendiente.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Pendiente))
                     .Where(b => (cbxTerminado.Checked ? true : b.EstadoCategoria != EnumEstadoCategoria.Terminado))

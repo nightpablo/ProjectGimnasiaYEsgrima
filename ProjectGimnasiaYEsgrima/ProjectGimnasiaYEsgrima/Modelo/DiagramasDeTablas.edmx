@@ -507,12 +507,10 @@
           <NavigationProperty Name="Empleado" Relationship="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" FromRole="RegistroIngresoEgreso" ToRole="Empleado" />
         </EntityType>
         <EnumType Name="EnumEstadoCategoria">
-          <Member Name="Baja" Value="0" />
-          <Member Name="Activo" Value="1" />
-          <Member Name="Pendiente" Value="2" />
-          <Member Name="Iniciado" Value="3" />
-          <Member Name="Cancelado" Value="4" />
-          <Member Name="Terminado" Value="5" />
+          <Member Name="Cancelado" Value="0" />
+          <Member Name="Pendiente" Value="1" />
+          <Member Name="Iniciado" Value="2" />
+          <Member Name="Terminado" Value="3" />
         </EnumType>
         <EnumType Name="EnumEstadoDeporte">
           <Member Name="Baja" Value="0" />
@@ -524,14 +522,12 @@
         </EnumType>
         <EnumType Name="EnumEstadoSocio" >
           <Member Name="Baja" Value="0" />
-          <Member Name="Activo" Value="1" />
-          <Member Name="Deudor" Value="2" />
+          <Member Name="Alta" Value="1" />
         </EnumType>
         <EnumType Name="EnumCategoriaSocio" >
           <Member Name="Activo" Value="1" />
           <Member Name="Menor" Value="2" />
           <Member Name="Vitalicio" Value="3" />
-          <Member Name="Adherente" Value="4" />
         </EnumType>
         <EnumType Name="EnumEstadoCuotaSocio" >
           <Member Name="NoPagado" Value="0" />
