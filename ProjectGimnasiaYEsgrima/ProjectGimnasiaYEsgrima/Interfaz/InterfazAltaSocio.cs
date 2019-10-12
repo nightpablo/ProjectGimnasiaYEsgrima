@@ -58,44 +58,45 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtNombreSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtNombreSocio, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreSocio, "El nombre del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtNombreSocio, "");
 
             if (txtApellidoSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtApellidoSocio, "El apellido debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtApellidoSocio, "El apellido del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtApellidoSocio, "");
 
-            if (txtDocumentoSocio.Text.Length < 7)
+            if (txtDocumentoSocio.Text.Length < 6 || (Convert.ToInt32(txtDocumentoSocio.Text)+"").Length < 6 )
             {
                 hayError = true;
-                errorProvider1.SetError(txtDocumentoSocio, "El DNI debe ser con número entre 6 y 8");
+                errorProvider1.SetError(txtDocumentoSocio, "El DNI debe ser un número entre 6 y 8 dígitos");
             }
             else errorProvider1.SetError(txtDocumentoSocio, "");
 
             if (txtDireccionSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtDireccionSocio, "La direccion debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtDireccionSocio, "La direccion del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtDireccionSocio, "");
 
             if (txtLocalidadSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtLocalidadSocio, "La localidad debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtLocalidadSocio, "La localidad del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtLocalidadSocio, "");
 
             if (txtTelefonoSocio.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtTelefonoSocio, "El teléfono debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtTelefonoSocio, "El teléfono del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtTelefonoSocio, "");
+
             if (hayError)
                 return;
 
@@ -126,7 +127,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else if (resultado == -2)
                 MyMessageBox.Show(this, "Ya existe el SOCIO", "Socio");
             else if (resultado == -3)
-                MyMessageBox.Show(this, "No se ha definido un monto inicial del club", "Socio");
+                MyMessageBox.Show(this, "No se ha definido un monto inicial de la cuota mensual del club, ir a las configuraciones del sistema", "Socio");
         }
 
         private void buttonVolverSocio_Click(object sender, EventArgs e)

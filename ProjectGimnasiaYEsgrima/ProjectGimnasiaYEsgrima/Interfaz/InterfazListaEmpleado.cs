@@ -82,10 +82,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (lista.Count == 0)
             {
-                ModificarMensaje("No hay ningún empleado con estos filtros");
+                ModificarMensaje("NO EXISTE NINGÚN EMPLEADO CON LOS FILTROS SELECCIONADOS");
                 return;
             }
-            else if (lblInfoEmpleado.Text.Equals("No hay ningún empleado con estos filtros"))
+            else if (lblInfoEmpleado.Text.Equals("NO EXISTE NINGÚN EMPLEADO CON LOS FILTROS SELECCIONADOS"))
             {
                 ModificarMensaje("");
             }

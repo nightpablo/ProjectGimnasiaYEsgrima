@@ -200,7 +200,7 @@
             this.btnCategorias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCategorias.Size = new System.Drawing.Size(250, 45);
             this.btnCategorias.TabIndex = 2;
-            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.Text = "Categorías";
             this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Click += new System.EventHandler(this.BtnCategorias_Click);
             // 
@@ -214,9 +214,9 @@
             this.label1.Location = new System.Drawing.Point(102, 21);
             this.label1.MaximumSize = new System.Drawing.Size(150, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 116);
+            this.label1.Size = new System.Drawing.Size(121, 69);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Gimnasia y Esgrima de la Ciudadela";
+            this.label1.Text = "Gimnasia y Esgrima de Ciudadela";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDeportes
@@ -292,7 +292,7 @@
             // 
             // InterfazPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1200, 724);

@@ -76,13 +76,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtNombreEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtNombreEmpleado, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreEmpleado, "El nombre del empleado debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtNombreEmpleado, "");
             if (txtApellidoEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtApellidoEmpleado, "El nombre del apellido debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtApellidoEmpleado, "");
 

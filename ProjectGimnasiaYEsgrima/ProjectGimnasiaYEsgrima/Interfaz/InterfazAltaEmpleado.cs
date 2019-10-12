@@ -71,19 +71,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtNombreEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtNombreEmpleado, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreEmpleado, "El nombre del empleado debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtNombreEmpleado, "");
             if (txtApellidoEmpleado.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtApellidoEmpleado, "El apellido debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtApellidoEmpleado, "El apellido del empleado debe contener entre entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtApellidoEmpleado, "");
             if (txtDNIEmpleado.Text.Length < 6)
             {
                 hayError = true;
-                errorProvider1.SetError(txtDNIEmpleado, "El DNI debe ser con número entre 6 y 8");
+                errorProvider1.SetError(txtDNIEmpleado, "El DNI debe ser un número entre 6 y 8 dígitos");
             }
             else errorProvider1.SetError(txtDNIEmpleado, "");
 
@@ -110,7 +110,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else if (resultado == -2)
                 MyMessageBox.Show(this, "Ya existe el EMPLEADO", "Empleado");
             else if (resultado == -3)
-                MyMessageBox.Show(this, "El tipo de EMPLEADO que seleccionó está en todavia en mantenimiento", "Empleado");
+                MyMessageBox.Show(this, "El tipo de EMPLEADO  seleccionó está en mantenimiento", "Empleado");
 
 
         }

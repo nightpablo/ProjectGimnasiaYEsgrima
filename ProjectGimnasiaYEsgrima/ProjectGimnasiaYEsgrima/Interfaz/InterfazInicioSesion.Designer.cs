@@ -44,32 +44,31 @@
             // 
             this.lblTituloInicioSesion.AutoSize = true;
             this.lblTituloInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloInicioSesion.Location = new System.Drawing.Point(24, 16);
+            this.lblTituloInicioSesion.Location = new System.Drawing.Point(18, 13);
+            this.lblTituloInicioSesion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloInicioSesion.Name = "lblTituloInicioSesion";
-            this.lblTituloInicioSesion.Size = new System.Drawing.Size(177, 32);
+            this.lblTituloInicioSesion.Size = new System.Drawing.Size(136, 26);
             this.lblTituloInicioSesion.TabIndex = 30;
-            this.lblTituloInicioSesion.Text = "Inicio Sesion";
+            this.lblTituloInicioSesion.Text = "Inicio Sesión";
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(104, 64);
+            this.lblUsuario.Location = new System.Drawing.Point(96, 56);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(104, 32);
+            this.lblUsuario.Size = new System.Drawing.Size(78, 26);
             this.lblUsuario.TabIndex = 30;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblContraseña
             // 
-            this.lblContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(72, 136);
+            this.lblContraseña.Location = new System.Drawing.Point(72, 112);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(136, 40);
+            this.lblContraseña.Size = new System.Drawing.Size(102, 32);
             this.lblContraseña.TabIndex = 30;
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -77,26 +76,29 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(256, 72);
+            this.txtUsuario.Location = new System.Drawing.Point(192, 58);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(288, 34);
+            this.txtUsuario.Size = new System.Drawing.Size(217, 29);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(256, 144);
+            this.txtContraseña.Location = new System.Drawing.Point(192, 117);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(288, 34);
+            this.txtContraseña.Size = new System.Drawing.Size(217, 29);
             this.txtContraseña.TabIndex = 1;
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(224, 208);
+            this.btnLogin.Location = new System.Drawing.Point(168, 169);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(104, 48);
+            this.btnLogin.Size = new System.Drawing.Size(78, 39);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -105,9 +107,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(376, 208);
+            this.btnCancelar.Location = new System.Drawing.Point(282, 169);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 48);
+            this.btnCancelar.Size = new System.Drawing.Size(102, 39);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -116,9 +119,10 @@
             // btnDesconectar
             // 
             this.btnDesconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesconectar.Location = new System.Drawing.Point(336, 128);
+            this.btnDesconectar.Location = new System.Drawing.Point(252, 104);
+            this.btnDesconectar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(168, 48);
+            this.btnDesconectar.Size = new System.Drawing.Size(126, 39);
             this.btnDesconectar.TabIndex = 2;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = true;
@@ -129,9 +133,10 @@
             this.lblPermiso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPermiso.Location = new System.Drawing.Point(544, 32);
+            this.lblPermiso.Location = new System.Drawing.Point(408, 26);
+            this.lblPermiso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPermiso.Name = "lblPermiso";
-            this.lblPermiso.Size = new System.Drawing.Size(136, 32);
+            this.lblPermiso.Size = new System.Drawing.Size(102, 26);
             this.lblPermiso.TabIndex = 30;
             this.lblPermiso.Text = "Permisos";
             this.lblPermiso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,18 +146,19 @@
             this.lblTipoEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTipoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoEmpleado.Location = new System.Drawing.Point(584, 72);
+            this.lblTipoEmpleado.Location = new System.Drawing.Point(438, 58);
+            this.lblTipoEmpleado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoEmpleado.Name = "lblTipoEmpleado";
-            this.lblTipoEmpleado.Size = new System.Drawing.Size(136, 32);
+            this.lblTipoEmpleado.Size = new System.Drawing.Size(102, 26);
             this.lblTipoEmpleado.TabIndex = 30;
             this.lblTipoEmpleado.Text = "AcaMostrar";
             this.lblTipoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // InterfazInicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.lblTipoEmpleado);
             this.Controls.Add(this.lblPermiso);
             this.Controls.Add(this.btnCancelar);
@@ -163,6 +169,7 @@
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblTituloInicioSesion);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InterfazInicioSesion";
             this.Text = "InterfazInicioSesion";
             this.ResumeLayout(false);

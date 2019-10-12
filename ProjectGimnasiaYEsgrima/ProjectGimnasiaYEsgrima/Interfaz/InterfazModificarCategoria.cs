@@ -74,14 +74,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (dtpFinCategoria.Value.CompareTo(dtpInicioCategoria.Value) < 1)
             {
                 hayError = true;
-                errorProvider1.SetError(dtpInicioCategoria, "El dia de comienzo debe ser antes que el dia de fin del Categoria");
-                errorProvider1.SetError(dtpFinCategoria, "El dia de comienzo debe ser antes que el dia de fin del Categoria");
+                errorProvider1.SetError(dtpInicioCategoria, "El día de comienzo debe ser antes que el día de fin del Categoría");
+                errorProvider1.SetError(dtpFinCategoria, "El día de comienzo debe ser antes que el día de fin del Categoría");
             }
             else { errorProvider1.SetError(dtpInicioCategoria, ""); errorProvider1.SetError(dtpFinCategoria, ""); }
             if (long.Parse(txtImporteMensualCategoria.Text) > Int32.MaxValue || long.Parse(txtImporteMensualCategoria.Text) < Int32.MinValue)
             {
                 hayError = true;
-                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual es un número demasiado grande o demasiado chico");
+                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual es un número demasiado grande");
             }
             else if (txtImporteMensualCategoria.Text.Equals("") || Int32.Parse(txtImporteMensualCategoria.Text) == 0)
             {
@@ -96,12 +96,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_Categoria.ModificarCategoria(Categoria.IdCategoria,txtNombreCategoria.Text,Int32.Parse(txtImporteMensualCategoria.Text), dtpInicioCategoria.Value, dtpFinCategoria.Value, Categoria.Deporte, Categoria.EstadoCategoria);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("La Categoria ha sido modificado con ÉXITO");
+                Padre.ModificarMensaje("La Categoría ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MyMessageBox.Show(this, "Ya existe el nombre de la Categoria", "Categoria");
+                MyMessageBox.Show(this, "Ya existe el nombre de la Categoría", "Categoria");
 
         }
 

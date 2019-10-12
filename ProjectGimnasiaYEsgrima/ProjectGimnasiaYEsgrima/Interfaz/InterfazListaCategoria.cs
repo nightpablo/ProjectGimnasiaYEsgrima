@@ -83,10 +83,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (listaCategoria.Count == 0)
             {
-                ModificarMensaje("No hay ninguna Categoria con estos filtros");
+                ModificarMensaje("NO EXISTE NINGUNA CATEGORIA CON LOS FILTROS SELECCIONADOS");
                 return;
             }
-            else if (lblInfoCategoria.Text.Equals("No hay ninguna Categoria con estos filtros"))
+            else if (lblInfoCategoria.Text.Equals("NO EXISTE NINGUNA CATEGORIA CON LOS FILTROS SELECCIONADOS"))
             {
                 ModificarMensaje("");
             }
@@ -118,12 +118,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             else if (dtvListarCategorias.Columns[e.ColumnIndex].Name.Equals("Eliminar"))
             {
-                if (MyMessageBox.Show("¿Está seguro que desea eliminar esta Categoria?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Está seguro que desea eliminar esta Categoría?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorCategoria controladorCategoria = new ControladorCategoria();
                     if (controladorCategoria.EliminarCategoria(((ModelCategoria)dtvListarCategorias.CurrentRow.DataBoundItem).MiCategoria) > 0)
                     {
-                        this.ModificarMensaje("La Categoria ha sido eliminado con ÉXITO");
+                        this.ModificarMensaje("La Categoría ha sido eliminado con ÉXITO");
                         dtvListarCategorias.DataSource = controladorCategoria.ListarTodosCategoriasFiltro(txtNombreCategoria.Text.ToString(), ((ModelDeporte)cbxDeporteCategoria.SelectedItem).MiDeporte);
                     }
                 }
@@ -185,6 +185,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         }
 
         private void InterfazListaCategoria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblInfoCategoria_Click(object sender, EventArgs e)
         {
 
         }

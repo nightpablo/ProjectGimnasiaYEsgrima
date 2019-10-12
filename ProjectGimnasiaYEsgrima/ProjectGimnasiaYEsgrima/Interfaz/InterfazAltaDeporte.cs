@@ -50,7 +50,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var hayError = false;
             if (txtNombreDeporte.Text.Length < 3) { 
                 hayError = true;
-                errorProvider1.SetError(txtNombreDeporte, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreDeporte, "El nombre del deporte debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtNombreDeporte, "");
 

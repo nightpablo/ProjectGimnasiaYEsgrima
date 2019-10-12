@@ -11,25 +11,21 @@
         <EntityTypeShape EntityType="DiagramasDeTablas.Empleado" Width="1.5" PointX="8" PointY="4.875" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Profesor" Width="1.5" PointX="4.25" PointY="5.625" />
         <InheritanceConnector EntityType="DiagramasDeTablas.Profesor" />
-        <AssociationConnector Association="DiagramasDeTablas.ProfesorCurso" />
+        <AssociationConnector Association="DiagramasDeTablas.ProfesorCategoria" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Secretaria" Width="1.5" PointX="8" PointY="7.375" />
         <InheritanceConnector EntityType="DiagramasDeTablas.Secretaria" />
         <AssociationConnector Association="DiagramasDeTablas.PersonaEmpleado" />
-        <AssociationConnector Association="DiagramasDeTablas.CursoDeporte" />
+        <AssociationConnector Association="DiagramasDeTablas.CategoriaDeporte" />
         <EntityTypeShape EntityType="DiagramasDeTablas.RegistroIngresoEgreso" Width="1.75" PointX="12.375" PointY="5.125" />
         <EntityTypeShape EntityType="DiagramasDeTablas.Socio" Width="2.25" PointX="4.375" PointY="0.875" />
         <AssociationConnector Association="DiagramasDeTablas.SocioPersona" />
-        <EntityTypeShape EntityType="DiagramasDeTablas.CuotaSocio" Width="1.5" PointX="10.5" PointY="1" />
+        <EntityTypeShape EntityType="DiagramasDeTablas.CuotaSocio" Width="1.5" PointX="10.625" PointY="0.875" />
         <EntityTypeShape EntityType="DiagramasDeTablas.ValorCuotaInicial" Width="1.5" PointX="14.375" PointY="1.25" />
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioValorCuotaInicial" />
         <AssociationConnector Association="DiagramasDeTablas.CuotaSocioSocio" />
         <AssociationConnector Association="DiagramasDeTablas.EmpleadoRegistroIngresoEgreso" />
-        <AssociationConnector Association="DiagramasDeTablas.SocioCurso" ></AssociationConnector>
-        <AssociationConnector Association="DiagramasDeTablas.CuotaSocioCurso" ManuallyRouted="true" >
-          <ConnectorPoint PointX="10.5" PointY="2.2910505871361639" />
-          <ConnectorPoint PointX="9.625" PointY="0.625" />
-          <ConnectorPoint PointX="1.375" PointY="0.625" />
-          <ConnectorPoint PointX="1.375" PointY="0.87499999999993883" />
+        <AssociationConnector Association="DiagramasDeTablas.SocioCategoria" ></AssociationConnector>
+        <AssociationConnector Association="DiagramasDeTablas.CuotaSocioCategoria" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="DiagramasDeTablas.Login" Width="1.5" PointX="5.25" PointY="7.625" />
         <AssociationConnector Association="DiagramasDeTablas.LoginEmpleado" />

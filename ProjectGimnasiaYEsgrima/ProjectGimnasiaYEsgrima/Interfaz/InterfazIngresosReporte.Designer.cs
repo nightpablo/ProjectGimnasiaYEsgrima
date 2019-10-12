@@ -68,7 +68,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.lblReportePeriodo.Name = "lblReportePeriodo";
             this.lblReportePeriodo.Size = new System.Drawing.Size(137, 17);
             this.lblReportePeriodo.TabIndex = 1;
-            this.lblReportePeriodo.Text = "Reporte por Periodo";
+            this.lblReportePeriodo.Text = "Reporte por Período";
             // 
             // cbxMesInicio
             // 

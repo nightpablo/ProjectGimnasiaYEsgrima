@@ -72,7 +72,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             using (var context = new DiagramasDeTablasContainer1())
             {
                 var j = context.Categorias.AsEnumerable()
-                .Where(b => b.Nombre.Contains((string)parametros[0]))
+                .Where(b => b.Nombre.ToLower().Contains(((string)parametros[0]).ToLower()))
                                .ToList();
                 var iddep = 0;
                 if (parametros[1]!=null)
@@ -103,7 +103,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Categorias.AsEnumerable()
-                    .FirstOrDefault(b => b.Nombre.Contains((string)parametros[0]));
+                    .FirstOrDefault(b => b.Nombre.ToLower().Contains(((string)parametros[0]).ToLower()));
             }
         }
 

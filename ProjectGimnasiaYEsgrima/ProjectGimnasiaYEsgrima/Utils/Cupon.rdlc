@@ -513,7 +513,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>="Socio " + Fields!NombreSocio.Value</Value>
+                                    <Value>="Socio " +Fields!ApellidoSocio.Value+", "+Fields!NombreSocio.Value</Value>
                                     <Style>
                                       <FontFamily>Century Gothic</FontFamily>
                                       <FontSize>16pt</FontSize>
@@ -659,7 +659,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Club GyE de la Ciudadela</Value>
+                                    <Value>Club GyE de Ciudadela</Value>
                                     <Style>
                                       <FontFamily>Century Gothic</FontFamily>
                                       <FontSize>16pt</FontSize>
@@ -709,14 +709,14 @@
                           <TablixHeader>
                             <Size>1.71683cm</Size>
                             <CellContents>
-                              <Textbox Name="IdCupon">
+                              <Textbox Name="Textbox1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!IdCupon.Value</Value>
+                                        <Value />
                                         <Style>
                                           <FontFamily>Century Gothic</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -728,7 +728,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>IdCupon</rd:DefaultName>
+                                <rd:DefaultName>Textbox1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -1278,7 +1278,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1438,7 +1437,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>="Socio " + Fields!NombreSocio.Value</Value>
+                                    <Value>="Socio " +Fields!ApellidoSocio.Value+", "+Fields!NombreSocio.Value</Value>
                                     <Style>
                                       <FontFamily>Century Gothic</FontFamily>
                                       <FontSize>16pt</FontSize>
@@ -1584,7 +1583,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>Club GyE de la Ciudadela</Value>
+                                    <Value>Club GyE de Ciudadela</Value>
                                     <Style>
                                       <FontFamily>Century Gothic</FontFamily>
                                       <FontSize>16pt</FontSize>
@@ -1634,14 +1633,14 @@
                           <TablixHeader>
                             <Size>1.71683cm</Size>
                             <CellContents>
-                              <Textbox Name="IdCupon2">
+                              <Textbox Name="Textbox6">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!IdCupon.Value</Value>
+                                        <Value />
                                         <Style>
                                           <FontFamily>Century Gothic</FontFamily>
                                           <FontSize>11pt</FontSize>
@@ -1653,7 +1652,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>IdCupon</rd:DefaultName>
+                                <rd:DefaultName>Textbox6</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -1668,6 +1667,7 @@
                                   <PaddingBottom>2pt</PaddingBottom>
                                 </Style>
                               </Textbox>
+                              <rd:Selected>true</rd:Selected>
                             </CellContents>
                           </TablixHeader>
                           <TablixMembers>
@@ -1897,6 +1897,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="ApellidoSocio">
+          <DataField>ApellidoSocio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DNISocio">
           <DataField>DNISocio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1938,6 +1942,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="ApellidoSocio">
+          <DataField>ApellidoSocio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DNISocio">
           <DataField>DNISocio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>

@@ -72,8 +72,8 @@ namespace ProjectGimnasiaYEsgrima.BD
             using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Deportes.AsEnumerable()
-                    .Where(b => b.Nombre.Contains((string)parametros[0]))
-                    .Where(b => b.Descripcion.Contains((string)parametros[1]))
+                    .Where(b => b.Nombre.ToLower().Contains(((string)parametros[0]).ToLower()))
+                    .Where(b => b.Descripcion.ToLower().Contains(((string)parametros[1]).ToLower()))
                     .Where(b => b.EstadoDeporte != EnumEstadoDeporte.Baja)
                     .Select(b => new ModelDeporte()
                     {
@@ -93,7 +93,7 @@ namespace ProjectGimnasiaYEsgrima.BD
             using (var context = new DiagramasDeTablasContainer1())
             {
                 return context.Deportes.AsEnumerable()
-                    .FirstOrDefault(b => b.Nombre.Contains((string)parametros[0]));
+                    .FirstOrDefault(b => b.Nombre.ToLower().Contains(((string)parametros[0]).ToLower()));
             }
         }
 

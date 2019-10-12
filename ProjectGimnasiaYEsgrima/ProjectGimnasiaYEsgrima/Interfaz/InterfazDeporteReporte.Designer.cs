@@ -46,7 +46,7 @@
             this.btnReporteAlfabetico.Name = "btnReporteAlfabetico";
             this.btnReporteAlfabetico.Size = new System.Drawing.Size(272, 56);
             this.btnReporteAlfabetico.TabIndex = 4;
-            this.btnReporteAlfabetico.Text = "Generar Reporte Alfabetico";
+            this.btnReporteAlfabetico.Text = "Generar Reporte Alfabético";
             this.btnReporteAlfabetico.UseVisualStyleBackColor = true;
             this.btnReporteAlfabetico.Click += new System.EventHandler(this.button1_Click);
             // 

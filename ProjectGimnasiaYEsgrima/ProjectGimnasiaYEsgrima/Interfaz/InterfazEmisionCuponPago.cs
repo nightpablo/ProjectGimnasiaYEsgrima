@@ -102,7 +102,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             if (dgvListaCuponesSocio.Columns[e.ColumnIndex].Name.Equals("Anular"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Anular esta Cuota?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Esta seguro que desea Anular esta Cuota?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorSocio controladorSocio = new ControladorSocio();
                     if (controladorSocio.AnularCuotaSocio(((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota)>0){
@@ -146,7 +146,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 montototal += j.Importe; 
             }
 
-            if(MyMessageBox.Show("El monto total de toda la cuota es de $"+montototal+". ¿Realiza el pago?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK){
+            if(MyMessageBox.Show("El monto total de la cuota es de $"+montototal+". ¿Desea realizar el pago?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK){
                 new ControladorSocio().PagarCuponSocio(lista);
                 if (MyMessageBox.Show("Se ha realizado el pago correspondiente, ¿Desea imprimir el cupón de pago?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {

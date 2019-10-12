@@ -226,7 +226,7 @@ namespace UnitTestProject1
             //Aceptado
             Assert.IsTrue(controladorSocio.CrearSocio("Roberto","Gonzalez",FechaNacimiento,36110000,"Lavaisse 0000","Santa Fe","4564322",EnumTipoDocumento.DNI,EnumCategoriaSocio.Activo) > 0);
             Assert.IsTrue(controladorSocio.CrearSocio("Ricardo", "Guitorri", FechaNacimiento, 36111111, "General Lopez 0000", "Rosario", "4774322", EnumTipoDocumento.DNI, EnumCategoriaSocio.Menor) > 0);
-            Assert.IsTrue(controladorSocio.CrearSocio("Marcela", "Corault", FechaNacimiento, 36112222, "Primea Junta 0000", "Santa Fe", "4561122", EnumTipoDocumento.DNI, EnumCategoriaSocio.Adherente) > 0);
+            Assert.IsTrue(controladorSocio.CrearSocio("Marcela", "Corault", FechaNacimiento, 36112222, "Primea Junta 0000", "Santa Fe", "4561122", EnumTipoDocumento.DNI, EnumCategoriaSocio.Activo) > 0);
             ModelSocioPersona socio_buscado = controladorSocio.BuscarPorClavesUnicasSocio(36110000);
             Assert.IsNotNull(socio_buscado);
             Assert.IsTrue(controladorSocio.ListarTodosSocios().Count > 0);

@@ -51,7 +51,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 .ToList();
 
             ReportDataSource dt = new ReportDataSource("DataSet1", lista);
-            string dir = "ProjectGimnasiaYEsgrima.Utils.ReporteTodosDeporte.rdlc";
+            string dir = "ProjectGimnasiaYEsgrima.Utils.AlfabeticoEmpleado.rdlc";
 
             new InterfazGenerarReporte(dt, dir).ShowDialog();
         }

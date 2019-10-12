@@ -85,10 +85,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (listaCategoria.Count == 0)
             {
-                ModificarMensaje("No hay ninguna Categoria con estos filtros");
+                ModificarMensaje("NO EXISTE NINGUNA CATEGORIA CON LOS FILTROS SELECCIONADOS");
                 return;
             }
-            else if (lblInfoCategoria.Text.Equals("No hay ninguna Categoria con estos filtros"))
+            else if (lblInfoCategoria.Text.Equals("NO EXISTE NINGUNA CATEGORIA CON LOS FILTROS SELECCIONADOS"))
             {
                 ModificarMensaje("");
             }
@@ -112,36 +112,36 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (dtvListarCategorias.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Inscribir"))
             {
                 ModelCategoria MiCategoria = (ModelCategoria)dtvListarCategorias.CurrentRow.DataBoundItem;
-                if (MyMessageBox.Show("¿Seguro que desea inscribir en la Categoria " + MiCategoria.Nombre + " al Socio " + MiSocio.Apellido + ", " + MiSocio.Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Seguro que desea inscribir en la Categoría " + MiCategoria.Nombre + " al Socio " + MiSocio.Apellido + ", " + MiSocio.Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorCategoria CCategoria = new ControladorCategoria();
                     var resultado = CCategoria.InscribirSocioAlCategoria(MiSocio.MiSocio, MiCategoria.MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha inscripto al Socio a la Categoria");
+                        Padre.ModificarMensaje("Se ha inscripto al Socio a la Categoría");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "Ya esta inscripto el Socio de la Categoria", "Categoria");
+                        MyMessageBox.Show(this, "Ya esta inscripto el Socio de la Categoría", "Categoria");
                     }
                 }
             }
-            else if (dtvListarCategorias.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Unsuscribir"))
+            else if (dtvListarCategorias.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Desinscribir"))
             {
                 ModelCategoria MiCategoria = (ModelCategoria)dtvListarCategorias.CurrentRow.DataBoundItem;
-                if (MyMessageBox.Show("¿Seguro que desea unsuscribir en la Categoria " + MiCategoria.Nombre + " al Socio " + MiSocio.Apellido + ", " + MiSocio.Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Seguro que desea desinscribir en la Categoría " + MiCategoria.Nombre + " al Socio " + MiSocio.Apellido + ", " + MiSocio.Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorCategoria CCategoria = new ControladorCategoria();
                     var resultado = CCategoria.UnsuscribirSocioAlCategoria(MiSocio.MiSocio, MiCategoria.MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha unsuscripto al Socio de la Categoria");
+                        Padre.ModificarMensaje("Se ha desubscripto al Socio de la Categoría");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "El Socio no está inscripto de la Categoria", "Categoria");
+                        MyMessageBox.Show(this, "El Socio no está inscripto de la Categoría", "Categoria");
                     }
                 }
             }

@@ -68,7 +68,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             lblInfoProfesor.Text = "";
             if (lista.Count == 0)
             {
-                lblInfoProfesor.Text = "No hay ningún profesor con estos filtros";
+                lblInfoProfesor.Text = "NO EXISTE NINGÚN EMPLEADO CON LOS FILTROS SELECCIONADOS";
                 return;
             }
 
@@ -81,20 +81,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Asignar Categoria"))
+            if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Asignar Categoría"))
             {
-                if (MyMessageBox.Show("¿Seguro que desea Asignar el Categoria "+MiCategoria.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MyMessageBox.Show("¿Seguro que desea Asignar la Categoría "+MiCategoria.Nombre+" al Empleado "+ ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", "+((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre+"?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     ControladorCategoria CCategoria = new ControladorCategoria();
                     var resultado = CCategoria.AsignarEmpleadoAlCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha asignado un Profesor a la Categoria");
+                        Padre.ModificarMensaje("Se ha asignado un Profesor a la Categoría");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "Ya esta asignado el Profesor a la Categoria", "Categoria");
+                        MyMessageBox.Show(this, "Ya esta asignado el Profesor a la Categoría", "Categoria");
                     }
                 }
                 
@@ -107,12 +107,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     var resultado = CCategoria.EliminarEmpleadoDelCategoria(((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).MiEmpleado, MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha eliminado un Profesor de la Categoria");
+                        Padre.ModificarMensaje("Se ha eliminado el Profesor de la Categoría");
                         Dispose();
                     }
                     else if (resultado == -2)
                     {
-                        MyMessageBox.Show(this, "El Profesor no está asignado a la Categoria", "Categoria");
+                        MyMessageBox.Show(this, "El Profesor no está asignado a la Categoría", "Categoria");
                     }
                 }
             }

@@ -133,8 +133,8 @@ namespace ProjectGimnasiaYEsgrima.BD
                         MiPersona = e.Persona
                     }).AsEnumerable()
                     .Where(b => b.MiSocio.EstadoSocio != EnumEstadoSocio.Baja)
-                    .Where(b => b.MiPersona.Nombre.Contains((string)parametros[0]))
-                    .Where(b => b.MiPersona.Apellido.Contains((string)parametros[1]))
+                    .Where(b => b.MiPersona.Nombre.ToLower().Contains(((string)parametros[0]).ToLower()))
+                    .Where(b => b.MiPersona.Apellido.ToLower().Contains(((string)parametros[1]).ToLower()))
                     .Where(b => b.MiPersona.DNI.ToString().Contains((string)parametros[2]))
                     .ToList();
                 

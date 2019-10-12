@@ -37,8 +37,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtDNISocio.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnBuscarSocio);
 
             txtNombreSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtNombreSocio, 50);
-            txtApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtNombreSocio, 50);
-            txtDNISocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtNombreSocio,9);
+            txtApellidoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoSocio, 50);
+            txtDNISocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNISocio, 8);
 
         }
 
@@ -80,10 +80,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (lista.Count == 0)
             {
-                ModificarMensaje("No hay ningún socio con estos filtros");
+                ModificarMensaje("NO EXISTE NINGÚN SOCIO CON LOS FILTROS SELECCIONADOS");
                 return;
             }
-            else if (lblInfoSocio.Text.Equals("No hay ningún socio con estos filtros"))
+            else if (lblInfoSocio.Text.Equals("NO EXISTE NINGÚN SOCIO CON LOS FILTROS SELECCIONADOS"))
             {
                 ModificarMensaje("");
             }

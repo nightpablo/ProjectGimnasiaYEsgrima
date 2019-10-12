@@ -90,7 +90,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     using (var ms = new MemoryStream())
                     {
                         new Bitmap(global::ProjectGimnasiaYEsgrima.Properties.Resources.Perfil).Save(ms, ImageFormat.Png);
-                        MiEmpleado.MiPersona.Foto = ms.ToArray();
+                        MiSocio.MiPersona.Foto = ms.ToArray();
                         new ControladorPersona().ActualizarFotoPersona(MiSocio.MiPersona.DNI, ms.ToArray());
                     }
                 }

@@ -72,10 +72,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             if (lista.Count == 0)
             {
-                ModificarMensaje("No hay ningún deporte con estos filtros");
+                ModificarMensaje("NO EXISTE NINGÚN DEPORTE CON LOS FILTROS SELECCIONADOS");
                 return;
             }
-            else if (lblInfoDeporte.Text.Equals("No hay ningún deporte con estos filtros"))
+            else if (lblInfoDeporte.Text.Equals("NO EXISTE NINGÚN DEPORTE CON LOS FILTROS SELECCIONADOS"))
             {
                 ModificarMensaje("");
             }

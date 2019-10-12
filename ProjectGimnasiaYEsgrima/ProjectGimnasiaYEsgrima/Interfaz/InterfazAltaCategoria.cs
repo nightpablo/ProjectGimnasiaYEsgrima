@@ -66,25 +66,25 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (txtNombreCategoria.Text.Length < 3)
             {
                 hayError = true;
-                errorProvider1.SetError(txtNombreCategoria, "El nombre debe ser con carácter entre 3 y 50");
+                errorProvider1.SetError(txtNombreCategoria, "El nombre de la categoría debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtNombreCategoria, "");
             if (dtpFinCategoria.Value.CompareTo(dtpInicioCategoria.Value) < 1)
             {
                 hayError = true;
-                errorProvider1.SetError(dtpInicioCategoria, "El día de comienzo debe ser antes que el dia de fin de la Categoría");
-                errorProvider1.SetError(dtpFinCategoria, "El día de fin debe ser después que el dia de inicio de la Categoría");
+                errorProvider1.SetError(dtpInicioCategoria, "El día de inicio de una categoría no debe ser mayor al día de fin la misma");
+                errorProvider1.SetError(dtpFinCategoria, "El día de fin de una categoria no debe ser menor al día inicio de la misma");
             }
             else { errorProvider1.SetError(dtpInicioCategoria, ""); errorProvider1.SetError(dtpFinCategoria, ""); }
-            if(long.Parse(txtImporteMensualCategoria.Text)>Int32.MaxValue || long.Parse(txtImporteMensualCategoria.Text) < Int32.MinValue)
+            if(txtImporteMensualCategoria.Text=="" || long.Parse(txtImporteMensualCategoria.Text)>Int32.MaxValue || long.Parse(txtImporteMensualCategoria.Text) < Int32.MinValue)
             {
                 hayError = true;
-                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual es un número demasiado grande o demasiado chico");
+                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual de la categoría es un número demasiado grande");
             }
             else if (txtImporteMensualCategoria.Text.Equals("") || Int32.Parse(txtImporteMensualCategoria.Text) == 0)
             {
                 hayError = true;
-                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual debe ser un número mayor a cero");
+                errorProvider1.SetError(txtImporteMensualCategoria, "El importe mensual categoría debe ser un número mayor a cero");
             }
             else errorProvider1.SetError(txtImporteMensualCategoria, ""); 
             if (hayError)
@@ -101,12 +101,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else if (resultado == -1)
             {
-                Padre.ModificarMensaje("La Categoría ha sido recuperado con ÉXITO");
+                Padre.ModificarMensaje("La Categoría ha sido recuperada con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -2)
-                MyMessageBox.Show(this, "Ya existe el nombre de la Categoría", "Categoría");
+                MyMessageBox.Show(this, "Ya existe el nombre de la Categoría, intente con otro número", "Categoría");
 
         }
 

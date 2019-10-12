@@ -62,7 +62,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             else
             {
-                MyMessageBox.Show(this, "El usuario o contraseña es incorrecta", "Inicio Sesion");
+                MyMessageBox.Show(this, "El usuario y/o contraseña es inválida, intente nuevamente", "Inicio Sesion");
             }
         }
 

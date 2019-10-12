@@ -55,6 +55,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 VentanaContenedor.Controls.Remove(i);
             }
+            if (InterfazEntradaSalida.videocapture != null && InterfazEntradaSalida.videocapture.IsRunning)
+                InterfazEntradaSalida.videocapture.Stop();
 
             Form fh = Formhijo as Form;
             fh.TopLevel = false;

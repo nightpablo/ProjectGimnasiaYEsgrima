@@ -15,7 +15,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     public partial class InterfazEntradaSalida : Form
     {
         private FilterInfoCollection Dispositivos;
-        private VideoCaptureDevice videocapture;
+        public static VideoCaptureDevice videocapture;
         private bool parado;
         private Timer msgTimer;
         private int disposeFormTimer;
@@ -233,5 +233,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             videocapture.Stop();
             tmpCapture.Stop();
         }
+        
     }
 }

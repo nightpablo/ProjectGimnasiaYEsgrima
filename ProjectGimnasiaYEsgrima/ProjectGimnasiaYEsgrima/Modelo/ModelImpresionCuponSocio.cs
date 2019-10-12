@@ -10,6 +10,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
     {
         public int IdSocio { get; set; }
         public string NombreSocio { get; set; }
+        public string ApellidoSocio { get; set; }
         public int DNISocio { get; set; }
         public DateTime FechaEmision { get; set; }
         public int IdCupon { get; set; }
@@ -20,6 +21,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         {
             IdSocio = socio.MiSocio.IdSocio;
             NombreSocio = socio.MiPersona.Nombre;
+            ApellidoSocio = socio.MiPersona.Apellido;
             DNISocio = socio.MiPersona.DNI;
             FechaEmision = cuota.MiCuota.FechaEmision;
             IdCupon = cuota.MiCuota.IdCuota;

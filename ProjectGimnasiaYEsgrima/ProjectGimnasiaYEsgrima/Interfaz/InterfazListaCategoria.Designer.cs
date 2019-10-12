@@ -32,9 +32,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             this.components = new System.ComponentModel.Container();
             this.dtvListarCategorias = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.AgregarProfesor = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.modelCategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblDeporteCategoria = new System.Windows.Forms.Label();
             this.lblNombreCategoria = new System.Windows.Forms.Label();
@@ -47,15 +52,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblTituloCategoria = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelCategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dtvListarCategorias
@@ -73,154 +73,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Eliminar,
             this.AgregarProfesor});
             this.dtvListarCategorias.DataSource = this.modelCategoriaBindingSource;
-            this.dtvListarCategorias.Location = new System.Drawing.Point(8, 192);
-            this.dtvListarCategorias.Margin = new System.Windows.Forms.Padding(4);
+            this.dtvListarCategorias.Location = new System.Drawing.Point(6, 156);
             this.dtvListarCategorias.Name = "dtvListarCategorias";
-            this.dtvListarCategorias.Size = new System.Drawing.Size(840, 208);
+            this.dtvListarCategorias.Size = new System.Drawing.Size(630, 169);
             this.dtvListarCategorias.TabIndex = 6;
             this.dtvListarCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridListarCategorias_CellContentClick);
-            // 
-            // Modificar
-            // 
-            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Modificar.HeaderText = "";
-            this.Modificar.Name = "Modificar";
-            this.Modificar.ReadOnly = true;
-            this.Modificar.Text = "Modificar";
-            this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 24;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 24;
-            // 
-            // AgregarProfesor
-            // 
-            this.AgregarProfesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.AgregarProfesor.HeaderText = "";
-            this.AgregarProfesor.Name = "AgregarProfesor";
-            this.AgregarProfesor.ReadOnly = true;
-            this.AgregarProfesor.Text = "Agregar Profesor";
-            this.AgregarProfesor.UseColumnTextForButtonValue = true;
-            this.AgregarProfesor.Width = 24;
-            // 
-            // lblDeporteCategoria
-            // 
-            this.lblDeporteCategoria.AutoSize = true;
-            this.lblDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeporteCategoria.Location = new System.Drawing.Point(40, 48);
-            this.lblDeporteCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDeporteCategoria.Name = "lblDeporteCategoria";
-            this.lblDeporteCategoria.Size = new System.Drawing.Size(100, 29);
-            this.lblDeporteCategoria.TabIndex = 2;
-            this.lblDeporteCategoria.Text = "Deporte";
-            this.lblDeporteCategoria.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lblNombreCategoria
-            // 
-            this.lblNombreCategoria.AutoSize = true;
-            this.lblNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCategoria.Location = new System.Drawing.Point(39, 96);
-            this.lblNombreCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(101, 29);
-            this.lblNombreCategoria.TabIndex = 3;
-            this.lblNombreCategoria.Text = "Nombre";
-            // 
-            // cbxDeporteCategoria
-            // 
-            this.cbxDeporteCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxDeporteCategoria.FormattingEnabled = true;
-            this.cbxDeporteCategoria.Location = new System.Drawing.Point(152, 46);
-            this.cbxDeporteCategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxDeporteCategoria.Name = "cbxDeporteCategoria";
-            this.cbxDeporteCategoria.Size = new System.Drawing.Size(248, 37);
-            this.cbxDeporteCategoria.TabIndex = 1;
-            // 
-            // txtNombreCategoria
-            // 
-            this.txtNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCategoria.Location = new System.Drawing.Point(152, 88);
-            this.txtNombreCategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombreCategoria.Name = "txtNombreCategoria";
-            this.txtNombreCategoria.Size = new System.Drawing.Size(248, 34);
-            this.txtNombreCategoria.TabIndex = 2;
-            // 
-            // btnBuscarCategoria
-            // 
-            this.btnBuscarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(272, 136);
-            this.btnBuscarCategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(133, 40);
-            this.btnBuscarCategoria.TabIndex = 3;
-            this.btnBuscarCategoria.Text = "Buscar";
-            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
-            this.btnBuscarCategoria.Click += new System.EventHandler(this.BotonBuscarCategoria_Click);
-            // 
-            // btnCrearCategoria
-            // 
-            this.btnCrearCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCategoria.Location = new System.Drawing.Point(432, 136);
-            this.btnCrearCategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCrearCategoria.Name = "btnCrearCategoria";
-            this.btnCrearCategoria.Size = new System.Drawing.Size(240, 41);
-            this.btnCrearCategoria.TabIndex = 4;
-            this.btnCrearCategoria.Text = "Crear Categoria";
-            this.btnCrearCategoria.UseVisualStyleBackColor = true;
-            this.btnCrearCategoria.Click += new System.EventHandler(this.BotonCrearCategoria_Click);
-            // 
-            // dbGimnasiaYEsgrimaDataSet
-            // 
-            this.dbGimnasiaYEsgrimaDataSet.DataSetName = "dbGimnasiaYEsgrimaDataSet";
-            this.dbGimnasiaYEsgrimaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblInfoCategoria
-            // 
-            this.lblInfoCategoria.AutoSize = true;
-            this.lblInfoCategoria.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoCategoria.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoCategoria.Location = new System.Drawing.Point(16, 408);
-            this.lblInfoCategoria.Name = "lblInfoCategoria";
-            this.lblInfoCategoria.Size = new System.Drawing.Size(199, 24);
-            this.lblInfoCategoria.TabIndex = 8;
-            this.lblInfoCategoria.Text = "Acá se imprime algo";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Deporte";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Deporte";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(712, 136);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 43);
-            this.btnVolver.TabIndex = 5;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
-            // 
-            // lblTituloCategoria
-            // 
-            this.lblTituloCategoria.AutoSize = true;
-            this.lblTituloCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCategoria.Location = new System.Drawing.Point(96, 0);
-            this.lblTituloCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTituloCategoria.Name = "lblTituloCategoria";
-            this.lblTituloCategoria.Size = new System.Drawing.Size(259, 32);
-            this.lblTituloCategoria.TabIndex = 2;
-            this.lblTituloCategoria.Text = "Gestión Categorias";
-            this.lblTituloCategoria.Click += new System.EventHandler(this.label2_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -250,15 +107,153 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.estadoCategoriaDataGridViewTextBoxColumn.HeaderText = "EstadoCategoria";
             this.estadoCategoriaDataGridViewTextBoxColumn.Name = "estadoCategoriaDataGridViewTextBoxColumn";
             // 
+            // Modificar
+            // 
+            this.Modificar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Modificar.HeaderText = "";
+            this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
+            this.Modificar.Text = "Modificar";
+            this.Modificar.UseColumnTextForButtonValue = true;
+            this.Modificar.Width = 21;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.Eliminar.Width = 21;
+            // 
+            // AgregarProfesor
+            // 
+            this.AgregarProfesor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.AgregarProfesor.HeaderText = "";
+            this.AgregarProfesor.Name = "AgregarProfesor";
+            this.AgregarProfesor.ReadOnly = true;
+            this.AgregarProfesor.Text = "Agregar Profesor";
+            this.AgregarProfesor.UseColumnTextForButtonValue = true;
+            this.AgregarProfesor.Width = 21;
+            // 
             // modelCategoriaBindingSource
             // 
             this.modelCategoriaBindingSource.DataSource = typeof(ProjectGimnasiaYEsgrima.Modelo.ModelCategoria);
             // 
+            // lblDeporteCategoria
+            // 
+            this.lblDeporteCategoria.AutoSize = true;
+            this.lblDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeporteCategoria.Location = new System.Drawing.Point(30, 39);
+            this.lblDeporteCategoria.Name = "lblDeporteCategoria";
+            this.lblDeporteCategoria.Size = new System.Drawing.Size(77, 24);
+            this.lblDeporteCategoria.TabIndex = 2;
+            this.lblDeporteCategoria.Text = "Deporte";
+            this.lblDeporteCategoria.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lblNombreCategoria
+            // 
+            this.lblNombreCategoria.AutoSize = true;
+            this.lblNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCategoria.Location = new System.Drawing.Point(29, 78);
+            this.lblNombreCategoria.Name = "lblNombreCategoria";
+            this.lblNombreCategoria.Size = new System.Drawing.Size(79, 24);
+            this.lblNombreCategoria.TabIndex = 3;
+            this.lblNombreCategoria.Text = "Nombre";
+            // 
+            // cbxDeporteCategoria
+            // 
+            this.cbxDeporteCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxDeporteCategoria.FormattingEnabled = true;
+            this.cbxDeporteCategoria.Location = new System.Drawing.Point(114, 37);
+            this.cbxDeporteCategoria.Name = "cbxDeporteCategoria";
+            this.cbxDeporteCategoria.Size = new System.Drawing.Size(187, 32);
+            this.cbxDeporteCategoria.TabIndex = 1;
+            // 
+            // txtNombreCategoria
+            // 
+            this.txtNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCategoria.Location = new System.Drawing.Point(114, 72);
+            this.txtNombreCategoria.Name = "txtNombreCategoria";
+            this.txtNombreCategoria.Size = new System.Drawing.Size(187, 29);
+            this.txtNombreCategoria.TabIndex = 2;
+            // 
+            // btnBuscarCategoria
+            // 
+            this.btnBuscarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(204, 110);
+            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscarCategoria.TabIndex = 3;
+            this.btnBuscarCategoria.Text = "Buscar";
+            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoria.Click += new System.EventHandler(this.BotonBuscarCategoria_Click);
+            // 
+            // btnCrearCategoria
+            // 
+            this.btnCrearCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearCategoria.Location = new System.Drawing.Point(324, 110);
+            this.btnCrearCategoria.Name = "btnCrearCategoria";
+            this.btnCrearCategoria.Size = new System.Drawing.Size(180, 33);
+            this.btnCrearCategoria.TabIndex = 4;
+            this.btnCrearCategoria.Text = "Crear Categoría";
+            this.btnCrearCategoria.UseVisualStyleBackColor = true;
+            this.btnCrearCategoria.Click += new System.EventHandler(this.BotonCrearCategoria_Click);
+            // 
+            // dbGimnasiaYEsgrimaDataSet
+            // 
+            this.dbGimnasiaYEsgrimaDataSet.DataSetName = "dbGimnasiaYEsgrimaDataSet";
+            this.dbGimnasiaYEsgrimaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblInfoCategoria
+            // 
+            this.lblInfoCategoria.AutoSize = true;
+            this.lblInfoCategoria.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoCategoria.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblInfoCategoria.Location = new System.Drawing.Point(12, 332);
+            this.lblInfoCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInfoCategoria.Name = "lblInfoCategoria";
+            this.lblInfoCategoria.Size = new System.Drawing.Size(165, 19);
+            this.lblInfoCategoria.TabIndex = 8;
+            this.lblInfoCategoria.Text = "Acá se imprime algo";
+            this.lblInfoCategoria.Click += new System.EventHandler(this.lblInfoCategoria_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Deporte";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Deporte";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(534, 110);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(73, 35);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // lblTituloCategoria
+            // 
+            this.lblTituloCategoria.AutoSize = true;
+            this.lblTituloCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloCategoria.Location = new System.Drawing.Point(72, 0);
+            this.lblTituloCategoria.Name = "lblTituloCategoria";
+            this.lblTituloCategoria.Size = new System.Drawing.Size(198, 26);
+            this.lblTituloCategoria.TabIndex = 2;
+            this.lblTituloCategoria.Text = "Gestión Categorias";
+            this.lblTituloCategoria.Click += new System.EventHandler(this.label2_Click);
+            // 
             // InterfazListaCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 448);
+            this.ClientSize = new System.Drawing.Size(645, 364);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblInfoCategoria);
             this.Controls.Add(this.btnCrearCategoria);
@@ -269,15 +264,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Controls.Add(this.lblTituloCategoria);
             this.Controls.Add(this.lblDeporteCategoria);
             this.Controls.Add(this.dtvListarCategorias);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InterfazListaCategoria";
-            this.Text = "InterfazListaCategoria";
+            this.Text = "InterfazListaCategoría";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazListaCategoria_FormClosing);
             this.Load += new System.EventHandler(this.InterfazListaCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbGimnasiaYEsgrimaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modelCategoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

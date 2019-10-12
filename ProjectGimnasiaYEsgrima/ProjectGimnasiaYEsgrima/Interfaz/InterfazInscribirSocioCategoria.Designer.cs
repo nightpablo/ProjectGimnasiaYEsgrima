@@ -72,10 +72,9 @@
             this.Inscribir,
             this.Unsuscribir});
             this.dtvListarCategorias.DataSource = this.modelCategoriaBindingSource;
-            this.dtvListarCategorias.Location = new System.Drawing.Point(8, 192);
-            this.dtvListarCategorias.Margin = new System.Windows.Forms.Padding(4);
+            this.dtvListarCategorias.Location = new System.Drawing.Point(6, 156);
             this.dtvListarCategorias.Name = "dtvListarCategorias";
-            this.dtvListarCategorias.Size = new System.Drawing.Size(840, 208);
+            this.dtvListarCategorias.Size = new System.Drawing.Size(630, 169);
             this.dtvListarCategorias.TabIndex = 5;
             this.dtvListarCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvListarCategorias_CellContentClick);
             this.dtvListarCategorias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtvListarCategorias_CellFormatting);
@@ -123,7 +122,7 @@
             this.Inscribir.ReadOnly = true;
             this.Inscribir.Text = "Inscribir";
             this.Inscribir.UseColumnTextForButtonValue = true;
-            this.Inscribir.Width = 24;
+            this.Inscribir.Width = 21;
             // 
             // Unsuscribir
             // 
@@ -133,7 +132,7 @@
             this.Unsuscribir.ReadOnly = true;
             this.Unsuscribir.Text = "Unsuscribir";
             this.Unsuscribir.UseColumnTextForButtonValue = true;
-            this.Unsuscribir.Width = 24;
+            this.Unsuscribir.Width = 21;
             // 
             // modelCategoriaBindingSource
             // 
@@ -143,10 +142,9 @@
             // 
             this.lblDeporteCategoria.AutoSize = true;
             this.lblDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeporteCategoria.Location = new System.Drawing.Point(40, 48);
-            this.lblDeporteCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeporteCategoria.Location = new System.Drawing.Point(30, 39);
             this.lblDeporteCategoria.Name = "lblDeporteCategoria";
-            this.lblDeporteCategoria.Size = new System.Drawing.Size(100, 29);
+            this.lblDeporteCategoria.Size = new System.Drawing.Size(77, 24);
             this.lblDeporteCategoria.TabIndex = 2;
             this.lblDeporteCategoria.Text = "Deporte";
             // 
@@ -154,10 +152,9 @@
             // 
             this.lblNombreCategoria.AutoSize = true;
             this.lblNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCategoria.Location = new System.Drawing.Point(39, 96);
-            this.lblNombreCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreCategoria.Location = new System.Drawing.Point(29, 78);
             this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(101, 29);
+            this.lblNombreCategoria.Size = new System.Drawing.Size(79, 24);
             this.lblNombreCategoria.TabIndex = 3;
             this.lblNombreCategoria.Text = "Nombre";
             // 
@@ -166,28 +163,25 @@
             this.cbxDeporteCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDeporteCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDeporteCategoria.FormattingEnabled = true;
-            this.cbxDeporteCategoria.Location = new System.Drawing.Point(152, 46);
-            this.cbxDeporteCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxDeporteCategoria.Location = new System.Drawing.Point(114, 37);
             this.cbxDeporteCategoria.Name = "cbxDeporteCategoria";
-            this.cbxDeporteCategoria.Size = new System.Drawing.Size(248, 37);
+            this.cbxDeporteCategoria.Size = new System.Drawing.Size(187, 32);
             this.cbxDeporteCategoria.TabIndex = 1;
             // 
             // txtNombreCategoria
             // 
             this.txtNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCategoria.Location = new System.Drawing.Point(152, 88);
-            this.txtNombreCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreCategoria.Location = new System.Drawing.Point(114, 72);
             this.txtNombreCategoria.Name = "txtNombreCategoria";
-            this.txtNombreCategoria.Size = new System.Drawing.Size(248, 34);
+            this.txtNombreCategoria.Size = new System.Drawing.Size(187, 29);
             this.txtNombreCategoria.TabIndex = 2;
             // 
             // btnBuscarCategoria
             // 
             this.btnBuscarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(345, 136);
-            this.btnBuscarCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(259, 110);
             this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(133, 40);
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(100, 32);
             this.btnBuscarCategoria.TabIndex = 3;
             this.btnBuscarCategoria.Text = "Buscar";
             this.btnBuscarCategoria.UseVisualStyleBackColor = true;
@@ -203,9 +197,10 @@
             this.lblInfoCategoria.AutoSize = true;
             this.lblInfoCategoria.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfoCategoria.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoCategoria.Location = new System.Drawing.Point(16, 408);
+            this.lblInfoCategoria.Location = new System.Drawing.Point(12, 332);
+            this.lblInfoCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoCategoria.Name = "lblInfoCategoria";
-            this.lblInfoCategoria.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoCategoria.Size = new System.Drawing.Size(165, 19);
             this.lblInfoCategoria.TabIndex = 8;
             this.lblInfoCategoria.Text = "Acá se imprime algo";
             // 
@@ -218,9 +213,10 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(704, 136);
+            this.btnVolver.Location = new System.Drawing.Point(528, 110);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 43);
+            this.btnVolver.Size = new System.Drawing.Size(73, 35);
             this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -230,12 +226,11 @@
             // 
             this.lblTituloCategoria.AutoSize = true;
             this.lblTituloCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCategoria.Location = new System.Drawing.Point(96, 0);
-            this.lblTituloCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTituloCategoria.Location = new System.Drawing.Point(72, 0);
             this.lblTituloCategoria.Name = "lblTituloCategoria";
-            this.lblTituloCategoria.Size = new System.Drawing.Size(282, 32);
+            this.lblTituloCategoria.Size = new System.Drawing.Size(216, 26);
             this.lblTituloCategoria.TabIndex = 2;
-            this.lblTituloCategoria.Text = "Inscripción Categoria";
+            this.lblTituloCategoria.Text = "Inscripción Categoría";
             // 
             // profesoresBindingSource
             // 
@@ -244,9 +239,9 @@
             // 
             // InterfazInscribirSocioCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 448);
+            this.ClientSize = new System.Drawing.Size(645, 364);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblInfoCategoria);
             this.Controls.Add(this.btnBuscarCategoria);
@@ -256,7 +251,6 @@
             this.Controls.Add(this.lblTituloCategoria);
             this.Controls.Add(this.lblDeporteCategoria);
             this.Controls.Add(this.dtvListarCategorias);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InterfazInscribirSocioCategoria";
             this.Text = "InterfazListaCategoria";
             ((System.ComponentModel.ISupportInitialize)(this.dtvListarCategorias)).EndInit();
