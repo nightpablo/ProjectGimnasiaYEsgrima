@@ -344,6 +344,7 @@
     <Compile Include="Modelo\ModelDeporte.cs" />
     <Compile Include="Modelo\ModelEmpleadoPersona.cs" />
     <Compile Include="Modelo\ModelImpresionCuponSocio.cs" />
+    <Compile Include="Modelo\ModelIngresoEgresoEmpleado.cs" />
     <Compile Include="Modelo\ModelPersona.cs" />
     <Compile Include="Modelo\ModelSocioPersona.cs" />
     <Compile Include="Modelo\Persona.cs">
@@ -466,6 +467,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Utils\EntradaSalidaEmpleado.rdlc" />
     <EmbeddedResource Include="Utils\AlfabeticoEmpleado.rdlc" />
     <EmbeddedResource Include="Utils\AlfabeticoSocio.rdlc" />
     <EmbeddedResource Include="Utils\Cupon.rdlc" />
@@ -519,6 +521,7 @@
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelDeporte.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelEmpleadoPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelImpresionCuponSocio.datasource" />
+    <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelIngresoEgresoEmpleado.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.ModelSocioPersona.datasource" />
     <None Include="Properties\DataSources\ProjectGimnasiaYEsgrima.Modelo.Persona1.datasource" />

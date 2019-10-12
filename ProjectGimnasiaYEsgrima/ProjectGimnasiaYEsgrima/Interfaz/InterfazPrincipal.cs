@@ -41,7 +41,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             foreach(var i in VentanaContenedor.Controls.OfType<Form>()) {
                 VentanaContenedor.Controls.Remove(i);
             }
+            if (InterfazEntradaSalida.videocapture != null) { 
+                InterfazEntradaSalida.videocapture.Stop();
+                //InterfazEntradaSalida.videocapture = null;
+                InterfazEntradaSalida.vspEntradaSalida.Stop();
+                //InterfazEntradaSalida.vspEntradaSalida = null;
+                InterfazEntradaSalida.msgTimer.Stop();
+                InterfazEntradaSalida.parado = true;
 
+            }
             Form fh = Formhijo as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
@@ -55,8 +63,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             {
                 VentanaContenedor.Controls.Remove(i);
             }
-            if (InterfazEntradaSalida.videocapture != null && InterfazEntradaSalida.videocapture.IsRunning)
+            if (InterfazEntradaSalida.videocapture != null) { 
                 InterfazEntradaSalida.videocapture.Stop();
+                //InterfazEntradaSalida.videocapture = null;
+                InterfazEntradaSalida.vspEntradaSalida.Stop();
+                //InterfazEntradaSalida.vspEntradaSalida = null;
+                InterfazEntradaSalida.msgTimer.Stop();
+                InterfazEntradaSalida.parado = true;
+            }
 
             Form fh = Formhijo as Form;
             fh.TopLevel = false;

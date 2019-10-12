@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.vspEntradaSalida = new AForge.Controls.VideoSourcePlayer();
+            vspEntradaSalida = new AForge.Controls.VideoSourcePlayer();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnParar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -52,14 +52,14 @@
             // 
             // vspEntradaSalida
             // 
-            this.vspEntradaSalida.Location = new System.Drawing.Point(12, 52);
-            this.vspEntradaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.vspEntradaSalida.Name = "vspEntradaSalida";
-            this.vspEntradaSalida.Size = new System.Drawing.Size(252, 273);
-            this.vspEntradaSalida.TabIndex = 0;
-            this.vspEntradaSalida.Text = "videoSourcePlayer1";
-            this.vspEntradaSalida.VideoSource = null;
-            this.vspEntradaSalida.Click += new System.EventHandler(this.vspEntradaSalida_Click);
+            vspEntradaSalida.Location = new System.Drawing.Point(12, 52);
+            vspEntradaSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            vspEntradaSalida.Name = "vspEntradaSalida";
+            vspEntradaSalida.Size = new System.Drawing.Size(252, 273);
+            vspEntradaSalida.TabIndex = 0;
+            vspEntradaSalida.Text = "videoSourcePlayer1";
+            vspEntradaSalida.VideoSource = null;
+            vspEntradaSalida.Click += new System.EventHandler(vspEntradaSalida_Click);
             // 
             // btnIniciar
             // 
@@ -242,7 +242,7 @@
             this.Controls.Add(this.btnParar);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.lblTituloEntradaSalida);
-            this.Controls.Add(this.vspEntradaSalida);
+            this.Controls.Add(vspEntradaSalida);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InterfazEntradaSalida";
             this.Text = "InterfazEntradaSalida";
@@ -259,7 +259,7 @@
 
         #endregion
 
-        private AForge.Controls.VideoSourcePlayer vspEntradaSalida;
+        public static AForge.Controls.VideoSourcePlayer vspEntradaSalida;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Button btnParar;
         private System.Windows.Forms.Button btnVolver;

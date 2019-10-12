@@ -231,6 +231,13 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             }
 
         }
+
+        public List<ModelIngresoEgresoEmpleado> TraerEntradaSalidaReporte()
+        {
+            return bdEmpleado.ListarEntradaSalidaEmpleado();
+        }
+
+
         public List<ModelEmpleadoPersona> TraerEmpleadoReporte()
         {
             return bdEmpleado.ListarTodosEmpleados();

@@ -16,8 +16,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
     {
         private FilterInfoCollection Dispositivos;
         public static VideoCaptureDevice videocapture;
-        private bool parado;
-        private Timer msgTimer;
+        public static bool parado;
+        public static Timer msgTimer;
         private int disposeFormTimer;
         private InterfazPrincipal MiVentana;
         public InterfazEntradaSalida(InterfazPrincipal ventana)
@@ -108,7 +108,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             else
             {
                 pnlDatosPersona.Hide();
-                if (!parado)
+                if (!parado && vspEntradaSalida!=null)
                 {
                     vspEntradaSalida.Start();
                     tmpCapture.Start();
@@ -142,14 +142,19 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                         }
                         else
                         {
-                            vspEntradaSalida.Start();
-                            tmpCapture.Start();
+                            if (vspEntradaSalida != null) { 
+                                vspEntradaSalida.Start();
+                                tmpCapture.Start();
+                            }
                         }
                     }
                     else
                     {
-                        vspEntradaSalida.Start();
-                        tmpCapture.Start();
+                        if (vspEntradaSalida != null)
+                        {
+                            vspEntradaSalida.Start();
+                            tmpCapture.Start();
+                        }
                     }
 
                 }

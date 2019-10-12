@@ -34,7 +34,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             interfaz.TransformarVentanaPersonalizado(this);
             interfaz.TransformarTituloVentanaPersonalizado(lblTituloReporteEmpleado);
             interfaz.TransformarLabelTextoPersonalizado(lblTipoEmpleado);
-            interfaz.TransformarBotonPersonalizadoTodos(btnReporteAlfabetico, btnReporteFiltro, btnVolver);
+            interfaz.TransformarBotonPersonalizadoTodos(btnReporteAlfabetico, btnReporteFiltro, btnVolver, button1);
             interfaz.TransformarCheckBoxPersonalizado(cbxDirectivo);
             interfaz.TransformarCheckBoxPersonalizado(cbxMantenimiento);
             interfaz.TransformarCheckBoxPersonalizado(cbxProfesor);
@@ -87,6 +87,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ControladorEmpleado CEmpleado = new ControladorEmpleado();
+            List<ModelIngresoEgresoEmpleado> lista = null;
+            lista = CEmpleado.TraerEntradaSalidaReporte();
+
+            ReportDataSource dt = new ReportDataSource("DataSet1", lista);
+            string dir = "ProjectGimnasiaYEsgrima.Utils.EntradaSalidaEmpleado.rdlc";
+
+            new InterfazGenerarReporte(dt, dir).ShowDialog();
         }
     }
 }

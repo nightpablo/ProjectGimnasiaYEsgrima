@@ -216,6 +216,23 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return lg==null? null:lg.Empleado;
             }
         }
+
+        public List<ModelIngresoEgresoEmpleado> ListarEntradaSalidaEmpleado()
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                return context.RegistroIngresoEgresoes
+                    .AsEnumerable()
+
+                    .Select(e => new ModelIngresoEgresoEmpleado()
+                    {
+                        Registro = e
+                    })
+                    .OrderByDescending(e=> e.Fecha)
+                    .OrderByDescending(e=>e.ApellidoEmpleado)
+                    .ToList();
+            }
+        }
     }
 
 }

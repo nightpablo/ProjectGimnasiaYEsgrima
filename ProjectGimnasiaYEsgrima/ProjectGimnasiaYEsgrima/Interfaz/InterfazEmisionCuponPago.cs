@@ -66,14 +66,15 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 .Where(b => b.FechaEmision.Month >= cbxFechaEmisionInicial.SelectedIndex+1)
                 .Where(b => b.FechaEmision.Month <= cbxFechaEmisionFinal.SelectedIndex+1)
                 .Where(b => (!cbxPagados.Checked ? b.Estado == EnumEstadoCuotaSocio.NoPagado : true))
+                .Where(b => (!cbxPagados.Checked ? b.Estado == EnumEstadoCuotaSocio.Anulado : true))
                 .ToList();
 
             dgvListaCuponesSocio.DataSource = lista;
 
             foreach (DataGridViewRow i in dgvListaCuponesSocio.Rows) {
-                if (((ModelCuponSocio)i.DataBoundItem).Estado != EnumEstadoCuotaSocio.NoPagado)
+                if (((ModelCuponSocio)i.DataBoundItem).Estado != EnumEstadoCuotaSocio.NoPagado) 
                     i.Cells["Confirmación"].ReadOnly = true;
-                
+
             }
             lblPrueba.Text = lista.Count()+"";
 
@@ -100,6 +101,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void dgvListaCuponesSocio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.NoPagado || ((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.Anulado) return;
             if (dgvListaCuponesSocio.Columns[e.ColumnIndex].Name.Equals("Anular"))
             {
                 if (MyMessageBox.Show("¿Esta seguro que desea Anular esta Cuota?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
