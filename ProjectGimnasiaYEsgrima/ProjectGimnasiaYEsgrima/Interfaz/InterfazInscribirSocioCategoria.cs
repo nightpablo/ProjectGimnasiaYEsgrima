@@ -158,7 +158,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
                 }
             }
-            else if (dtvListarCategorias.Columns[e.ColumnIndex].Name.Equals("Unsuscribir"))
+            else if (dtvListarCategorias.Columns[e.ColumnIndex].Name.Equals("Desinscribir"))
             {
                 if (!new ControladorCategoria().ExisteSocioEnCategoria(MiSocio.MiSocio, ((ModelCategoria)dtvListarCategorias.Rows[e.RowIndex].DataBoundItem).MiCategoria))
                 {

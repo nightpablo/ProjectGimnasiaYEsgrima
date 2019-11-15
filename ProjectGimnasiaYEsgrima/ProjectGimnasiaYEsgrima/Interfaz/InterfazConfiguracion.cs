@@ -53,8 +53,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
         {
             var HayError = false;
 
-            
-            if (long.Parse(txtValorInicialAsociado.Text) > Int32.MaxValue || long.Parse(txtValorInicialAsociado.Text) < Int32.MinValue)
+            if (txtValorInicialAsociado.Text == "")
+            {
+                HayError = true;
+                errorProvider1.SetError(txtValorInicialAsociado, "El importe inicial no debe ser nulo");
+            }
+            else if (long.Parse(txtValorInicialAsociado.Text) > Int32.MaxValue || long.Parse(txtValorInicialAsociado.Text) < Int32.MinValue)
             {
                 HayError = true;
                 errorProvider1.SetError(txtValorInicialAsociado, "El importe inicial es un número demasiado grande");

@@ -250,6 +250,7 @@ namespace ProjectGimnasiaYEsgrima.Controlador
             var valorInicial = bdSocio.ValorInicialClub();
             double MontoTotal;
             DateTime dat;
+            List<CuotaSocio> cupones = new List<CuotaSocio>();
             foreach (var i in socios) {
                 MontoTotal = valorInicial.Importe;
                 Categorias = bdSocio.ListarCategoriasInscripto(i.MiSocio);
@@ -259,13 +260,31 @@ namespace ProjectGimnasiaYEsgrima.Controlador
                 dat = new DateTime(DateTime.Now.Year, MesSeleccionado+1, 1,
                     DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Kind);
 
-
-                CrearCupon(dat, valorInicial.Importe, valorInicial, i.MiSocio);
+                cupones.Add(new CuotaSocio
+                {
+                    FechaEmision = dat,
+                    Estado = EnumEstadoCuotaSocio.NoPagado,
+                    Importe = valorInicial.Importe,
+                    ValorCuotaInicial = valorInicial,
+                    Socio = i.MiSocio
+                });
+                //CrearCupon(dat, valorInicial.Importe, valorInicial, i.MiSocio);
                 foreach(var j in Categorias)
                 {
-                    CrearCupon(dat, j.Costo, valorInicial, i.MiSocio,j);
+                    cupones.Add(new CuotaSocio
+                    {
+                        FechaEmision = dat,
+                        Estado = EnumEstadoCuotaSocio.NoPagado,
+                        Importe = j.Costo,
+                        ValorCuotaInicial = valorInicial,
+                        Socio = i.MiSocio,
+                        Categoria = j
+                    });
+                    //CrearCupon(dat, j.Costo, valorInicial, i.MiSocio,j);
                 }
             }
+            bdSocio.CrearCuponesDelMes(cupones);
+
         }
 
         public void PagarCuponSocio(List<ModelCuponSocio> lista)

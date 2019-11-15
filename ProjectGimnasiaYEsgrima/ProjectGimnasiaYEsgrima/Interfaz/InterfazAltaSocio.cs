@@ -36,6 +36,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtDireccionSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtDireccionSocio, 50);
             txtLocalidadSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtLocalidadSocio, 50);
             txtTelefonoSocio.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYLimitador(sender, e, txtTelefonoSocio, 50);
+
         }
         private void CargarInterfazBuena()
         {
@@ -96,6 +97,14 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtTelefonoSocio, "El teléfono del socio debe contener entre 3 y 50 caracteres");
             }
             else errorProvider1.SetError(txtTelefonoSocio, "");
+
+            if (dtFechaNacimientoSocio.Value.CompareTo(DateTime.Now) >= 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtFechaNacimientoSocio, "La fecha de nacimiento debe ser inferior al dia de hoy.");
+            }
+            else errorProvider1.SetError(dtFechaNacimientoSocio, "");
+            
 
             if (hayError)
                 return;

@@ -42,6 +42,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             txtDNIProfesor.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, txtApellidoProfesor);
             txtApellidoProfesor.KeyPress += (sender, e) => new CampoConRestriccion().EventoEnterFocus(sender, e, btnBuscar);
+
         }
 
         private void CargarInterfazBuena()
@@ -143,5 +144,6 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             }
             
         }
+        
     }
 }

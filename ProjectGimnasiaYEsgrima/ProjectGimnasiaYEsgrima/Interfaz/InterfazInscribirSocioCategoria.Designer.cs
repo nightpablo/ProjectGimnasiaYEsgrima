@@ -128,9 +128,9 @@
             // 
             this.Unsuscribir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Unsuscribir.HeaderText = "";
-            this.Unsuscribir.Name = "Unsuscribir";
+            this.Unsuscribir.Name = "Desinscribir";
             this.Unsuscribir.ReadOnly = true;
-            this.Unsuscribir.Text = "Unsuscribir";
+            this.Unsuscribir.Text = "Desinscribir";
             this.Unsuscribir.UseColumnTextForButtonValue = true;
             this.Unsuscribir.Width = 21;
             // 

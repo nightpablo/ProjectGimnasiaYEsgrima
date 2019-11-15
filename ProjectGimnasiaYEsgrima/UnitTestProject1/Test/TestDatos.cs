@@ -65,7 +65,7 @@ namespace UnitTestProject1
             //Eliminación
             Assert.IsTrue(controladorDeporte.EliminarDeporte(deporte_buscado) > 0);
             deporte_buscado = controladorDeporte.BuscarDeportePorClavesUnicas("NatacionPrueba");
-            Assert.IsTrue(controladorDeporte.EliminarDeporte(deporte_buscado) > 0); //Como que se eliminaron todo, todavia debe existir en la bd pero en estado BAJA
+            Assert.IsTrue(controladorDeporte.EliminarDeporte(deporte_buscado) > 0);
             //Recuperación
             Assert.IsTrue(controladorDeporte.CrearDeporte("FutbolPrueba", "Recuperando Futbol") == -1);
             Assert.IsTrue(controladorDeporte.CrearDeporte("NatacionPrueba", "Recuperando Natacion") == -1);

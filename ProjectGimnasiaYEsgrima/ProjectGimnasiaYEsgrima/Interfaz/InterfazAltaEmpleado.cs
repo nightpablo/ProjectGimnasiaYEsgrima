@@ -46,6 +46,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             txtApellidoEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtApellidoEmpleado, 50);
             txtDNIEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtDNIEmpleado, 8);
             txtDescripcionEmpleado.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYSeparadorYLimitador(sender, e, txtDescripcionEmpleado, 255);
+
         }
 
         private void CargarInterfazBuena()
@@ -86,6 +87,18 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 errorProvider1.SetError(txtDNIEmpleado, "El DNI debe ser un número entre 6 y 8 dígitos");
             }
             else errorProvider1.SetError(txtDNIEmpleado, "");
+            if (dtpFechaNacimiento.Value.CompareTo(DateTime.Now) >= 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtpFechaNacimiento, "La fecha de nacimiento debe ser inferior al dia de hoy.");
+            }
+            else errorProvider1.SetError(dtpFechaNacimiento, "");
+            if (dtpFechaNacimiento.Value.CompareTo(dtpInicioEmpleado.Value) >= 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtpInicioEmpleado, "La fecha de inicio debe ser superior a la fecha de nacimiento.");
+            }
+            else errorProvider1.SetError(dtpInicioEmpleado, "");
 
 
             if (hayError)

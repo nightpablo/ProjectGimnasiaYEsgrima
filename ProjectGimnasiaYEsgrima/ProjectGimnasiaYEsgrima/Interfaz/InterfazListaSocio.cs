@@ -189,7 +189,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             string[] lista = { "Enero", "Febrero", "Marzo", "Abril", "Mayo" ,"Junio" , "Julio", "Agosto"
             , "Septiembre", "Octubre", "Noviembre", "Diciembre"};
             Object[] resultado = MyMessageBox.ShowComboBox("Seleccione el mes que desea generar el proceso", "Mensaje", lista, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if ((DialogResult)resultado[0] == DialogResult.OK)
+            if ((DialogResult)resultado[0] == DialogResult.OK && (int)resultado[1]!=-1)
             {
                 
                 new ControladorSocio().EjecutarProcesoCuponesGeneral((int)resultado[1]);

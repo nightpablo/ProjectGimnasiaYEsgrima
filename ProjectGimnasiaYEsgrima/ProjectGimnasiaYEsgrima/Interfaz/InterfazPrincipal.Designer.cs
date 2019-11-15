@@ -303,7 +303,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "InterfazPrincipal";
-            this.Text = "Ventana";
+            this.Text = "Gimnasia y Esgrima de Ciudadela";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazPrincipal_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

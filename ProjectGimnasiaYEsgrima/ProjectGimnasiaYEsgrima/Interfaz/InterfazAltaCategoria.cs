@@ -45,6 +45,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
             txtNombreCategoria.KeyPress += (sender, e) => new CampoConRestriccion().PermiteLetrasYNumerosYSeparadorYLimitador(sender, e, txtNombreCategoria, 50);
             txtImporteMensualCategoria.KeyPress += (sender, e) => new CampoConRestriccion().PermiteNumerosYLimitador(sender, e, txtImporteMensualCategoria,9);
+
         }
 
         private void CargarInterfazBuena()

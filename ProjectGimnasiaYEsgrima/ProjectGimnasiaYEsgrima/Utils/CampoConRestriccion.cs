@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ProjectGimnasiaYEsgrima.Utils
@@ -9,6 +10,8 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void Limitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
+            
+            textBox.MaxLength = length;
             if (textBox.Text.Length < length)
                 e.Handled = false;
             else if (char.IsControl(e.KeyChar))
@@ -19,7 +22,8 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void PermiteLetrasYNumerosYSeparadorYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
-            if(textBox.Text.Length < length) {
+            textBox.MaxLength = length;
+            if (textBox.Text.Length < length) {
                 PermiteLetrasYNumerosYSeparador(sender, e);
             }
             else if (char.IsControl(e.KeyChar))
@@ -56,6 +60,7 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void PermiteLetrasYNumerosYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
+            textBox.MaxLength = length;
             if (textBox.Text.Length < length)
                 PermiteLetrasYNumeros(sender, e);
             else if (char.IsControl(e.KeyChar))
@@ -78,6 +83,7 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void PermiteLetrasYSeparadorYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
+            textBox.MaxLength = length;
             if (textBox.Text.Length < length)
             {
                 PermiteLetrasYSeparador(sender, e); //definirlo!!
@@ -90,6 +96,7 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void PermiteLetrasYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
+            textBox.MaxLength = length;
             if (textBox.Text.Length < length)
             {
                 PermiteLetras(sender,e);
@@ -112,6 +119,7 @@ namespace ProjectGimnasiaYEsgrima.Utils
 
         public void PermiteNumerosYLimitador(object sender, KeyPressEventArgs e, TextBox textBox, int length)
         {
+            textBox.MaxLength = length;
             if (textBox.Text.Length < length)
             {
                 PermiteNumeros(sender, e);

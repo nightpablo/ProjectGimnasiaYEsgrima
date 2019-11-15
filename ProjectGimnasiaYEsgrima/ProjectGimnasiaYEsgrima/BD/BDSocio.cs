@@ -97,6 +97,26 @@ namespace ProjectGimnasiaYEsgrima.BD
             }
         }
 
+        public void CrearCuponesDelMes(List<CuotaSocio> cupones)
+        {
+            using (var context = new DiagramasDeTablasContainer1())
+            {
+                foreach (var entrada in cupones)
+                {
+                    context.Entry(entrada.Socio).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(entrada.ValorCuotaInicial).State = System.Data.Entity.EntityState.Modified;
+                    if (entrada.Categoria != null)
+                    {
+                        entrada.Categoria = context.Categorias.AsEnumerable().FirstOrDefault(b => b.IdCategoria == entrada.Categoria.IdCategoria);
+                        context.Entry(entrada.Categoria).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    context.Entry(entrada).State = System.Data.Entity.EntityState.Added;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         public void PagarCupon(CuotaSocio cuota)
         {
             using (var context = new DiagramasDeTablasContainer1())
@@ -205,6 +225,9 @@ namespace ProjectGimnasiaYEsgrima.BD
                         }
                     }).AsEnumerable()
                     .Where(b=> b.MiSocio.MiSocio.IdSocio == socio.IdSocio)
+                    .Where(b=>b.MiCategoria != null)
+                    .Where(b=>b.EstadoCategoria != EnumEstadoCategoria.Cancelado)
+                    .Where(b=>b.EstadoCategoria!= EnumEstadoCategoria.Terminado)
                     .ToList();
 
                 return j;
@@ -312,6 +335,7 @@ namespace ProjectGimnasiaYEsgrima.BD
                 return context.Categorias
                     .AsEnumerable()
                     .Where(b=> b.Socios.Select(c=>c.IdSocio).Contains(socio.IdSocio))
+                    .Where(b=>b.EstadoCategoria!=EnumEstadoCategoria.Cancelado && b.EstadoCategoria!=EnumEstadoCategoria.Terminado )
                     .ToList();
             }
         }

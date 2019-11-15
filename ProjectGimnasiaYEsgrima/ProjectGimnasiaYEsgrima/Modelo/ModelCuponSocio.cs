@@ -21,6 +21,7 @@ namespace ProjectGimnasiaYEsgrima.Modelo
         public ModelSocioPersona MiSocio { get; set; }
         public CuotaSocio MiCuota { get; set; }
         public Categoria MiCategoria { get; set; }
+        public EnumEstadoCategoria EstadoCategoria { get { return MiCategoria.EstadoCategoria; } }
 
 
         public ModelCuponSocio(){}

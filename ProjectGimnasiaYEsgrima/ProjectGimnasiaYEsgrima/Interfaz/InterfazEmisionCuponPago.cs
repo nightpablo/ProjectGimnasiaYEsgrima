@@ -65,8 +65,8 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             lista = lista.AsEnumerable()
                 .Where(b => b.FechaEmision.Month >= cbxFechaEmisionInicial.SelectedIndex+1)
                 .Where(b => b.FechaEmision.Month <= cbxFechaEmisionFinal.SelectedIndex+1)
-                .Where(b => (!cbxPagados.Checked ? b.Estado == EnumEstadoCuotaSocio.NoPagado : true))
-                .Where(b => (!cbxPagados.Checked ? b.Estado == EnumEstadoCuotaSocio.Anulado : true))
+                .Where(b => (!cbxPagados.Checked ? b.Estado == EnumEstadoCuotaSocio.NoPagado : b.Estado != EnumEstadoCuotaSocio.NoPagado))
+                
                 .ToList();
 
             dgvListaCuponesSocio.DataSource = lista;
@@ -101,7 +101,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
 
         private void dgvListaCuponesSocio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.NoPagado || ((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.Anulado) return;
+            if (((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.Pagado || ((ModelCuponSocio)dgvListaCuponesSocio.CurrentRow.DataBoundItem).MiCuota.Estado == EnumEstadoCuotaSocio.Anulado) return;
             if (dgvListaCuponesSocio.Columns[e.ColumnIndex].Name.Equals("Anular"))
             {
                 if (MyMessageBox.Show("¿Esta seguro que desea Anular esta Cuota?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)

@@ -54,37 +54,35 @@
             // 
             this.lblTituloProfesor.AutoSize = true;
             this.lblTituloProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloProfesor.Location = new System.Drawing.Point(8, 8);
+            this.lblTituloProfesor.Location = new System.Drawing.Point(6, 6);
+            this.lblTituloProfesor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloProfesor.Name = "lblTituloProfesor";
-            this.lblTituloProfesor.Size = new System.Drawing.Size(256, 32);
+            this.lblTituloProfesor.Size = new System.Drawing.Size(196, 26);
             this.lblTituloProfesor.TabIndex = 1;
             this.lblTituloProfesor.Text = "Lista de profesores";
             // 
             // txtApellidoProfesor
             // 
             this.txtApellidoProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoProfesor.Location = new System.Drawing.Point(146, 93);
-            this.txtApellidoProfesor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidoProfesor.Location = new System.Drawing.Point(110, 76);
             this.txtApellidoProfesor.Name = "txtApellidoProfesor";
-            this.txtApellidoProfesor.Size = new System.Drawing.Size(160, 34);
+            this.txtApellidoProfesor.Size = new System.Drawing.Size(121, 29);
             this.txtApellidoProfesor.TabIndex = 2;
             // 
             // txtDNIProfesor
             // 
             this.txtDNIProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNIProfesor.Location = new System.Drawing.Point(146, 57);
-            this.txtDNIProfesor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNIProfesor.Location = new System.Drawing.Point(110, 46);
             this.txtDNIProfesor.Name = "txtDNIProfesor";
-            this.txtDNIProfesor.Size = new System.Drawing.Size(160, 34);
+            this.txtDNIProfesor.Size = new System.Drawing.Size(121, 29);
             this.txtDNIProfesor.TabIndex = 1;
             // 
             // lblApellidoProfesor
             // 
             this.lblApellidoProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoProfesor.Location = new System.Drawing.Point(0, 96);
-            this.lblApellidoProfesor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoProfesor.Location = new System.Drawing.Point(0, 78);
             this.lblApellidoProfesor.Name = "lblApellidoProfesor";
-            this.lblApellidoProfesor.Size = new System.Drawing.Size(120, 30);
+            this.lblApellidoProfesor.Size = new System.Drawing.Size(90, 24);
             this.lblApellidoProfesor.TabIndex = 14;
             this.lblApellidoProfesor.Text = "Apellido";
             this.lblApellidoProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -92,10 +90,9 @@
             // lblDNIProfesor
             // 
             this.lblDNIProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNIProfesor.Location = new System.Drawing.Point(32, 60);
-            this.lblDNIProfesor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNIProfesor.Location = new System.Drawing.Point(24, 49);
             this.lblDNIProfesor.Name = "lblDNIProfesor";
-            this.lblDNIProfesor.Size = new System.Drawing.Size(88, 28);
+            this.lblDNIProfesor.Size = new System.Drawing.Size(66, 23);
             this.lblDNIProfesor.TabIndex = 15;
             this.lblDNIProfesor.Text = "DNI";
             this.lblDNIProfesor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -111,10 +108,11 @@
             this.AsignarCategoria,
             this.EliminarCategoria});
             this.dgvEmpleadoProfesor.DataSource = this.modelEmpleadoPersonaBindingSource;
-            this.dgvEmpleadoProfesor.Location = new System.Drawing.Point(8, 208);
+            this.dgvEmpleadoProfesor.Location = new System.Drawing.Point(6, 169);
+            this.dgvEmpleadoProfesor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvEmpleadoProfesor.Name = "dgvEmpleadoProfesor";
             this.dgvEmpleadoProfesor.RowTemplate.Height = 24;
-            this.dgvEmpleadoProfesor.Size = new System.Drawing.Size(816, 150);
+            this.dgvEmpleadoProfesor.Size = new System.Drawing.Size(612, 122);
             this.dgvEmpleadoProfesor.TabIndex = 18;
             this.dgvEmpleadoProfesor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvEmpleadoProfesor.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmpleadoProfesor_CellFormatting);
@@ -147,7 +145,7 @@
             this.AsignarCategoria.Name = "AsignarCategoria";
             this.AsignarCategoria.Text = "Asignar Categoria";
             this.AsignarCategoria.UseColumnTextForButtonValue = true;
-            this.AsignarCategoria.Width = 24;
+            this.AsignarCategoria.Width = 21;
             // 
             // EliminarCategoria
             // 
@@ -156,7 +154,7 @@
             this.EliminarCategoria.Name = "EliminarCategoria";
             this.EliminarCategoria.Text = "Eliminar Categoria";
             this.EliminarCategoria.UseColumnTextForButtonValue = true;
-            this.EliminarCategoria.Width = 24;
+            this.EliminarCategoria.Width = 21;
             // 
             // modelEmpleadoPersonaBindingSource
             // 
@@ -165,9 +163,10 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(400, 144);
+            this.btnBuscar.Location = new System.Drawing.Point(300, 117);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(173, 48);
+            this.btnBuscar.Size = new System.Drawing.Size(130, 39);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -176,9 +175,10 @@
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(616, 144);
+            this.btnVolver.Location = new System.Drawing.Point(462, 117);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(173, 48);
+            this.btnVolver.Size = new System.Drawing.Size(130, 39);
             this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -189,9 +189,10 @@
             this.lblInfoProfesor.AutoSize = true;
             this.lblInfoProfesor.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfoProfesor.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoProfesor.Location = new System.Drawing.Point(8, 376);
+            this.lblInfoProfesor.Location = new System.Drawing.Point(6, 306);
+            this.lblInfoProfesor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoProfesor.Name = "lblInfoProfesor";
-            this.lblInfoProfesor.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoProfesor.Size = new System.Drawing.Size(165, 19);
             this.lblInfoProfesor.TabIndex = 20;
             this.lblInfoProfesor.Text = "Acá se imprime algo";
             // 
@@ -201,9 +202,9 @@
             // 
             // InterfazAgregarCategoriaEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 412);
+            this.ClientSize = new System.Drawing.Size(627, 335);
             this.Controls.Add(this.lblInfoProfesor);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnBuscar);
@@ -213,6 +214,7 @@
             this.Controls.Add(this.lblApellidoProfesor);
             this.Controls.Add(this.lblDNIProfesor);
             this.Controls.Add(this.lblTituloProfesor);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InterfazAgregarCategoriaEmpleado";
             this.Text = "InterfazAgregarCategoriaEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleadoProfesor)).EndInit();
