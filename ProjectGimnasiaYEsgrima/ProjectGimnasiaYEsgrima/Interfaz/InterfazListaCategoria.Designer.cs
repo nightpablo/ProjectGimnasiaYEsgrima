@@ -244,9 +244,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.lblTituloCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloCategoria.Location = new System.Drawing.Point(72, 0);
             this.lblTituloCategoria.Name = "lblTituloCategoria";
-            this.lblTituloCategoria.Size = new System.Drawing.Size(198, 26);
+            this.lblTituloCategoria.Size = new System.Drawing.Size(228, 26);
             this.lblTituloCategoria.TabIndex = 2;
-            this.lblTituloCategoria.Text = "Gestión Categorias";
+            this.lblTituloCategoria.Text = "Gestión de Categorias";
             this.lblTituloCategoria.Click += new System.EventHandler(this.label2_Click);
             // 
             // InterfazListaCategoria

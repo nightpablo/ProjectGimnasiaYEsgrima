@@ -40,7 +40,7 @@
             // btnSociosReportes
             // 
             this.btnSociosReportes.Location = new System.Drawing.Point(18, 52);
-            this.btnSociosReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSociosReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnSociosReportes.Name = "btnSociosReportes";
             this.btnSociosReportes.Size = new System.Drawing.Size(138, 39);
             this.btnSociosReportes.TabIndex = 1;
@@ -51,7 +51,7 @@
             // btnEmpleadosReportes
             // 
             this.btnEmpleadosReportes.Location = new System.Drawing.Point(198, 52);
-            this.btnEmpleadosReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmpleadosReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmpleadosReportes.Name = "btnEmpleadosReportes";
             this.btnEmpleadosReportes.Size = new System.Drawing.Size(138, 39);
             this.btnEmpleadosReportes.TabIndex = 2;
@@ -62,7 +62,7 @@
             // btnDeportesReportes
             // 
             this.btnDeportesReportes.Location = new System.Drawing.Point(18, 130);
-            this.btnDeportesReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeportesReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeportesReportes.Name = "btnDeportesReportes";
             this.btnDeportesReportes.Size = new System.Drawing.Size(138, 39);
             this.btnDeportesReportes.TabIndex = 3;
@@ -73,7 +73,7 @@
             // btnIngresosReportes
             // 
             this.btnIngresosReportes.Location = new System.Drawing.Point(18, 208);
-            this.btnIngresosReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresosReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresosReportes.Name = "btnIngresosReportes";
             this.btnIngresosReportes.Size = new System.Drawing.Size(138, 39);
             this.btnIngresosReportes.TabIndex = 5;
@@ -87,14 +87,14 @@
             this.lblTituloReportes.Location = new System.Drawing.Point(30, 20);
             this.lblTituloReportes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloReportes.Name = "lblTituloReportes";
-            this.lblTituloReportes.Size = new System.Drawing.Size(50, 13);
+            this.lblTituloReportes.Size = new System.Drawing.Size(104, 13);
             this.lblTituloReportes.TabIndex = 5;
-            this.lblTituloReportes.Text = "Reportes";
+            this.lblTituloReportes.Text = "Gestión de Reportes";
             // 
             // btnCategoriasReportes
             // 
             this.btnCategoriasReportes.Location = new System.Drawing.Point(198, 130);
-            this.btnCategoriasReportes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCategoriasReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategoriasReportes.Name = "btnCategoriasReportes";
             this.btnCategoriasReportes.Size = new System.Drawing.Size(144, 39);
             this.btnCategoriasReportes.TabIndex = 4;
@@ -105,7 +105,7 @@
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(198, 208);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(144, 39);
             this.btnVolver.TabIndex = 6;
@@ -125,7 +125,7 @@
             this.Controls.Add(this.btnDeportesReportes);
             this.Controls.Add(this.btnEmpleadosReportes);
             this.Controls.Add(this.btnSociosReportes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InterfazFiltroReporte";
             this.Text = "InterfazFiltroReporte";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazFiltroReporte_FormClosing);

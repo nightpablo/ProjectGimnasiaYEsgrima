@@ -136,7 +136,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     var resultado = CCategoria.UnsuscribirSocioAlCategoria(MiSocio.MiSocio, MiCategoria.MiCategoria);
                     if (resultado > 0)
                     {
-                        Padre.ModificarMensaje("Se ha desubscripto al Socio de la Categoría");
+                        Padre.ModificarMensaje("Se ha desinscripto al Socio de la Categoría");
                         Dispose();
                     }
                     else if (resultado == -2)

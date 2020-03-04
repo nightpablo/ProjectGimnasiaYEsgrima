@@ -96,7 +96,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             var resultado = un_controlador_Categoria.ModificarCategoria(Categoria.IdCategoria,txtNombreCategoria.Text,Int32.Parse(txtImporteMensualCategoria.Text), dtpInicioCategoria.Value, dtpFinCategoria.Value, Categoria.Deporte, Categoria.EstadoCategoria);
             if (resultado > 0)
             {
-                Padre.ModificarMensaje("La Categoría ha sido modificado con ÉXITO");
+                Padre.ModificarMensaje("La CATEGORÍA ha sido modificado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }

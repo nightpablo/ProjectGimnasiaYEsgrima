@@ -44,9 +44,12 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (InterfazEntradaSalida.videocapture != null) { 
                 InterfazEntradaSalida.videocapture.Stop();
                 //InterfazEntradaSalida.videocapture = null;
-                InterfazEntradaSalida.vspEntradaSalida.Stop();
+                if(InterfazEntradaSalida.vspEntradaSalida!=null && !InterfazEntradaSalida.vspEntradaSalida.IsDisposed)
+                    InterfazEntradaSalida.vspEntradaSalida.Stop();
                 //InterfazEntradaSalida.vspEntradaSalida = null;
-                InterfazEntradaSalida.msgTimer.Stop();
+                if(InterfazEntradaSalida.msgTimer!=null)
+                    InterfazEntradaSalida.msgTimer.Stop();
+
                 InterfazEntradaSalida.parado = true;
 
             }
@@ -66,9 +69,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (InterfazEntradaSalida.videocapture != null) { 
                 InterfazEntradaSalida.videocapture.Stop();
                 //InterfazEntradaSalida.videocapture = null;
-                InterfazEntradaSalida.vspEntradaSalida.Stop();
+                if(InterfazEntradaSalida.vspEntradaSalida!= null && !InterfazEntradaSalida.vspEntradaSalida.IsDisposed)
+                    InterfazEntradaSalida.vspEntradaSalida.Stop();
                 //InterfazEntradaSalida.vspEntradaSalida = null;
-                InterfazEntradaSalida.msgTimer.Stop();
+                if(InterfazEntradaSalida.msgTimer!=null)
+                    InterfazEntradaSalida.msgTimer.Stop();
                 InterfazEntradaSalida.parado = true;
             }
 

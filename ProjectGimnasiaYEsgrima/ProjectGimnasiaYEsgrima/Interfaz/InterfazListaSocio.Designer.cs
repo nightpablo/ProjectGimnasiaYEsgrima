@@ -62,10 +62,9 @@
             // lblNombreSocio
             // 
             this.lblNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreSocio.Location = new System.Drawing.Point(29, 40);
-            this.lblNombreSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreSocio.Location = new System.Drawing.Point(22, 32);
             this.lblNombreSocio.Name = "lblNombreSocio";
-            this.lblNombreSocio.Size = new System.Drawing.Size(101, 29);
+            this.lblNombreSocio.Size = new System.Drawing.Size(76, 24);
             this.lblNombreSocio.TabIndex = 16;
             this.lblNombreSocio.Text = "Nombre";
             this.lblNombreSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -73,19 +72,17 @@
             // txtNombreSocio
             // 
             this.txtNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreSocio.Location = new System.Drawing.Point(153, 40);
-            this.txtNombreSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreSocio.Location = new System.Drawing.Point(115, 32);
             this.txtNombreSocio.Name = "txtNombreSocio";
-            this.txtNombreSocio.Size = new System.Drawing.Size(160, 34);
+            this.txtNombreSocio.Size = new System.Drawing.Size(121, 29);
             this.txtNombreSocio.TabIndex = 1;
             // 
             // lblDNISocio
             // 
             this.lblDNISocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNISocio.Location = new System.Drawing.Point(76, 112);
-            this.lblDNISocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNISocio.Location = new System.Drawing.Point(57, 91);
             this.lblDNISocio.Name = "lblDNISocio";
-            this.lblDNISocio.Size = new System.Drawing.Size(54, 29);
+            this.lblDNISocio.Size = new System.Drawing.Size(40, 24);
             this.lblDNISocio.TabIndex = 17;
             this.lblDNISocio.Text = "DNI";
             this.lblDNISocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -93,10 +90,9 @@
             // lblApellidoSocio
             // 
             this.lblApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoSocio.Location = new System.Drawing.Point(28, 77);
-            this.lblApellidoSocio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoSocio.Location = new System.Drawing.Point(21, 63);
             this.lblApellidoSocio.Name = "lblApellidoSocio";
-            this.lblApellidoSocio.Size = new System.Drawing.Size(102, 29);
+            this.lblApellidoSocio.Size = new System.Drawing.Size(76, 24);
             this.lblApellidoSocio.TabIndex = 14;
             this.lblApellidoSocio.Text = "Apellido";
             this.lblApellidoSocio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,27 +100,26 @@
             // txtDNISocio
             // 
             this.txtDNISocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNISocio.Location = new System.Drawing.Point(153, 112);
-            this.txtDNISocio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDNISocio.Location = new System.Drawing.Point(115, 91);
             this.txtDNISocio.Name = "txtDNISocio";
-            this.txtDNISocio.Size = new System.Drawing.Size(160, 34);
+            this.txtDNISocio.Size = new System.Drawing.Size(121, 29);
             this.txtDNISocio.TabIndex = 3;
             // 
             // txtApellidoSocio
             // 
             this.txtApellidoSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoSocio.Location = new System.Drawing.Point(153, 77);
-            this.txtApellidoSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidoSocio.Location = new System.Drawing.Point(115, 63);
             this.txtApellidoSocio.Name = "txtApellidoSocio";
-            this.txtApellidoSocio.Size = new System.Drawing.Size(160, 34);
+            this.txtApellidoSocio.Size = new System.Drawing.Size(121, 29);
             this.txtApellidoSocio.TabIndex = 2;
             // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(672, 368);
+            this.btnVolver.Location = new System.Drawing.Point(504, 299);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 40);
+            this.btnVolver.Size = new System.Drawing.Size(73, 32);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -133,10 +128,9 @@
             // btnCrearSocio
             // 
             this.btnCrearSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearSocio.Location = new System.Drawing.Point(608, 112);
-            this.btnCrearSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearSocio.Location = new System.Drawing.Point(456, 91);
             this.btnCrearSocio.Name = "btnCrearSocio";
-            this.btnCrearSocio.Size = new System.Drawing.Size(160, 36);
+            this.btnCrearSocio.Size = new System.Drawing.Size(120, 29);
             this.btnCrearSocio.TabIndex = 5;
             this.btnCrearSocio.Text = "Crear Socio";
             this.btnCrearSocio.UseVisualStyleBackColor = true;
@@ -145,10 +139,9 @@
             // btnBuscarSocio
             // 
             this.btnBuscarSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarSocio.Location = new System.Drawing.Point(472, 112);
-            this.btnBuscarSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarSocio.Location = new System.Drawing.Point(354, 91);
             this.btnBuscarSocio.Name = "btnBuscarSocio";
-            this.btnBuscarSocio.Size = new System.Drawing.Size(133, 36);
+            this.btnBuscarSocio.Size = new System.Drawing.Size(100, 29);
             this.btnBuscarSocio.TabIndex = 4;
             this.btnBuscarSocio.Text = "Buscar";
             this.btnBuscarSocio.UseVisualStyleBackColor = true;
@@ -170,10 +163,11 @@
             this.CuponPago,
             this.EmitirCarnet});
             this.dataGridViewSocioPersona.DataSource = this.modelSocioPersonaBindingSource1;
-            this.dataGridViewSocioPersona.Location = new System.Drawing.Point(8, 165);
+            this.dataGridViewSocioPersona.Location = new System.Drawing.Point(6, 134);
+            this.dataGridViewSocioPersona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewSocioPersona.Name = "dataGridViewSocioPersona";
             this.dataGridViewSocioPersona.RowTemplate.Height = 24;
-            this.dataGridViewSocioPersona.Size = new System.Drawing.Size(784, 185);
+            this.dataGridViewSocioPersona.Size = new System.Drawing.Size(588, 150);
             this.dataGridViewSocioPersona.TabIndex = 6;
             this.dataGridViewSocioPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSocioPersona_CellContentClick);
             // 
@@ -206,7 +200,7 @@
             this.Modificar.ReadOnly = true;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 24;
+            this.Modificar.Width = 21;
             // 
             // Eliminar
             // 
@@ -216,7 +210,7 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 24;
+            this.Eliminar.Width = 21;
             // 
             // InscribirCategoria
             // 
@@ -226,7 +220,7 @@
             this.InscribirCategoria.ReadOnly = true;
             this.InscribirCategoria.Text = "InscribirCategoria";
             this.InscribirCategoria.UseColumnTextForButtonValue = true;
-            this.InscribirCategoria.Width = 24;
+            this.InscribirCategoria.Width = 21;
             // 
             // CuponPago
             // 
@@ -236,7 +230,7 @@
             this.CuponPago.ReadOnly = true;
             this.CuponPago.Text = "CuponPago";
             this.CuponPago.UseColumnTextForButtonValue = true;
-            this.CuponPago.Width = 24;
+            this.CuponPago.Width = 21;
             // 
             // EmitirCarnet
             // 
@@ -246,7 +240,7 @@
             this.EmitirCarnet.ReadOnly = true;
             this.EmitirCarnet.Text = "EmitirCarnet";
             this.EmitirCarnet.UseColumnTextForButtonValue = true;
-            this.EmitirCarnet.Width = 24;
+            this.EmitirCarnet.Width = 21;
             // 
             // modelSocioPersonaBindingSource1
             // 
@@ -257,9 +251,10 @@
             this.lblInfoSocio.AutoSize = true;
             this.lblInfoSocio.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold);
             this.lblInfoSocio.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoSocio.Location = new System.Drawing.Point(48, 360);
+            this.lblInfoSocio.Location = new System.Drawing.Point(36, 292);
+            this.lblInfoSocio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoSocio.Name = "lblInfoSocio";
-            this.lblInfoSocio.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoSocio.Size = new System.Drawing.Size(165, 19);
             this.lblInfoSocio.TabIndex = 26;
             this.lblInfoSocio.Text = "Aca se imprime algo";
             // 
@@ -267,12 +262,11 @@
             // 
             this.labelTituloVentana.AutoSize = true;
             this.labelTituloVentana.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTituloVentana.Location = new System.Drawing.Point(48, 0);
-            this.labelTituloVentana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTituloVentana.Location = new System.Drawing.Point(36, 0);
             this.labelTituloVentana.Name = "labelTituloVentana";
-            this.labelTituloVentana.Size = new System.Drawing.Size(207, 32);
+            this.labelTituloVentana.Size = new System.Drawing.Size(189, 26);
             this.labelTituloVentana.TabIndex = 27;
-            this.labelTituloVentana.Text = "Gestion Socios";
+            this.labelTituloVentana.Text = "Gestion de Socios";
             // 
             // ContenedorHijo
             // 
@@ -280,8 +274,9 @@
             this.ContenedorHijo.Controls.Add(this.btnEjecutarProcesoGeneral);
             this.ContenedorHijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContenedorHijo.Location = new System.Drawing.Point(0, 0);
+            this.ContenedorHijo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ContenedorHijo.Name = "ContenedorHijo";
-            this.ContenedorHijo.Size = new System.Drawing.Size(797, 478);
+            this.ContenedorHijo.Size = new System.Drawing.Size(598, 388);
             this.ContenedorHijo.TabIndex = 28;
             // 
             // btnEjecutarProcesoGeneral
@@ -289,9 +284,10 @@
             this.btnEjecutarProcesoGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEjecutarProcesoGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEjecutarProcesoGeneral.Location = new System.Drawing.Point(240, 424);
+            this.btnEjecutarProcesoGeneral.Location = new System.Drawing.Point(180, 344);
+            this.btnEjecutarProcesoGeneral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEjecutarProcesoGeneral.Name = "btnEjecutarProcesoGeneral";
-            this.btnEjecutarProcesoGeneral.Size = new System.Drawing.Size(416, 40);
+            this.btnEjecutarProcesoGeneral.Size = new System.Drawing.Size(312, 32);
             this.btnEjecutarProcesoGeneral.TabIndex = 8;
             this.btnEjecutarProcesoGeneral.Text = "Proceso - Generar Cupon Socios";
             this.btnEjecutarProcesoGeneral.UseVisualStyleBackColor = true;
@@ -303,9 +299,9 @@
             // 
             // InterfazListaSocio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 478);
+            this.ClientSize = new System.Drawing.Size(598, 388);
             this.Controls.Add(this.lblInfoSocio);
             this.Controls.Add(this.dataGridViewSocioPersona);
             this.Controls.Add(this.btnVolver);
@@ -318,6 +314,7 @@
             this.Controls.Add(this.lblDNISocio);
             this.Controls.Add(this.lblNombreSocio);
             this.Controls.Add(this.ContenedorHijo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InterfazListaSocio";
             this.Text = "InterfazListaSocio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazListaSocio_FormClosing);

@@ -58,19 +58,21 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             this.lblTituloDeporte.AutoSize = true;
             this.lblTituloDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloDeporte.Location = new System.Drawing.Point(16, 0);
+            this.lblTituloDeporte.Location = new System.Drawing.Point(12, 0);
+            this.lblTituloDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTituloDeporte.Name = "lblTituloDeporte";
-            this.lblTituloDeporte.Size = new System.Drawing.Size(236, 32);
+            this.lblTituloDeporte.Size = new System.Drawing.Size(211, 26);
             this.lblTituloDeporte.TabIndex = 0;
-            this.lblTituloDeporte.Text = "Gestión Deportes";
+            this.lblTituloDeporte.Text = "Gestión de Deportes";
             // 
             // lblNombreDeporte
             // 
             this.lblNombreDeporte.AutoSize = true;
             this.lblNombreDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreDeporte.Location = new System.Drawing.Point(29, 46);
+            this.lblNombreDeporte.Location = new System.Drawing.Point(22, 37);
+            this.lblNombreDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreDeporte.Name = "lblNombreDeporte";
-            this.lblNombreDeporte.Size = new System.Drawing.Size(101, 29);
+            this.lblNombreDeporte.Size = new System.Drawing.Size(79, 24);
             this.lblNombreDeporte.TabIndex = 1;
             this.lblNombreDeporte.Text = "Nombre";
             // 
@@ -78,37 +80,38 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             this.lblDescripcionDeporte.AutoSize = true;
             this.lblDescripcionDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionDeporte.Location = new System.Drawing.Point(29, 87);
+            this.lblDescripcionDeporte.Location = new System.Drawing.Point(22, 71);
+            this.lblDescripcionDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcionDeporte.Name = "lblDescripcionDeporte";
-            this.lblDescripcionDeporte.Size = new System.Drawing.Size(141, 29);
+            this.lblDescripcionDeporte.Size = new System.Drawing.Size(110, 24);
             this.lblDescripcionDeporte.TabIndex = 1;
             this.lblDescripcionDeporte.Text = "Descripción";
             // 
             // txtNombreDeporte
             // 
             this.txtNombreDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreDeporte.Location = new System.Drawing.Point(200, 46);
-            this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreDeporte.Location = new System.Drawing.Point(150, 37);
+            this.txtNombreDeporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreDeporte.Name = "txtNombreDeporte";
-            this.txtNombreDeporte.Size = new System.Drawing.Size(280, 34);
+            this.txtNombreDeporte.Size = new System.Drawing.Size(211, 29);
             this.txtNombreDeporte.TabIndex = 1;
             // 
             // txtDescripcionDeporte
             // 
             this.txtDescripcionDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionDeporte.Location = new System.Drawing.Point(200, 88);
-            this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcionDeporte.Location = new System.Drawing.Point(150, 72);
+            this.txtDescripcionDeporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescripcionDeporte.Name = "txtDescripcionDeporte";
-            this.txtDescripcionDeporte.Size = new System.Drawing.Size(280, 34);
+            this.txtDescripcionDeporte.Size = new System.Drawing.Size(211, 29);
             this.txtDescripcionDeporte.TabIndex = 2;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(296, 136);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(222, 110);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(103, 41);
+            this.btnBuscar.Size = new System.Drawing.Size(77, 33);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -117,10 +120,10 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // btnCrearDeporte
             // 
             this.btnCrearDeporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearDeporte.Location = new System.Drawing.Point(432, 136);
-            this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCrearDeporte.Location = new System.Drawing.Point(324, 110);
+            this.btnCrearDeporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCrearDeporte.Name = "btnCrearDeporte";
-            this.btnCrearDeporte.Size = new System.Drawing.Size(199, 41);
+            this.btnCrearDeporte.Size = new System.Drawing.Size(149, 33);
             this.btnCrearDeporte.TabIndex = 4;
             this.btnCrearDeporte.Text = "Crear Deporte";
             this.btnCrearDeporte.UseVisualStyleBackColor = true;
@@ -139,11 +142,11 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Modificar,
             this.Eliminar});
             this.dataGridViewDeporte.DataSource = this.modelDeporteBindingSource;
-            this.dataGridViewDeporte.Location = new System.Drawing.Point(8, 184);
-            this.dataGridViewDeporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewDeporte.Location = new System.Drawing.Point(6, 150);
+            this.dataGridViewDeporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewDeporte.Name = "dataGridViewDeporte";
             this.dataGridViewDeporte.RowTemplate.Height = 24;
-            this.dataGridViewDeporte.Size = new System.Drawing.Size(784, 204);
+            this.dataGridViewDeporte.Size = new System.Drawing.Size(588, 166);
             this.dataGridViewDeporte.TabIndex = 6;
             this.dataGridViewDeporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -176,7 +179,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Modificar.ReadOnly = true;
             this.Modificar.Text = "Modificar";
             this.Modificar.UseColumnTextForButtonValue = true;
-            this.Modificar.Width = 24;
+            this.Modificar.Width = 21;
             // 
             // Eliminar
             // 
@@ -186,7 +189,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForButtonValue = true;
-            this.Eliminar.Width = 24;
+            this.Eliminar.Width = 21;
             // 
             // modelDeporteBindingSource
             // 
@@ -197,18 +200,20 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.lblInfoDeporte.AutoSize = true;
             this.lblInfoDeporte.Font = new System.Drawing.Font("Arial Black", 9.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfoDeporte.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblInfoDeporte.Location = new System.Drawing.Point(24, 392);
+            this.lblInfoDeporte.Location = new System.Drawing.Point(18, 318);
+            this.lblInfoDeporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfoDeporte.Name = "lblInfoDeporte";
-            this.lblInfoDeporte.Size = new System.Drawing.Size(199, 24);
+            this.lblInfoDeporte.Size = new System.Drawing.Size(165, 19);
             this.lblInfoDeporte.TabIndex = 5;
             this.lblInfoDeporte.Text = "Acá se imprime algo";
             // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(672, 136);
+            this.btnVolver.Location = new System.Drawing.Point(504, 110);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(97, 40);
+            this.btnVolver.Size = new System.Drawing.Size(73, 32);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -220,9 +225,9 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             // 
             // InterfazListaDeportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 426);
+            this.ClientSize = new System.Drawing.Size(600, 346);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblInfoDeporte);
             this.Controls.Add(this.dataGridViewDeporte);
@@ -233,7 +238,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             this.Controls.Add(this.lblDescripcionDeporte);
             this.Controls.Add(this.lblNombreDeporte);
             this.Controls.Add(this.lblTituloDeporte);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InterfazListaDeportes";
             this.Text = "InterfazListaDeportes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BtnVolver_Click);

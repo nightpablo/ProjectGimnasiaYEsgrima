@@ -209,14 +209,14 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(102, 21);
+            this.label1.Location = new System.Drawing.Point(104, 40);
             this.label1.MaximumSize = new System.Drawing.Size(150, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 69);
+            this.label1.Size = new System.Drawing.Size(122, 41);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Gimnasia y Esgrima de Ciudadela";
+            this.label1.Text = "SiGeC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDeportes
@@ -303,7 +303,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "InterfazPrincipal";
-            this.Text = "Gimnasia y Esgrima de Ciudadela";
+            this.Text = "Sistema de gestión de clubes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterfazPrincipal_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -100,7 +100,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 }
                 
             }
-            else if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Eliminar Categoria"))
+            else if (dgvEmpleadoProfesor.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.Equals("Eliminar Categoría"))
             {
                 if (MyMessageBox.Show("¿Seguro que desea Eliminar de la Categoria " + MiCategoria.Nombre + " al Empleado " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Apellido + ", " + ((ModelEmpleadoPersona)dgvEmpleadoProfesor.CurrentRow.DataBoundItem).Nombre + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
                 {

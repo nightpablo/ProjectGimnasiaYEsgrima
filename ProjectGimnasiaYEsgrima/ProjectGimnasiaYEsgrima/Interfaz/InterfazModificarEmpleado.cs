@@ -84,6 +84,17 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                 hayError = true;
                 errorProvider1.SetError(txtApellidoEmpleado, "El nombre del apellido debe contener entre 3 y 50 caracteres");
             }
+            if (dtpFechaNacimiento.Value.CompareTo(DateTime.Now) >= 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtpFechaNacimiento, "La fecha de nacimiento debe ser inferior al dia de hoy.");
+            }
+            else errorProvider1.SetError(dtpFechaNacimiento, "");
+            if (dtpFechaNacimiento.Value.CompareTo(dtpInicioEmpleado.Value) >= 0)
+            {
+                hayError = true;
+                errorProvider1.SetError(dtpInicioEmpleado, "La fecha de inicio debe ser superior a la fecha de nacimiento.");
+            }
             else errorProvider1.SetError(txtApellidoEmpleado, "");
 
 

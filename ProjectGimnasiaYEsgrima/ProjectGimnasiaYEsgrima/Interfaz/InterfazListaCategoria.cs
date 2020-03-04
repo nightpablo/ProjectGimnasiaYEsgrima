@@ -123,7 +123,7 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
                     ControladorCategoria controladorCategoria = new ControladorCategoria();
                     if (controladorCategoria.EliminarCategoria(((ModelCategoria)dtvListarCategorias.CurrentRow.DataBoundItem).MiCategoria) > 0)
                     {
-                        this.ModificarMensaje("La Categoría ha sido eliminado con ÉXITO");
+                        this.ModificarMensaje("La CATEGORÍA ha sido eliminado con ÉXITO");
                         dtvListarCategorias.DataSource = controladorCategoria.ListarTodosCategoriasFiltro(txtNombreCategoria.Text.ToString(), ((ModelDeporte)cbxDeporteCategoria.SelectedItem).MiDeporte);
                     }
                 }

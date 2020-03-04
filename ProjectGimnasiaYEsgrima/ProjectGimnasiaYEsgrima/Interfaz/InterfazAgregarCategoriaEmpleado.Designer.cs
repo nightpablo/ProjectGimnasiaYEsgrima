@@ -143,7 +143,7 @@
             this.AsignarCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.AsignarCategoria.HeaderText = "";
             this.AsignarCategoria.Name = "AsignarCategoria";
-            this.AsignarCategoria.Text = "Asignar Categoria";
+            this.AsignarCategoria.Text = "Asignar Categoría";
             this.AsignarCategoria.UseColumnTextForButtonValue = true;
             this.AsignarCategoria.Width = 21;
             // 
@@ -152,7 +152,7 @@
             this.EliminarCategoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.EliminarCategoria.HeaderText = "";
             this.EliminarCategoria.Name = "EliminarCategoria";
-            this.EliminarCategoria.Text = "Eliminar Categoria";
+            this.EliminarCategoria.Text = "Eliminar Categoría";
             this.EliminarCategoria.UseColumnTextForButtonValue = true;
             this.EliminarCategoria.Width = 21;
             // 

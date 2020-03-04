@@ -96,13 +96,13 @@ namespace ProjectGimnasiaYEsgrima.Interfaz
             if (resultado > 0)
             {
                 
-                Padre.ModificarMensaje("La Categoría ha sido creado con ÉXITO");
+                Padre.ModificarMensaje("La CATEGORÍA ha sido creado con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
             else if (resultado == -1)
             {
-                Padre.ModificarMensaje("La Categoría ha sido recuperada con ÉXITO");
+                Padre.ModificarMensaje("La CATEGORÍA ha sido recuperada con ÉXITO");
                 Padre.Actualizar();
                 Dispose();
             }
